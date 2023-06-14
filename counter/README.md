@@ -63,6 +63,14 @@ Then, set `/app` as the default directory. All subsequent commands assume that.
 
 `CMD ["python", "app.py"]` means every time the image is run, it automatically runs `python /app/app.py`, thus starting the server.
 
+```dockerfile
+FROM python:3.7-alpine
+WORKDIR /app
+ADD . .
+RUN pip install -r requirements.txt
+CMD ["python", "app.py"]
+```
+
 ### `docker-compose.yml`
 
 A `yaml` file that defines 2 services that makes up our application. It is run by `docker-compose up`. It is useful when you want to run several images at once, each image responsible for doing one service, like setting up a company instead of just a single agent.
