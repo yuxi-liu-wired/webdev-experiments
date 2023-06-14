@@ -22,7 +22,7 @@ Run `docker-compose up -d` to run it in the background (so that the terminal doe
 
 Run `./wrk -t4 -c1000 -d20s http://localhost:8000/`, which would run 4 `wrk` threads, each of which would hit the server with 250 concurrent connectinons (1000 in total). Each concurrent connection would send one new request as soon as the previous one is replied. This should stress the server. Now open `http://localhost:8000` in browser and refresh. It should have significant lag, and the numbers would jump up by a thousand or more, every time you refresh.
 
-## What did we do?
+## How it works
 
 ### `requirements.txt`
 
