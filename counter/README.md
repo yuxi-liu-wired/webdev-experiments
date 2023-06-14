@@ -1,3 +1,5 @@
+# Hello World with counter using Nginx, Flask, Redis
+
 ## How to run
 
 Run `docker-compose up` in this folder. Read what the terminal says. When it stops changing, go to `http://localhost:8000`. It should say `Hello World! I have been seen 1 times.`
