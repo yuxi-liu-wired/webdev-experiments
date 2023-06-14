@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import random
 
 app = Flask(__name__)
+difficulty = 4
 
 # Defining a list of color hex codes
 colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF",
@@ -12,10 +13,11 @@ colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF",
 def index():    
     return render_template('index.html')
 
+
 @app.route('/right')
 def right():
     random.shuffle(colors)
-    hex_codes = random.sample(colors, k=3)
+    hex_codes = random.sample(colors, k=difficulty)
     hex_codes_left = hex_codes.copy()
     random.shuffle(hex_codes_left)
     hex_codes_right = hex_codes.copy()
@@ -34,7 +36,7 @@ def right():
 @app.route('/left')
 def left():
     random.shuffle(colors)
-    hex_codes = random.sample(colors, k=3)
+    hex_codes = random.sample(colors, k=difficulty)
     hex_codes_left = hex_codes.copy()
     random.shuffle(hex_codes_left)
     hex_codes_right = hex_codes.copy()
