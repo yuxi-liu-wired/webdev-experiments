@@ -22,7 +22,7 @@ fetch(locationURL)
     });
 
 // Make a request to retrieve the forecast URL
-var apikey = "2d5672b6edee932debbc47e20026124c";
+var apikey = "";
 var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=" + latitude + "&lon=" + longitude + "&appid=" + apikey;
 
 fetch(forecastURL)
