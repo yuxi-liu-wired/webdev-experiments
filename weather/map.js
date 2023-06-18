@@ -3,6 +3,25 @@ let map;
 let marker; // A variable to hold the current marker
 let locDiv;
 
+// Normalise the latitude and longitude values 
+// if latitude exteends [-90, 90], then clamp it to [-90, 90]
+// also, ensure longitude is in range [-180, 180], by first modulo 360,
+// then subtract 360 if the result is greater than 180
+function normalise (lat, lng) {
+    let normalisedLat = lat;
+    let normalisedLng = lng;
+    if (lat < -90) {
+        normalisedLat = -90;
+    } else if (lat > 90) {
+        normalisedLat = 90;
+    }
+    normalisedLng = lng % 360;
+    if (normalisedLng > 180) {
+        normalisedLng -= 360;
+    }
+    return [normalisedLat, normalisedLng];
+}
+
 window.onload = function () {
     locDiv = document.getElementById("location");
 
@@ -23,6 +42,8 @@ window.onload = function () {
             if (marker) {
                 map.removeLayer(marker);
             }
+            // normalize
+            [latitude, longitude] = normalise(latitude, longitude);
 
             // Add a new marker to the map at the clicked location
             marker = L.marker([latitude, longitude]).addTo(map);
@@ -38,12 +59,27 @@ window.onload = function () {
     // Call the initMap function
     initMap();
 
-    // Add event listener to the "Get Weather" button
+    // Add event listener to the "Get American Weather" button
     document.getElementById("getWeather").addEventListener("click", function () {
         if (marker) {
             var latitude = marker.getLatLng().lat;
             var longitude = marker.getLatLng().lng;
+            // normalize
+            [latitude, longitude] = normalise(latitude, longitude);
             window.location.href = `weather.html?lat=${latitude}&lng=${longitude}`;
+        } else {
+            alert("Please click on the map to select a location.");
+        }
+    });
+
+    // Add event listener to the "Get World Weather" button
+    document.getElementById("getWorldWeather").addEventListener("click", function () {
+        if (marker) {
+            var latitude = marker.getLatLng().lat;
+            var longitude = marker.getLatLng().lng;
+            // normalize
+            [latitude, longitude] = normalise(latitude, longitude);
+            window.location.href = `world_weather.html?lat=${latitude}&lng=${longitude}`;
         } else {
             alert("Please click on the map to select a location.");
         }

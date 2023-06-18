@@ -3,11 +3,28 @@ const urlParams = new URLSearchParams(window.location.search);
 const latitude = urlParams.get('lat');
 const longitude = urlParams.get('lng');
 
+// Make a request to retrieve the location name
+var locationURL = "https://geocode.maps.co/reverse?lat=" + latitude + "&lon=" + longitude;
+fetch(locationURL)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        var locationName = data.display_name;
+        var locationDiv = document.getElementById("location");
+        locationDiv.innerHTML = locationName;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
 // Construct the URL to retrieve the forecast URL
 var pointsURL = "https://api.weather.gov/points/" + latitude + "," + longitude;
 
 // Make a request to retrieve the forecast URL
-
 fetch(pointsURL)
     .then(response => {
         if (!response.ok) {

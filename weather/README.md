@@ -8,6 +8,8 @@ Sselect a location on a map and get a weather forecast for that location.
 1. Click on any location within the United States land area (not marine areas) on the map, as NOAA only supports those locations.
 2. Click the 'Get Weather' button to retrieve the weather forecast for the selected location.
 
+If you want to "Get World Weather", then you need to go to [OpenWeatherMap](https://openweathermap.org/) and register for a free API key. Then, fill in the line `var apikey = "";` in `world_weather.js`.
+
 ## Technologies Used
 
 - [Leaflet](https://leafletjs.com/): An open-source JavaScript library for interactive maps.
