@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask Magnet App</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 24px; 
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      input[type="text"],
+      button {
+        font-size: 1.5em; /* Increase the font size for input and button */
+      }
+    </style>
+    <script type='module' src="/static/js/main.js"></script>
+  </head>
+  <body>
+    <form id="magnetForm">
+      <input type="text" id="magnetLink" placeholder="Paste your magnet link here" value="magnet:?xt=urn:btih:FHFXOPQT6LT2LK2COHLXOJ3CZSXA5ICX&dn=lubuntu-23.04-desktop-amd64.iso&xl=3100446720&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce">
+      <button type="submit">Fetch Info</button>
+    </form>
+    <div id="info"></div>
+  </body>
+</html>
