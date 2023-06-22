@@ -1,13 +1,17 @@
+# Webdev Experiments
+
 My experiments with Nginx, Docker, and Python web hosting.
 
-Each folder is a standalone project and contains its own `README.md` which describes how to run it, and how it works. 
+Each folder is a standalone project and contains its own `README.md` which describes how to run it, and how it works.
 
 To run the projects:
+
 * Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 * Run `git clone https://github.com/yuxiliu1995/webdev-experiments.git`.
 * Go into each folder and follow the `README.md` within.
 
 Table of contents:
+
 * [`hello`](./hello/): A website that shows `Hello World!`.
 * [`counter`](./counter/)
 : Counts how many times it is hit by HTTP requests and displays it on the webpage.
