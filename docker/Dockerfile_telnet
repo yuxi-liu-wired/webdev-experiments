@@ -1,0 +1,30 @@
+# Use Debian 11 as the base image
+FROM debian:11
+
+# Avoid prompts from apt
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Update the system and install xinetd and telnet daemon
+RUN apt-get update && apt-get install -y \
+    xinetd \
+    telnetd \
+    && rm -rf /var/lib/apt/lists/*
+
+# Configure xinetd to start the Telnet service
+RUN echo "service telnet\n{\ndisable = no\nflags = REUSE\nsocket_type = stream\nwait = no\nuser = root\nserver = /usr/sbin/in.telnetd\nlog_on_failure += USERID\n}" > /etc/xinetd.d/telnet
+
+RUN useradd -m myuser && echo "myuser:mypassword" | chpasswd
+RUN echo "root:rootpassword" | chpasswd
+RUN mkdir /data 
+RUN chown -R myuser:myuser /data
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
+# Expose the Telnet port
+EXPOSE 23
+
+# Start xinetd
+CMD ["xinetd", "-dontfork"]
+
