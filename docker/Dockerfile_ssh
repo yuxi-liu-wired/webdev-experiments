@@ -1,0 +1,35 @@
+# Use Debian 11 as the base image
+FROM debian:11
+
+# Update the system and install necessary packages
+RUN apt-get update && apt-get install -y \
+    telnet \
+    rsh-server \
+    openssh-server \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install telnet server
+RUN apt-get update && apt-get install -y xinetd telnetd
+
+# Create a file for telnet service
+RUN echo "service telnet\n{\ndisable = no\nflags = REUSE\nsocket_type = stream\nwait = no\nuser = root\nserver = /usr/sbin/in.telnetd\nlog_on_failure += USERID\n}" > /etc/xinetd.d/telnet
+
+
+# Create SSH directory and add the ed25519 public key
+RUN mkdir /root/.ssh
+COPY id_ed25519.pub /root/.ssh/authorized_keys
+RUN chmod 700 /root/.ssh && chmod 600 /root/.ssh/authorized_keys
+RUN mkdir -p /run/sshd && chmod 0755 /run/sshd
+
+# Configure SSH to permit key-based login and disable password authentication
+RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+
+# Expose the necessary ports
+EXPOSE 0-65535
+
+# Set up a volume for persistent data
+VOLUME ["/data"]
+
+# Define the command to run when starting the container
+CMD ["/usr/sbin/sshd", "-D", "-ddd", "-e"]
