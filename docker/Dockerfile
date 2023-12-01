@@ -3,17 +3,12 @@ FROM debian:11
 
 # Update the system and install necessary packages
 RUN apt-get update && apt-get install -y \
-    telnet \
-    rsh-server \
     openssh-server \
+    netcat \
     && rm -rf /var/lib/apt/lists/*
 
 # Install telnet server
 RUN apt-get update && apt-get install -y xinetd telnetd
-
-# Create a file for telnet service
-RUN echo "service telnet\n{\ndisable = no\nflags = REUSE\nsocket_type = stream\nwait = no\nuser = root\nserver = /usr/sbin/in.telnetd\nlog_on_failure += USERID\n}" > /etc/xinetd.d/telnet
-
 
 # Create SSH directory and add the ed25519 public key
 RUN mkdir /root/.ssh
@@ -26,10 +21,17 @@ RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 
 # Expose the necessary ports
-EXPOSE 0-65535
+EXPOSE 22
 
 # Set up a volume for persistent data
 VOLUME ["/data"]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
-# Define the command to run when starting the container
-CMD ["/usr/sbin/sshd", "-D", "-ddd", "-e"]
+# Install supervisord
+RUN apt-get update && apt-get install -y supervisor
+# Use supervisord as the default command
+RUN echo "[supervisord]\nnodaemon=true\n[program:sshd]\ncommand=/usr/sbin/sshd -D\nautorestart=true" > /etc/supervisor/conf.d/supervisord.conf
+
+CMD ["/usr/bin/supervisord"]
