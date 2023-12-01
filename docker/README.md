@@ -33,8 +33,16 @@ In the above example, the only way to access the container is to ssh into `local
 If there is a service running on a port within the container, we can access it by tunnelling out the port. For example, if there is a web server running on port 80 within the container, we can access it by running the following command:
 
 ```bash
-ssh -L 10080:localhost:80 -p 10022 root@localhost
+ssh -f -N -i ~/.ssh/id_ed25519 -p 10022 -L 10081:localhost:80 root@localhost
 ```
+
+This command forwards port 10081 on the host to port 80 on the container in the background.
+* The `-f` option runs the ssh command in the background.
+* The `-N` option tells ssh that we don't want to execute any command on the remote host.
+* The `-i` option specifies the private key to use.
+* The `-p` option specifies the port to connect to on the remote host.
+* The `-L` option specifies the port forwarding goes from localhost to remote host.
+* `-L 10081:localhost:80` means that port `10081` on the localhost is forwarded to `localhost:80` on the container. Note that `10081` is relative to the localhost, `localhost:80` is relative to the container.
 
 Now we can access the web server by visiting `localhost:10080` in the browser.
 
