@@ -1,0 +1,81 @@
+# This file controls the settings for your Quarto template from www.marvinschmitt.com
+
+# website settings
+website:
+  title: "Yuxi on the Wired"                                # Your name
+  description: "Personal website of Yuxi Liu"   # A brief slogan (optional)
+  image: img/blog icon.jpg
+  
+  favicon: img/favicon.ico
+  
+  # start of the navigation bar at the top of the website
+  navbar:
+    pinned: true
+    logo: /img/favicon.ico
+    
+    # your sub-pages
+    left:
+      - text: "Blog"
+        href: blog/index.qmd
+      - text: "Projects"
+        href: projects/index.qmd
+      - text: "About"
+        href: about/index.qmd
+      # - text: "CV"
+      #   href: cv/index.qmd
+    
+    # your social media handles
+    right:
+      - icon: folder-symlink
+        href: https://bair.berkeley.edu/
+      # - icon: wikipedia
+      #   href: 
+      # - icon: linkedin
+      #   href: https://www.linkedin.com/in/yuxi-liu-78b947277/
+      - icon: envelope
+        aria-label: email
+        href: "mailto:yuxi.liu.1995@gmail.com"  
+  
+  
+
+# Don't touch unless you know what you are doing :) ------------
+  search: 
+    location: navbar
+    type: textbox
+  page-footer: 
+    left: |
+      <span class="faux-block">&#169; Left Footer</span>
+    center: |
+      <span class="faux-block">Middle Footer</span>
+    right: |
+      <span class="faux-block">Right Footer</span>
+
+project:
+  type: website
+  output-dir: docs
+
+  preview: 
+    port: 22222
+    browser: true
+    watch-inputs: true
+    navigate: true
+
+execute:
+  freeze: true
+
+format:
+  html:
+    fontsize: 1.1em
+    theme: 
+      light: flatly
+      dark: darkly
+      # light: html/theme-light.scss
+      # dark: html/theme-dark.scss
+    toc: true
+    code-link: true
+    anchor-sections: true
+    fig-cap-location: margin
+    reference-location: margin
+    footnotes-hover: true
+
+bibliography: static/references.bib

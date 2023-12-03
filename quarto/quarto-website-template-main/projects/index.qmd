@@ -1,0 +1,12 @@
+---
+title: Projects
+---
+
+## Double Stroop
+
+<img src="doublestroop_screenshot.png" style="height: 100%; width: 100%; object-fit: contain" onclick="window.open('https://github.com/yuxiliu1995/webdev-experiments/tree/main/doublestroop', 'blank');"/>
+
+
+Something ridiculously painful to play, lol.
+
+[Play online](./double_stroop) | [Play offline](https://github.com/yuxiliu1995/webdev-experiments/tree/main/doublestroop)
