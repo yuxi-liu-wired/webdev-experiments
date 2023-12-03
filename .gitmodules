@@ -1,0 +1,6 @@
+[submodule "pelican/plugins/pelican-bib"]
+	path = pelican/plugins/pelican-bib
+	url = https://github.com/scheunemann/pelican-bib
+[submodule "pelican/plugins/pelican-bibtex"]
+	path = pelican/plugins/pelican-bibtex
+	url = https://github.com/vene/pelican-bibtex.git
