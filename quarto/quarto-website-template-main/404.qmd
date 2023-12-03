@@ -1,0 +1,5 @@
+---
+title: ""
+---
+
+  <img src="img/404.jpeg" width="100%">

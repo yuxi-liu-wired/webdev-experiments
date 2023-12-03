@@ -1,0 +1,11 @@
+{
+  "hash": "53868eecff6320f72a7556b7795978f6",
+  "result": {
+    "markdown": "---\ntitle: \"Math Test\"\nauthor: \"\"\ndate: \"2023-12-02\"\ncategories: \n# image: \"image.jpg\"\ndescription: \"Testing math input\"\nbibliography: ../../static/references.bib\n---\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![Plot](index_files/figure-html/fig-plot-output-1.png){#fig-plot width=566 height=411}\n:::\n:::\n\n\nFor example, see @fig-plot.\n\nThe Bitter Lesson [@sutton2019bitter]\n\n",
+    "supporting": [
+      "index_files\\figure-html"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

@@ -1,0 +1,54 @@
+---
+title: "Math Test"
+author: ""
+date: "2023-12-02"
+categories: 
+# image: "image.jpg"
+description: "Testing math input"
+---
+
+## Introduction {#sec-introduction}
+
+See @sec-introduction for additional context.
+
+Black-Scholes (@eq-black-scholes) is a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options:
+
+
+\begin{equation}
+\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2} \frac{\partial^{2} \mathrm C}{\partial \mathrm C^2}   + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ = \mathrm r \mathrm C \tag{Black--Scholes Equation}
+\end{equation}
+{#eq-black-scholes}
+
+$$
+E = mc^2  \tag{mass-energy equation}
+$$
+
+<!-- ```{python}
+#| label: fig-plot
+#| fig-cap: "Plot"
+
+import matplotlib.pyplot as plt
+plt.plot([1,23,2,4])
+plt.show()
+```
+
+For example, see @fig-plot. -->
+
+The Bitter Lesson [@sutton2019bitter]
+
+::: {#thm-line}
+
+## Line
+
+The equation of any straight line, called a linear equation, can be written as:
+
+$$
+y = mx + b
+$$
+:::
+
+See @thm-line.
+
+::: {.solution}
+The solution.
+:::
