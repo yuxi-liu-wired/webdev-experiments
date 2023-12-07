@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opossum Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer a {
+            color: #fff;
+        }
+
+        .banner {
+            width: 50%;
+            max-width: 500px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            margin-top: 1rem;
+        }
+
+        .search-input {
+            width: 50%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-button {
+            margin-left: 1rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Opossum Search</h1>
+        <img class="banner" src="banner.jpg" alt="Opossum">
+    </header>
+
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search the web">
+        <button class="search-button">Search</button>
+    </div>
+    <footer>
+        Idea made by <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=55">Google
+            Gemini</a>.
+    </footer>
+
+    <script>
+        const searchInput = document.querySelector('.search-input');
+        const searchButton = document.querySelector('.search-button');
+
+        searchButton.addEventListener('click', search);
+        searchInput.addEventListener('keypress', function (event) {
+            if (event.keyCode === 13) {
+                search();
+            }
+        });
+
+        function search() {
+            const query = searchInput.value;
+            if (query) {
+                window.location.href = `https://www.google.com/search?q=opossum+${query}`;
+            }
+        }
+    </script>
+</body>
+
+</html>
