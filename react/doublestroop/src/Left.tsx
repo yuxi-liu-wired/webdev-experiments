@@ -1,11 +1,12 @@
 // Left.tsx
 import React, { useState, useEffect } from 'react';
 import tinycolor from 'tinycolor2';
-import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, } from '@dnd-kit/core';
+import { DndContext, KeyboardSensor, PointerSensor, useSensor, useSensors, } from '@dnd-kit/core';
 import { SortableContext, verticalListSortingStrategy, useSortable, } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 
-const SortableItem = ({ id, style }) => {
+
+const SortableItem = ({ id, style }: { id: string, style: React.CSSProperties }) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: id });
 
     const itemStyle = {
@@ -34,7 +35,7 @@ const Left: React.FC = (props: any) => {
         const { active, over } = event;
 
         if (active.id !== over.id) {
-            setItems((items) => {
+            setItems((items: string) => {
                 const oldIndex = items.indexOf(active.id);
                 const newIndex = items.indexOf(over.id);
                 return arrayMove(items, oldIndex, newIndex);
@@ -48,6 +49,7 @@ const Left: React.FC = (props: any) => {
         if (JSON.stringify(hexCodesLeft) === JSON.stringify(rightColors)) {
             let endTime = new Date().getTime();
             let timeTaken = (endTime - startTime) / 1000;
+            timeTaken = Math.round(timeTaken * 10) / 10; // round to 1 decimal place
             setMessage(`Congratulations! You have solved the puzzle correctly. Time taken: ${timeTaken} seconds.`);
         } else {
             setMessage("Sorry, some of your answers are incorrect. Try again!");
@@ -83,6 +85,7 @@ const Left: React.FC = (props: any) => {
 export default Left;
 
 // Utility function to reorder the array based on drag and drop
+// arrayMove(['a', 'b', 'c', 'd'], 1, 3) -> ['a', 'c', 'b', 'd'].
 const arrayMove = (array, from, to) => {
     const newArray = array.slice();
     newArray.splice(to < 0 ? newArray.length + to : to, 0, newArray.splice(from, 1)[0]);
