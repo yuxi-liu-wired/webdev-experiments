@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js"></script>
-
+    <link rel="stylesheet" href="simple.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
     <h1 id="title">Double Stroop Puzzle</h1>
-    <h2 id="instruction">Match the <i>colors</i> of the hex codes on the left with the hex codes on the right.</h2>
+    <h2 id="instruction">Match the <i><b>colors</b></i> of the hex codes on the left with the hex codes on the right.</h2>
     <p id="message"></p>
     <div>
         <div id="left-column">
@@ -45,12 +45,12 @@
         }
 
         for (let i = 0; i < hexCodesRight.length; i++) {
-            const li = document.createElement('li');
-            li.classList.add('ui-state-default');
-            li.style.color = hexColorsRight[i];
-            li.id = hexCodesRight[i];
-            li.textContent = hexCodesRight[i];
-            rightColumn.appendChild(li);
+            const p = document.createElement('p');
+            p.classList.add('ui-state-default');
+            p.style.color = hexColorsRight[i];
+            p.id = hexCodesRight[i];
+            p.textContent = hexCodesRight[i];
+            rightColumn.appendChild(p);
         }
 
         let startTime = new Date().getTime();
@@ -63,12 +63,15 @@
                 return tinycolor($(this).css("color")).toHexString().toUpperCase(); // Convert CSS color to hex
             }).get();
 
-            let rightColors = $("#sortable li").map(function () {
+            let rightColors = $("#sortable p").map(function () {
                 return $(this).attr('id').toUpperCase(); // Directly use the id value
             }).get();
 
             if (JSON.stringify(leftColors) === JSON.stringify(rightColors)) {
                 let endTime = new Date().getTime();
+                $("#sortable").sortable("disable"); // freeze the puzzle after solving
+                $("#sortable").find('p').addClass("solved-button").css('cursor', 'default');
+                $("#check-button").remove();
                 let timeTaken = (endTime - startTime) / 1000;
                 timeTaken = Math.round(timeTaken * 10) / 10;
                 $("#message").text("Congratulations! You have solved the puzzle correctly. Time taken: " + timeTaken + " seconds.");
@@ -76,8 +79,7 @@
                 $("#message").text("Sorry, some of your answers are incorrect. Try again!");
             }
         });
-    </script>
-
+</script>
 </body>
 
 </html>
