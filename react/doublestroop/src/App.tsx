@@ -13,7 +13,7 @@ const App: React.FC = () => {
         setGameData(data);
     }, [difficulty]);
 
-    const handleDifficultyChange = (e) => {
+    const handleDifficultyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = parseInt(e.target.value, 10);
         if (isNaN(value)) {
             setDifficulty(4);
@@ -46,13 +46,13 @@ const App: React.FC = () => {
 export default App;
 
 // Function to generate game data
-const generateGameData = (difficulty) => {
+const generateGameData = (difficulty: number) => {
     const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF",
                     "#C0C0C0", "#808080", "#800000", "#808000", "#008000", "#800080",
                     "#008080", "#000080", "#000000", "#FFFFFF"];
     
     // Shuffle and sample colors
-    const shuffleAndSample = (array, size) => {
+    const shuffleAndSample = (array: string[], size: number) => {
         const shuffled = [...array].sort(() => 0.5 - Math.random());
         return shuffled.slice(0, size);
     };
