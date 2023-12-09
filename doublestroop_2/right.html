@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <title>Double Stroop Puzzle - Right</title>
     <script src="static/jquery.min.js"></script>
-    <script src="static/jquery.ui.touch-punch.min.js"></script>
-    <link rel="stylesheet" href="static/jquery-ui.css">
     <script src="static/jquery-ui.min.js"></script>
+    <script src="static/jquery.ui.touch-punch.min.js"></script>
     <script src="static/tinycolor.min.js"></script>
+    <link rel="stylesheet" href="static/jquery-ui.css">
     <link rel="stylesheet" href="static/simple.css">
     <link rel="stylesheet" href="static/style.css">
 </head>
@@ -62,6 +62,10 @@
         $("#sortable").sortable();
         $("#sortable").disableSelection();
 
+        $("#sortable").on("mouseup", "p", function () {
+            $("#message").text("");
+        });
+    
         $("#check-button").click(function () {
             let leftColors = $("#left-column p").map(function () {
                 return tinycolor($(this).css("color")).toHexString().toUpperCase(); // Convert CSS color to hex
