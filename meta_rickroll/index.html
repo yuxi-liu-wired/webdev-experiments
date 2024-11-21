@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- when a file is uploaded, it attempts to open it as an image file, 
+        and if it does open as an image file, 
+        only *then* compile it back to jpeg and send to the server side -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Meta Generator</title>
+    <script>
+        function validateForm() {
+            var fileInput = document.getElementById('file');
+            var file = fileInput.files[0];
+            if (file) {
+                if (!['image/png', 'image/jpeg'].includes(file.type)) {
+                    alert('Please upload a PNG or JPEG image.');
+                    return false;
+                }
+                if (file.size > 1 * 1024 * 1024) {
+                    alert('File size must not exceed 1MB.');
+                    return false;
+                }
+            } else {
+                alert('Please select a file to upload.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>OG Meta Generator</h1>
+    <form method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <label for="file">Upload Image (PNG or JPEG, max 1MB):</label><br>
+        <input type="file" id="file" name="file" accept=".png,.jpg,.jpeg" required><br><br>        
+          
+        <label for="og_site_name">og:site_name:</label><br>
+        <input type="text" id="og_site_name" name="og_site_name" required><br><br>
+        
+        <label for="og_title">og:title:</label><br>
+        <input type="text" id="og_title" name="og_title" required><br><br>
+        
+        <label for="og_description">og:description:</label><br>
+        <textarea id="og_description" name="og_description" required></textarea><br><br>
+        
+        <input type="submit" value="Generate Page">
+    </form>
+</body>
+</html>
