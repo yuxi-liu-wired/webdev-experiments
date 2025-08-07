@@ -1,8 +1,15 @@
 [Unit]
-Description=Update webdev-experiments repo
+Description=Update webdev-experiments repo and units
 
 [Service]
 Type=oneshot
 WorkingDirectory=/srv/webdev
-ExecStart=/usr/bin/git pull --ff-only
+# pull code
+ExecStart=/usr/bin/git fetch --all -p
+ExecStart=/usr/bin/git reset --hard origin/main
+# install/refresh unit files
+ExecStartPost=/usr/bin/install -m 0644 -t /etc/systemd/system /srv/webdev/systemd/systemd_files/*
 ExecStartPost=/bin/systemctl daemon-reload
+# ensure symlinks exist and the schedule is recalculated
+ExecStartPost=/bin/systemctl reenable git-update.timer
+ExecStartPost=/bin/systemctl restart git-update.timer
