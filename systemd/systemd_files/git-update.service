@@ -1,5 +1,5 @@
 [Unit]
-Description=Update repo and hot-refresh systemd units
+Description=Update repo and hot-refresh systemd units canary
 
 [Service]
 Type=oneshot
