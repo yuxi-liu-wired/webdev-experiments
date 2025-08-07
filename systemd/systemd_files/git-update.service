@@ -1,5 +1,5 @@
 [Unit]
-Description=Update webdev-experiments repo and units wtf
+Description=Update webdev-experiments repo and units drink water
 
 [Service]
 Type=oneshot

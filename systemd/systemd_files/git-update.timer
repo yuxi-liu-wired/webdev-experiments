@@ -1,5 +1,5 @@
 [Unit]
-Description=Run git-update.service every 1 minute wtf
+Description=Run git-update.service every 1 minute drink water
 
 [Timer]
 OnBootSec=60
