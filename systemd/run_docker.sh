@@ -1,4 +1,6 @@
 #!/bin/bash
+docker rm -f sysbox || true
+yes | docker system prune -a
 docker build -t nginx-sysd .
 docker run -d --name sysbox \
   --privileged \
