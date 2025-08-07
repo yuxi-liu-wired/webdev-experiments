@@ -1,0 +1,2 @@
+*.service text eol=lf
+*.timer   text eol=lf

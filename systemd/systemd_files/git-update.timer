@@ -1,10 +1,11 @@
 [Unit]
-Description=Run git-update.service every 1 minute drink water
+Description=Run git-update.service every 1 minute
 
 [Timer]
 OnBootSec=60
 OnUnitActiveSec=60
 Persistent=true
+Unit=git-update.service
 
 [Install]
 WantedBy=timers.target
