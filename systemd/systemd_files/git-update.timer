@@ -1,9 +1,9 @@
 [Unit]
-Description=Run git-update.service every minute
+Description=Run git-update.service every 2 minutes
 
 [Timer]
-OnBootSec=30
-OnUnitActiveSec=60
+OnBootSec=60
+OnUnitActiveSec=120
 Persistent=true
 
 [Install]
