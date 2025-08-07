@@ -1,5 +1,5 @@
 [Unit]
-Description=Run git-update.service every 1 minute
+Description=Run git-update.service every 1 minute canarystring
 
 [Timer]
 OnBootSec=60

@@ -1,5 +1,5 @@
 [Unit]
-Description=Update webdev-experiments repo and units
+Description=Update webdev-experiments repo and units canarystring
 
 [Service]
 Type=oneshot
