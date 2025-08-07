@@ -1,0 +1,8 @@
+[Unit]
+Description=Update webdev-experiments repo
+
+[Service]
+Type=oneshot
+WorkingDirectory=/srv/webdev
+ExecStart=/usr/bin/git pull --ff-only
+ExecStartPost=/bin/systemctl daemon-reload
