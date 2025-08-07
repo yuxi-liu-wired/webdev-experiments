@@ -10,6 +10,22 @@ ssh dev@localhost -p 8022
 # `dev` is the hardcoded password (see Dockerfile)
 ```
 
+## Check that systemd is self-updating
+
+You can check that systemd is self-updating by looking at the `git-update.timer` and `git-update.service` files in the `systemd_files` directory. These files are set up to run every minute to update the systemd units from a git repository. You can modify these files to test the self-updating feature.
+
+```bash
+docker exec sysbox systemctl cat git-update.timer
+# wait a while...
+docker exec sysbox systemctl cat git-update.timer
+```
+
+If you are impatient, you can manually trigger the update:
+
+```bash
+docker exec sysbox systemctl start git-update.service
+```
+
 ## Check systemd status
 
 You can do it via `docker exec`:
