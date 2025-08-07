@@ -9,7 +9,8 @@ WorkingDirectory=/srv/webdev
 ExecStart=/usr/bin/git fetch --prune origin main
 ExecStart=/usr/bin/git reset --hard origin/main
 
-# 2) copy units WITHOUT globs (no shell required)
+# 2) copy services and timers WITHOUT globs, because
+#    globs have failed me so hard
 ExecStartPost=/usr/bin/find /srv/webdev/systemd/systemd_files -maxdepth 1 -type f -name "*.service" -exec /usr/bin/install -m0644 -t /etc/systemd/system {} +
 ExecStartPost=/usr/bin/find /srv/webdev/systemd/systemd_files -maxdepth 1 -type f -name "*.timer"   -exec /usr/bin/install -m0644 -t /etc/systemd/system {} +
 
