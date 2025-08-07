@@ -1,23 +1,55 @@
 # systemd experiments
 
-## Install
-
-
+## Get Docker running
 
 ```bash
-docker pull ubuntu/nginx
+chmod 755 run_docker.sh
+./run_docker.sh
 
-# run img with enough priv to get systemd working
-docker run -d --name lab \
-  --privileged \
-  -p 2222:22 \
-  -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
-  ubuntu/nginx
+ssh dev@localhost -p 8022
+# `dev` is the hardcoded password (see Dockerfile)
 ```
 
-COMM. The privilege is necessary because [Containers are not VMs](https://www.docker.com/blog/containers-are-not-vms/), so systemd needs to get some privilege from the host.
+## Check systemd status
 
-> Apartments (the containers) are built around shared infrastructure. The apartment building (Docker Host) shares plumbing, heating, electrical, etc. With containers, you share the underlying resources of the Docker host and you build an image that is exactly what you need to run your application. VMs are built in the opposite direction. You are going to start with a full operating system and, depending on your application, might be strip out the things you don’t want.
->
-> ...how do you backup your container, you don’t. Your data doesn’t live in the container, it lives in a named volume that is shared between 1-N containers that you define. You backup the data volume, and forget about the container. Optimally your containers are completely stateless and immutable.
+You can do it via `docker exec`:
 
+```bash
+$ docker exec sysbox ps -p 1 -o pid,comm
+    PID COMMAND
+      1 systemd
+
+$ docker exec sysbox systemctl list-units --type=service --state=running
+  UNIT                     LOAD   ACTIVE SUB     DESCRIPTION
+  getty@tty1.service       loaded active running Getty on tty1
+  getty@tty2.service       loaded active running Getty on tty2
+  getty@tty3.service       loaded active running Getty on tty3
+  getty@tty4.service       loaded active running Getty on tty4
+  getty@tty5.service       loaded active running Getty on tty5
+  getty@tty6.service       loaded active running Getty on tty6
+  nginx.service            loaded active running A high performance web server and a reverse proxy server
+  ssh.service              loaded active running OpenBSD Secure Shell server
+  systemd-journald.service loaded active running Journal Service
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+9 loaded units listed.
+```
+
+Note that `systemctl` commands can't be run if you ssh into the container directly, because `dev` user is an unprivileged user in a fresh session, that doesn't automatically have access to the system bus socket that `systemctl` uses (that lives under `/run/systemd/private`). So you need to use `docker exec` to run `systemctl` commands.
+
+```bash
+docker exec sysbox systemctl status
+docker exec sysbox systemctl list-units --type=service
+docker exec sysbox systemctl list-unit-files --type=service
+```
+
+## Check nginx status
+
+```bash
+docker exec sysbox systemctl status nginx
+docker exec sysbox systemctl list-units --type=service | grep nginx
+docker exec sysbox systemctl list-unit-files --type=service | grep nginx
+```

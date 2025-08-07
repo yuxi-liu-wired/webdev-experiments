@@ -1,4 +1,4 @@
-FROM ubuntu/nginx:24.04
+FROM ubuntu/nginx
 ENV DEBIAN_FRONTEND=noninteractive container=docker
 
 # 1) core bits
@@ -8,19 +8,33 @@ RUN apt-get update && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # 2) simple dev account for SSH
-RUN useradd -m dev && echo "dev:dev" | chpasswd && mkdir /var/run/sshd
-RUN systemctl enable ssh.service
+RUN useradd -m dev                     \
+ && echo "dev:dev" | chpasswd         \
+ && mkdir -p /run/sshd
 
-# 3) clone
+# 3) ensure sshd starts at boot (multi-user.target)
+RUN ln -s /lib/systemd/system/ssh.service \
+        /etc/systemd/system/multi-user.target.wants/ssh.service
+
+# 4) clone your repo
 RUN git clone --depth 1 \
       https://github.com/yuxi-liu-wired/webdev-experiments.git /srv/webdev
 
-# 4) install your unit files so systemd can see them
-RUN cp /srv/webdev/systemd/systemd_files/* /etc/systemd/system/ && \
-    systemctl daemon-reload && \
-    systemctl enable git-update.timer
+# 5) install all unit files into the system directory
+#    and enable them with symlinks
+RUN cp /srv/webdev/systemd/systemd_files/* \
+       /usr/lib/systemd/system/ && \
+    mkdir -p \
+      /etc/systemd/system/multi-user.target.wants \
+      /etc/systemd/system/timers.target.wants && \
+    ln -s \
+      /usr/lib/systemd/system/git-update.service \
+      /etc/systemd/system/multi-user.target.wants/git-update.service && \
+    ln -s \
+      /usr/lib/systemd/system/git-update.timer \
+      /etc/systemd/system/timers.target.wants/git-update.timer
 
-# 5) expose ports
+# 6) expose ports
 EXPOSE 22 80 443
 
 STOPSIGNAL SIGRTMIN+3
