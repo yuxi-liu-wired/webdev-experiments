@@ -20,19 +20,15 @@ RUN ln -s /lib/systemd/system/ssh.service \
 RUN git clone --depth 1 \
       https://github.com/yuxi-liu-wired/webdev-experiments.git /srv/webdev
 
-# 5) install all unit files into the system directory
-#    and enable them with symlinks
-RUN cp /srv/webdev/systemd/systemd_files/* \
-       /usr/lib/systemd/system/ && \
+# 5) install all unit files and enable them
+RUN install -m0644 /srv/webdev/systemd/systemd_files/* /etc/systemd/system/ && \
     mkdir -p \
       /etc/systemd/system/multi-user.target.wants \
       /etc/systemd/system/timers.target.wants && \
-    ln -s \
-      /usr/lib/systemd/system/git-update.service \
-      /etc/systemd/system/multi-user.target.wants/git-update.service && \
-    ln -s \
-      /usr/lib/systemd/system/git-update.timer \
-      /etc/systemd/system/timers.target.wants/git-update.timer
+    ln -s /etc/systemd/system/git-update.service \
+          /etc/systemd/system/multi-user.target.wants/git-update.service && \
+    ln -s /etc/systemd/system/git-update.timer \
+          /etc/systemd/system/timers.target.wants/git-update.timer
 
 # 6) expose ports
 EXPOSE 22 80 443
