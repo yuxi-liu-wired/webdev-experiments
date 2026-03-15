@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-baskerville);
+}
+
+:root {
+  /* Goodreads-authentic palette */
+  --background: #FFFFFF;
+  --foreground: #1E1915;
+
+  --bg-cream: #FAF8F6;
+  --bg-warm-cream: #F4F1EA;
+  --bg-cover-placeholder: #EBE2D7;
+
+  --text-primary: #1E1915;
+  --text-secondary: #4F4F4D;
+  --text-muted: #707070;
+  --text-author: #825445;
+  --heading-brown: #382110;
+
+  --green-primary: #3F8363;
+  --green-hover: #409970;
+  --green-border: #377458;
+
+  --star-filled: #E87400;
+  --star-empty: #C2C7CC;
+
+  --divider: #CFCCC9;
+}
+
+body {
+  background: var(--bg-warm-cream);
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+/* Star rating */
+.star-filled {
+  color: var(--star-filled);
+}
+.star-empty {
+  color: var(--star-empty);
+}
+
+/* Goodreads-style "Want to Reed" button */
+.btn-wtr {
+  background: var(--green-primary);
+  color: white;
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--green-border);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-wtr:hover {
+  background: var(--green-hover);
+}
+
+/* Reed card hover */
+.reed-card {
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+.reed-card:hover {
+  box-shadow: 0 4px 12px rgba(30, 25, 21, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Goodreads divider */
+.gr-divider {
+  border: none;
+  height: 1px;
+  background: var(--divider);
+  margin: 24px 0;
+}
