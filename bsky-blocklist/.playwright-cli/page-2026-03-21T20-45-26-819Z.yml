@@ -1,0 +1,225 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - heading "// block_analysis" [level=1] [ref=e4]
+    - generic [ref=e5]: blocks received by yuxi.ml after 2026-03-17 · 257 accounts
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e8]: "257"
+        - generic [ref=e9]: blocks received
+      - generic [ref=e10]:
+        - generic [ref=e11]: 11711k
+        - generic [ref=e12]: total followers (blockers)
+      - generic [ref=e13]:
+        - generic [ref=e14]: "129"
+        - generic [ref=e15]: with ≥50k followers
+      - generic [ref=e16]:
+        - generic [ref=e17]: 39h
+        - generic [ref=e18]: time span
+    - heading "01 — block timeline (hourly buckets)" [level=2] [ref=e19]
+    - heading "02 — blocker follower distribution" [level=2] [ref=e22]
+    - heading "03 — word cloud + concordance" [level=2] [ref=e25]
+    - generic [ref=e26]:
+      - img [ref=e28]:
+        - generic [ref=e29]:
+          - img [ref=e30]:
+            - generic [ref=e31] [cursor=pointer]: dms
+          - img [ref=e32]:
+            - generic [ref=e33] [cursor=pointer]: democracy
+          - img [ref=e34]:
+            - generic [ref=e35] [cursor=pointer]: rights
+          - img [ref=e36]:
+            - generic [ref=e37] [cursor=pointer]: lover
+          - img [ref=e38]:
+            - generic [ref=e39] [cursor=pointer]: blue
+          - img [ref=e40]:
+            - generic [ref=e41] [cursor=pointer]: crypto
+          - img [ref=e42]:
+            - generic [ref=e43] [cursor=pointer]: mom
+          - img [ref=e44]:
+            - generic [ref=e45] [cursor=pointer]: resist
+          - img [ref=e46]:
+            - generic [ref=e47] [cursor=pointer]: love
+          - img [ref=e48]:
+            - generic [ref=e49] [cursor=pointer]: ally
+          - img [ref=e50]:
+            - generic [ref=e51] [cursor=pointer]: democrat
+          - img [ref=e52]:
+            - generic [ref=e53] [cursor=pointer]: maga
+          - img [ref=e54]:
+            - generic [ref=e55] [cursor=pointer]: liberal
+          - img [ref=e56]:
+            - generic [ref=e57] [cursor=pointer]: proud
+          - img [ref=e58]:
+            - generic [ref=e59] [cursor=pointer]: social
+          - img [ref=e60]:
+            - generic [ref=e61] [cursor=pointer]: music
+          - img [ref=e62]:
+            - generic [ref=e63] [cursor=pointer]: porn
+          - img [ref=e64]:
+            - generic [ref=e65] [cursor=pointer]: good
+          - img [ref=e66]:
+            - generic [ref=e67] [cursor=pointer]: block
+          - img [ref=e68]:
+            - generic [ref=e69] [cursor=pointer]: follow
+          - img [ref=e70]:
+            - generic [ref=e71] [cursor=pointer]: blm
+          - img [ref=e72]:
+            - generic [ref=e73] [cursor=pointer]: retired
+          - img [ref=e74]:
+            - generic [ref=e75] [cursor=pointer]: dog
+          - img [ref=e76]:
+            - generic [ref=e77] [cursor=pointer]: here
+          - img [ref=e78]:
+            - generic [ref=e79] [cursor=pointer]: cat
+          - img [ref=e80]:
+            - generic [ref=e81] [cursor=pointer]: life
+          - img [ref=e82]:
+            - generic [ref=e83] [cursor=pointer]: people
+          - img [ref=e84]:
+            - generic [ref=e85] [cursor=pointer]: animals
+          - img [ref=e86]:
+            - generic [ref=e87] [cursor=pointer]: bluecrew
+          - img [ref=e88]:
+            - generic [ref=e89] [cursor=pointer]: time
+          - img [ref=e90]:
+            - generic [ref=e91] [cursor=pointer]: never
+          - img [ref=e92]:
+            - generic [ref=e93] [cursor=pointer]: please
+          - img [ref=e94]:
+            - generic [ref=e95] [cursor=pointer]: lgbtq
+          - img [ref=e96]:
+            - generic [ref=e97] [cursor=pointer]: science
+          - img [ref=e98]:
+            - generic [ref=e99] [cursor=pointer]: dogs
+          - img [ref=e100]:
+            - generic [ref=e101] [cursor=pointer]: fight
+          - img [ref=e102]:
+            - generic [ref=e103] [cursor=pointer]: bsky
+          - img [ref=e104]:
+            - generic [ref=e105] [cursor=pointer]: always
+          - img [ref=e106]:
+            - generic [ref=e107] [cursor=pointer]: fan
+          - img [ref=e108]:
+            - generic [ref=e109] [cursor=pointer]: posts
+          - img [ref=e110]:
+            - generic [ref=e111] [cursor=pointer]: antifa
+          - img [ref=e112]:
+            - generic [ref=e113] [cursor=pointer]: writer
+          - img [ref=e114]:
+            - generic [ref=e115] [cursor=pointer]: back
+          - img [ref=e116]:
+            - generic [ref=e117] [cursor=pointer]: left
+          - img [ref=e118]:
+            - generic [ref=e119] [cursor=pointer]: hate
+          - img [ref=e120]:
+            - generic [ref=e121] [cursor=pointer]: women
+          - img [ref=e122]:
+            - generic [ref=e123] [cursor=pointer]: vote
+          - img [ref=e124]:
+            - generic [ref=e125] [cursor=pointer]: com
+          - img [ref=e126]:
+            - generic [ref=e127] [cursor=pointer]: know
+          - img [ref=e128]:
+            - generic [ref=e129] [cursor=pointer]: political
+          - img [ref=e130]:
+            - generic [ref=e131] [cursor=pointer]: ukraine
+          - img [ref=e132]:
+            - generic [ref=e133] [cursor=pointer]: like
+          - img [ref=e134]:
+            - generic [ref=e135] [cursor=pointer]: news
+          - img [ref=e136]:
+            - generic [ref=e137] [cursor=pointer]: feminist
+          - img [ref=e138]:
+            - generic [ref=e139] [cursor=pointer]: cats
+          - img [ref=e140]:
+            - generic [ref=e141] [cursor=pointer]: truth
+          - img [ref=e142]:
+            - generic [ref=e143] [cursor=pointer]: things
+          - img [ref=e144]:
+            - generic [ref=e145] [cursor=pointer]: kindness
+          - img [ref=e146]:
+            - generic [ref=e147] [cursor=pointer]: blocked
+          - img [ref=e148]:
+            - generic [ref=e149] [cursor=pointer]: married
+          - img [ref=e150]:
+            - generic [ref=e151] [cursor=pointer]: believe
+          - img [ref=e152]:
+            - generic [ref=e153] [cursor=pointer]: children
+          - img [ref=e154]:
+            - generic [ref=e155] [cursor=pointer]: equality
+          - img [ref=e156]:
+            - generic [ref=e157] [cursor=pointer]: human
+          - img [ref=e158]:
+            - generic [ref=e159] [cursor=pointer]: health
+          - img [ref=e160]:
+            - generic [ref=e161] [cursor=pointer]: art
+          - img [ref=e162]:
+            - generic [ref=e163] [cursor=pointer]: matters
+          - img [ref=e164]:
+            - generic [ref=e165] [cursor=pointer]: unless
+          - img [ref=e166]:
+            - generic [ref=e167] [cursor=pointer]: now
+          - img [ref=e168]:
+            - generic [ref=e169] [cursor=pointer]: care
+          - img [ref=e170]:
+            - generic [ref=e171] [cursor=pointer]: world
+          - img [ref=e172]:
+            - generic [ref=e173] [cursor=pointer]: make
+          - img [ref=e174]:
+            - generic [ref=e175] [cursor=pointer]: way
+          - img [ref=e176]:
+            - generic [ref=e177] [cursor=pointer]: think
+          - img [ref=e178]:
+            - generic [ref=e179] [cursor=pointer]: public
+          - img [ref=e180]:
+            - generic [ref=e181] [cursor=pointer]: history
+          - img [ref=e182]:
+            - generic [ref=e183] [cursor=pointer]: atheist
+          - img [ref=e184]:
+            - generic [ref=e185] [cursor=pointer]: twitter
+          - img [ref=e186]:
+            - generic [ref=e187] [cursor=pointer]: coffee
+          - img [ref=e188]:
+            - generic [ref=e189] [cursor=pointer]: lifelong
+          - img [ref=e190]:
+            - generic [ref=e191] [cursor=pointer]: money
+          - img [ref=e192]:
+            - generic [ref=e193] [cursor=pointer]: resister
+          - img [ref=e194]:
+            - generic [ref=e195] [cursor=pointer]: nature
+          - img [ref=e196]:
+            - generic [ref=e197] [cursor=pointer]: slava
+          - img [ref=e198]:
+            - generic [ref=e199] [cursor=pointer]: sheshed
+          - img [ref=e200]:
+            - generic [ref=e201] [cursor=pointer]: girl
+          - img [ref=e202]:
+            - generic [ref=e203] [cursor=pointer]: still
+          - img [ref=e204]:
+            - generic [ref=e205] [cursor=pointer]: dm's
+          - img [ref=e206]:
+            - generic [ref=e207] [cursor=pointer]: old
+          - img [ref=e208]:
+            - generic [ref=e209] [cursor=pointer]: woke
+          - img [ref=e210]:
+            - generic [ref=e211] [cursor=pointer]: country
+          - img [ref=e212]:
+            - generic [ref=e213] [cursor=pointer]: better
+          - img [ref=e214]:
+            - generic [ref=e215] [cursor=pointer]: media
+          - img [ref=e216]:
+            - generic [ref=e217] [cursor=pointer]: free
+          - img [ref=e218]:
+            - generic [ref=e219] [cursor=pointer]: interested
+          - img [ref=e220]:
+            - generic [ref=e221] [cursor=pointer]: there
+          - img [ref=e222]:
+            - generic [ref=e223] [cursor=pointer]: dad
+          - img [ref=e224]:
+            - generic [ref=e225] [cursor=pointer]: since
+          - img [ref=e226]:
+            - generic [ref=e227] [cursor=pointer]: politics
+          - img [ref=e228]:
+            - generic [ref=e229] [cursor=pointer]: others
+      - generic [ref=e231]: click a word to see it in context
+  - generic [ref=e232] [cursor=pointer]: others

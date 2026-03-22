@@ -1,0 +1,14 @@
+{
+  "name": "bsky-blocklist",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "bun run index.ts",
+    "discover": "bun run index.ts discover",
+    "build": "bun run index.ts build",
+    "stats": "bun run index.ts stats"
+  },
+  "dependencies": {
+    "@atproto/api": "^0.15.0"
+  }
+}
