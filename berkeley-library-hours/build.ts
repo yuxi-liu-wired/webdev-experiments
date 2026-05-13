@@ -89,11 +89,10 @@ function buildHTML(data: Record<string, Record<string, string>>): string {
   td .half { font-size: 0.65em; vertical-align: super; opacity: 0.6; margin-left: 1px; }
   tr:hover td:not(.closed), tr:hover th { background: #fffce0 !important; }
   .meta { padding: 4px 16px; font-size: 11px; color: #666; background: #fff; border-bottom: 1px solid #eee; }
-  .data-banner { padding: 10px 16px; background: #fef6d8; border-bottom: 2px solid #fdb515; font-size: 13px; color: #222; }
-  .data-banner a.dl { display: inline-block; background: #003262; color: #fdb515; padding: 4px 10px; border-radius: 3px; text-decoration: none; font-weight: 600; margin-right: 8px; }
+  .data-banner { padding: 4px 16px; background: #fef6d8; border-bottom: 1px solid #fdb515; font-size: 11px; color: #222; display: flex; align-items: center; gap: 8px; }
+  .data-banner a.dl { background: #003262; color: #fdb515; padding: 2px 6px; border-radius: 2px; text-decoration: none; font-weight: 600; font-size: 11px; }
   .data-banner a.dl:hover { background: #1a4b80; }
-  .data-banner code { background: #fff; padding: 1px 4px; border: 1px solid #ddd; border-radius: 2px; font-size: 12px; }
-  .data-banner .schema { color: #555; margin-top: 4px; font-size: 11px; line-height: 1.5; }
+  .data-banner code { background: #fff; padding: 0 3px; border: 1px solid #ddd; border-radius: 2px; font-size: 10px; }
 </style>
 <link rel="alternate" type="application/json" href="./data.json" title="UC Berkeley library hours JSON">
 <meta name="description" content="UC Berkeley library hours scraped from lib.berkeley.edu/hours for ${dates[0]} to ${dates[dates.length-1]}. Raw data: ./data.json">
@@ -110,10 +109,8 @@ function buildHTML(data: Record<string, Record<string, string>>): string {
   </div>
 </header>
 <div class="data-banner">
-  <a class="dl" href="./data.json" download>⬇ Download data.json</a>
-  <a class="dl" href="./data.json" target="_blank" style="background:#555;">View raw JSON</a>
-  <strong>For agents and scrapers</strong>: the full dataset is at <code>./data.json</code> (${dates.length} dates × ${libraries.length} libraries). Schema: <code>{"YYYY-MM-DD": {"Library Name": "raw hours string"}}</code>. Source: <code>lib.berkeley.edu/hours?date=YYYY-MM-DD</code>. Rebuild script and license at <a href="https://github.com/yuxi-liu-wired/webdev-experiments/tree/main/berkeley-library-hours">github.com/yuxi-liu-wired/webdev-experiments</a>.
-  <div class="schema">Hours strings are verbatim from the Berkeley site (e.g. <code>"9 a.m.-6 p.m."</code>, <code>"9 a.m.-6 p.m. Cal ID required"</code>, <code>"24 hours Cal ID required"</code>, <code>"Closed"</code>, <code>"By appointment"</code>, or empty when unavailable). UTF-8 JSON, ${(JSON.stringify(data).length / 1024).toFixed(1)} KB.</div>
+  <a class="dl" href="./data.json">⬇ data.json</a>
+  <span style="color:#555;">${dates.length} dates × ${libraries.length} libraries. Schema in the <code>_meta</code> key.</span>
 </div>
 <div class="libs">
   <button id="selAll">all</button><button id="selNone">none</button><button id="selCore">core (doe/stacks/biz/law/etc)</button>
@@ -251,17 +248,35 @@ render();
 
 const action = process.argv[2] || "all";
 
+function buildMeta(data: Record<string, Record<string, string>>) {
+  const dates = Object.keys(data).sort();
+  return {
+    description: "UC Berkeley library opening hours, one entry per date in the configured range.",
+    source: "https://www.lib.berkeley.edu/hours?date=YYYY-MM-DD&library_select=0&hours_date_select=YYYY-MM-DD",
+    schema: { "YYYY-MM-DD": { "Library Name": "raw hours string (verbatim from source, e.g. '9 a.m.-6 p.m.', '24 hours Cal ID required', 'Closed', 'By appointment', or empty when unavailable)" } },
+    range: { start: dates[0], end: dates[dates.length - 1], count: dates.length },
+    scraped_at: new Date().toISOString(),
+    project: "https://github.com/yuxi-liu-wired/webdev-experiments/tree/main/berkeley-library-hours",
+    license: "Scraper code MIT. Underlying hours data is from UC Berkeley Library; reuse subject to their terms.",
+    note: "Keys starting with underscore (currently just _meta) are metadata; iterate over date keys only.",
+  };
+}
+
 if (action === "fetch" || action === "all") {
   console.error(`fetching ${dateRange(START, END).length} dates...`);
   const data = await fetchAll();
-  await Bun.write(OUT_JSON, JSON.stringify(data));
+  const out = { _meta: buildMeta(data), ...data };
+  await Bun.write(OUT_JSON, JSON.stringify(out));
   const html = buildHTML(data);
   await Bun.write(OUT_HTML, html);
   console.error(`wrote ${OUT_JSON} and ${OUT_HTML}`);
 }
 
 if (action === "rebuild") {
-  const data = JSON.parse(await Bun.file(OUT_JSON).text());
+  const raw = JSON.parse(await Bun.file(OUT_JSON).text());
+  const { _meta, ...data } = raw;
+  const withMeta = { _meta: _meta ?? buildMeta(data), ...data };
+  await Bun.write(OUT_JSON, JSON.stringify(withMeta));
   const html = buildHTML(data);
   await Bun.write(OUT_HTML, html);
   console.error(`rebuilt ${OUT_HTML} from cached ${OUT_JSON}`);

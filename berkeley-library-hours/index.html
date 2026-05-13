@@ -29,11 +29,10 @@
   td .half { font-size: 0.65em; vertical-align: super; opacity: 0.6; margin-left: 1px; }
   tr:hover td:not(.closed), tr:hover th { background: #fffce0 !important; }
   .meta { padding: 4px 16px; font-size: 11px; color: #666; background: #fff; border-bottom: 1px solid #eee; }
-  .data-banner { padding: 10px 16px; background: #fef6d8; border-bottom: 2px solid #fdb515; font-size: 13px; color: #222; }
-  .data-banner a.dl { display: inline-block; background: #003262; color: #fdb515; padding: 4px 10px; border-radius: 3px; text-decoration: none; font-weight: 600; margin-right: 8px; }
+  .data-banner { padding: 4px 16px; background: #fef6d8; border-bottom: 1px solid #fdb515; font-size: 11px; color: #222; display: flex; align-items: center; gap: 8px; }
+  .data-banner a.dl { background: #003262; color: #fdb515; padding: 2px 6px; border-radius: 2px; text-decoration: none; font-weight: 600; font-size: 11px; }
   .data-banner a.dl:hover { background: #1a4b80; }
-  .data-banner code { background: #fff; padding: 1px 4px; border: 1px solid #ddd; border-radius: 2px; font-size: 12px; }
-  .data-banner .schema { color: #555; margin-top: 4px; font-size: 11px; line-height: 1.5; }
+  .data-banner code { background: #fff; padding: 0 3px; border: 1px solid #ddd; border-radius: 2px; font-size: 10px; }
 </style>
 <link rel="alternate" type="application/json" href="./data.json" title="UC Berkeley library hours JSON">
 <meta name="description" content="UC Berkeley library hours scraped from lib.berkeley.edu/hours for 2026-05-01 to 2026-08-31. Raw data: ./data.json">
@@ -50,10 +49,8 @@
   </div>
 </header>
 <div class="data-banner">
-  <a class="dl" href="./data.json" download>⬇ Download data.json</a>
-  <a class="dl" href="./data.json" target="_blank" style="background:#555;">View raw JSON</a>
-  <strong>For agents and scrapers</strong>: the full dataset is at <code>./data.json</code> (123 dates × 29 libraries). Schema: <code>{"YYYY-MM-DD": {"Library Name": "raw hours string"}}</code>. Source: <code>lib.berkeley.edu/hours?date=YYYY-MM-DD</code>. Rebuild script and license at <a href="https://github.com/yuxi-liu-wired/webdev-experiments/tree/main/berkeley-library-hours">github.com/yuxi-liu-wired/webdev-experiments</a>.
-  <div class="schema">Hours strings are verbatim from the Berkeley site (e.g. <code>"9 a.m.-6 p.m."</code>, <code>"9 a.m.-6 p.m. Cal ID required"</code>, <code>"24 hours Cal ID required"</code>, <code>"Closed"</code>, <code>"By appointment"</code>, or empty when unavailable). UTF-8 JSON, 159.5 KB.</div>
+  <a class="dl" href="./data.json">⬇ data.json</a>
+  <span style="color:#555;">123 dates × 29 libraries. Schema in the <code>_meta</code> key.</span>
 </div>
 <div class="libs">
   <button id="selAll">all</button><button id="selNone">none</button><button id="selCore">core (doe/stacks/biz/law/etc)</button>
