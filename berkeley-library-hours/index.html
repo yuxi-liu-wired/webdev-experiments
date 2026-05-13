@@ -27,6 +27,9 @@
   td.h24 { background: #d4f4d4; font-weight: 600; }
   td.extended { background: #d4e8f8; }
   td .half { font-size: 0.65em; vertical-align: super; opacity: 0.6; margin-left: 1px; }
+  tr.today th.date { background: #fdb515 !important; color: #003262; font-weight: 700; box-shadow: inset 3px 0 0 #003262; }
+  tr.today td:not(.closed) { background: #fff5cc; }
+  tr.today td.closed { background: #e6dba0; }
   tr:hover td:not(.closed), tr:hover th { background: #fffce0 !important; }
   .meta { padding: 4px 16px; font-size: 11px; color: #666; background: #fff; border-bottom: 1px solid #eee; }
   .data-banner { padding: 4px 16px; background: #fef6d8; border-bottom: 1px solid #fdb515; font-size: 11px; color: #222; display: flex; align-items: center; gap: 8px; }
@@ -73,6 +76,7 @@ const DAY_ABBR = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
 function isWeekend(d) { const w = new Date(d+"T00:00:00Z").getUTCDay(); return w===0 || w===6; }
 function pad2(n) { return n < 10 ? "0" + n : "" + n; }
+const TODAY = (() => { const n = new Date(); return n.getFullYear() + "-" + pad2(n.getMonth()+1) + "-" + pad2(n.getDate()); })();
 
 function to24(hStr, ampm) {
   let h = parseInt(hStr, 10);
@@ -168,7 +172,8 @@ function render() {
     const wknd = isWeekend(d);
     const hol = HOLIDAYS_2026.has(d);
     const cls = "date" + (hol ? " holiday" : wknd ? " weekend" : "");
-    html += "<tr><th class=\"" + cls + "\">" + pad2(day) + " " + dow + "</th>";
+    const trCls = d === TODAY ? " class=\"today\"" : "";
+    html += "<tr" + trCls + "><th class=\"" + cls + "\">" + pad2(day) + " " + dow + "</th>";
     visibleLibs.forEach(l => {
       const h = (DATA[d]||{})[l] || "";
       const f = fmtHours(h);
@@ -181,6 +186,8 @@ function render() {
   document.getElementById("meta").textContent = visibleDates.length + " dates x " + visibleLibs.length + " libraries shown. Green=24h, blue=close at 21:00 or later, grey=closed. Hover a cell for the raw value.";
 }
 render();
+const todayRow = document.querySelector("tr.today");
+if (todayRow) todayRow.scrollIntoView({ block: "center" });
 </script>
 </body>
 </html>
