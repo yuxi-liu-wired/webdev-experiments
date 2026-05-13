@@ -286,8 +286,12 @@ if (action === "serve" || action === "all") {
   Bun.serve({
     port: PORT,
     fetch(req) {
+      const path = new URL(req.url).pathname;
+      if (path === "/data.json") {
+        return new Response(Bun.file(OUT_JSON), { headers: { "content-type": "application/json; charset=utf-8" } });
+      }
       return new Response(Bun.file(OUT_HTML), { headers: { "content-type": "text/html; charset=utf-8" } });
     },
   });
-  console.error(`serving on http://localhost:${PORT} (reads ${OUT_HTML} fresh per request)`);
+  console.error(`serving on http://localhost:${PORT} (/ -> ${OUT_HTML}, /data.json -> ${OUT_JSON})`);
 }
