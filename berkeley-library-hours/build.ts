@@ -79,6 +79,7 @@ function buildHTML(data: Record<string, Record<string, string>>): string {
   table { border-collapse: collapse; width: max-content; background: #fff; }
   th, td { padding: 3px 6px; border: 1px solid #e0e0e0; text-align: left; white-space: nowrap; font-variant-numeric: tabular-nums; }
   thead th { position: sticky; top: 0; background: #f0f0f0; z-index: 2; font-weight: 600; font-size: 11px; }
+  thead th:not(:first-child), tbody td { width: 12ch; max-width: 12ch; min-width: 12ch; box-sizing: content-box; overflow: hidden; text-overflow: clip; }
   tbody th.date { position: sticky; left: 0; background: #f8f8f8; font-weight: 500; z-index: 1; min-width: 50px; }
   tbody th.date.weekend { background: #fff5e6; }
   tbody th.date.holiday { background: #ffd0d0; }
@@ -116,7 +117,7 @@ function buildHTML(data: Record<string, Record<string, string>>): string {
   <span style="color:#555;">${dates.length} dates × ${libraries.length} libraries. Schema in the <code>_meta</code> key.</span>
 </div>
 <div class="libs">
-  <button id="selAll">all</button><button id="selNone">none</button><button id="selCore">core (doe/stacks/biz/law/etc)</button>
+  <button id="selAll">all</button><button id="selNone">none</button><button id="selCore" title="Bioscience, CAP, Doe, East Asian, Math, Main Stacks, Morrison">mine</button>
   <span id="libChecks"></span>
 </div>
 <div class="meta" id="meta"></div>
@@ -126,9 +127,13 @@ const DATA = ${JSON.stringify(data)};
 const LIBS = ${JSON.stringify(libraries)};
 const DATES = ${JSON.stringify(dates)};
 const CORE = new Set([
-  "Doe Library","Main (Gardner) Stacks","Business Library","Berkeley Law Library",
-  "Engineering & Mathematical Sciences Library","East Asian Library","Bioscience, Natural Resources & Public Health Library",
-  "Chemistry, Astronomy & Physics Library","Environmental Design Library","Bancroft Library","Morrison Library","Music Library"
+  "Bioscience, Natural Resources & Public Health Library",
+  "Chemistry, Astronomy & Physics Library",
+  "Doe Library",
+  "East Asian Library",
+  "Engineering & Mathematical Sciences Library",
+  "Main (Gardner) Stacks",
+  "Morrison Library"
 ]);
 const HOLIDAYS_2026 = new Set(["2026-05-25","2026-07-03","2026-07-04"]);
 const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -214,7 +219,8 @@ function render() {
   const ncols = visibleLibs.length + 1;
   let html = "<thead><tr><th></th>";
   visibleLibs.forEach(l => {
-    const short = l.replace(/ Library$/, "").replace(/Main \\(Gardner\\) Stacks/,"Main Stacks");
+    let short = l.replace(/ Library$/, "").replace(/Main \\(Gardner\\) Stacks/,"Main Stacks");
+    if (short.length > 12) short = short.slice(0, 11) + "\\u2026";
     html += "<th title=\\"" + l.replace(/"/g,"&quot;") + "\\">" + short + "</th>";
   });
   html += "</tr></thead><tbody>";
