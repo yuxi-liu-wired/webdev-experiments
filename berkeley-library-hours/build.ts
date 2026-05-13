@@ -135,7 +135,12 @@ const CORE = new Set([
   "Main (Gardner) Stacks",
   "Morrison Library"
 ]);
-const HOLIDAYS_2026 = new Set(["2026-05-25","2026-07-03","2026-07-04"]);
+const HOLIDAYS_2026 = {
+  "2026-05-25": "Memorial Day",
+  "2026-06-19": "Juneteenth",
+  "2026-07-03": "Independence Day eve",
+  "2026-07-04": "Independence Day"
+};
 const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 const DAY_ABBR = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
@@ -236,10 +241,11 @@ function render() {
       lastMonth = mo;
     }
     const wknd = isWeekend(d);
-    const hol = HOLIDAYS_2026.has(d);
-    const cls = "date" + (hol ? " holiday" : wknd ? " weekend" : "");
+    const holName = HOLIDAYS_2026[d];
+    const cls = "date" + (holName ? " holiday" : wknd ? " weekend" : "");
     const trCls = d === TODAY ? " class=\\"today\\"" : "";
-    html += "<tr" + trCls + "><th class=\\"" + cls + "\\">" + pad2(day) + " " + dow + "</th>";
+    const dateTitle = holName ? " title=\\"" + holName + "\\"" : "";
+    html += "<tr" + trCls + "><th class=\\"" + cls + "\\"" + dateTitle + ">" + pad2(day) + " " + dow + "</th>";
     visibleLibs.forEach(l => {
       const h = (DATA[d]||{})[l] || "";
       const f = fmtHours(h);
@@ -249,7 +255,7 @@ function render() {
   });
   html += "</tbody>";
   tbl.innerHTML = html;
-  document.getElementById("meta").textContent = visibleDates.length + " dates x " + visibleLibs.length + " libraries shown. Green=24h, blue=close at 21:00 or later, grey=closed. Hover a cell for the raw value.";
+  document.getElementById("meta").textContent = visibleDates.length + " dates x " + visibleLibs.length + " libraries shown. Green=24h, blue=close at 21:00 or later, grey=closed, red=holiday. Hover a date for the holiday name, a cell for the raw hours value.";
 }
 render();
 const todayRow = document.querySelector("tr.today");
