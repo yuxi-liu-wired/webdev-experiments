@@ -1,0 +1,7 @@
+[build]
+  base = "berkeley-library-hours"
+  command = "bun build.ts fetch"
+  publish = "."
+
+[build.environment]
+  BUN_VERSION = "1.1.0"
