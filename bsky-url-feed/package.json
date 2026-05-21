@@ -1,0 +1,15 @@
+{
+  "name": "bsky-url-feed",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "test": "bun test scripts/",
+    "ingest": "bun run scripts/ingest.ts",
+    "serve": "bun run scripts/serve-local.ts",
+    "e2e": "bun run scripts/e2e-test.ts",
+    "publish": "bun run scripts/publish.ts"
+  },
+  "dependencies": {
+    "@atproto/api": "^0.15.0"
+  }
+}

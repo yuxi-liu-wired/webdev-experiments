@@ -1,0 +1,8 @@
+{
+  "did": "did:web:bsky-url-feed.pages.dev",
+  "feeds": [
+    {
+      "uri": "at://did:plc:rpe5afe3qleyyzkdcs2nnvwx/app.bsky.feed.generator/url-lists"
+    }
+  ]
+}

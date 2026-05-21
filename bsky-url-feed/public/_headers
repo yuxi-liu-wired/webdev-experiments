@@ -1,0 +1,7 @@
+/xrpc/*
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+
+/.well-known/did.json
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
