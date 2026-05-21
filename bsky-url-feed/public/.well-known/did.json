@@ -1,11 +1,11 @@
 {
   "@context": ["https://www.w3.org/ns/did/v1"],
-  "id": "did:web:bsky-url-feed.pages.dev",
+  "id": "did:web:webdev-experiments.pages.dev",
   "service": [
     {
       "id": "#bsky_fg",
       "type": "BskyFeedGenerator",
-      "serviceEndpoint": "https://bsky-url-feed.pages.dev"
+      "serviceEndpoint": "https://webdev-experiments.pages.dev"
     }
   ]
 }
