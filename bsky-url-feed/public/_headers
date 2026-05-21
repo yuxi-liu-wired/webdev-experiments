@@ -5,3 +5,9 @@
 /.well-known/did.json
   Content-Type: application/json
   Access-Control-Allow-Origin: *
+
+# Gzipped JSON for the firehose viz — browser auto-decompresses on Content-Encoding: gzip
+/viz/firehose-compact.json.gz
+  Content-Type: application/json
+  Content-Encoding: gzip
+  Cache-Control: public, max-age=3600
