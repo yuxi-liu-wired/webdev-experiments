@@ -1,0 +1,35 @@
+name = "bsky-url-feed"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# Public runtime values. None of these are secrets — they all appear in public
+# AT URIs / DIDs / hostnames. Plain vars, not `wrangler secret`.
+[vars]
+PUBLISHER_DID = "did:plc:rpe5afe3qleyyzkdcs2nnvwx"
+FEED_RKEY = "url-lists"
+# Set FEED_HOST after first `wrangler deploy` prints the assigned hostname.
+FEED_HOST = "bsky-url-feed.yuxi-liu.workers.dev"
+
+# Durable Object: holds the Jetstream WebSocket open, classifies posts, writes to KV.
+[[durable_objects.bindings]]
+name = "JETSTREAM_DO"
+class_name = "JetstreamDO"
+
+# Durable Object migration — `new_sqlite_classes` opts into the SQLite-backed DO
+# storage that's required for the free tier and for hibernation.
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["JetstreamDO"]
+
+# KV namespace for the feed skeleton JSON. Create with `wrangler kv namespace create FEED_KV`
+# then replace the placeholder id below with the printed id.
+[[kv_namespaces]]
+binding = "FEED_KV"
+id = "a18df39d439143249fa7566d51c94fb7"
+
+# Cron trigger fires every 5 minutes. Each tick runs one Jetstream drain batch:
+# connect with cursor=last_run-30s, drain to live, classify, write to KV, disconnect.
+# The DO hibernates between batches, so duration cost is ~6% of always-on.
+[triggers]
+crons = ["*/5 * * * *"]

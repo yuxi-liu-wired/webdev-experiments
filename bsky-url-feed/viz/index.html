@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>bsky URL-list filter explorer</title>
+<style>
+  :root {
+    --bg: #0e0f17;
+    --panel: #181a25;
+    --border: #262838;
+    --accent: #76d4ff;
+    --accent-dim: #4a8fb5;
+    --text: #e3e6f3;
+    --text-dim: #9aa0bd;
+    --bot: #ff7e9c;
+    --self: #87ffae;
+    --other: #ffd773;
+    --none: #888;
+    --bar: #76d4ff;
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 14px/1.45 ui-monospace, "SF Mono", Menlo, monospace;
+    padding: 20px;
+  }
+  h1 { font-size: 18px; font-weight: 600; margin: 0 0 6px; color: var(--accent); }
+  h2 { font-size: 13px; font-weight: 600; margin: 16px 0 8px; color: var(--accent-dim); letter-spacing: 0.05em; text-transform: uppercase; }
+  .layout { display: grid; grid-template-columns: 280px 1fr; gap: 18px; }
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 14px; }
+  .controls .row { margin-bottom: 12px; }
+  .controls label { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-dim); margin-bottom: 4px; }
+  .controls input[type=range] { width: 100%; accent-color: var(--accent); }
+  .controls .val { color: var(--accent); font-weight: 600; }
+  .controls select, .controls input[type=text] { background: var(--bg); color: var(--text); border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px; width: 100%; font-family: inherit; }
+  .checkbox { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
+  .stat { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 12px; }
+  .stat .num { font-size: 24px; font-weight: 700; color: var(--accent); }
+  .stat .lbl { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+  .stat .sub { font-size: 11px; color: var(--text-dim); margin-top: 2px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .chart { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 12px; }
+  .chart svg { display: block; width: 100%; }
+  .bar text { fill: var(--text); font: 11px ui-monospace; }
+  .bar rect { fill: var(--bar); }
+  .bar rect.bot { fill: var(--bot); }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th, td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--border); }
+  th { color: var(--text-dim); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+  td.num { text-align: right; color: var(--accent); }
+  td.bot-flag { color: var(--bot); }
+  .samples .post { border: 1px solid var(--border); border-radius: 4px; padding: 10px; margin-bottom: 8px; background: var(--bg); }
+  .samples .meta { font-size: 11px; color: var(--text-dim); margin-bottom: 6px; }
+  .samples .meta a { color: var(--accent); text-decoration: none; }
+  .samples .text { white-space: pre-wrap; font-size: 12px; color: var(--text); }
+  .samples .text a.post-link { color: var(--accent); text-decoration: underline; text-decoration-color: var(--accent-dim); }
+  .samples .text a.post-link:hover { text-decoration-color: var(--accent); }
+  .samples .meta .open-post { color: var(--accent); text-decoration: none; margin-left: 4px; }
+  .samples .meta .open-post:hover { text-decoration: underline; }
+  .samples .doms { margin-top: 6px; }
+  .samples .doms .dom { display: inline-block; background: var(--border); padding: 1px 6px; border-radius: 3px; margin-right: 4px; font-size: 10px; }
+  .legend { font-size: 11px; color: var(--text-dim); margin-bottom: 6px; }
+  .legend .dot { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin: 0 4px -1px 8px; }
+  .reply-self { color: var(--self); }
+  .reply-other { color: var(--other); }
+  .reply-none { color: var(--none); }
+  .bot-mark { color: var(--bot); }
+</style>
+</head>
+<body>
+<h1>bsky URL-list filter explorer</h1>
+<div id="header" style="color:var(--text-dim);font-size:12px;margin-bottom:14px;">loading...</div>
+
+<div class="layout">
+  <div class="panel controls">
+    <h2 style="margin-top:0">filters</h2>
+
+    <div class="row">
+      <label>min link facets <span class="val" id="vMinLinks">2</span></label>
+      <input type="range" id="minLinks" min="2" max="10" value="2" step="1" />
+    </div>
+
+    <div class="row">
+      <label>min char-coverage <span class="val" id="vMinCov">0%</span></label>
+      <input type="range" id="minCov" min="0" max="100" value="0" step="5" />
+    </div>
+
+    <div class="row">
+      <label>reply state</label>
+      <select id="reply">
+        <option value="any">any</option>
+        <option value="reply">reply (to anyone)</option>
+        <option value="self">self-reply only</option>
+        <option value="other">reply to other only</option>
+        <option value="top">top-level only</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label class="checkbox"><input type="checkbox" id="excludeBots" checked /> exclude bot-handle accounts</label>
+    </div>
+
+    <div class="row">
+      <label>min domain diversity <span class="val" id="vMinDoms">1</span></label>
+      <input type="range" id="minDoms" min="1" max="6" value="1" step="1" />
+    </div>
+
+    <div class="row">
+      <label>min text length <span class="val" id="vMinLen">0</span></label>
+      <input type="range" id="minLen" min="0" max="300" value="0" step="10" />
+    </div>
+
+    <div class="row">
+      <label>max posts per author <span class="val" id="vMaxAuth">∞</span></label>
+      <input type="range" id="maxAuth" min="0" max="20" value="0" step="1" />
+    </div>
+
+    <div class="row">
+      <label>exclude domains containing</label>
+      <input type="text" id="excludeDom" placeholder="e.g. adsb, flightaware" />
+    </div>
+  </div>
+
+  <div>
+    <div class="stats">
+      <div class="stat"><div class="num" id="sMatching">—</div><div class="lbl">matching posts</div><div class="sub" id="sMatchingPct">—</div></div>
+      <div class="stat"><div class="num" id="sPerHour">—</div><div class="lbl">per hour</div><div class="sub" id="sPerDay">—</div></div>
+      <div class="stat"><div class="num" id="sAuthors">—</div><div class="lbl">unique authors</div></div>
+      <div class="stat"><div class="num" id="sDomains">—</div><div class="lbl">unique domains</div></div>
+    </div>
+
+    <div class="grid2">
+      <div class="chart">
+        <h2 style="margin-top:0">link-facet count (matching set)</h2>
+        <svg id="linkChart" height="180"></svg>
+      </div>
+      <div class="chart">
+        <h2 style="margin-top:0">char-coverage histogram (matching set)</h2>
+        <svg id="covChart" height="180"></svg>
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-top:18px">
+      <div class="chart">
+        <h2 style="margin-top:0">top domains (matching set)</h2>
+        <table id="domTable"><thead><tr><th>domain</th><th class="num">posts</th></tr></thead><tbody></tbody></table>
+      </div>
+      <div class="chart">
+        <h2 style="margin-top:0">top authors (matching set)</h2>
+        <div class="legend">
+          <span class="dot" style="background:var(--self)"></span>self-reply
+          <span class="dot" style="background:var(--other)"></span>reply-other
+          <span class="dot" style="background:var(--none)"></span>top-level
+          <span class="dot" style="background:var(--bot)"></span>bot
+        </div>
+        <table id="authTable"><thead><tr><th>handle</th><th class="num">posts</th></tr></thead><tbody></tbody></table>
+      </div>
+    </div>
+
+    <div class="chart samples" style="margin-top:18px">
+      <h2 style="margin-top:0">sample matching posts (up to 20, newest first)</h2>
+      <div id="samples"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+async function main() {
+  const headerEl = document.getElementById("header");
+  headerEl.textContent = "fetching /firehose-compact.json ...";
+  const r = await fetch("/firehose-compact.json");
+  if (!r.ok) { headerEl.textContent = "fetch failed: " + r.status; return; }
+  const data = await r.json();
+  const posts = data.posts;
+  const s = data.summary;
+  headerEl.textContent = `captured ${data.capturedAt} • ${s.totalPosts.toLocaleString()} commits / 24h • ${s.kept.toLocaleString()} posts ≥2 links • ${s.authorsResolved.toLocaleString()}/${s.uniqueAuthors.toLocaleString()} handles resolved`;
+
+  const ctrls = {
+    minLinks: document.getElementById("minLinks"),
+    minCov: document.getElementById("minCov"),
+    reply: document.getElementById("reply"),
+    excludeBots: document.getElementById("excludeBots"),
+    minDoms: document.getElementById("minDoms"),
+    minLen: document.getElementById("minLen"),
+    maxAuth: document.getElementById("maxAuth"),
+    excludeDom: document.getElementById("excludeDom"),
+  };
+
+  function applyFilters() {
+    const minLinks = +ctrls.minLinks.value;
+    const minCov = +ctrls.minCov.value / 100;
+    const reply = ctrls.reply.value;
+    const excludeBots = ctrls.excludeBots.checked;
+    const minDoms = +ctrls.minDoms.value;
+    const minLen = +ctrls.minLen.value;
+    const maxAuth = +ctrls.maxAuth.value;
+    const excludeDom = ctrls.excludeDom.value.trim().toLowerCase().split(/[\s,]+/).filter(x => x);
+
+    document.getElementById("vMinLinks").textContent = minLinks;
+    document.getElementById("vMinCov").textContent = (+ctrls.minCov.value) + "%";
+    document.getElementById("vMinDoms").textContent = minDoms;
+    document.getElementById("vMinLen").textContent = minLen;
+    document.getElementById("vMaxAuth").textContent = maxAuth === 0 ? "∞" : maxAuth;
+
+    // Pass 1: structural filter
+    let matched = [];
+    for (const p of posts) {
+      if (p.n < minLinks) continue;
+      if (p.c < minCov) continue;
+      if (p.l < minLen) continue;
+      if (p.D.length < minDoms) continue;
+      if (excludeBots && p.b) continue;
+      if (reply === "reply" && p.r === 0) continue;
+      if (reply === "self" && p.r !== 1) continue;
+      if (reply === "other" && p.r !== 2) continue;
+      if (reply === "top" && p.r !== 0) continue;
+      if (excludeDom.length > 0) {
+        let blocked = false;
+        for (const dom of p.D) {
+          for (const ex of excludeDom) if (dom.toLowerCase().includes(ex)) { blocked = true; break; }
+          if (blocked) break;
+        }
+        if (blocked) continue;
+      }
+      matched.push(p);
+    }
+    // Per-author cap (newest first by ts)
+    if (maxAuth > 0) {
+      matched.sort((a, b) => (b.ts ?? 0) - (a.ts ?? 0));
+      const counts = new Map();
+      const capped = [];
+      for (const p of matched) {
+        const n = counts.get(p.d) ?? 0;
+        if (n >= maxAuth) continue;
+        counts.set(p.d, n + 1);
+        capped.push(p);
+      }
+      matched = capped;
+    }
+
+    render(matched);
+  }
+
+  function render(matched) {
+    // Stats
+    document.getElementById("sMatching").textContent = matched.length.toLocaleString();
+    const pct = data.summary.totalPosts > 0 ? (matched.length / data.summary.totalPosts * 100) : 0;
+    document.getElementById("sMatchingPct").textContent = pct.toFixed(3) + "% of all 24h posts";
+    document.getElementById("sPerHour").textContent = (matched.length / 24).toFixed(1);
+    document.getElementById("sPerDay").textContent = matched.length.toLocaleString() + " /day";
+
+    const authorCounts = new Map();
+    const domCounts = new Map();
+    for (const p of matched) {
+      authorCounts.set(p.d, (authorCounts.get(p.d) ?? 0) + 1);
+      for (const d of p.D) domCounts.set(d, (domCounts.get(d) ?? 0) + 1);
+    }
+    document.getElementById("sAuthors").textContent = authorCounts.size.toLocaleString();
+    document.getElementById("sDomains").textContent = domCounts.size.toLocaleString();
+
+    // Link-count histogram
+    const linkDist = new Map();
+    for (const p of matched) linkDist.set(p.n, (linkDist.get(p.n) ?? 0) + 1);
+    renderBars("linkChart", [...linkDist.entries()].sort((a, b) => a[0] - b[0]).map(([k, v]) => [String(k), v]));
+
+    // Coverage histogram
+    const covBuckets = ["0-10","10-20","20-30","30-40","40-50","50-60","60-70","70-80","80-90","90-100"];
+    const covDist = new Array(10).fill(0);
+    for (const p of matched) {
+      let i = Math.min(9, Math.floor(p.c * 10));
+      covDist[i]++;
+    }
+    renderBars("covChart", covBuckets.map((b, i) => [b, covDist[i]]));
+
+    // Top domains
+    renderTable("domTable", [...domCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 25).map(([k, v]) => [k, v]));
+
+    // Top authors with handle + reply-state breakdown
+    const authStats = new Map();
+    for (const p of matched) {
+      let a = authStats.get(p.d);
+      if (!a) { a = { handle: p.h || p.d.slice(0,18) + "…", bot: p.b ? 1 : 0, self: 0, other: 0, top: 0 }; authStats.set(p.d, a); }
+      if (p.r === 1) a.self++;
+      else if (p.r === 2) a.other++;
+      else a.top++;
+    }
+    const topAuthors = [...authStats.entries()].sort((a, b) => (b[1].self + b[1].other + b[1].top) - (a[1].self + a[1].other + a[1].top)).slice(0, 25);
+    const authBody = document.querySelector("#authTable tbody");
+    authBody.innerHTML = "";
+    for (const [did, a] of topAuthors) {
+      const total = a.self + a.other + a.top;
+      const colorBits = [];
+      if (a.self) colorBits.push(`<span class="reply-self">${a.self}s</span>`);
+      if (a.other) colorBits.push(`<span class="reply-other">${a.other}o</span>`);
+      if (a.top) colorBits.push(`<span class="reply-none">${a.top}t</span>`);
+      const handleEl = `<a href="https://bsky.app/profile/${a.handle}" target="_blank" style="color:inherit;text-decoration:none">${a.handle}</a>` +
+        (a.bot ? ' <span class="bot-mark">[bot]</span>' : '');
+      authBody.innerHTML += `<tr><td>${handleEl}</td><td class="num">${total} (${colorBits.join(" ")})</td></tr>`;
+    }
+
+    // Samples (newest first)
+    const samples = matched.slice().sort((a, b) => (b.ts ?? 0) - (a.ts ?? 0)).slice(0, 20);
+    const samplesEl = document.getElementById("samples");
+    samplesEl.innerHTML = "";
+    for (const p of samples) {
+      const handle = p.h || p.d.slice(0, 24) + "…";
+      const replyClass = p.r === 1 ? "reply-self" : p.r === 2 ? "reply-other" : "reply-none";
+      const replyLabel = p.r === 1 ? "self-reply" : p.r === 2 ? "reply→other" : "top-level";
+      // Use DID rather than handle in URLs — bsky.app accepts both, and DIDs
+      // are stable across handle changes / resolution mishaps.
+      const profileUrl = `https://bsky.app/profile/${p.d}`;
+      const postUrl = `https://bsky.app/profile/${p.d}/post/${p.k}`;
+      const doms = p.D.map(d => `<span class="dom">${d}</span>`).join("");
+      const date = p.ts ? new Date(p.ts).toISOString().slice(11, 16) + "Z" : "?";
+      const textHtml = renderTextWithLinks(p.t, p.f);
+      samplesEl.innerHTML += `<div class="post">
+        <div class="meta">
+          <a href="${profileUrl}" target="_blank">@${handle}</a>
+          · ${date} · ${p.n} links · cov ${(p.c*100).toFixed(0)}% ·
+          <span class="${replyClass}">${replyLabel}</span>${p.b ? ' <span class="bot-mark">[bot]</span>' : ''}
+          · <a href="${postUrl}" target="_blank" class="open-post">↗ view post</a>
+        </div>
+        <div class="text">${textHtml}</div>
+        <div class="doms">${doms}</div>
+      </div>`;
+    }
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function escapeAttr(s) {
+    return s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+  }
+
+  // Render text with link facets as <a> tags. Facets carry UTF-8 byte ranges
+  // into the original text; we walk codepoint-by-codepoint, tracking byte
+  // position, opening/closing anchors at the right offsets.
+  const _enc = new TextEncoder();
+  function renderTextWithLinks(text, facets) {
+    if (!facets || facets.length === 0) return escapeHtml(text);
+    const sorted = facets.slice().sort((a, b) => a[0] - b[0]);
+    let out = "";
+    let bytePos = 0;
+    let nextIdx = 0;
+    let active = null;
+    for (const ch of text) {
+      if (active && bytePos >= active[1]) {
+        out += `</a>`;
+        active = null;
+      }
+      if (!active && nextIdx < sorted.length && bytePos >= sorted[nextIdx][0]) {
+        active = sorted[nextIdx];
+        nextIdx++;
+        out += `<a href="${escapeAttr(active[2])}" target="_blank" class="post-link">`;
+      }
+      out += escapeHtml(ch);
+      bytePos += _enc.encode(ch).length;
+    }
+    if (active) out += `</a>`;
+    return out;
+  }
+
+  function renderBars(svgId, data) {
+    const svg = document.getElementById(svgId);
+    const W = svg.clientWidth || 400;
+    const H = 180;
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+    svg.innerHTML = "";
+    if (data.length === 0) return;
+    const max = Math.max(...data.map(d => d[1])) || 1;
+    const barW = (W - 40) / data.length;
+    for (let i = 0; i < data.length; i++) {
+      const [label, val] = data[i];
+      const h = val / max * (H - 40);
+      const x = 30 + i * barW;
+      const y = H - 25 - h;
+      svg.insertAdjacentHTML("beforeend", `
+        <g class="bar">
+          <rect x="${x}" y="${y}" width="${barW - 4}" height="${h}" />
+          <text x="${x + (barW - 4) / 2}" y="${H - 10}" text-anchor="middle">${label}</text>
+          <text x="${x + (barW - 4) / 2}" y="${y - 3}" text-anchor="middle" fill="var(--text-dim)" style="font-size:10px">${val}</text>
+        </g>`);
+    }
+  }
+
+  function renderTable(tableId, rows) {
+    const tbody = document.querySelector(`#${tableId} tbody`);
+    tbody.innerHTML = "";
+    for (const [k, v] of rows) {
+      tbody.innerHTML += `<tr><td>${k}</td><td class="num">${v.toLocaleString()}</td></tr>`;
+    }
+  }
+
+  for (const ctrl of Object.values(ctrls)) {
+    ctrl.addEventListener("input", applyFilters);
+    ctrl.addEventListener("change", applyFilters);
+  }
+  applyFilters();
+}
+main();
+</script>
+</body>
+</html>

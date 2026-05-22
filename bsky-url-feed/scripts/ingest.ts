@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 import { readFile, writeFile, mkdir } from "fs/promises";
 import { existsSync } from "fs";
-import { classify, type Facet } from "./classify";
+import { classify, type Facet, type ReplyRef } from "./classify";
 
 const PUBLIC_API = "https://api.bsky.app";
 const STATE_FILE = "./state/seen.json";
@@ -41,7 +41,8 @@ interface State {
 interface SearchPost {
   uri: string;
   cid: string;
-  record: { text?: string; facets?: Facet[]; createdAt?: string };
+  author: { did: string; handle: string; labels?: { val: string }[] };
+  record: { text?: string; facets?: Facet[]; createdAt?: string; reply?: ReplyRef };
   indexedAt: string;
 }
 
@@ -131,11 +132,16 @@ async function ingest(): Promise<void> {
 
   let added = 0;
   let classified = 0;
+  const rejectionCounts: Record<string, number> = {};
   for (const p of candidates.values()) {
     classified++;
     const result = classify({
       text: p.record.text ?? "",
       facets: p.record.facets,
+      reply: p.record.reply,
+      authorDid: p.author.did,
+      authorHandle: p.author.handle,
+      authorLabels: p.author.labels,
     });
     if (result.isUrlList) {
       state.items.push({
@@ -146,12 +152,22 @@ async function ingest(): Promise<void> {
       });
       added++;
       console.log(
-        `  + ${p.uri.split("/").pop()} (${result.linkCount} links, ${(result.coverage * 100).toFixed(0)}% coverage)`,
+        `  + ${p.uri.split("/").pop()} by @${p.author.handle} (${result.linkCount} links, ${(result.coverage * 100).toFixed(0)}% coverage)`,
       );
+    } else {
+      const reason = result.reason ?? "unknown";
+      const key = reason.replace(/\d+/g, "N");
+      rejectionCounts[key] = (rejectionCounts[key] ?? 0) + 1;
     }
   }
 
   console.log(`[ingest] classified ${classified}, matched ${added}`);
+  if (added < 5 && classified > 0) {
+    console.log(`[ingest] rejection breakdown:`);
+    for (const [reason, n] of Object.entries(rejectionCounts).sort((a, b) => b[1] - a[1])) {
+      console.log(`  ${n.toString().padStart(5)}  ${reason}`);
+    }
+  }
 
   state.items.sort(
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
