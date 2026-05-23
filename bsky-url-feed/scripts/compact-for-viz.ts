@@ -7,7 +7,7 @@ import { isBotAuthor, type Facet, type ReplyRef } from "./classify";
 const INPUT = process.env.INPUT_FILE ?? "/tmp/firehose-24h.jsonl";
 const OUTPUT = process.env.OUTPUT_FILE ?? "/tmp/firehose-compact.json";
 const APPVIEW = "https://api.bsky.app";
-const MIN_LINKS_TO_INCLUDE = 2; // keep posts with >=2 link facets
+const MIN_LINKS_TO_INCLUDE = 3; // keep posts with >=3 EXTERNAL link facets (was 2, blew the Pages 25 MiB limit)
 
 interface PostEvent {
   did: string;
@@ -169,8 +169,8 @@ async function streamReadAll(): Promise<{
       const cov = charCoverage(p.text, lf);
       const ts = p.createdAt ? new Date(p.createdAt).getTime() : 0;
 
-      // Cap text at 500 chars; only keep facets whose start is within the kept window.
-      const TEXT_CAP = 500;
+      // Cap text at 250 chars (text-heavy posts otherwise dominate compact size).
+      const TEXT_CAP = 250;
       const keptText = p.text.length > TEXT_CAP ? p.text.slice(0, TEXT_CAP) + "…" : p.text;
       const keptBytes = new TextEncoder().encode(keptText).length;
       const compactFacets: [number, number, string][] = lf
