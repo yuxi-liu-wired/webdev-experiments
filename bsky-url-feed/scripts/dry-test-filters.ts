@@ -9,7 +9,7 @@ const JETSTREAM_URL =
   "wss://jetstream2.us-east.bsky.network/subscribe?wantedCollections=app.bsky.feed.post";
 const APPVIEW = "https://api.bsky.app";
 const CAPTURE_MS = 5 * 60 * 1000;
-const OUTPUT_FILE = "/tmp/firehose-5min.jsonl";
+const OUTPUT_FILE = "/workspace/firehose-data/firehose-5min.jsonl";
 
 interface PostEvent {
   did: string;

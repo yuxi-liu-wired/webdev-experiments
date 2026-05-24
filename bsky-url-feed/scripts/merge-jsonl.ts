@@ -3,15 +3,15 @@
 // Dedup by (did, rkey). Newer-discovered records win (latter file overrides earlier).
 //
 // Inputs: list of files (env INPUT_FILES, comma-separated) or defaults below.
-// Output: env OUTPUT_FILE or /tmp/firehose-merged.jsonl.
+// Output: env OUTPUT_FILE or /workspace/firehose-data/firehose-merged.jsonl.
 
 import { createReadStream, statSync } from "fs";
 
 const DEFAULTS = [
-  "/tmp/firehose-168h.jsonl",
-  "/tmp/firehose-topup.jsonl",
-  "/tmp/firehose-live.jsonl",
-  "/tmp/firehose-relay.jsonl",
+  "/workspace/firehose-data/firehose-168h.jsonl",
+  "/workspace/firehose-data/firehose-topup.jsonl",
+  "/workspace/firehose-data/firehose-live.jsonl",
+  "/workspace/firehose-data/firehose-relay.jsonl",
 ];
 
 const INPUT_FILES = (process.env.INPUT_FILES ?? DEFAULTS.join(",")).split(",").filter((p) => {
@@ -21,7 +21,7 @@ const INPUT_FILES = (process.env.INPUT_FILES ?? DEFAULTS.join(",")).split(",").f
     return false;
   }
 });
-const OUTPUT_FILE = process.env.OUTPUT_FILE ?? "/tmp/firehose-merged.jsonl";
+const OUTPUT_FILE = process.env.OUTPUT_FILE ?? "/workspace/firehose-data/firehose-merged.jsonl";
 
 interface Post {
   did: string;

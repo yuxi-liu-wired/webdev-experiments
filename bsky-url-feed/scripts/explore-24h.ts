@@ -1,10 +1,10 @@
 #!/usr/bin/env bun
-// Exploratory analysis of /tmp/firehose-24h.jsonl. Single streaming pass that
+// Exploratory analysis of /workspace/firehose-data/firehose-24h.jsonl. Single streaming pass that
 // computes a bunch of distributions to surface filter ideas.
 
 import { type Facet, type ReplyRef } from "./classify";
 
-const INPUT_FILE = "/tmp/firehose-24h.jsonl";
+const INPUT_FILE = "/workspace/firehose-data/firehose-24h.jsonl";
 const APPVIEW = "https://api.bsky.app";
 
 interface PostEvent {

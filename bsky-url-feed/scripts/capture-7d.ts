@@ -1,10 +1,10 @@
 #!/usr/bin/env bun
 // Replay HOURS_BACK hours of Jetstream and save posts with >=1 link facet to JSONL.
-// Default: 168h (7 days). Output to /tmp/firehose-${HOURS}h.jsonl.
+// Default: 168h (7 days). Output to /workspace/firehose-data/firehose-${HOURS}h.jsonl.
 
 const JETSTREAM_URL = "wss://jetstream2.us-east.bsky.network/subscribe";
 const HOURS_BACK = Number(process.env.HOURS_BACK ?? 168);
-const OUTPUT_FILE = process.env.OUTPUT_FILE ?? `/tmp/firehose-${HOURS_BACK}h.jsonl`;
+const OUTPUT_FILE = process.env.OUTPUT_FILE ?? `/workspace/firehose-data/firehose-${HOURS_BACK}h.jsonl`;
 const DRAIN_IDLE_MS = 5_000;
 const DRAIN_HARD_TIMEOUT_MS = 6 * 3600 * 1000; // 6h max wall clock
 const STATS_FILE = `${OUTPUT_FILE}.stats.json`;

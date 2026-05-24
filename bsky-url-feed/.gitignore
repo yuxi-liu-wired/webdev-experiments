@@ -3,3 +3,12 @@ node_modules/
 .env
 .env.local
 .DS_Store
+
+# Raw firehose captures live in /workspace/firehose-data/ (outside the repo).
+# Belt-and-suspenders: if anything ever ends up inside the repo, ignore it.
+firehose-data/
+*.jsonl
+*.jsonl.*
+firehose-*.json
+!public/viz/firehose-*.json.gz
+

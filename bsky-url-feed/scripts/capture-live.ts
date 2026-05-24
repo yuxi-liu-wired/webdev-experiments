@@ -4,7 +4,7 @@
 
 const JETSTREAM_URL =
   "wss://jetstream2.us-east.bsky.network/subscribe?wantedCollections=app.bsky.feed.post";
-const OUTPUT_FILE = process.env.OUTPUT_FILE ?? "/tmp/firehose-live.jsonl";
+const OUTPUT_FILE = process.env.OUTPUT_FILE ?? "/workspace/firehose-data/firehose-live.jsonl";
 const STATS_FILE = `${OUTPUT_FILE}.stats.json`;
 const DURATION_DAYS = Number(process.env.DURATION_DAYS ?? 7);
 const STATS_INTERVAL_MS = 60_000;

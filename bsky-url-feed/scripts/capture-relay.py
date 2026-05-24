@@ -6,11 +6,11 @@
 """
 Connect to the AT Protocol relay (com.atproto.sync.subscribeRepos), decode each
 commit's CAR bundle, extract app.bsky.feed.post creates that have >=1 link facet,
-write as JSONL to /tmp/firehose-relay.jsonl. Cursor-resume on restart.
+write as JSONL to /workspace/firehose-data/firehose-relay.jsonl. Cursor-resume on restart.
 
 Env:
   RELAY            wss://bsky.network (default)
-  OUT              /tmp/firehose-relay.jsonl
+  OUT              /workspace/firehose-data/firehose-relay.jsonl
   CURSOR           start sequence number; default = whatever resume.json says or 0
   STATS_INTERVAL   30 (seconds)
   HARD_STOP_AT     epoch seconds; default = +7d from now
@@ -30,7 +30,7 @@ from atproto import (
     models,
 )
 
-OUT = os.environ.get("OUT", "/tmp/firehose-relay.jsonl")
+OUT = os.environ.get("OUT", "/workspace/firehose-data/firehose-relay.jsonl")
 STATS = OUT + ".stats.json"
 RESUME = OUT + ".resume.json"
 RELAY = os.environ.get("RELAY", "wss://bsky.network/xrpc")
@@ -49,6 +49,11 @@ else:
             START_CURSOR = json.load(rf).get("cursor")
     except Exception:
         START_CURSOR = None
+
+# Optional upper bound on cursor — process exits when this seq is reached.
+# Used to split a backfill range across parallel workers.
+_end_env = os.environ.get("SEQ_END_AT")
+SEQ_END_AT: int | None = int(_end_env) if _end_env else None
 
 stats = {
     "started_at": START_TS,
@@ -117,6 +122,13 @@ def on_message(message: firehose_models.MessageFrame):
         stats["min_seq_seen"] = commit.seq
     if commit.seq > stats["max_seq_seen"]:
         stats["max_seq_seen"] = commit.seq
+
+    # Honour optional upper bound — exit cleanly once we've passed our window.
+    if SEQ_END_AT is not None and commit.seq >= SEQ_END_AT:
+        print(f"reached SEQ_END_AT={SEQ_END_AT}, flushing & exiting", file=sys.stderr)
+        flush_stats()
+        f.flush()
+        os._exit(0)
 
     # Fast pre-check: skip decoding CAR if no feed.post create ops in this commit
     has_post_create = any(

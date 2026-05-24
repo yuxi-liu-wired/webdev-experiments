@@ -3,7 +3,7 @@
 
 import { isBotAuthor, type Facet, type ReplyRef } from "./classify";
 
-const INPUT_FILE = "/tmp/firehose-24h.jsonl";
+const INPUT_FILE = "/workspace/firehose-data/firehose-24h.jsonl";
 const APPVIEW = "https://api.bsky.app";
 
 interface PostEvent {

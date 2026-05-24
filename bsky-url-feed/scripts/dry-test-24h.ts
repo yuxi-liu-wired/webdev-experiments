@@ -1,13 +1,13 @@
 #!/usr/bin/env bun
 // Replay the last 24h of Jetstream, stream to disk, compute filter counts.
-// Writes raw posts to /tmp/firehose-24h.jsonl (~1.3 GB).
+// Writes raw posts to /workspace/firehose-data/firehose-24h.jsonl (~1.3 GB).
 
 import { isBotAuthor, type Facet, type ReplyRef } from "./classify";
 
 const JETSTREAM_URL = "wss://jetstream2.us-east.bsky.network/subscribe";
 const APPVIEW = "https://api.bsky.app";
 const HOURS_BACK = 24;
-const OUTPUT_FILE = "/tmp/firehose-24h.jsonl";
+const OUTPUT_FILE = "/workspace/firehose-data/firehose-24h.jsonl";
 const DRAIN_IDLE_MS = 5_000;
 const DRAIN_HARD_TIMEOUT_MS = 90 * 60_000;
 

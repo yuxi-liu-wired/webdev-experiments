@@ -1,11 +1,11 @@
 #!/usr/bin/env bun
 // Compact the 1.6 GB firehose dump into a small JSON consumable by the dashboard.
-// Output: /tmp/firehose-compact.json (~3-5 MB)
+// Output: /workspace/firehose-data/firehose-compact.json (~3-5 MB)
 
 import { isBotAuthor, type Facet, type ReplyRef } from "./classify";
 
-const INPUT = process.env.INPUT_FILE ?? "/tmp/firehose-24h.jsonl";
-const OUTPUT = process.env.OUTPUT_FILE ?? "/tmp/firehose-compact.json";
+const INPUT = process.env.INPUT_FILE ?? "/workspace/firehose-data/firehose-24h.jsonl";
+const OUTPUT = process.env.OUTPUT_FILE ?? "/workspace/firehose-data/firehose-compact.json";
 const APPVIEW = "https://api.bsky.app";
 const MIN_LINKS_TO_INCLUDE = 3; // keep posts with >=3 EXTERNAL link facets (was 2, blew the Pages 25 MiB limit)
 
