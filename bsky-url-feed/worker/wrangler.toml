@@ -28,8 +28,8 @@ new_sqlite_classes = ["JetstreamDO"]
 binding = "FEED_KV"
 id = "a18df39d439143249fa7566d51c94fb7"
 
-# Cron trigger fires every 5 minutes. Each tick runs one Jetstream drain batch:
-# connect with cursor=last_run-30s, drain to live, classify, write to KV, disconnect.
-# The DO hibernates between batches, so duration cost is ~6% of always-on.
+# Cron fires every 30 minutes — the sole batch trigger (DO alarm path is disabled).
+# Each tick: connect with cursor=last_run-30s, drain up to 3s of post events
+# (capped to keep DO ws-message billing under the 100k/day free tier).
 [triggers]
-crons = ["*/5 * * * *"]
+crons = ["*/30 * * * *"]

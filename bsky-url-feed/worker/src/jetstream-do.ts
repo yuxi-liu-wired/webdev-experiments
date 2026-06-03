@@ -5,10 +5,11 @@ const APPVIEW = "https://api.bsky.app";
 const SKELETON_KEY = "skeleton";
 const MAX_ITEMS = 200;
 
-const BATCH_INTERVAL_MS = 5 * 60_000;  // run every 5 minutes
+// Each inbound Jetstream WS message bills as 1 DO request. Free tier is
+// 100k/day; cron (*/30) × drain cap (3s) × ~150 post/s ≈ 22k/day.
 const OVERLAP_SAFETY_MS = 30_000;       // re-read last 30s to cover gaps
 const DRAIN_LIVE_MS = 2_000;            // consider "live" when no msg for 2s
-const DRAIN_HARD_TIMEOUT_MS = 90_000;   // never drain longer than 90s per batch
+const DRAIN_HARD_TIMEOUT_MS = 3_000;    // keep DO ws-message billing under free tier
 const HANDLE_CACHE_MAX = 5_000;         // LRU cap
 
 interface Env {
@@ -81,9 +82,11 @@ export class JetstreamDO {
       this.lastCursorUs = (await this.state.storage.get<number>("lastCursorUs")) ?? 0;
       this.lastRunAt = (await this.state.storage.get<number>("lastRunAt")) ?? 0;
       this.lastBatchStats = (await this.state.storage.get("lastBatchStats")) ?? null;
+      // No self-rescheduling alarm — cron is the sole trigger. Drop any pending
+      // alarm left over from prior deploys so it can't double-fire batches.
       const existingAlarm = await this.state.storage.getAlarm();
-      if (existingAlarm === null) {
-        await this.state.storage.setAlarm(Date.now() + 2_000);
+      if (existingAlarm !== null) {
+        await this.state.storage.deleteAlarm();
       }
     });
   }
@@ -116,23 +119,21 @@ export class JetstreamDO {
   }
 
   async alarm() {
-    try {
-      await this.runBatch();
-    } finally {
-      await this.state.storage.setAlarm(Date.now() + BATCH_INTERVAL_MS);
-    }
+    // Intentionally empty. Cron is the sole batch trigger; any pending alarm
+    // from older deploys fires once here and is not rescheduled.
   }
 
   private async runBatch() {
     const startedAt = Date.now();
     const startedUs = startedAt * 1000;
 
-    // First run: backfill the last 5 minutes only.
+    // First run: backfill ~30 min (matches cron cadence).
     // Subsequent runs: replay from lastCursorUs - overlap.
+    const INITIAL_LOOKBACK_US = 30 * 60 * 1_000_000;
     const cursorUs =
       this.lastCursorUs > 0
         ? this.lastCursorUs - OVERLAP_SAFETY_MS * 1000
-        : startedUs - BATCH_INTERVAL_MS * 1000;
+        : startedUs - INITIAL_LOOKBACK_US;
 
     const url = `${JETSTREAM_HOST}?wantedCollections=app.bsky.feed.post&cursor=${cursorUs}`;
 
