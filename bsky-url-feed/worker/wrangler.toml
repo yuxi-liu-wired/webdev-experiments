@@ -28,8 +28,10 @@ new_sqlite_classes = ["JetstreamDO"]
 binding = "FEED_KV"
 id = "a18df39d439143249fa7566d51c94fb7"
 
-# Cron fires every 30 minutes — the sole batch trigger (DO alarm path is disabled).
-# Each tick: connect with cursor=last_run-30s, drain up to 3s of post events
-# (capped to keep DO ws-message billing under the 100k/day free tier).
+# Cron fires hourly — the sole batch trigger (DO alarm path is disabled).
+# Each tick: connect, drain up to 2s of post events (~2k msgs), classify, write
+# to KV, disconnect. The cursor lookback is capped so a stale cursor can't
+# trigger a replay flood. Daily ceiling: 24 × ~2k ≈ 48k DO requests; the free
+# tier is 100k, leaving ~50% headroom.
 [triggers]
-crons = ["*/30 * * * *"]
+crons = ["0 * * * *"]

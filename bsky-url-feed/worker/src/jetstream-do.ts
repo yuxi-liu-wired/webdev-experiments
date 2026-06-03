@@ -6,10 +6,12 @@ const SKELETON_KEY = "skeleton";
 const MAX_ITEMS = 200;
 
 // Each inbound Jetstream WS message bills as 1 DO request. Free tier is
-// 100k/day; cron (*/30) × drain cap (3s) × ~150 post/s ≈ 22k/day.
-const OVERLAP_SAFETY_MS = 30_000;       // re-read last 30s to cover gaps
+// 100k/day; live post-stream rate is ~1k/s. Cron (hourly) × drain cap (2s) ≈
+// 48k/day. Tighter knobs cost coverage (huge gaps between cursor windows)
+// without buying meaningful headroom.
+const OVERLAP_SAFETY_MS = 60_000;       // re-read last 60s to cover gaps
 const DRAIN_LIVE_MS = 2_000;            // consider "live" when no msg for 2s
-const DRAIN_HARD_TIMEOUT_MS = 3_000;    // keep DO ws-message billing under free tier
+const DRAIN_HARD_TIMEOUT_MS = 2_000;    // hard cap; live stream never goes idle
 const HANDLE_CACHE_MAX = 5_000;         // LRU cap
 
 interface Env {
@@ -127,13 +129,16 @@ export class JetstreamDO {
     const startedAt = Date.now();
     const startedUs = startedAt * 1000;
 
-    // First run: backfill ~30 min (matches cron cadence).
-    // Subsequent runs: replay from lastCursorUs - overlap.
-    const INITIAL_LOOKBACK_US = 30 * 60 * 1_000_000;
+    // Live tail only. lastCursorUs is ignored if it's older than MAX_LOOKBACK_US —
+    // at ~1k msg/s a stale cursor would deliver an unbounded replay flood, each
+    // message billing as a DO request. Cap the lookback so a single batch always
+    // ingests ≤ ~drain-window's worth of events.
+    const MAX_LOOKBACK_US = 5 * 60 * 1_000_000;
+    const now = startedUs;
     const cursorUs =
-      this.lastCursorUs > 0
+      this.lastCursorUs > 0 && now - this.lastCursorUs < MAX_LOOKBACK_US
         ? this.lastCursorUs - OVERLAP_SAFETY_MS * 1000
-        : startedUs - INITIAL_LOOKBACK_US;
+        : now - 5 * 60 * 1_000_000;
 
     const url = `${JETSTREAM_HOST}?wantedCollections=app.bsky.feed.post&cursor=${cursorUs}`;
 
