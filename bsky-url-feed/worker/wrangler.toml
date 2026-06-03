@@ -28,10 +28,10 @@ new_sqlite_classes = ["JetstreamDO"]
 binding = "FEED_KV"
 id = "a18df39d439143249fa7566d51c94fb7"
 
-# Cron fires hourly — the sole batch trigger (DO alarm path is disabled).
-# Each tick: connect, drain up to 2s of post events (~2k msgs), classify, write
-# to KV, disconnect. The cursor lookback is capped so a stale cursor can't
-# trigger a replay flood. Daily ceiling: 24 × ~2k ≈ 48k DO requests; the free
-# tier is 100k, leaving ~50% headroom.
-[triggers]
-crons = ["0 * * * *"]
+# Live-update cron DISABLED. The DO architecture (one-isolate-invocation per
+# inbound WS frame) is structurally incompatible with the 100k/day free tier
+# for firehose-rate streams. Re-enable only if moving the WS subscription
+# off-DO (e.g. external ingest shim posts batches via HTTP). The DO + alarm()
+# stubs are left in src/ as dead code paths so nothing fires.
+# [triggers]
+# crons = []
