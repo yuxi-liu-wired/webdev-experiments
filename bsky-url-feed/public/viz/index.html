@@ -170,10 +170,19 @@
 async function main() {
   const headerEl = document.getElementById("header");
   headerEl.textContent = "fetching firehose-compact.json.gz ...";
-  // Pages serves this gzipped with Content-Encoding: gzip; browser decompresses transparently.
+  // Cloudflare Pages serves .gz as content-type application/json WITHOUT
+  // Content-Encoding: gzip, so the browser doesn't auto-decompress. Sniff
+  // the magic bytes and decompress manually if needed; falls back gracefully
+  // if a future host decides to decompress transparently.
   const r = await fetch("./firehose-compact.json.gz");
   if (!r.ok) { headerEl.textContent = "fetch failed: " + r.status; return; }
-  const data = await r.json();
+  const buf = await r.arrayBuffer();
+  const u8 = new Uint8Array(buf);
+  const isGzip = u8.length >= 2 && u8[0] === 0x1f && u8[1] === 0x8b;
+  const text = isGzip
+    ? await new Response(new Blob([buf]).stream().pipeThrough(new DecompressionStream("gzip"))).text()
+    : new TextDecoder().decode(buf);
+  const data = JSON.parse(text);
   const posts = data.posts;
   const s = data.summary;
   headerEl.textContent = `captured ${data.capturedAt} • ${s.totalPosts.toLocaleString()} commits / 24h • ${s.kept.toLocaleString()} posts ≥2 links • ${s.authorsResolved.toLocaleString()}/${s.uniqueAuthors.toLocaleString()} handles resolved`;
