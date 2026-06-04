@@ -184,8 +184,18 @@ async function main() {
     : new TextDecoder().decode(buf);
   const data = JSON.parse(text);
   const posts = data.posts;
-  const s = data.summary;
-  headerEl.textContent = `captured ${data.capturedAt} • ${s.totalPosts.toLocaleString()} commits / 24h • ${s.kept.toLocaleString()} posts ≥2 links • ${s.authorsResolved.toLocaleString()}/${s.uniqueAuthors.toLocaleString()} handles resolved`;
+  // Two summary schemas in the wild: the original from compact-for-viz.ts
+  // (totalPosts/kept/authorsResolved/uniqueAuthors) and the post-merge one
+  // from merge-compacts.ts (posts/oldPosts/newPosts/newUnique). Fall back
+  // gracefully and derive what's missing from the posts array.
+  const s = data.summary ?? {};
+  const uniqueAuthors = new Set(posts.map(p => p.d)).size;
+  const kept = s.kept ?? s.posts ?? posts.length;
+  const totalLabel = s.totalPosts ? `${s.totalPosts.toLocaleString()} commits / 24h • ` : "";
+  const resolvedLabel = (s.authorsResolved != null)
+    ? `${s.authorsResolved.toLocaleString()}/${uniqueAuthors.toLocaleString()} handles resolved`
+    : `${uniqueAuthors.toLocaleString()} unique authors`;
+  headerEl.textContent = `captured ${data.capturedAt} • ${totalLabel}${kept.toLocaleString()} posts ≥2 links • ${resolvedLabel}`;
 
   const ctrls = {
     minLinks: document.getElementById("minLinks"),
@@ -256,8 +266,10 @@ async function main() {
   function render(matched) {
     // Stats
     document.getElementById("sMatching").textContent = matched.length.toLocaleString();
-    const pct = data.summary.totalPosts > 0 ? (matched.length / data.summary.totalPosts * 100) : 0;
-    document.getElementById("sMatchingPct").textContent = pct.toFixed(3) + "% of all 24h posts";
+    const denom = data.summary?.totalPosts;
+    document.getElementById("sMatchingPct").textContent = (denom && denom > 0)
+      ? (matched.length / denom * 100).toFixed(3) + "% of all 24h posts"
+      : "—";
     document.getElementById("sPerHour").textContent = (matched.length / 24).toFixed(1);
     document.getElementById("sPerDay").textContent = matched.length.toLocaleString() + " /day";
 
