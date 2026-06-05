@@ -182,6 +182,63 @@
 </div>
 
 <script>
+// One-sentence descriptions for the top-50 most-frequent domains in the
+// current dataset. Hover-only metadata; nothing depends on this being
+// exhaustive. Refresh by re-running scripts/top-domains.ts when the
+// dataset shifts substantially.
+const DOMAIN_INFO = {
+  "is.gd": "Free URL shortener.",
+  "awakari.com": "Interest-based content-discovery and feed-aggregator service.",
+  "flightaware.com": "Commercial flight-tracking website operated by Collins Aerospace.",
+  "globe.adsbexchange.com": "Community-run, unfiltered ADS-B flight tracker (no military-blocklist).",
+  "arxiv.org": "Open-access preprint server (Cornell) for physics, math, CS, and related fields.",
+  "globe.airplanes.live": "Community ADS-B flight tracker — fork of ADSBexchange.",
+  "registry.faa.gov": "US FAA's aircraft-registration database lookup.",
+  "sdr-e.com": "GitHub organisation page for SDR Enthusiasts (software-defined-radio tooling).",
+  "bigearthdata.ai": "News and topic search aggregator that indexes Bluesky posts.",
+  "the-hear.com": "US news-headline aggregator showing real-time sources side by side.",
+  "t.me": "Direct link to a Telegram message, channel, or group.",
+  "music.youtube.com": "Google's YouTube Music streaming service.",
+  "youtube.com": "Google's video-sharing platform.",
+  "music.apple.com": "Apple Music streaming service.",
+  "kx1t.com": "Personal site of ham radio operator KX1T hosting Boston-area and Netherlands ADS-B data.",
+  "genius.com": "Song-lyrics and crowd-annotation community.",
+  "aiscatcher.org": "Community-run AIS (ship-tracking) software for SDR receivers.",
+  "okpojie.com": "Chinese pirated-content / resource aggregator site.",
+  "pan.quark.cn": "Quark Cloud Drive — Chinese file-hosting service by Alibaba's Quark.",
+  "twitch.tv": "Amazon-owned live video-streaming platform (gaming-focused).",
+  "en.wikipedia.org": "English-language Wikipedia.",
+  "instagram.com": "Meta's photo- and video-sharing app.",
+  "youtu.be": "Short-link domain for YouTube videos.",
+  "x.com": "X (formerly Twitter), Elon Musk's microblogging platform.",
+  "amzn.to": "Amazon's URL shortener.",
+  "newsmason.com": "News-link aggregator that brands itself as filtering 'propaganda'.",
+  "aepiot.ro": "Romanian 'MultiSearch Tag Explorer' SEO content-aggregator template.",
+  "headlines-world.com": "Same MultiSearch SEO aggregator template, world-news framing.",
+  "aepiot.com": ".com mirror of aepiot.ro (same SEO aggregator template).",
+  "allgraph.ro": "Same MultiSearch SEO aggregator template (Romanian).",
+  "duckduckgo.com": "Privacy-focused search engine.",
+  "abc.net.au": "Australian Broadcasting Corporation — Australia's public broadcaster.",
+  "linktr.ee": "Linktree — link-in-bio aggregator service.",
+  "bit.ly": "Bitly URL shortener.",
+  "kensbookinfo.blogspot.com": "Personal book-info blog on Google's Blogger platform.",
+  "patreon.com": "Creator subscription / membership platform.",
+  "onlyfans.com": "Subscription content platform (predominantly adult content).",
+  "github.com": "Microsoft's git-repository hosting and developer collaboration platform.",
+  "urlscan.io": "URL-threat-analysis and website-scanning service.",
+  "open.spotify.com": "Spotify's music-streaming web player.",
+  "tiktok.com": "ByteDance's short-form video platform.",
+  "tinyurl.com": "One of the oldest URL-shortener services.",
+  "buff.ly": "Buffer's URL shortener (Buffer is a social-media scheduling tool).",
+  "amazon.com": "Amazon's main retail website.",
+  "twitter.com": "Legacy Twitter URL (now redirects to x.com).",
+  "facebook.com": "Meta's flagship social network.",
+  "planefence.com": "KX1T's plane-proximity alert tool (ADS-B based).",
+  "ko-fi.com": "Ko-fi — creator tipping / membership platform.",
+  "buymeacoffee.com": "Buy Me a Coffee — creator tipping / membership platform.",
+  "pixiv.net": "Japanese illustration- and artwork-sharing community.",
+};
+
 async function main() {
   const headerEl = document.getElementById("header");
   headerEl.textContent = "fetching firehose-compact.json.gz ...";
@@ -362,8 +419,13 @@ async function main() {
     }
     renderBars("covChart", covBuckets.map((b, i) => [b, covDist[i]]));
 
-    // Top domains
-    renderTable("domTable", [...domCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 25).map(([k, v]) => [k, v]));
+    // Top domains — wrap each name in a span carrying the description as a
+    // mouseover title when one is curated.
+    renderTable("domTable", [...domCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 25).map(([k, v]) => {
+      const info = DOMAIN_INFO[k];
+      const label = info ? `<span title="${escapeAttr(info)}" style="cursor:help;border-bottom:1px dotted var(--text-dim);">${k}</span>` : k;
+      return [label, v];
+    }));
 
     // Top authors with handle + reply-state breakdown
     const authStats = new Map();
@@ -401,7 +463,12 @@ async function main() {
       // are stable across handle changes / resolution mishaps.
       const profileUrl = `https://bsky.app/profile/${p.d}`;
       const postUrl = `https://bsky.app/profile/${p.d}/post/${p.k}`;
-      const doms = p.D.map(d => `<span class="dom">${d}</span>`).join("");
+      const doms = p.D.map(d => {
+        const info = DOMAIN_INFO[d];
+        return info
+          ? `<span class="dom" title="${escapeAttr(info)}">${d}</span>`
+          : `<span class="dom">${d}</span>`;
+      }).join("");
       const date = p.ts ? new Date(p.ts).toISOString().slice(11, 16) + "Z" : "?";
       const textHtml = renderTextWithLinks(p.t, p.f);
       samplesEl.innerHTML += `<div class="post">
