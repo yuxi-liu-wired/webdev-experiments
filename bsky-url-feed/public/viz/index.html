@@ -121,6 +121,21 @@
       <label>exclude domains containing</label>
       <input type="text" id="excludeDom" placeholder="e.g. adsb, flightaware" />
     </div>
+
+    <div class="row">
+      <label>language</label>
+      <div style="display:flex;flex-direction:column;gap:3px;margin-top:4px;">
+        <label class="checkbox"><input type="radio" name="lang" value="all" checked /> all</label>
+        <label class="checkbox"><input type="radio" name="lang" value="en" /> English only (en*)</label>
+        <label class="checkbox"><input type="radio" name="lang" value="individual" /> individual</label>
+      </div>
+      <div id="langPicker" style="display:none;max-height:180px;overflow-y:auto;margin-top:6px;border:1px solid var(--border);padding:6px;border-radius:4px;font-size:12px;"></div>
+    </div>
+
+    <div class="row">
+      <label>sample size <span class="val" id="vSampleN">20</span></label>
+      <input type="range" id="sampleN" min="20" max="500" value="20" step="20" />
+    </div>
   </div>
 
   <div>
@@ -160,7 +175,7 @@
     </div>
 
     <div class="chart samples" style="margin-top:18px">
-      <h2 style="margin-top:0">sample matching posts (up to 20, newest first)</h2>
+      <h2 id="samplesHeader" style="margin-top:0">sample matching posts (up to 20, newest first)</h2>
       <div id="samples"></div>
     </div>
   </div>
@@ -206,7 +221,49 @@ async function main() {
     minLen: document.getElementById("minLen"),
     maxAuth: document.getElementById("maxAuth"),
     excludeDom: document.getElementById("excludeDom"),
+    sampleN: document.getElementById("sampleN"),
   };
+  const langRadios = document.querySelectorAll('input[name="lang"]');
+  const langPicker = document.getElementById("langPicker");
+  // selectedLangs: live set of BCP-47 tags checked in the Individual picker.
+  // Mutated when the user clicks a checkbox in the picker.
+  const selectedLangs = new Set();
+
+  // Inventory all langs present in the dataset, sorted by post-count desc.
+  // "(no langs field)" is its own bucket — many bsky posts don't set langs at all.
+  const langCounts = new Map();
+  let postsWithoutLangs = 0;
+  for (const p of posts) {
+    if (!p.g || p.g.length === 0) { postsWithoutLangs++; continue; }
+    for (const l of p.g) langCounts.set(l, (langCounts.get(l) ?? 0) + 1);
+  }
+  const langList = [...langCounts.entries()].sort((a, b) => b[1] - a[1]);
+  langPicker.innerHTML = langList.map(([l, n]) =>
+    `<label class="checkbox" style="display:flex;justify-content:space-between;padding:1px 0;">
+      <span><input type="checkbox" class="langChk" value="${l}" /> ${l}</span>
+      <span style="color:var(--text-dim)">${n.toLocaleString()}</span>
+    </label>`
+  ).join("") + (postsWithoutLangs > 0
+    ? `<div style="margin-top:6px;padding-top:6px;border-top:1px solid var(--border);color:var(--text-dim);">
+        (${postsWithoutLangs.toLocaleString()} posts with no langs field — never matched by English/Individual)
+      </div>`
+    : "");
+  langPicker.querySelectorAll(".langChk").forEach((el) => {
+    el.addEventListener("change", () => {
+      if (el.checked) selectedLangs.add(el.value);
+      else selectedLangs.delete(el.value);
+      applyFilters();
+    });
+  });
+  langRadios.forEach((el) => {
+    el.addEventListener("change", () => {
+      langPicker.style.display = el.value === "individual" && el.checked ? "block" : (langPicker.style.display);
+      // Refresh display state based on the currently checked radio
+      const checked = document.querySelector('input[name="lang"]:checked').value;
+      langPicker.style.display = checked === "individual" ? "block" : "none";
+      applyFilters();
+    });
+  });
 
   function applyFilters() {
     const minLinks = +ctrls.minLinks.value;
@@ -217,12 +274,15 @@ async function main() {
     const minLen = +ctrls.minLen.value;
     const maxAuth = +ctrls.maxAuth.value;
     const excludeDom = ctrls.excludeDom.value.trim().toLowerCase().split(/[\s,]+/).filter(x => x);
+    const sampleN = +ctrls.sampleN.value;
+    const langMode = document.querySelector('input[name="lang"]:checked').value;
 
     document.getElementById("vMinLinks").textContent = minLinks;
     document.getElementById("vMinCov").textContent = (+ctrls.minCov.value) + "%";
     document.getElementById("vMinDoms").textContent = minDoms;
     document.getElementById("vMinLen").textContent = minLen;
     document.getElementById("vMaxAuth").textContent = maxAuth === 0 ? "∞" : maxAuth;
+    document.getElementById("vSampleN").textContent = sampleN;
 
     // Pass 1: structural filter
     let matched = [];
@@ -244,6 +304,12 @@ async function main() {
         }
         if (blocked) continue;
       }
+      if (langMode === "en") {
+        if (!p.g || !p.g.some(l => l.toLowerCase().startsWith("en"))) continue;
+      } else if (langMode === "individual") {
+        if (selectedLangs.size === 0) continue;
+        if (!p.g || !p.g.some(l => selectedLangs.has(l))) continue;
+      }
       matched.push(p);
     }
     // Per-author cap (newest first by ts)
@@ -260,10 +326,10 @@ async function main() {
       matched = capped;
     }
 
-    render(matched);
+    render(matched, sampleN);
   }
 
-  function render(matched) {
+  function render(matched, sampleN) {
     // Stats
     document.getElementById("sMatching").textContent = matched.length.toLocaleString();
     const denom = data.summary?.totalPosts;
@@ -323,7 +389,8 @@ async function main() {
     }
 
     // Samples (newest first)
-    const samples = matched.slice().sort((a, b) => (b.ts ?? 0) - (a.ts ?? 0)).slice(0, 20);
+    const samples = matched.slice().sort((a, b) => (b.ts ?? 0) - (a.ts ?? 0)).slice(0, sampleN);
+    document.getElementById("samplesHeader").textContent = `sample matching posts (up to ${sampleN.toLocaleString()}, newest first)`;
     const samplesEl = document.getElementById("samples");
     samplesEl.innerHTML = "";
     for (const p of samples) {

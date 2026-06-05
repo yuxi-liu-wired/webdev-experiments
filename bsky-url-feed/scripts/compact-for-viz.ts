@@ -16,6 +16,7 @@ interface PostEvent {
   facets?: Facet[];
   reply?: ReplyRef;
   createdAt?: string;
+  langs?: string[];
 }
 
 interface CompactPost {
@@ -31,6 +32,7 @@ interface CompactPost {
   t: string;      // full text (capped at 500 chars)
   f: [number, number, string][];  // link facets: [byteStart, byteEnd, uri]
   ts: number;     // createdAt epoch ms
+  g?: string[];   // BCP-47 langs from the post record (omitted when absent)
 }
 
 function linkFacets(facets?: Facet[]) {
@@ -177,7 +179,7 @@ async function streamReadAll(): Promise<{
         .filter((f) => f.byteStart < keptBytes)
         .map((f) => [f.byteStart, Math.min(f.byteEnd, keptBytes), f.uri]);
 
-      posts.push({
+      const post: CompactPost = {
         d: p.did,
         k: p.rkey ?? "",
         n: lc,
@@ -188,7 +190,9 @@ async function streamReadAll(): Promise<{
         t: keptText,
         f: compactFacets,
         ts,
-      });
+      };
+      if (p.langs && p.langs.length > 0) post.g = p.langs;
+      posts.push(post);
 
       if (totalPosts % 500_000 === 0) {
         process.stdout.write(
