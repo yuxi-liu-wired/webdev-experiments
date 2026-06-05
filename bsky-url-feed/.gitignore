@@ -12,3 +12,8 @@ firehose-data/
 firehose-*.json
 !public/viz/firehose-*.json.gz
 
+# viz-local/ holds the unbounded local-only dashboard. The pipeline
+# rewrites firehose-compact.json.gz here on every refresh; public/viz/
+# stays frozen at whatever's committed (≤25 MB Pages per-file limit).
+viz-local/
+
