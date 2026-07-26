@@ -1,3 +1,25 @@
+2026-07-26 - the strict stack, tested on the firehose at home
+
+tools/strict-haiku.mjs implements the firehose filter stack and ran against
+the url-feed's local capture of 123,421 real posts. Gates, in order: found
+span within a single source line (deliberate haiku write their line breaks);
+dictionary words only; unambiguous counts (every word one pronunciation
+length); no line ending on a function word; and the anti-intent rule — if the
+author's own commas or slashes sit at every one of our line breaks, their
+punctuation already wrote the poem, so it is not found. Whole-post-only was
+dropped by design: the best finds live inside long posts, and the operator
+named the semantic estrangement as the point.
+
+Funnel: 62,907 raw finds, 40,923 single-line, 18,828 dict-only, 15,039
+unambiguous, 5,927 clean-ended, 5,854 unintended, 4,928 distinct — about 4%
+of posts. Against the real firehose's daily volume the strictest stack still
+passes thousands a day, so a daily-best bot ranks, never scrapes.
+
+Kigo ranking tested and found homonym-poisoned: it surfaced sea turtles and
+the Magellanic Cloud, but also ranked Star Wars marketing and "Cloud
+Platforms" study guides. Needs a collocation blocklist before it can be
+trusted as the anthology editor.
+
 2026-07-26 - iambic pentameter scanner
 
 tools/iambic.mjs reads the stress digits the syllable build discards: each
