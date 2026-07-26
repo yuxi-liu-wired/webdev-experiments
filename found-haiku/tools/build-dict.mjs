@@ -42,6 +42,16 @@ for (const line of raw.split('\n')) {
   words.get(word).add(syl);
 }
 
+// Words CMUdict predates but this bot's corpus is full of. Counts are the
+// ordinary spoken ones: BLUE-sky, bee-SKY, at-PRO-to, FED-i-verse, e-MO-ji.
+const SUPPLEMENTS = {
+  bluesky: [2], bsky: [2], skeet: [1], skeets: [1],
+  atproto: [3], fediverse: [3], emoji: [3], emojis: [3],
+};
+for (const [word, counts] of Object.entries(SUPPLEMENTS)) {
+  if (!words.has(word)) words.set(word, new Set(counts));
+}
+
 // Variants that differ only in stress collapse; genuine length variants stay.
 let ambiguous = 0;
 let wrong = 0;

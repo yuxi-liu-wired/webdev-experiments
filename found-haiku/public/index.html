@@ -8,7 +8,7 @@
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="found haiku — poems already hiding in ordinary prose">
-<meta property="og:description" content="Accidental 5-7-5 in any English text, counted against 126,030 dictionary words.">
+<meta property="og:description" content="Accidental 5-7-5 in any English text, counted against 126,036 dictionary words.">
 <style>
 :root {
   --bg: #faf9f6; --text: #1a1a1a; --muted: #777; --rule: #ccc;
@@ -104,12 +104,14 @@ button:disabled { opacity: 0.4; cursor: default; }
   border-radius: 7px; padding: 0.9rem 1rem 0.8rem; background: var(--good-faint);
 }
 .results li .close {
-  position: absolute; top: 0.18rem; right: 0.24rem;
-  background: none; border: none; padding: 0.1rem 0.3rem;
-  font-family: var(--mono); font-size: 0.8rem; line-height: 1; letter-spacing: 0;
-  color: var(--muted); opacity: 0.5; cursor: pointer;
+  position: absolute; top: 0.3rem; right: 0.3rem;
+  width: 1.15rem; height: 1.15rem; padding: 0; border: none; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(128, 128, 128, 0.16);
+  font-family: var(--mono); font-size: 0.72rem; line-height: 1; letter-spacing: 0;
+  color: var(--muted); cursor: pointer;
 }
-.results li .close:hover { opacity: 1; color: var(--text); background: none; }
+.results li .close:hover { background: rgba(128, 128, 128, 0.3); color: var(--text); }
 .poem { font-size: 1.2rem; line-height: 1.5; white-space: pre-wrap; }
 .poem .line { display: flex; gap: 0.8rem; align-items: baseline; }
 .poem .line > span:first-child { flex: 1; }
@@ -206,7 +208,7 @@ footer b { color: var(--text); }
 
 <footer>
   <b>How it works.</b> Text is normalized and cut at punctuation and line breaks. Each word is
-  looked up in CMUdict — 126,030 words, syllables counted from the pronunciation itself, not from
+  looked up in CMUdict — 126,036 words, syllables counted from the pronunciation itself, not from
   the spelling. Words it has never seen fall back to a rules engine that agrees with the dictionary
   91.5% of the time; those words are <span style="border-bottom:1px dotted var(--gold)">underlined</span>
   in the results so you know which numbers are a guess. Numbers are read aloud before counting

@@ -9,6 +9,7 @@
     "serve:static": "NO_API=1 bun serve.mjs 8094",
     "test": "bun test",
     "e2e": "bun test/e2e.mjs",
+    "bot:dry": "bun bot/dry-run.mjs",
     "e2e:static": "bun test/e2e.mjs http://localhost:8094/ --no-bsky",
     "build-dict": "bun tools/build-dict.mjs",
     "errors": "bun tools/errors.mjs"

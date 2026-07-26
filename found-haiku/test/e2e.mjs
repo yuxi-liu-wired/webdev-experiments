@@ -44,7 +44,8 @@ page.on('pageerror', (e) => errors.push(String(e)));
 await page.goto(BASE, { waitUntil: 'networkidle' });
 await page.waitForFunction(() => document.getElementById('status').textContent.includes('dictionary ready'), { timeout: 30000 });
 const ready = await page.textContent('#status');
-check('dictionary loads in the browser', /126,030 words/.test(ready), ready.trim());
+const wordCount = Number((/([\d,]+) words/.exec(ready) || [])[1]?.replace(/,/g, '') || 0);
+check('dictionary loads in the browser', wordCount >= 126030, ready.trim());
 await page.screenshot({ path: `${SHOTS}/01-empty.png`, fullPage: true });
 
 // --- the sample button ------------------------------------------------------

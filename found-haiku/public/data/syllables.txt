@@ -6083,6 +6083,7 @@ bs	4
 3r	2
 4ino	4
 2p	3
+3roto	3
 2ra	2
 3ia	3
 4um	3
@@ -11852,6 +11853,7 @@ as	3
 4r	2
 4s	1
 5'	1
+5ky	2
 5t	2
 6ein	2
 6ine	2
@@ -14936,6 +14938,7 @@ an	2
 4zowski	3
 3ycki	2
 1s	2
+2ky	2
 1t	2
 2a	3
 1ua	2,3
@@ -35084,6 +35087,8 @@ as	4
 4s	2
 2o	2
 3gene	3
+3ji	3
+5s	3
 3nd	2
 3ry	3
 5's	3
@@ -38557,6 +38562,7 @@ as	4
 4wa	3
 4x	2
 3iay	3
+4verse	3
 3ler	2
 3or	2
 5a	3

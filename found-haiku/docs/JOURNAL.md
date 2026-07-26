@@ -1,3 +1,38 @@
+2026-07-26 - the bot
+
+The engine became a Bluesky bot: mention it and it replies with a poem found
+in someone's posts. Grammar per the spec, both slots optional and ordered:
+@found-haiku <format> <@someone>, format = haiku|tanka|tanaga|[3-9]{3,9} with
+digits read one line each, and the exact error wordings for malformed
+requests, disallowed formats, out-of-bounds digits, and missing users, each
+linking the pinned usage post.
+
+Architecture: bot/parse.js (commands; mention facets carry pre-resolved DIDs,
+the protocol's own parser, with resolveHandle for hand-typed handles),
+bot/compose.js (replies; the 300-grapheme cap and UTF-8 byte offsets for link
+facets are computed in one place), bot/engine.js (the browser engine loaded
+server-side; URLs stripped to clause boundaries; scopes cascade
+segment > span > cross so whole-clause poems win), bot/bsky.js (public
+appview for reads, PDS session for writes, byparr routing for in-container
+reads), bot/run.js (one poll cycle), and a Netlify scheduled function every
+five minutes — createSession is rate-limited per day, so no faster. State is
+Bluesky's own notification cursor: no database.
+
+The dry run caught the engine miscounting "bluesky" (guessed 3, spoken 2) in
+the platform's own posts, so the dictionary build gained a small supplement
+list (bluesky, bsky, skeet, atproto, fediverse, emoji) — CMUdict predates
+them all. That moved the table to 126,036 words and broke a test that had
+encoded the undercount, plus the hardcoded count in the page footer and the
+e2e check, now count-agnostic.
+
+Untestable from the container: actually posting (auth POSTs cannot leave).
+Tested: the whole read path live through byparr — parse, resolve, fetch,
+find, compose — plus 20 unit tests on the pure logic. First real find, from
+@bsky.app: "You can now reply / to specific messages / in group chats and
+DMs".
+
+The close button also gained its pale disk so it reads as a button.
+
 2026-07-26 - screenshot-friendly cards
 
 Two small card changes for arranging a screenshot to post: an unobtrusive

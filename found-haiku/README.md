@@ -49,7 +49,8 @@ plus the browser check that the direct call is attempted before the fallback.
 How the syllable counting works
 
 Counts come from CMUdict, the CMU Pronouncing Dictionary, which records the actual
-phonemes of 126,030 words. A syllable is a phoneme carrying a stress digit, so the
+phonemes of 126,030 words, plus a handful of supplements CMUdict predates (bluesky,
+skeet, emoji). A syllable is a phoneme carrying a stress digit, so the
 count is derived from pronunciation rather than spelling. This matters: "chocolate"
 is two syllables, "camera" is three, "business" is two.
 
@@ -132,6 +133,56 @@ bun tools/errors.mjs 3        # groups the fallback's remaining errors by suffix
 mistakes by word ending, which is where the systematic ones show up. What remains
 is dominated by surnames and loanwords, which are dictionary problems rather than
 rule problems.
+
+The bot
+
+`bot/` is a Bluesky bot on the same engine: mention it and it answers with a
+poem found in someone's posts. The grammar, both slots optional and in this
+order:
+
+```text
+@found-haiku <format> <@someone>
+```
+
+`format` is `haiku`, `tanka`, `tanaga`, or 3-9 digits each 3-9, one per line
+(`577` is a 5-7-7). `@someone` redirects the search from the mentioner to that
+account. Malformed commands, unknown formats, out-of-bounds digits, and
+missing users each get their exact error reply, linking the pinned usage post.
+Mentions typed with the client's autocomplete carry the target's DID in the
+post facets, the protocol's own parser; hand-typed handles go through
+`resolveHandle`. Search prefers whole-clause poems, then mid-clause runs, then
+punctuation-straddling ones, and skips any poem that would not fit in a 300
+grapheme reply with its source permalink.
+
+It runs as a Netlify scheduled function, `netlify/functions/found-haiku-bot.mjs`,
+polling notifications every five minutes and marking them seen; state lives in
+Bluesky's own notification cursor, so there is no database. Five minutes, not
+faster: cold starts create a session each run and `createSession` is
+rate-limited per day.
+
+To turn it on:
+
+1. Create the bot account on Bluesky, and under Settings, App Passwords, make
+   an app password for it.
+2. In the Netlify site settings, set `BOT_IDENTIFIER` (the handle),
+   `BOT_APP_PASSWORD`, and `BOT_PINNED_URL` (the usage post's URL, once
+   posted and pinned).
+3. Deploy. The schedule starts with the deploy.
+
+Rehearse without posting anything: `bun bot/dry-run.mjs "@found-haiku 577 @bsky.app"`
+prints the reply it would have sent. Inside the dev container, prefix
+`BYPARR_URL=http://byparr:8191` so the reads route through the proxy.
+
+Suggested pinned post, within the length limit:
+
+```text
+I find accidental poems. Mention me:
+@found-haiku → a haiku from your posts
+add tanka, tanaga, or digits 3-9 per line (577 = 5-7-7)
+add @someone to search their posts instead
+Syllables counted against the CMU pronouncing dictionary.
+Engine: found-haiku.netlify.app
+```
 
 Credits
 

@@ -16,3 +16,10 @@
   for = "/src/*"
   [headers.values]
     Content-Type = "text/javascript; charset=utf-8"
+
+# The bot: a scheduled function polling for mentions (netlify/functions/).
+# It needs the syllable table shipped alongside the bundled code, and the
+# BOT_* environment variables set in the site settings before it can speak.
+[functions]
+  directory = "netlify/functions"
+  included_files = ["public/data/syllables.txt"]

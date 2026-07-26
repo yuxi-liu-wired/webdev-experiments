@@ -59,7 +59,7 @@ describe('dictionary', () => {
     expect(counter.count('well-worn')).toBe(2);
     expect(counter.count('self-evident')).toBe(4);
     expect(counter.count('and/or')).toBe(2);
-    expect(counter.count('toni.bsky.team')).toBe(4); // to-ni bsky team, spoken apart
+    expect(counter.count('toni.bsky.team')).toBe(5); // to-ni bee-sky team, spoken apart
   });
 });
 
