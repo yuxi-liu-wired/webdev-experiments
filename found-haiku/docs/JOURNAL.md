@@ -1,3 +1,28 @@
+2026-07-26 - the rarity survey and the shininess measure
+
+The week corpus turned out to be the url-feed's own captures in
+/workspace/firehose-data — link-posts only, and the relay capture
+double-delivers, so the survey dedupes by did:rkey: 1,525,309 unique posts,
+107,122 strict finds. tools/strict-lib.mjs holds the shared gates and eight
+badges (iambic, rhyme 1-3, triple rhyme, kigo with a collocation blocklist,
+e-lipogram, alphabetical word order, monovocalic, stress palindrome);
+tools/rarity-survey.mjs streams a capture at ~15k posts/s and writes
+data/rarity.json with per-badge and per-combination counts plus specimens.
+
+Measured, per unique post: iambic 1 in 242, kigo 1 in 415, stress-palindrome
+1 in 438, e-lipogram 1 in 2.5k, rhyme 1-3 1 in 7.4k, monovocalic 1 in 13k,
+alphabetical 1 in 15k, triple rhyme 1 in 763k. Rarest combination sighted:
+iambic+rhymed+kigo, exactly once — "We bloomed on Sunday / at Women Writers
+in Bloom / A beautiful way".
+
+bot/shiny.js turns the table into the posting measure: a find's rarity is
+posts-scanned over finds carrying at least its badge set (supersets counted,
+unseen combinations score above everything), tiers of sparkle emoji at powers
+of ten, flair like "🌟🌟🌟 1 in 1,525,309 · iambic, rhymed, kigo", and
+pickRarest() for the planned once-an-hour cadence. Unit-tested against a
+synthetic table. Known exploit, unguarded for now: repetition spam ("Blood
+clot!" nine times) earns four badges; a distinct-word ratio would kill it.
+
 2026-07-26 - iambic and rhymed gates
 
 tools/meter-lib.mjs now holds the shared meter machinery (CMUdict phones with

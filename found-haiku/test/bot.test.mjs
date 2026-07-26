@@ -2,6 +2,7 @@ import { expect, test, describe } from 'bun:test';
 import { parseCommand, facetMentions } from '../bot/parse.js';
 import { poemReply, notFoundReply, errorReply, graphemes } from '../bot/compose.js';
 import { corpusFromPosts, findBest } from '../bot/engine.js';
+import { shininess, flair, pickRarest } from '../bot/shiny.js';
 
 const BOT = ['found-haiku.bsky.social', 'found-haiku'];
 
@@ -110,6 +111,46 @@ describe('reply composition', () => {
     const bytes = new TextEncoder().encode(r.text);
     expect(new TextDecoder().decode(bytes.slice(f.index.byteStart, f.index.byteEnd)))
       .toBe('https://bsky.app/profile/x/post/pin');
+  });
+});
+
+describe('shininess', () => {
+  // a toy table: 1M posts, mostly plain finds, a few badged
+  const table = {
+    scanned: 1_000_000,
+    masks: { plain: 50_000, iambic: 900, 'iambic+kigo': 90, 'iambic+rhyme13+kigo': 2 },
+  };
+
+  test('rarity counts supersets, so more badges is always rarer', () => {
+    const plain = shininess(table, {});
+    const iambic = shininess(table, { iambic: true });
+    const both = shininess(table, { iambic: true, kigo: true });
+    const all = shininess(table, { iambic: true, kigo: true, rhyme13: true });
+    expect(plain.rarity).toBeLessThan(iambic.rarity);
+    expect(iambic.rarity).toBeLessThan(both.rarity);
+    expect(both.rarity).toBeLessThan(all.rarity);
+    expect(iambic.rarity).toBe(Math.round(1_000_000 / 992)); // 900+90+2 sightings
+  });
+
+  test('an unprecedented combination beats everything in the table', () => {
+    const unseen = shininess(table, { monovocalic: true });
+    expect(unseen.rarity).toBe(2_000_000);
+    expect(unseen.tier).toBe('🌟🌟🌟');
+  });
+
+  test('flair reads like a shiny announcement', () => {
+    const shine = shininess(table, { iambic: true, rhyme13: true, kigo: true });
+    expect(flair(shine)).toBe('🌟🌟 1 in 500,000 · iambic, rhymed, kigo');
+    expect(flair(shininess(table, {}))).toBe('');
+  });
+
+  test('pickRarest takes the rarest of the batch', () => {
+    const best = pickRarest(table, [
+      { id: 'a', badges: { iambic: true } },
+      { id: 'b', badges: { iambic: true, kigo: true } },
+      { id: 'c', badges: {} },
+    ]);
+    expect(best.id).toBe('b');
   });
 });
 
