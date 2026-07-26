@@ -61,6 +61,12 @@ check('every result is a 3-line 5-7-5', lineBeats.every((b) => b.join('-') === '
 const firstPoem = await page.$eval('.results li .poem', (el) => el.innerText);
 console.log('\n' + firstPoem.split('\n').map((l) => `      ${l}`).join('\n') + '\n');
 
+// --- dismissing a card ------------------------------------------------------
+const beforeClose = (await page.$$('.results li')).length;
+await page.click('.results li .close');
+const afterClose = (await page.$$('.results li')).length;
+check('the close button dismisses one card', afterClose === beforeClose - 1, `${beforeClose} -> ${afterClose}`);
+
 // --- tanka ------------------------------------------------------------------
 await page.click('#fm-tanka + label');
 await page.click('#sc-cross + label');
@@ -153,6 +159,10 @@ const PERMALINK = new RegExp('^https://bsky\\.app/profile/[^/]+/post/[^/]+$');
 check('every bluesky card links to its live post',
   liveLinks.length === cardCount && liveLinks.every((h) => PERMALINK.test(h)),
   `${liveLinks.length}/${cardCount} links, e.g. ${liveLinks[0]}`);
+const labeled = await page.$$eval('.results li .meta a.live',
+  (as) => as.every((a) => a.textContent.trim() === a.href.split('/').pop()));
+check('the live link is labeled with the post id', labeled,
+  await page.$eval('.results li .meta a.live', (a) => a.textContent.trim()));
 
 // A settings change must recompute from the cached posts, not refetch.
 let feedFetches = 0;

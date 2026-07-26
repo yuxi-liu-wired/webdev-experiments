@@ -1,3 +1,13 @@
+2026-07-26 - screenshot-friendly cards
+
+Two small card changes for arranging a screenshot to post: an unobtrusive
+close button in each card's top-right corner removes that card from the list
+(the found-counter deliberately keeps the true count), and the live-post link
+is now labeled with the post's rkey instead of "the live post", so a cropped
+screenshot still says exactly which post each poem came from. The close
+button sits above the first line's syllable count; checked visually for
+collision.
+
 2026-07-26 - reactive settings
 
 Changing a setting used to leave the old results on screen until find was
