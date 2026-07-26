@@ -1,0 +1,8 @@
+# a symlink here in development, so match it without a trailing slash
+node_modules
+
+# 3.6 MB of upstream CMUdict. Only tools/build-dict.mjs reads it, and its
+# output (public/data/syllables.txt) is committed, so the site builds without
+# it. Re-fetch with:
+#   wget -O tools/cmudict.dict https://raw.githubusercontent.com/cmusphinx/cmudict/master/cmudict.dict
+tools/cmudict.dict

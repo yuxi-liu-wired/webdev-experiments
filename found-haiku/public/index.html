@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>found haiku — poems already hiding in ordinary prose</title>
+<meta name="description" content="Paste any English text and it finds the accidental haiku: runs of words that fall into 5-7-5 exactly, counted against the CMU pronouncing dictionary. Tanka, tanaga and custom forms too.">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="found haiku — poems already hiding in ordinary prose">
+<meta property="og:description" content="Accidental 5-7-5 in any English text, counted against 126,030 dictionary words.">
+<style>
+:root {
+  --bg: #faf9f6; --text: #1a1a1a; --muted: #777; --rule: #ccc;
+  --sky: #1a82c4; --sky-faint: rgba(110, 193, 228, 0.12);
+  --gold: #b8860b; --good: #2e7d4f; --good-faint: rgba(46,125,79,0.08);
+  --mono: 'SF Mono', 'Cascadia Code', 'Fira Code', Menlo, monospace;
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f0f0f; --text: #d4d4d4; --muted: #888; --rule: #333;
+    --sky: #6ec1e4; --sky-faint: rgba(110, 193, 228, 0.10);
+    --gold: #d8b85a; --good: #6fd0a0; --good-faint: rgba(111,208,160,0.09);
+  }
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--text); font-family: var(--serif);
+  line-height: 1.65; -webkit-font-smoothing: antialiased;
+  max-width: 760px; margin: 0 auto; padding: 2.4rem 1.4rem 6rem;
+}
+.crumb {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); text-decoration: none;
+  display: inline-block; margin-bottom: 1.4rem;
+}
+.crumb:hover { color: var(--sky); }
+h1 { font-size: 2.6rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.05; }
+h1 .fly { color: var(--sky); }
+.tagline {
+  font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--muted); margin-top: 0.5rem;
+}
+.sky-rule { height: 3px; width: 84px; background: var(--sky); margin: 1.2rem 0 0; border-radius: 2px; }
+.lede { font-size: 1.02rem; color: var(--muted); margin-top: 1.2rem; max-width: 62ch; }
+.lede b { color: var(--text); font-weight: 600; }
+.lede .term { font-style: italic; color: var(--gold); }
+
+form { margin: 1.8rem 0 1rem; }
+textarea, input[type=text] {
+  width: 100%; font-family: var(--mono); font-size: 0.95rem;
+  padding: 0.7rem 0.85rem; border: 1px solid var(--rule); border-radius: 6px;
+  background: var(--bg); color: var(--text); line-height: 1.6;
+}
+textarea { min-height: 170px; resize: vertical; }
+textarea:focus, input[type=text]:focus { outline: none; border-color: var(--sky); }
+textarea.drop { border-color: var(--sky); background: var(--sky-faint); }
+.row { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-top: 0.9rem; }
+button {
+  font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.04em;
+  padding: 0.7rem 1.2rem; border: 1px solid var(--sky); border-radius: 6px;
+  background: var(--sky); color: #fff; cursor: pointer; transition: opacity .15s;
+}
+button:hover { opacity: 0.88; }
+button.ghost { background: transparent; color: var(--sky); }
+button:disabled { opacity: 0.4; cursor: default; }
+.hint { font-family: var(--mono); font-size: 0.66rem; color: var(--muted); letter-spacing: 0.04em; }
+
+.modes { display: flex; gap: 0.4rem; margin: 0 0 0.9rem; flex-wrap: wrap; align-items: center; }
+.modes label {
+  font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); border: 1px solid var(--rule); border-radius: 20px;
+  padding: 0.3rem 0.8rem; cursor: pointer; user-select: none;
+}
+.modes input { display: none; }
+.modes input:checked + label { color: var(--sky); border-color: var(--sky); background: var(--sky-faint); }
+.modes .lead {
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted); width: 4.6rem; flex: none;
+}
+#custom {
+  font-family: var(--mono); font-size: 0.66rem; width: 8.5rem; padding: 0.3rem 0.6rem;
+  border-radius: 20px; display: none;
+}
+#custom.on { display: inline-block; }
+
+#status { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); min-height: 1.4em; margin-bottom: 0.4rem; }
+#status .err { color: #c0392b; }
+.bar { height: 4px; background: var(--rule); border-radius: 3px; overflow: hidden; margin: 0.6rem 0 1.4rem; opacity: 0; transition: opacity .2s; }
+.bar.on { opacity: 1; }
+.bar > i { display: block; height: 100%; width: 0; background: var(--sky); transition: width .2s ease; }
+
+.summary { display: flex; gap: 1.6rem; flex-wrap: wrap; margin: 0.4rem 0 1.6rem; }
+.summary .stat { font-family: var(--mono); }
+.summary .stat b { display: block; font-size: 1.5rem; color: var(--sky); font-weight: 600; }
+.summary .stat.found b { color: var(--good); }
+.summary .stat span { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+.results { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.results li {
+  border: 1px solid var(--rule); border-left: 3px solid var(--good);
+  border-radius: 7px; padding: 0.9rem 1rem 0.8rem; background: var(--good-faint);
+}
+.poem { font-size: 1.2rem; line-height: 1.5; white-space: pre-wrap; }
+.poem .line { display: flex; gap: 0.8rem; align-items: baseline; }
+.poem .line > span:first-child { flex: 1; }
+.poem .beat {
+  font-family: var(--mono); font-size: 0.6rem; color: var(--muted);
+  letter-spacing: 0.1em; flex: none; opacity: 0.55;
+}
+.poem .guessed { border-bottom: 1px dotted var(--gold); cursor: help; }
+.meta {
+  font-family: var(--mono); font-size: 0.66rem; color: var(--muted);
+  margin-top: 0.6rem; display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: center;
+}
+.meta .warn { color: var(--gold); }
+.meta button {
+  font-size: 0.6rem; padding: 0.15rem 0.5rem; border-radius: 4px;
+  background: transparent; color: var(--sky); border-color: var(--rule);
+}
+.context { font-size: 0.88rem; color: var(--muted); margin-top: 0.5rem; display: none; }
+.context.on { display: block; }
+.context mark { background: transparent; color: var(--text); font-weight: 600; }
+.empty { color: var(--muted); font-style: italic; margin-top: 1rem; }
+footer { margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--rule); font-family: var(--mono); font-size: 0.72rem; color: var(--muted); line-height: 1.8; }
+footer a { color: var(--sky); text-decoration: none; }
+footer b { color: var(--text); }
+</style>
+</head>
+<body>
+<a class="crumb" href="https://b.mino.mobi/unique/">← after <b>unique</b> · b.mino.mobi</a>
+<h1><span class="fly">found</span> haiku</h1>
+<div class="tagline">poems already hiding in ordinary prose</div>
+<div class="sky-rule"></div>
+<p class="lede">
+  Give it any English text. It normalizes, splits on punctuation and line breaks, counts the
+  syllables of every word against the <b>CMU pronouncing dictionary</b>, and keeps the runs that
+  fall into <b>5-7-5</b> exactly — the <span class="term">found haiku</span>, written by someone who
+  had no idea they were writing one. Tanka, tanaga and any pattern you like are in the pills below.
+</p>
+
+<form id="f">
+  <div class="modes" id="sources">
+    <span class="lead">source</span>
+    <input type="radio" name="src" id="src-text" value="text" checked><label for="src-text">paste text</label>
+    <input type="radio" name="src" id="src-bsky" value="bsky"><label for="src-bsky">a bluesky account</label>
+  </div>
+
+  <textarea id="text" spellcheck="false" placeholder="Paste prose here — an essay, a chat log, a terms-of-service, a novel. Or drop a .txt file on this box."></textarea>
+  <input type="text" id="handle" placeholder="handle.bsky.social" autocomplete="off" spellcheck="false" autocapitalize="none" style="display:none">
+
+  <div class="row">
+    <button type="submit" id="go">find</button>
+    <button type="button" id="stop" class="ghost" style="display:none">stop</button>
+    <button type="button" id="sample" class="ghost">try a sample</button>
+    <span class="hint" id="size"></span>
+  </div>
+</form>
+
+<div class="modes">
+  <span class="lead">form</span>
+  <input type="radio" name="form" id="fm-haiku" value="haiku" checked><label for="fm-haiku">haiku · 5-7-5</label>
+  <input type="radio" name="form" id="fm-tanka" value="tanka"><label for="fm-tanka">tanka · 5-7-5-7-7</label>
+  <input type="radio" name="form" id="fm-tanaga" value="tanaga"><label for="fm-tanaga">tanaga · 7-7-7-7</label>
+  <input type="radio" name="form" id="fm-custom" value="custom"><label for="fm-custom">custom</label>
+  <input type="text" id="custom" value="2-4-6-8-2" spellcheck="false" title="Syllables per line, e.g. 5-7-5. Presets: cinquain 2-4-6-8-2, lanterne 1-2-3-4-1, fib 1-1-2-3-5-8, monoku 17.">
+</div>
+
+<div class="modes">
+  <span class="lead">scope</span>
+  <input type="radio" name="scope" id="sc-seg" value="segment" checked><label for="sc-seg" title="The poem must be a whole run of words between two punctuation marks or line breaks — nothing before it, nothing after.">whole clauses only</label>
+  <input type="radio" name="scope" id="sc-span" value="span"><label for="sc-span" title="Any run of consecutive words inside one clause, so a poem may start and end mid-clause.">any run within a clause</label>
+  <input type="radio" name="scope" id="sc-cross" value="cross"><label for="sc-cross" title="Ignore punctuation entirely: a poem may straddle commas, full stops and line breaks.">straddle punctuation</label>
+</div>
+
+<div class="modes">
+  <span class="lead">counting</span>
+  <input type="checkbox" id="alt" checked><label for="alt" title="fire, hour and flower are one syllable to some speakers and two to others. When on, either reading may be used to make a line fit.">allow alternate pronunciations</label>
+  <input type="checkbox" id="strictwords"><label for="strictwords" title="Drop any poem containing a word that is not in the dictionary, where the syllable count is only a guess.">dictionary words only</label>
+</div>
+
+<div id="status"></div>
+<div class="bar" id="bar"><i></i></div>
+<div class="summary" id="summary" style="display:none">
+  <div class="stat"><b id="s-words">0</b><span>words read</span></div>
+  <div class="stat"><b id="s-segments">0</b><span>clauses</span></div>
+  <div class="stat found"><b id="s-found">0</b><span>poems found</span></div>
+</div>
+<ul class="results" id="results"></ul>
+<div class="empty" id="empty" style="display:none"></div>
+
+<footer>
+  <b>How it works.</b> Text is normalized and cut at punctuation and line breaks. Each word is
+  looked up in CMUdict — 126,030 words, syllables counted from the pronunciation itself, not from
+  the spelling. Words it has never seen fall back to a rules engine that agrees with the dictionary
+  91.5% of the time; those words are <span style="border-bottom:1px dotted var(--gold)">underlined</span>
+  in the results so you know which numbers are a guess. Numbers are read aloud before counting
+  (<span style="font-family:var(--mono)">1984</span> is five syllables). Then it looks for runs of
+  whole words whose syllables partition exactly into the chosen shape.
+  Nothing leaves your browser unless you ask it for a Bluesky account, which is fetched read-only.
+  <br>Layout and typography after <a href="https://b.mino.mobi/unique/">unique</a>, by b.mino.mobi.
+  Sample text is <i>Alice's Adventures in Wonderland</i>, public domain.
+</footer>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>

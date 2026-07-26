@@ -1,0 +1,16 @@
+{
+  "name": "found-haiku",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Finds the accidental haiku, tanka and tanaga hiding in ordinary English prose.",
+  "type": "module",
+  "scripts": {
+    "serve": "bun serve.mjs",
+    "serve:static": "NO_API=1 bun serve.mjs 8094",
+    "test": "bun test",
+    "e2e": "bun test/e2e.mjs",
+    "e2e:static": "bun test/e2e.mjs http://localhost:8094/ --no-bsky",
+    "build-dict": "bun tools/build-dict.mjs",
+    "errors": "bun tools/errors.mjs"
+  }
+}
