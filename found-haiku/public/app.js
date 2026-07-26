@@ -11,6 +11,8 @@ const barI = bar.querySelector('i');
 let counter = null;
 let cancelled = false;
 let running = false;
+let queuedRerun = false;
+let bskyCache = null; // { key: lowercased handle, data: { text, spans } }
 
 function setStatus(msg, isErr) {
   statusEl.innerHTML = isErr ? `<span class="err">${esc(msg)}</span>` : msg;
@@ -190,12 +192,16 @@ async function bskyText(handle) {
   return joinPosts(posts);
 }
 
-async function sourceText() {
+async function sourceText(useCache) {
   const src = document.querySelector('input[name=src]:checked').value;
   if (src === 'bsky') {
     const handle = $('handle').value.trim().replace(/^@/, '');
     if (!handle) throw new Error('give a handle first');
-    return bskyText(handle);
+    const key = handle.toLowerCase();
+    if (useCache && bskyCache?.key === key) return bskyCache.data;
+    const data = await bskyText(handle);
+    bskyCache = { key, data };
+    return data;
   }
   const text = $('text').value;
   if (!text.trim()) throw new Error('paste some text first');
@@ -204,9 +210,12 @@ async function sourceText() {
 
 // --- run -------------------------------------------------------------------
 
-async function run(ev) {
+async function run(ev, { useCache = false, auto = false } = {}) {
   if (ev) ev.preventDefault();
-  if (running) return;
+  if (running) {
+    if (auto) queuedRerun = true; // settle with the newest settings when free
+    return;
+  }
   running = true;
   cancelled = false;
   results.innerHTML = '';
@@ -219,7 +228,7 @@ async function run(ev) {
 
   try {
     const options = currentOptions();
-    const { text, spans } = await sourceText();
+    const { text, spans } = await sourceText(useCache);
     const c = await dictionary();
     if (cancelled) throw new DOMException('stopped', 'AbortError');
 
@@ -266,10 +275,37 @@ async function run(ev) {
     running = false;
     $('go').disabled = false;
     $('stop').style.display = 'none';
+    if (queuedRerun) {
+      queuedRerun = false;
+      rerunIfLoaded();
+    }
   }
 }
 
 const frame = () => new Promise((r) => requestAnimationFrame(() => r()));
+
+// --- reactive settings ------------------------------------------------------
+// Changing any control re-runs the search at once on whatever is already
+// loaded, so the output never sits stale behind the settings. Bluesky posts
+// are fetched once per handle and reused here; only the find button refetches.
+
+function debounce(fn, ms) {
+  let t;
+  return () => {
+    clearTimeout(t);
+    t = setTimeout(fn, ms);
+  };
+}
+
+function rerunIfLoaded() {
+  const form = document.querySelector('input[name=form]:checked').value;
+  if (form === 'custom' && !parsePattern($('custom').value)) return; // mid-edit
+  const src = document.querySelector('input[name=src]:checked').value;
+  const ready = src === 'bsky'
+    ? bskyCache && $('handle').value.trim().replace(/^@/, '').toLowerCase() === bskyCache.key
+    : !!$('text').value.trim();
+  if (ready) run(null, { useCache: true, auto: true });
+}
 
 // --- wiring ----------------------------------------------------------------
 
@@ -290,12 +326,18 @@ for (const el of document.querySelectorAll('input[name=form]')) {
     $('custom').classList.toggle('on', el.value === 'custom' && el.checked);
   });
 }
+for (const el of document.querySelectorAll('input[name=form], input[name=scope], #alt, #strictwords')) {
+  el.addEventListener('change', rerunIfLoaded);
+}
+$('custom').addEventListener('input', debounce(rerunIfLoaded, 400));
 
 const textArea = $('text');
-textArea.addEventListener('input', () => {
+function updateCount() {
   const len = textArea.value.length;
   $('size').textContent = len ? `${n(len)} characters` : '';
-});
+}
+textArea.addEventListener('input', updateCount);
+textArea.addEventListener('input', debounce(rerunIfLoaded, 500));
 textArea.addEventListener('dragover', (e) => { e.preventDefault(); textArea.classList.add('drop'); });
 textArea.addEventListener('dragleave', () => textArea.classList.remove('drop'));
 textArea.addEventListener('drop', async (e) => {
@@ -312,7 +354,7 @@ $('sample').addEventListener('click', async () => {
   $('src-text').dispatchEvent(new Event('change'));
   const res = await fetch('./data/sample.txt');
   textArea.value = await res.text();
-  textArea.dispatchEvent(new Event('input'));
+  updateCount(); // not the input event: run() below already searches
   run();
 });
 

@@ -94,6 +94,12 @@ Paste text into the box, or drop a `.txt` file onto it. The Bluesky option mines
 account's posts instead, reading the public author feed straight from the browser.
 See Deploying above for why a local proxy exists alongside that direct call.
 
+Every control is live: changing the form, scope, or counting toggles re-runs the
+search at once on whatever text is loaded, and edits to the text or the custom
+pattern re-run it after a short pause. There is no apply step. Bluesky posts are
+fetched once per handle and reused for settings changes; only the find button
+fetches again.
+
 Deep links: `?form=tanka`, `?pattern=2-4-6-8-2`, `?scope=cross`, `?handle=x.bsky.social`.
 
 Layout

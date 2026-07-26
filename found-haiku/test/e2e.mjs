@@ -102,6 +102,17 @@ const pasted = await page.$eval('.results li .poem', (el) => el.innerText.replac
 check('a pasted haiku comes back split 5-7-5',
   /the old silent pond[\s\S]*where a green frog jumps into[\s\S]*the still cold water/.test(pasted), pasted.replace(/\n/g, ' / '));
 
+// --- settings changes re-run by themselves ----------------------------------
+await page.click('#fm-tanka + label'); // 17 syllables can never be a tanka
+await page.waitForFunction(() => document.getElementById('empty').style.display === 'block', { timeout: 10000 });
+check('changing the form re-runs without pressing find', true, (await page.textContent('#status')).trim());
+await page.click('#fm-haiku + label');
+await page.waitForFunction(() => document.querySelectorAll('.results li').length === 1, { timeout: 10000 });
+check('changing it back re-runs again', true);
+await page.fill('#text', 'nothing poetic in this box at all');
+await page.waitForFunction(() => document.querySelectorAll('.results li').length === 0, { timeout: 10000 });
+check('editing the text re-runs after a pause', true);
+
 await page.fill('#text', 'Hello there. the old blorping pond where a green frog jumps into the still cold water. Bye.');
 await page.click('#go');
 await page.waitForFunction(() => !document.getElementById('go').disabled, { timeout: 20000 });
@@ -142,6 +153,18 @@ const PERMALINK = new RegExp('^https://bsky\\.app/profile/[^/]+/post/[^/]+$');
 check('every bluesky card links to its live post',
   liveLinks.length === cardCount && liveLinks.every((h) => PERMALINK.test(h)),
   `${liveLinks.length}/${cardCount} links, e.g. ${liveLinks[0]}`);
+
+// A settings change must recompute from the cached posts, not refetch.
+let feedFetches = 0;
+page.on('request', (r) => {
+  if (r.url().includes('api/feed') || r.url().includes('getAuthorFeed')) feedFetches++;
+});
+await page.click('#fm-tanka + label');
+await page.waitForFunction(() => !document.getElementById('go').disabled
+  && document.getElementById('status').textContent.includes('tanka'), { timeout: 20000 });
+const tankaFound = Number((await page.textContent('#s-found')).replace(/,/g, ''));
+check('a settings change reuses the fetched posts', feedFetches === 0 && tankaFound > 0,
+  `${feedFetches} refetches, ${tankaFound} tanka from cache`);
 check('the direct bluesky call was tried before the proxy',
   triedDirect, triedDirect ? 'saw a request to public.api.bsky.app' : 'no direct request was made');
 await page.screenshot({ path: `${SHOTS}/09-bluesky.png` });

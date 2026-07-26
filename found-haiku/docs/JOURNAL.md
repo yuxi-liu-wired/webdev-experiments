@@ -1,3 +1,19 @@
+2026-07-26 - reactive settings
+
+Changing a setting used to leave the old results on screen until find was
+pressed again, which read as stuckness. Every control now re-runs the search
+by itself: pills and checkboxes immediately, the text box and the custom
+pattern field on a 400-500 ms debounce. A run started while another is in
+flight queues one re-run for when it finishes, so the newest settings always
+win and runs never interleave. A half-typed custom pattern is skipped rather
+than reported as an error.
+
+The trap was Bluesky: a pill click must not refetch ten pages of posts. The
+fetched text and its post spans are cached per handle; settings changes
+recompute from the cache in milliseconds, and only the find button fetches
+fresh. Checked in the browser: a form change on mined posts produced 107 tanka
+with zero network requests.
+
 2026-07-26 - live-post links on Bluesky cards
 
 Each poem found in a Bluesky account now carries "the live post" with an
