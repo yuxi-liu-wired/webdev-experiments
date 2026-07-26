@@ -1,3 +1,17 @@
+2026-07-26 - iambic pentameter scanner
+
+tools/iambic.mjs reads the stress digits the syllable build discards: each
+CMUdict word becomes a 0/1/2 string per syllable, and a run of words scans as
+pentameter when some choice of pronunciation variants puts every primary
+stress of a polysyllabic word on a strong beat. Calibration against canon
+forced two corrections: unstressed syllables must be allowed on strong beats
+(promotion — "the QUAL-i-TY of MER-cy" was rejected before), and lines must
+not end on a function word ("...random sentence with" scans but is nothing).
+After both: all three canonical test lines found, both prose controls
+rejected. Lines may cross commas, never sentence ends, line breaks, or post
+boundaries; at least two polysyllabic words required so all-monosyllable mush
+cannot scan. First live run on three accounts found 87, 123, and 243 lines.
+
 2026-07-26 - the bot
 
 The engine became a Bluesky bot: mention it and it replies with a poem found
