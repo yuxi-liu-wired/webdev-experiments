@@ -1,7 +1,8 @@
 2026-07-26 - the bot
 
 The engine became a Bluesky bot: mention it and it replies with a poem found
-in someone's posts. Grammar per the spec, both slots optional and ordered:
+in someone's posts. Grammar per the spec, both slots optional, any order (slots are named by
+token shape: @-prefixed is the target, anything else the format):
 @found-haiku <format> <@someone>, format = haiku|tanka|tanaga|[3-9]{3,9} with
 digits read one line each, and the exact error wordings for malformed
 requests, disallowed formats, out-of-bounds digits, and missing users, each

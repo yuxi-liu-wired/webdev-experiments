@@ -52,35 +52,35 @@ export function parseCommand(text, botHandles, facets) {
   const tokens = String(text).trim().split(/\s+/).filter(Boolean)
     .filter((t) => !(t.startsWith('@') && ours.has(t.slice(1).toLowerCase())));
 
-  let pattern = NAMED.haiku;
-  let formatName = 'haiku';
+  // The slots may come in any order: a token names the slot by its shape —
+  // @-prefixed fills the target, anything else fills the format. Filling
+  // either slot twice is malformed.
+  let format = null;
   let target = null;
-  let i = 0;
 
-  if (i < tokens.length && !tokens[i].startsWith('@')) {
-    const t = tokens[i];
+  for (const t of tokens) {
+    if (t.startsWith('@')) {
+      if (target) return { error: 'malformed request' };
+      if (!HANDLE.test(t)) return { error: 'malformed request' };
+      const handle = t.slice(1).toLowerCase();
+      target = { handle, did: mentions.get(handle) || null };
+      continue;
+    }
+    if (format) return { error: 'malformed request' };
     const lower = t.toLowerCase();
     if (NAMED[lower]) {
-      pattern = NAMED[lower];
-      formatName = lower;
+      format = { pattern: NAMED[lower], name: lower };
     } else if (/^[0-9]+$/.test(t)) {
       if (!/^[3-9]{3,9}$/.test(t)) return { error: `"${t}" exceeds allowed bounds` };
-      pattern = t.split('').map(Number);
-      formatName = t;
+      format = { pattern: t.split('').map(Number), name: t };
     } else {
       return { error: `"${t}" is not an allowed format` };
     }
-    i++;
   }
 
-  if (i < tokens.length) {
-    const t = tokens[i];
-    if (!HANDLE.test(t)) return { error: 'malformed request' };
-    const handle = t.slice(1).toLowerCase();
-    target = { handle, did: mentions.get(handle) || null };
-    i++;
-  }
-
-  if (i < tokens.length) return { error: 'malformed request' };
-  return { pattern, formatName, target };
+  return {
+    pattern: format ? format.pattern : NAMED.haiku,
+    formatName: format ? format.name : 'haiku',
+    target,
+  };
 }

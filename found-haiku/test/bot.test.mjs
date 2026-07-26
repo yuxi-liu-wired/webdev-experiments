@@ -45,10 +45,19 @@ describe('command parsing', () => {
     expect(c2.target.handle).toBe('vgel.me');
   });
 
+  test('the slots come in any order', () => {
+    const c = parseCommand('@found-haiku @vgel.me tanka', BOT, null);
+    expect(c.pattern).toEqual([5, 7, 5, 7, 7]);
+    expect(c.target.handle).toBe('vgel.me');
+    const d = parseCommand('@vgel.me 577 @found-haiku', BOT, null);
+    expect(d.pattern).toEqual([5, 7, 7]);
+    expect(d.target.handle).toBe('vgel.me');
+  });
+
   test('malformed requests', () => {
     expect(parseCommand('@found-haiku @a @b', BOT, null).error).toBe('malformed request');
     expect(parseCommand('@found-haiku tanka @x extra', BOT, null).error).toBe('malformed request');
-    expect(parseCommand('@found-haiku @vgel.me tanka', BOT, null).error).toBe('malformed request');
+    expect(parseCommand('@found-haiku tanka 577', BOT, null).error).toBe('malformed request');
     expect(parseCommand('@found-haiku @bad!handle', BOT, null).error).toBe('malformed request');
   });
 

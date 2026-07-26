@@ -137,8 +137,8 @@ rule problems.
 The bot
 
 `bot/` is a Bluesky bot on the same engine: mention it and it answers with a
-poem found in someone's posts. The grammar, both slots optional and in this
-order:
+poem found in someone's posts. The grammar, both slots optional, in any order
+(a token starting with `@` is the target, anything else is the format):
 
 ```text
 @found-haiku <format> <@someone>
