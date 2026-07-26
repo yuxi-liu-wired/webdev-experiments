@@ -1,3 +1,17 @@
+2026-07-26 - iambic and rhymed gates
+
+tools/meter-lib.mjs now holds the shared meter machinery (CMUdict phones with
+stress, the calibrated scansion rule, rhyme tails), and strict-haiku.mjs
+gained --iambic (every line independently scans as iambs) and --rhyme (last
+words of the first and final lines share a rhyme tail from the last stressed
+vowel; identical words do not rhyme). On the 123,421-post capture the strict
+stack's 5,854 finds fall to 331 iambic and then to 2 iambic-and-rhymed — one
+genuine ("and Sophia hit / the showers. but Sophia / plans to get a bit",
+hit/bit), one degenerate: a URL spelled out letter by letter, since letter
+names scan freely and "p" rhymes with "d". Single-letter floods are now
+rejected. Rate at maximum strictness: about one per sixty thousand posts,
+which against the live firehose is still dozens a day.
+
 2026-07-26 - the strict stack, tested on the firehose at home
 
 tools/strict-haiku.mjs implements the firehose filter stack and ran against

@@ -24,10 +24,7 @@ import { readFileSync } from 'node:fs';
 import { gunzipSync } from 'node:zlib';
 import { decodeExceptions, SyllableCounter } from '../public/src/syllables.js';
 import { findPoems, parsePattern } from '../public/src/finder.js';
-
-const WEAK_ENDINGS = new Set(('a an the of in on at to and but or nor with for from by as than that if so ' +
-  'is are was were be been am do does did has have had will would can could shall should may might must ' +
-  'it its his her hers my your our their this these those i you he she we they them him us me').split(' '));
+import { loadCmudict, lineScansIambic, wordsRhyme, WEAK_ENDINGS } from './meter-lib.mjs';
 
 const KIGO = new Set(('moon snow rain frost spring summer autumn fall winter blossom blossoms cherry ' +
   'leaf leaves wind storm river sea ocean mountain dawn dusk twilight sunset sunrise morning evening ' +
@@ -37,12 +34,18 @@ const KIGO = new Set(('moon snow rain frost spring summer autumn fall winter blo
 const table = decodeExceptions(readFileSync(new URL('../public/data/syllables.txt', import.meta.url).pathname, 'utf8'));
 const counter = new SyllableCounter(table);
 
-const [, , path, patternArg] = process.argv;
+const argv = process.argv.slice(2);
+const IAMBIC = argv.includes('--iambic');
+const RHYME = argv.includes('--rhyme');
+const positional = argv.filter((a) => !a.startsWith('--'));
+const [path, patternArg] = positional;
 if (!path) {
-  console.error('usage: bun tools/strict-haiku.mjs capture.json.gz [pattern]');
+  console.error('usage: bun tools/strict-haiku.mjs capture.json.gz [pattern] [--iambic] [--rhyme]');
   process.exit(2);
 }
 const pattern = patternArg ? parsePattern(patternArg) : [5, 7, 5];
+const cmudict = (IAMBIC || RHYME) ? loadCmudict() : null;
+const wordKey = (w) => w.raw.toLowerCase().replace(/[^a-z'.-]/g, '');
 
 const raw = path.endsWith('.gz') ? gunzipSync(readFileSync(path)).toString() : readFileSync(path, 'utf8');
 const capture = JSON.parse(raw);
@@ -57,6 +60,8 @@ const strip = (t) => String(t)
 const funnel = {
   scanned: 0, found: 0, singleLine: 0, dictOnly: 0,
   unambiguous: 0, cleanEnded: 0, unintended: 0,
+  ...(IAMBIC ? { iambic: 0 } : {}),
+  ...(RHYME ? { rhymed: 0 } : {}),
 };
 const survivors = [];
 const seen = new Set();
@@ -94,6 +99,28 @@ for (const post of posts) {
     });
     if (breaks.length && breaks.every((gap) => /[,/]/.test(gap))) continue;
     funnel.unintended++;
+
+    // spelled-out letters ("c o m / j p") scan freely and letter names rhyme;
+    // a poem that is mostly single letters is a URL in a trenchcoat
+    if (words.filter((w) => wordKey(w).length === 1).length * 3 > words.length) continue;
+
+    if (IAMBIC) {
+      // every line must independently scan as iambs, per the calibrated rule
+      const scans = poem.lines.every((line) => {
+        const variants = line.words.map((w) => cmudict.get(wordKey(w)));
+        if (variants.some((v) => !v)) return false; // numbers etc: unscannable
+        return lineScansIambic(variants.map((vs) => vs.map((v) => v.stress)));
+      });
+      if (!scans) continue;
+      funnel.iambic++;
+    }
+
+    if (RHYME) {
+      const first = wordKey(poem.lines[0].words.at(-1));
+      const last = wordKey(poem.lines.at(-1).words.at(-1));
+      if (!wordsRhyme(first, last, cmudict)) continue;
+      funnel.rhymed++;
+    }
 
     const key = span.toLowerCase().replace(/\s+/g, ' ');
     if (seen.has(key)) continue;
