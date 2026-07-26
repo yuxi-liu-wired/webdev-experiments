@@ -119,6 +119,12 @@ button:disabled { opacity: 0.4; cursor: default; }
   font-size: 0.6rem; padding: 0.15rem 0.5rem; border-radius: 4px;
   background: transparent; color: var(--sky); border-color: var(--rule);
 }
+.meta a.live {
+  margin-left: auto; display: inline-flex; align-items: center; gap: 0.32rem;
+  color: var(--sky); text-decoration: none;
+}
+.meta a.live:hover { text-decoration: underline; }
+.meta a.live svg { width: 11px; height: 11px; }
 .context { font-size: 0.88rem; color: var(--muted); margin-top: 0.5rem; display: none; }
 .context.on { display: block; }
 .context mark { background: transparent; color: var(--text); font-weight: 600; }

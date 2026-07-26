@@ -1,3 +1,16 @@
+2026-07-26 - live-post links on Bluesky cards
+
+Each poem found in a Bluesky account now carries "the live post" with an
+external-link icon, opening the source post on bsky.app. The finder works on
+one joined text blob, so the feature is an offset map: public/src/posts.js
+records each post's [start, end) span at join time, a poem's start offset
+resolves to the span it fell in, and the span's at:// URI converts to a
+bsky.app permalink. Posts are joined with a blank line, which the finder
+already treats as a paragraph boundary, so a poem can never straddle two posts
+and the mapping is always unambiguous. Pasted text has no spans and renders no
+link. Checked in the browser suite: every card's href matches the permalink
+shape, 400 of 400.
+
 2026-07-25 - initial build
 
 Cloned the layout and typography of `https://b.mino.mobi/unique/` and rebuilt the

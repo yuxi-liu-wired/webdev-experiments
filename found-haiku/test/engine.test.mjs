@@ -4,6 +4,7 @@ import {
   guessSyllables, numericTokens, decodeExceptions, SyllableCounter, acronymSyllables,
 } from '../public/src/syllables.js';
 import { segment, findPoems, parsePattern, FORMS } from '../public/src/finder.js';
+import { atUriToUrl, joinPosts, spanAt } from '../public/src/posts.js';
 
 const table = decodeExceptions(readFileSync(new URL('../public/data/syllables.txt', import.meta.url).pathname, 'utf8'));
 const counter = new SyllableCounter(table);
@@ -206,6 +207,37 @@ describe('finding poems', () => {
     const text = new Array(50).fill(`${HAIKU}.`).join(' ');
     const { poems } = findPoems(text, counter, { scope: 'segment', limit: 7 });
     expect(poems.length).toBe(7);
+  });
+});
+
+describe('bluesky post mapping', () => {
+  test('at:// URIs become bsky.app permalinks', () => {
+    expect(atUriToUrl('at://did:plc:abc123/app.bsky.feed.post/3kxyzq'))
+      .toBe('https://bsky.app/profile/did:plc:abc123/post/3kxyzq');
+    expect(atUriToUrl('at://did:plc:abc/app.bsky.feed.like/3k')).toBe(null);
+    expect(atUriToUrl('nonsense')).toBe(null);
+    expect(atUriToUrl(undefined)).toBe(null);
+  });
+
+  test('joined posts remember which span each offset belongs to', () => {
+    const { text, spans } = joinPosts([
+      { text: 'one two', uri: 'at://d/app.bsky.feed.post/a' },
+      { text: 'three', uri: 'at://d/app.bsky.feed.post/b' },
+    ]);
+    expect(text).toBe('one two\n\nthree');
+    expect(spanAt(spans, 0).uri).toBe('at://d/app.bsky.feed.post/a');
+    expect(spanAt(spans, text.indexOf('three')).uri).toBe('at://d/app.bsky.feed.post/b');
+    expect(spanAt(spans, 8)).toBe(null); // inside the separator gap
+  });
+
+  test('a poem found in joined posts maps back to its own post', () => {
+    const { text, spans } = joinPosts([
+      { text: 'unrelated filler words here', uri: 'at://d/app.bsky.feed.post/first' },
+      { text: 'the old silent pond where a green frog jumps into the still cold water', uri: 'at://d/app.bsky.feed.post/second' },
+    ]);
+    const { poems } = findPoems(text, counter, { pattern: [5, 7, 5], scope: 'span' });
+    expect(poems.length).toBe(1);
+    expect(spanAt(spans, poems[0].start).uri).toBe('at://d/app.bsky.feed.post/second');
   });
 });
 

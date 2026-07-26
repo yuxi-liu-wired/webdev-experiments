@@ -1,5 +1,6 @@
 import { SyllableCounter } from './src/syllables.js';
 import { findPoems, FORMS, parsePattern } from './src/finder.js';
+import { atUriToUrl, joinPosts, spanAt } from './src/posts.js';
 
 const $ = (id) => document.getElementById(id);
 const results = $('results');
@@ -55,7 +56,7 @@ function currentOptions() {
 
 // --- rendering -------------------------------------------------------------
 
-function renderPoem(poem, text, options) {
+function renderPoem(poem, text, options, liveUrl) {
   const li = document.createElement('li');
 
   const body = document.createElement('div');
@@ -115,6 +116,16 @@ function renderPoem(poem, text, options) {
     ctx.classList.toggle('on');
   });
   meta.append(copy, ctxBtn);
+  if (liveUrl) {
+    const live = document.createElement('a');
+    live.className = 'live';
+    live.href = liveUrl;
+    live.target = '_blank';
+    live.rel = 'noopener';
+    live.title = 'open the post on Bluesky';
+    live.innerHTML = 'the live post <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
+    meta.append(live);
+  }
 
   li.append(body, meta, ctx);
   results.append(li);
@@ -167,14 +178,16 @@ async function bskyText(handle) {
     const data = await feedPage(handle, cursor);
     for (const item of data.feed || []) {
       const text = item?.post?.record?.text;
-      if (text && item.post?.author?.handle?.toLowerCase() === handle.toLowerCase()) posts.push(text);
+      if (text && item.post?.author?.handle?.toLowerCase() === handle.toLowerCase()) {
+        posts.push({ text, uri: item.post.uri });
+      }
     }
     setStatus(`fetching @${esc(handle)}’s posts… ${n(posts.length)} so far`);
     cursor = data.cursor || '';
     if (!cursor) break;
   }
   if (!posts.length) throw new Error(`no readable posts for @${handle}`);
-  return posts.join('\n\n');
+  return joinPosts(posts);
 }
 
 async function sourceText() {
@@ -186,7 +199,7 @@ async function sourceText() {
   }
   const text = $('text').value;
   if (!text.trim()) throw new Error('paste some text first');
-  return text;
+  return { text, spans: null };
 }
 
 // --- run -------------------------------------------------------------------
@@ -206,7 +219,7 @@ async function run(ev) {
 
   try {
     const options = currentOptions();
-    const text = await sourceText();
+    const { text, spans } = await sourceText();
     const c = await dictionary();
     if (cancelled) throw new DOMException('stopped', 'AbortError');
 
@@ -227,7 +240,10 @@ async function run(ev) {
     $('s-found').textContent = n(shown.length);
     $('summary').style.display = 'flex';
 
-    for (const poem of shown) renderPoem(poem, text, options);
+    for (const poem of shown) {
+      const post = spans && spanAt(spans, poem.start);
+      renderPoem(poem, text, options, post && atUriToUrl(post.uri));
+    }
 
     // haiku, tanka and tanaga take no English plural.
     const label = options.name === options.pattern.join('-')

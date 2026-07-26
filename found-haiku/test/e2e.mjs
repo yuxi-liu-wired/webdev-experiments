@@ -136,6 +136,12 @@ await page.waitForFunction(() => !document.getElementById('go').disabled, { time
 const bskyStatus = (await page.textContent('#status')).trim();
 const bskyWords = Number((await page.textContent('#s-words')).replace(/,/g, ''));
 check('a bluesky account can be mined for poems', bskyWords > 100, `${bskyWords} words read — ${bskyStatus}`);
+const cardCount = (await page.$$('.results li')).length;
+const liveLinks = await page.$$eval('.results li .meta a.live', (as) => as.map((a) => a.href));
+const PERMALINK = new RegExp('^https://bsky\\.app/profile/[^/]+/post/[^/]+$');
+check('every bluesky card links to its live post',
+  liveLinks.length === cardCount && liveLinks.every((h) => PERMALINK.test(h)),
+  `${liveLinks.length}/${cardCount} links, e.g. ${liveLinks[0]}`);
 check('the direct bluesky call was tried before the proxy',
   triedDirect, triedDirect ? 'saw a request to public.api.bsky.app' : 'no direct request was made');
 await page.screenshot({ path: `${SHOTS}/09-bluesky.png` });
