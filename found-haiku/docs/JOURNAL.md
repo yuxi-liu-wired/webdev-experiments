@@ -1,3 +1,23 @@
+2026-07-27 - the unfiltered table
+
+6,753,255 unique posts, about 52 continuous hours of the whole network,
+captured in-box through the proxy and surveyed in 704 seconds. Conversational
+prose redraws the rarity map that headlines had distorted: iambic rises to 1
+in 161 (speech likes iambs more than headlines do), monovocalic collapses
+from 1 in 1.56M to 1 in 87k (casual English runs on few vowels), isosyllabic
+triples in frequency (speech is monosyllabic), while kigo thins to 1 in 544
+(the weather news is gone) and sanmyaku holds nearly constant at 1 in 225k —
+apparently a corpus-independent shape. Strict finds hold at one post in
+fourteen in both registers, a suspiciously stable constant of English.
+
+The crowns are the network being itself: a bread post ("dough this morning
+split / into a focaccia / pizza and a small"), vernacular despair earning
+four badges on pure monosyllables ("I mean....its been shit / for a long
+time so I guess / this means it won't get"), and "organization / built on
+intimidation / manipulation" — iambic, triple-rhymed, e-less. One dark
+homonym caught: the kigo on the ICE elegy is "ice", winter, matched against
+the agency. The blocklist cannot fix that one; noted and left.
+
 2026-07-26 - apostrophes, decided
 
 The operator conjectured apostrophes were decidable by dictionary, and the

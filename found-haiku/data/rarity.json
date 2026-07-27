@@ -1,1771 +1,2563 @@
 {
- "source": "/workspace/firehose-data/relay-update-2026-06-03.jsonl + /workspace/firehose-data/merged.jsonl + /workspace/firehose-data/jetstream.jsonl + /workspace/firehose-data/jetstream-2.jsonl + /workspace/firehose-data/relay.jsonl",
+ "source": "/workspace/firehose-data/jetstream-all.jsonl",
  "capturedBias": "link-posts only (url-feed capture)",
- "scanned": 3117811,
- "strictFinds": 207349,
+ "scanned": 6753255,
+ "strictFinds": 473633,
  "badges": {
-  "iambic": 12273,
-  "rhyme13": 456,
-  "rhymeAll": 4,
-  "kigo": 7655,
-  "lipogramE": 215,
-  "alphabetical": 31,
-  "monovocalic": 2,
-  "stressPalindrome": 6785,
-  "isosyllabic": 104,
-  "sanmyaku": 13,
-  "stopless": 18793
+  "iambic": 41898,
+  "rhyme13": 1012,
+  "rhymeAll": 11,
+  "kigo": 12403,
+  "lipogramE": 681,
+  "alphabetical": 132,
+  "monovocalic": 78,
+  "stressPalindrome": 22496,
+  "isosyllabic": 763,
+  "sanmyaku": 30,
+  "stopless": 57294
  },
  "masks": {
-  "iambic+stressPalindrome": 1533,
-  "kigo": 6252,
-  "plain": 164752,
-  "iambic": 9898,
-  "stressPalindrome": 4729,
-  "stopless": 17677,
-  "kigo+stopless": 675,
-  "iambic+stressPalindrome+isosyllabic": 85,
-  "iambic+kigo": 417,
-  "alphabetical+stopless": 27,
-  "rhyme13": 360,
-  "stressPalindrome+stopless": 76,
-  "kigo+stressPalindrome": 225,
-  "iambic+kigo+stopless": 8,
-  "iambic+stopless": 185,
-  "rhyme13+stressPalindrome": 15,
-  "iambic+kigo+stressPalindrome": 39,
-  "lipogramE+stopless": 25,
-  "lipogramE": 150,
-  "rhyme13+stopless": 24,
-  "iambic+kigo+stressPalindrome+stopless": 11,
-  "iambic+lipogramE": 12,
-  "iambic+rhyme13+stressPalindrome": 14,
-  "iambic+rhyme13": 23,
-  "rhyme13+rhymeAll+stopless": 1,
-  "iambic+isosyllabic": 5,
-  "kigo+lipogramE": 6,
-  "iambic+rhyme13+kigo": 1,
+  "plain": 347482,
+  "iambic": 34154,
+  "kigo": 9933,
+  "stopless": 55860,
+  "stressPalindrome": 15490,
+  "lipogramE": 388,
+  "iambic+stressPalindrome": 5335,
+  "kigo+lipogramE+stressPalindrome": 1,
+  "iambic+stopless": 190,
+  "iambic+kigo": 1086,
+  "iambic+stressPalindrome+isosyllabic": 491,
+  "kigo+stressPalindrome": 536,
+  "rhyme13": 754,
+  "iambic+kigo+stressPalindrome": 198,
+  "kigo+stopless": 559,
+  "kigo+alphabetical+stopless": 2,
+  "stressPalindrome+stopless": 74,
+  "kigo+lipogramE": 12,
+  "lipogramE+stopless": 24,
+  "alphabetical+stopless": 28,
+  "iambic+rhyme13": 97,
+  "isosyllabic": 53,
+  "iambic+rhyme13+stressPalindrome": 17,
+  "iambic+lipogramE": 41,
+  "iambic+isosyllabic": 24,
+  "iambic+rhyme13+rhymeAll+lipogramE": 1,
+  "rhyme13+stressPalindrome": 58,
+  "rhyme13+rhymeAll": 7,
+  "rhyme13+kigo": 38,
+  "lipogramE+stressPalindrome": 21,
+  "rhyme13+stopless": 26,
+  "sanmyaku+stopless": 14,
+  "iambic+kigo+stressPalindrome+isosyllabic": 16,
+  "iambic+lipogramE+stopless": 5,
+  "iambic+rhyme13+stressPalindrome+isosyllabic": 2,
+  "rhyme13+kigo+stressPalindrome": 1,
+  "iambic+kigo+stopless": 5,
+  "iambic+lipogramE+stressPalindrome+isosyllabic": 2,
+  "kigo+sanmyaku+stopless": 2,
+  "iambic+rhyme13+lipogramE": 1,
+  "kigo+isosyllabic": 2,
+  "iambic+stressPalindrome+stopless": 5,
+  "rhyme13+isosyllabic": 1,
+  "lipogramE+stressPalindrome+stopless": 2,
   "rhyme13+lipogramE": 1,
-  "rhyme13+kigo": 9,
-  "iambic+lipogramE+stopless": 6,
-  "rhyme13+rhymeAll": 3,
-  "isosyllabic": 4,
-  "alphabetical": 2,
-  "iambic+kigo+stressPalindrome+isosyllabic": 6,
-  "kigo+stressPalindrome+stopless": 3,
-  "sanmyaku+stopless": 9,
-  "iambic+stressPalindrome+stopless": 20,
-  "lipogramE+stressPalindrome": 4,
-  "iambic+lipogramE+stressPalindrome+isosyllabic": 1,
-  "rhyme13+lipogramE+stopless": 1,
-  "iambic+lipogramE+stressPalindrome": 2,
-  "rhyme13+stressPalindrome+stopless": 2,
-  "rhyme13+kigo+stressPalindrome": 2,
-  "lipogramE+sanmyaku+stopless": 1,
-  "iambic+alphabetical": 1
+  "rhyme13+rhymeAll+stressPalindrome": 2,
+  "lipogramE+isosyllabic": 1,
+  "iambic+kigo+lipogramE": 2,
+  "iambic+lipogramE+stressPalindrome": 3,
+  "iambic+rhyme13+kigo": 5,
+  "iambic+kigo+isosyllabic": 1,
+  "kigo+stressPalindrome+stopless": 1,
+  "alphabetical": 2
  },
  "specimens": {
-  "iambic+stressPalindrome": [
+  "iambic": [
    {
     "lines": [
-     "of the school funding",
-     "for Michigan away (calls",
-     "it a tax cut, it's"
+     "REALITY won’t",
+     "be nice to Ms Weiss. No-one",
+     "has yet defeated"
     ],
-    "url": "https://bsky.app/profile/did:plc:5in7jq3m7ive3dpwkq752dqp/post/3mn6mve7kq22j"
+    "url": "https://bsky.app/profile/did:plc:5vhsekkg6cktnx4qras7illv/post/3mri4ha5ow22q"
    },
    {
     "lines": [
-     "New Vegas! Silver's",
-     "off to deal with the Great Khan's",
-     "with a renewed sense"
+     "between those and ones",
+     "that basically are jump scares",
+     "to other drivers"
     ],
-    "url": "https://bsky.app/profile/did:plc:lfljommgurn4stsy64ikhcht/post/3mn6na5wnbs2n"
+    "url": "https://bsky.app/profile/did:plc:tqz3dqcbywqjz33lvpdydeqt/post/3mri4ibrgqk2w"
    },
    {
     "lines": [
-     "hopes & aspirations",
-     "delivering a future",
-     "that only looks like"
+     "done! I tried it just",
+     "now for the first time, but failed",
+     "spectacularly"
     ],
-    "url": "https://bsky.app/profile/did:plc:r462juxcfdklp6xmikc7f5gs/post/3mn6nddbkps2j"
+    "url": "https://bsky.app/profile/did:plc:xpo7kofdtvedu5dog5ufkoua/post/3mri4icxoes2y"
    },
    {
     "lines": [
-     "the death museum",
-     "I wrote about in this piece",
-     "and how it's also"
+     "was forced to sit through",
+     "the White House Correspondents’",
+     "Association"
     ],
-    "url": "https://bsky.app/profile/did:plc:xfby3tkxscrmqz4pd6trvsw7/post/3mn6nhmirbk24"
+    "url": "https://bsky.app/profile/did:plc:443arya3g7jvqz5jyr75555x/post/3mri4ikfgrk2z"
    },
    {
     "lines": [
-     "that I believe Trump",
-     "or any doctor who sees",
-     "him as a patient"
+     "all seriousness",
+     "what is new here? Cost of health",
+     "care is NOT a new"
     ],
-    "url": "https://bsky.app/profile/did:plc:imfn5tli5nkm2bpul5pisg33/post/3mn6nw7rbqk2l"
+    "url": "https://bsky.app/profile/did:plc:tv2cmspym4s6a3mk5bmk5zow/post/3mri4imtfvc2y"
    }
   ],
   "kigo": [
    {
     "lines": [
-     "no coincidence",
-     "that the Ballroom will complete",
-     "just before Trump leaves"
+     "Fifteen People Just",
+     "Walked Out Of ICE Detention",
+     "and More Great News That’s"
     ],
-    "url": "https://bsky.app/profile/did:plc:ngw3k52phff5rhe4rwjntltt/post/3mn6mvgjjw223"
+    "url": "https://bsky.app/profile/did:plc:fisrf7w3dptugcavj742ap7z/post/3mri4i5kp7s2v"
    },
    {
     "lines": [
-     "session for the new",
-     "album last night w",
-     "Rob, Ben & a silver"
+     "I'm illiterate",
+     "on blue sky sorry other",
+     "websites just posting"
     ],
-    "url": "https://bsky.app/profile/did:plc:6vvmojl4q7llk2zl2dtanwkg/post/3mn6mxhcyis2d"
+    "url": "https://bsky.app/profile/did:plc:6hyxl676iuiu5lksjsmbbufw/post/3mri4hxmfes2y"
    },
    {
     "lines": [
-     "the Ocean” (Irving",
-     "Berlin) drifts with tenderness",
-     "longing, and moonlit"
+     "SUMMER26",
+     "for special subscription price",
+     "Link in the profile"
     ],
-    "url": "https://bsky.app/profile/did:plc:khe3dtctnaa6yjnwqnesqkg5/post/3mn6mxq2fad2r"
+    "url": "https://bsky.app/profile/did:plc:5dindijle5lsxh53qvaaf5dj/post/3mri4iucp4k2b"
    },
    {
     "lines": [
-     "of demonstrators",
-     "near the ICE facility",
-     "signals that unrest"
+     "and reliable",
+     "summer weather? We suffer",
+     "months of misery"
     ],
-    "url": "https://bsky.app/profile/did:plc:iipowqhztticiguaxkwgtiwt/post/3mn6mznixdg2e"
+    "url": "https://bsky.app/profile/did:plc:fcwgkhxqtiaa5xcnodzmwkoe/post/3mri4j4t7t22c"
    },
    {
     "lines": [
-     "man was shot and killed",
-     "in North Philadelphia",
-     "on Saturday night"
+     "Again, my eyes see",
+     "nothing except for people",
+     "going after ICE"
     ],
-    "url": "https://bsky.app/profile/did:plc:mhy3zsbrj6vn774qmqs7htaj/post/3mn6n3cfeza24"
-   }
-  ],
-  "iambic": [
-   {
-    "lines": [
-     "on Sunday. That's why",
-     "the Cowboys have another",
-     "elimination"
-    ],
-    "url": "https://bsky.app/profile/did:plc:52prs2lu3a4ahbcd4eiqye7s/post/3mn6mydgct22h"
-   },
-   {
-    "lines": [
-     "Remember dancing",
-     "to this when I was a kid",
-     "man, hard to sit still"
-    ],
-    "url": "https://bsky.app/profile/did:plc:gmc3ggcjfojqt6goi3fblqsh/post/3mn6n4bfgw22i"
-   },
-   {
-    "lines": [
-     "just be nostalgia",
-     "Michelle Obama is right",
-     "up there at the top"
-    ],
-    "url": "https://bsky.app/profile/did:plc:ndjvp53yyqyj66keu3uoe7mv/post/3mn6ne6pihs2p"
-   },
-   {
-    "lines": [
-     "When energy got",
-     "expensive, both rose. But right",
-     "now, cocoa is cheap"
-    ],
-    "url": "https://bsky.app/profile/did:plc:2b4sg433ajebfh32vpwzy5c7/post/3mn6ngvlmr32h"
-   },
-   {
-    "lines": [
-     "fun, and a tier list",
-     "of blue foods that I'm going",
-     "to try out on stream"
-    ],
-    "url": "https://bsky.app/profile/did:plc:cb7q2utun67snqvrv72efyqm/post/3mn6nijfg5c2v"
-   }
-  ],
-  "stressPalindrome": [
-   {
-    "lines": [
-     "game, this time against",
-     "Alabama. How it all",
-     "changed against Upstate"
-    ],
-    "url": "https://bsky.app/profile/did:plc:52prs2lu3a4ahbcd4eiqye7s/post/3mn6mydgct22h"
-   },
-   {
-    "lines": [
-     "generate trillions",
-     "in economic value",
-     "for those who adapt"
-    ],
-    "url": "https://bsky.app/profile/did:plc:g323nwoy6rzvxylyjmn243qu/post/3mn6mzaovjk2p"
-   },
-   {
-    "lines": [
-     "pants equipped, come watch",
-     "or maybe join the mayhem",
-     "as I'm going live"
-    ],
-    "url": "https://bsky.app/profile/did:plc:hod6oflkksq2sqjxmy7ssudf/post/3mn6naf4plk2g"
-   },
-   {
-    "lines": [
-     "you are not alone",
-     "in this unfettered anger",
-     "and frustration. I’m"
-    ],
-    "url": "https://bsky.app/profile/did:plc:cl5rxb5z6gwah62slt5k5rbz/post/3mn6ndloj622p"
-   },
-   {
-    "lines": [
-     "for reliable",
-     "automatic door repair",
-     "in Ontario"
-    ],
-    "url": "https://bsky.app/profile/did:plc:xr5iovrfa42lz4mgwb7daq2t/post/3mn6niz3x7g23"
+    "url": "https://bsky.app/profile/did:plc:4e724cfav5xmtkikaf52y6m7/post/3mri4j5fmos2s"
    }
   ],
   "stopless": [
    {
     "lines": [
-     "building resilient",
-     "democracies. Cultural",
-     "representations"
+     "Lestat no sería",
+     "una estrella del rock",
+     "en plan Mick Jagger"
     ],
-    "url": "https://bsky.app/profile/did:plc:kkergqgbhb56ptpwj2wenkje/post/3mn6myuk3bl2x"
+    "url": "https://bsky.app/profile/did:plc:6s6qzlaaojfjxcuqs7wkpyqa/post/3mri4iebm6c2c"
    },
    {
     "lines": [
-     "Megan Gustafson",
-     "emotionally pinpoints truth",
-     "about expansion"
+     "Nizhny Novgorod",
+     "Chelyabinsk 1–2 Nizhny",
+     "Novgorod. First League"
     ],
-    "url": "https://bsky.app/profile/did:plc:rpraomxl4qbdazg322vwsno4/post/3mn6n3gzzde27"
+    "url": "https://bsky.app/profile/did:plc:acglo4ret2f2wc5duqtispsa/post/3mri4iqpo7g2g"
    },
    {
     "lines": [
-     "18:33",
-     "Updated : 31/05",
-     "2026"
+     "needs *proactive* (not",
+     "reactive) responses. More",
+     "complex discussions"
     ],
-    "url": "https://bsky.app/profile/did:plc:eec7ds5grxy7f7mnjmvumw35/post/3mn6n3m6lbl2t"
+    "url": "https://bsky.app/profile/did:plc:7cikncgzlzzy5xy2fmygi4vs/post/3mri4iqitpc2r"
    },
    {
     "lines": [
-     "That’s all, folks Well then",
-     "2-0 became 2-2",
-     "became 3-2. I’d"
+     "2026",
+     "Russian losses exceeded",
+     "recruitment. Over"
     ],
-    "url": "https://bsky.app/profile/did:plc:vizwdor43adw3277u2kkrssd/post/3mn6n3tiygd2b"
+    "url": "https://bsky.app/profile/did:plc:exkwti3p75fr75vko3typ65c/post/3mri4iwc6ek23"
    },
    {
     "lines": [
-     "Clyburn’s seat survives",
-     "after South Carolina",
-     "redistricting fail"
+     "Mirror Displacement",
+     "Indoors . 1969",
+     "Marian Goodman"
     ],
-    "url": "https://bsky.app/profile/did:plc:ip2zzau3cnx3xpqhnzvahtzw/post/3mn6n5wnsxc2t"
+    "url": "https://bsky.app/profile/did:plc:2ek4fjkbjm52f2eyqitu2twk/post/3mri4j4vywl2r"
    }
   ],
-  "kigo+stopless": [
+  "stressPalindrome": [
    {
     "lines": [
-     "Wild turkey attack",
-     "leaves Alameda woman",
-     "83, bloodied"
+     "Remember the fun",
+     "it was before trump ? Now it's",
+     "only another"
     ],
-    "url": "https://bsky.app/profile/did:plc:5zww7zorx2ajw7hqrhuix3ba/post/3mn6n22jyd62g"
+    "url": "https://bsky.app/profile/did:plc:m7n5ubpxsg5cpl25frasrrkx/post/3mri4imrnas2x"
    },
    {
     "lines": [
-     "Star Spangled Banner",
-     "Purple Haze / Instrumental",
-     "Solo (Live Woodstock"
+     "And the Trump circus",
+     "is a front for Russell Vought",
+     "and the Heritage"
     ],
-    "url": "https://bsky.app/profile/did:plc:nxoip4ojrilxyfz6tvr5tjaz/post/3mn6n3gricg2o"
+    "url": "https://bsky.app/profile/did:plc:6oz27opjx2agymuf2qddeyfp/post/3mri4iqxt722c"
    },
    {
     "lines": [
-     "Amazon #Garden",
-     "Ad #Deal #Bargain #Sale #Voucher",
-     "Promo #Coupon #Gifts"
+     "anyone who went",
+     "is ok with kids being",
+     "raped. Anyone who"
     ],
-    "url": "https://bsky.app/profile/did:plc:x77aem367tvvqd2twloaycnd/post/3mn6nc5ztbd2e"
+    "url": "https://bsky.app/profile/did:plc:qr36yetm46y2p226rrtdimnk/post/3mri4iqmgws2d"
    },
    {
     "lines": [
-     "International",
-     "Sea Turtle Society",
-     "Symposium, meet"
+     "is a million years",
+     "old and never coming back",
+     "It does not matter"
     ],
-    "url": "https://bsky.app/profile/did:plc:l3or3htclluz6h5qdz4ax5z7/post/3mn6ng4fmds2x"
+    "url": "https://bsky.app/profile/did:plc:jbjqcvzcivnyxms2gyljycf2/post/3mri4k2pfi227"
    },
    {
     "lines": [
-     "attending Cooper",
-     "River Indivisible's",
-     "event, “Gov. Sherrill"
+     "this to nobody",
+     "Wrote it in Cursor. Deployed",
+     "it Sunday. It's up"
     ],
-    "url": "https://bsky.app/profile/did:plc:b2trkxmyokn3kmrypvwvb3h3/post/3mn6opupdds2f"
-   }
-  ],
-  "iambic+stressPalindrome+isosyllabic": [
-   {
-    "lines": [
-     "Look, I used to like",
-     "them way back...but you can't rhyme",
-     "day\" with \"day\" then \"day"
-    ],
-    "url": "https://bsky.app/profile/did:plc:twabu4zhvvrajvsxzkx3isi2/post/3mn6neek54s2b"
-   },
-   {
-    "lines": [
-     "to fix this—let's make",
-     "sure they keep their word. Please add",
-     "your name to help right"
-    ],
-    "url": "https://bsky.app/profile/did:plc:bt4rkmuhdipcw2fhe5dxek5d/post/3mn6oawp7r22s"
-   },
-   {
-    "lines": [
-     "Well, I watched all three",
-     "That was a lot. Please don't talk",
-     "to me for a week"
-    ],
-    "url": "https://bsky.app/profile/did:plc:e3bd3ba6tjtcwuarkcfmsam2/post/3mn6rf5ifr22t"
-   },
-   {
-    "lines": [
-     "to fix this—let's make",
-     "sure they keep their word. Please add",
-     "your name to help right"
-    ],
-    "url": "https://bsky.app/profile/did:plc:ja5j6uvcyotbqg47ciczooel/post/3mn6rp2zaak2n"
-   },
-   {
-    "lines": [
-     "to fix this—let's make",
-     "sure they keep their word. Please add",
-     "your name to help right"
-    ],
-    "url": "https://bsky.app/profile/did:plc:lhgc6h5ufagvhhyvfdkkpt4c/post/3mn6ugkh6cs25"
-   }
-  ],
-  "iambic+kigo": [
-   {
-    "lines": [
-     "Ways to Use Orange",
-     "Peels in Your Garden to Boost",
-     "Plant Health and Keep Pests"
-    ],
-    "url": "https://bsky.app/profile/did:plc:lkmm2r7zciuu4n25mccrhb26/post/3mn6o7gxssr2f"
-   },
-   {
-    "lines": [
-     "Gusts, Large Hail. The Storm",
-     "will Be Near Lake Vermillion",
-     "State Recreation"
-    ],
-    "url": "https://bsky.app/profile/did:plc:emcaizmvtsp3c5kf76wrvv6a/post/3mn6r7nz5fs2n"
-   },
-   {
-    "lines": [
-     "drugs in the eastern",
-     "Pacific Ocean, killing",
-     "three men in the fourth"
-    ],
-    "url": "https://bsky.app/profile/did:plc:jxk6dc54wkeutjoo5nthqwxt/post/3mn6uvrzvif2p"
-   },
-   {
-    "lines": [
-     "Had to look it up",
-     "Delaney Hall is an ICE",
-     "detention center"
-    ],
-    "url": "https://bsky.app/profile/did:plc:54oasbzx2wlhxge65jufq24u/post/3mn6vh3iok22p"
-   },
-   {
-    "lines": [
-     "The night Bill Kaufman",
-     "is shot in Juliana",
-     "one of the suspects"
-    ],
-    "url": "https://bsky.app/profile/did:plc:7ldka23pwomld2ef4564nxc5/post/3mn6wk4stzs2h"
-   }
-  ],
-  "alphabetical+stopless": [
-   {
-    "lines": [
-     "Netherlands Poland",
-     "Portugal Romania",
-     "Slovakia Spain"
-    ],
-    "url": "https://bsky.app/profile/did:plc:zgsrmiu3wrajqa4kw65fa5rr/post/3mn6oiiwbws2n"
-   },
-   {
-    "lines": [
-     "carnival #cruising",
-     "dictatorship #gay #hitman",
-     "murder #past #police"
-    ],
-    "url": "https://bsky.app/profile/did:plc:5rvuhwzkodw5c7nqfukybmps/post/3mn7whj7mas2p"
-   },
-   {
-    "lines": [
-     "design #digital",
-     "environment #fantasy",
-     "game #illustration"
-    ],
-    "url": "https://bsky.app/profile/did:plc:o224oldiblsrbf4skepqlygb/post/3mna3xlzcdk23"
-   },
-   {
-    "lines": [
-     "Aboriginal",
-     "Community Controlled Health",
-     "Organisation"
-    ],
-    "url": "https://bsky.app/profile/did:plc:hp3t4k35yyjxczb3vuhoegyy/post/3mnays7oyjt2e"
-   },
-   {
-    "lines": [
-     "Netherlands, Poland",
-     "Portugal, Romania",
-     "Slovakia Spain"
-    ],
-    "url": "https://bsky.app/profile/did:plc:zgsrmiu3wrajqa4kw65fa5rr/post/3mnb5eqgh4s2l"
-   }
-  ],
-  "rhyme13": [
-   {
-    "lines": [
-     "RECAP: Ryan Ward",
-     "hit his first career home run",
-     "and the Dodgers scored"
-    ],
-    "url": "https://bsky.app/profile/did:plc:u73vunepapto6glfdluhqmw5/post/3mn6p5uvfkm2m"
-   },
-   {
-    "lines": [
-     "ALAMOSA CO",
-     "May 31 Climate: High",
-     "78 Low"
-    ],
-    "url": "https://bsky.app/profile/did:plc:wjy3pheolfzhykebaikitrt5/post/3mn6q2fuz4t2m"
-   },
-   {
-    "lines": [
-     "ALAMOSA CO",
-     "May 31 Climate: High",
-     "78 Low"
-    ],
-    "url": "https://bsky.app/profile/did:plc:wjy3pheolfzhykebaikitrt5/post/3mn6tfpgcec2l"
-   },
-   {
-    "lines": [
-     "Dave Winfield, baseball",
-     "Hall of Famer, never strayed",
-     "too far from St. Paul"
-    ],
-    "url": "https://bsky.app/profile/did:plc:6k6zec673z4furm4zfah4htl/post/3mn6tpwczjk26"
-   },
-   {
-    "lines": [
-     "Hardware Bottleneck",
-     "Is Determining the Next",
-     "Trillion-Dollar Tech"
-    ],
-    "url": "https://bsky.app/profile/did:plc:6w7425hsc4mjjkte2mbsxdhw/post/3mn6uacem4f2v"
-   }
-  ],
-  "stressPalindrome+stopless": [
-   {
-    "lines": [
-     "Surge Outpaces All",
-     "Emerging Markets Combined",
-     "BREAKING #CEO"
-    ],
-    "url": "https://bsky.app/profile/did:plc:cqx6nmsoq7xdc5dbr37f5c5r/post/3mn6qh6en662x"
-   },
-   {
-    "lines": [
-     "training & civilian",
-     "protection, not aggression",
-     "Diplomacy guides"
-    ],
-    "url": "https://bsky.app/profile/did:plc:iemrsceqzdb62c72gzmw6mjm/post/3mn7fgzifps2k"
-   },
-   {
-    "lines": [
-     "suicide assisté",
-     "sera examinée demain",
-     "en Commission Mixte"
-    ],
-    "url": "https://bsky.app/profile/did:plc:wv4pghh2fxrzydvu7cud6wjf/post/3mn7ultuggc2i"
-   },
-   {
-    "lines": [
-     "six weeks. Enables",
-     "local workflows via new",
-     "deployment endpoints"
-    ],
-    "url": "https://bsky.app/profile/did:plc:e4wr5lkpn63w5hy6iisnauqu/post/3mn7y7anj7w2z"
-   },
-   {
-    "lines": [
-     "weather: Scattered storms",
-     "rainy stretch ahead before",
-     "drier days arrive"
-    ],
-    "url": "https://bsky.app/profile/did:plc:neagpuh2q5oerqowc22mxqmh/post/3mn7zt5fue72d"
-   }
-  ],
-  "kigo+stressPalindrome": [
-   {
-    "lines": [
-     "Hardly. The #Thunder",
-     "will stay the course, make some tough",
-     "decisions and come"
-    ],
-    "url": "https://bsky.app/profile/did:plc:xzbefttll7cdqcnnvym2cm7a/post/3mn6qhnv5pk2k"
-   },
-   {
-    "lines": [
-     "A little cafe",
-     "with rain pouring down outside",
-     "This is a forced mute"
-    ],
-    "url": "https://bsky.app/profile/did:plc:bn7lc3pbfvqtdvodlwwm4527/post/3mn6yidkdqs2k"
-   },
-   {
-    "lines": [
-     "a glance: how small town’s",
-     "fight against ICE mega jail",
-     "could rewrite legal"
-    ],
-    "url": "https://bsky.app/profile/did:plc:vaged6uocai4jrd2s5pd2ebo/post/3mn6yn5s2od2q"
-   },
-   {
-    "lines": [
-     "a glance: how small town’s",
-     "fight against ICE mega jail",
-     "could rewrite legal"
-    ],
-    "url": "https://bsky.app/profile/did:plc:frpkvbrtpqugqghzpxrrxuxc/post/3mn73nmjiwl2t"
-   },
-   {
-    "lines": [
-     "a glance: how small town’s",
-     "fight against ICE mega jail",
-     "could rewrite legal"
-    ],
-    "url": "https://bsky.app/profile/did:plc:izdo23j2fb75hmqqwetb7xcu/post/3mn73o7xwkk2j"
-   }
-  ],
-  "iambic+kigo+stopless": [
-   {
-    "lines": [
-     "dead: Former child star",
-     "dies after cancer battle",
-     "Celebrity News"
-    ],
-    "url": "https://bsky.app/profile/did:plc:sxbfu7giy35hcpekhb7khwer/post/3mn6qnrt55g2f"
-   },
-   {
-    "lines": [
-     "dead: Former child star",
-     "dies after cancer battle",
-     "Celebrity News"
-    ],
-    "url": "https://bsky.app/profile/did:plc:gi6gydeibb64wvhwm6tehjht/post/3mn6sof7emz2c"
-   },
-   {
-    "lines": [
-     "Neil Bogart, met Kiss",
-     "en disco; Village People",
-     "en Donna Summer"
-    ],
-    "url": "https://bsky.app/profile/did:plc:gihjdqjkjfjhthtiaoyza3rk/post/3mnckrzv5xw2q"
-   },
-   {
-    "lines": [
-     "STAR LIBERTY PAC",
-     "spent $380K",
-     "supporting PAXTON"
-    ],
-    "url": "https://bsky.app/profile/did:plc:xds4luusktvkqqzea6iwd6bc/post/3mmiybvrngd2i"
-   },
-   {
-    "lines": [
-     "Rain chances over",
-     "Memorial Day weekend",
-     "becoming warmer"
-    ],
-    "url": "https://bsky.app/profile/did:plc:kq6jfz2rx6vj2snqdix26tft/post/3mmex5vxv3xx2"
-   }
-  ],
-  "iambic+stopless": [
-   {
-    "lines": [
-     "successful artist",
-     "wife, mother falls into Nth",
-     "degree imposter"
-    ],
-    "url": "https://bsky.app/profile/did:plc:db3z5pdjwvbouoytbw6xgsux/post/3mn6rcb42ak2v"
-   },
-   {
-    "lines": [
-     "Bald Chicken, Bleeding",
-     "Sweets, Desert Flat World, Golden",
-     "Retriever, Hastey"
-    ],
-    "url": "https://bsky.app/profile/did:plc:gtbjhey45zhveq7amv57pwps/post/3mn6wl4l3uq2p"
-   },
-   {
-    "lines": [
-     "Identity, Knicks",
-     "Defensive Navigating",
-     "Through Luka Pick & Rolls"
-    ],
-    "url": "https://bsky.app/profile/did:plc:ynmjqdz42h4daah3rpxncyyi/post/3mn6zrbkwuv2g"
-   },
-   {
-    "lines": [
-     "Identity, Knicks",
-     "Defensive Navigating",
-     "Through Luka Pick & Rolls"
-    ],
-    "url": "https://bsky.app/profile/did:plc:ynmjqdz42h4daah3rpxncyyi/post/3mn73bev2lp27"
-   },
-   {
-    "lines": [
-     "alternative #homes",
-     "ALTERNATIVE HOMES #better",
-     "homes #cob_homes #dome_homes"
-    ],
-    "url": "https://bsky.app/profile/did:plc:tkh4zxqphmui3z6v2pmwfutt/post/3mn73fdelyc2c"
-   }
-  ],
-  "rhyme13+stressPalindrome": [
-   {
-    "lines": [
-     "This Tiny Upstate",
-     "New York Spot May Serve The Best",
-     "Hot Dog In The State"
-    ],
-    "url": "https://bsky.app/profile/did:plc:jcso5rqil5dlthzkao5xb45g/post/3mn6rkrdepi2n"
-   },
-   {
-    "lines": [
-     "One of the top Fourth",
-     "of July fireworks shows takes",
-     "place right here in North"
-    ],
-    "url": "https://bsky.app/profile/did:plc:h6ju2yaiha3kohbqjyd2udjs/post/3mna6au4sdu2q"
-   },
-   {
-    "lines": [
-     "Will Bitcoin break free",
-     "from the market slump this week",
-     "Keep an eye on key"
-    ],
-    "url": "https://bsky.app/profile/did:plc:tm7ee4ozhhxwne575nkp4tsm/post/3mnafpidzmv2w"
-   },
-   {
-    "lines": [
-     "And each time, the same",
-     "claim is made at the outset",
-     "Russia is to blame"
-    ],
-    "url": "https://bsky.app/profile/did:plc:62qwqnqtlccgdpyvecuj3lbi/post/3mnaw5fhv5k2q"
-   },
-   {
-    "lines": [
-     "It's that time again",
-     "Time to throw myself at more",
-     "monsters in the vain"
-    ],
-    "url": "https://bsky.app/profile/did:plc:h5c3dyjqync4l5g6ybzdw436/post/3mnazq6t2w22k"
-   }
-  ],
-  "iambic+kigo+stressPalindrome": [
-   {
-    "lines": [
-     "It’s Sunday night slop",
-     "time and yes I know the twitch",
-     "needs to be changed I’m"
-    ],
-    "url": "https://bsky.app/profile/did:plc:h7en3m2juhlyjoy4kxgf6za7/post/3mn6txyy3qc2i"
-   },
-   {
-    "lines": [
-     "on the Moon—it’s now",
-     "an orbital rehearsal",
-     "to dock with Starship"
-    ],
-    "url": "https://bsky.app/profile/did:plc:olv3g46odp6hxpjncbef7fqa/post/3mn72ggins22e"
-   },
-   {
-    "lines": [
-     "just blew up a boat",
-     "in the Pacific Ocean",
-     "which may or may not"
-    ],
-    "url": "https://bsky.app/profile/did:plc:25xz4mmocebkvk6uqarcjfax/post/3mna5k2hcvs2k"
-   },
-   {
-    "lines": [
-     "And everyone down",
-     "the ice line. These ice thugs need",
-     "to be arrested"
-    ],
-    "url": "https://bsky.app/profile/did:plc:jzvytosiq7fd5y4ajn3rk3gv/post/3mnabjuqwok22"
-   },
-   {
-    "lines": [
-     "Good morning--it's not",
-     "quite noon yet! This took some time",
-     "It's Monday, and I'm"
-    ],
-    "url": "https://bsky.app/profile/did:plc:e4ubvhgojb2vvog7q6fmmqow/post/3mnaghqeef22j"
-   }
-  ],
-  "lipogramE+stopless": [
-   {
-    "lines": [
-     "Motors, Maruti",
-     "Suzuki, Hyundai Motor",
-     "India, Ashok"
-    ],
-    "url": "https://bsky.app/profile/did:plc:zibx3delbo24mdsccz6s7qa4/post/3mn6zwtl6i725"
-   },
-   {
-    "lines": [
-     "Maximilian",
-     "L. Ach, Konstantin",
-     "S. Jakob, Christian"
-    ],
-    "url": "https://bsky.app/profile/did:plc:uxjdkwlgj5ptelt2x4e3zrzr/post/3mn76yqr4v72k"
-   },
-   {
-    "lines": [
-     "Maximilian",
-     "L. Ach, Konstantin",
-     "S. Jakob, Christian"
-    ],
-    "url": "https://bsky.app/profile/did:plc:npq7o2en235kjxtvwp6lhfr2/post/3mn7imadvk22c"
-   },
-   {
-    "lines": [
-     "individuals",
-     "who publicly justify",
-     "russia's war against"
-    ],
-    "url": "https://bsky.app/profile/did:plc:kztn3wd3n45j3l4yr6dz6isl/post/3mn7yuh2wq227"
-   },
-   {
-    "lines": [
-     "Colorful Abstract",
-     "Musician\" acrylic print",
-     "transforms bland into"
-    ],
-    "url": "https://bsky.app/profile/did:plc:oezdbawymfjmrpu4z4so2z4p/post/3mnca6kjprc2j"
+    "url": "https://bsky.app/profile/did:plc:2jxy5tws4bpl6lnfbdhyckox/post/3mri4kbk4lf2j"
    }
   ],
   "lipogramE": [
    {
     "lines": [
-     "Productivity",
-     "Playbook — practical, hands-on",
-     "and built for busy"
+     "had a banana",
+     "and a half along with half",
+     "a bag of spinach"
     ],
-    "url": "https://bsky.app/profile/did:plc:zyknph63msl727cgoq6aqx6j/post/3mn7fp2s4fp2n"
+    "url": "https://bsky.app/profile/did:plc:ccrabc6xdnjx4l7btvynnng4/post/3mri4injqqc2u"
    },
    {
     "lines": [
-     "K. Prasad, Krishna",
-     "Agarwal: SAM for Robust",
-     "Mitochondria"
+     "did…wringing your hands",
+     "and making accusations",
+     "without proof isn’t"
     ],
-    "url": "https://bsky.app/profile/did:plc:traxg4jscmm3n3usqi76dsk2/post/3mn7hxtz6gh2r"
+    "url": "https://bsky.app/profile/did:plc:juq5cx5p66q6pfkuqgiddcre/post/3mri4lpdac22c"
    },
    {
     "lines": [
-     "It's not charity",
-     "it's solidarity.  What",
-     "Tulsa is doing"
+     "city that isn't",
+     "infamous for having tons",
+     "of tourists walking"
     ],
-    "url": "https://bsky.app/profile/did:plc:3lrufnlijfvugs7d6svzj6sg/post/3mn7ifqq3xc24"
+    "url": "https://bsky.app/profile/did:plc:3tyowpf7zfavrbsw3vtolmu2/post/3mri5f74rak2p"
    },
    {
     "lines": [
-     "of traditional",
-     "information control. Don't",
-     "just watch it unfold"
+     "And that's it as far",
+     "as what I'm working on. Oh",
+     "also, I'm gonna"
     ],
-    "url": "https://bsky.app/profile/did:plc:mlo6zfby6oplwqkehpomebd4/post/3mn7lgug6xk2j"
+    "url": "https://bsky.app/profile/did:plc:ydbpr7ouwvefc3fsm5c6pdsj/post/3mri5hzkex22z"
    },
    {
     "lines": [
-     "music industry",
-     "Congratulations from all",
-     "at UK Music"
+     "max and it's so bad",
+     "Just jumping around from sport",
+     "to sport, not fully"
     ],
-    "url": "https://bsky.app/profile/did:plc:vth2ov55sef6ntyyvgv4kg2p/post/3mn7nwe6hws2v"
+    "url": "https://bsky.app/profile/did:plc:jat54qd2u3vesevz37u6rtmn/post/3mri5x4xdrs25"
    }
   ],
-  "rhyme13+stopless": [
+  "iambic+stressPalindrome": [
    {
     "lines": [
-     "paranoia: White",
-     "House Launches Immigration",
-     "Enforcement Website"
+     "ten minutes straight then",
+     "come out with his face still red",
+     "from scrubbing with cold"
     ],
-    "url": "https://bsky.app/profile/did:plc:nncuaxbaa7m4ywitalrp5kfz/post/3mn7iq4ifn22c"
+    "url": "https://bsky.app/profile/did:plc:ntdxbdcyvqvcnjly3faf4hdy/post/3mri4jbazvs2w"
    },
    {
     "lines": [
-     "Conflict/War…Midday",
-     "June 1, 2026",
-     "Iran backs Away"
+     "appropriate forms",
+     "in triplicate, deliver",
+     "them to the proper"
     ],
-    "url": "https://bsky.app/profile/did:plc:wjx4gtldkaqrsntrc7blii4x/post/3mnamtha3ps2e"
+    "url": "https://bsky.app/profile/did:plc:aakho7uah6oavtf4lfuzcjze/post/3mri4jrq35c23"
    },
    {
     "lines": [
-     "money flows into",
-     "maine senate race through susan",
-     "collins' donors, who"
+     "a few of my team",
+     "associates I'm going",
+     "to let him fucking"
     ],
-    "url": "https://bsky.app/profile/did:plc:3s4yefqenph2uxsf3rje3avq/post/3mnamysinqc2a"
+    "url": "https://bsky.app/profile/did:plc:dqzajx6ctgpbsonmqvqqcasx/post/3mri4lhqesk2m"
    },
    {
     "lines": [
-     "plant conservation",
-     "knowledge exchange through science",
-     "collaboration"
+     "I need is seven",
+     "kids who DON'T earn out, so how",
+     "can that be my plan"
     ],
-    "url": "https://bsky.app/profile/did:plc:grqk5m2vmkhjjbdnzk2k2jxj/post/3mncr4bpv4s25"
+    "url": "https://bsky.app/profile/did:plc:d52nk6dg2fc7ufhccrhafmyq/post/3mri4m7klgk2c"
    },
    {
     "lines": [
-     "La estrella de",
-     "Spider-Man, Tom Holland, dice",
-     "que Brand New Day le"
+     "in the right mind takes",
+     "an england flag to something",
+     "like this in glasgow"
     ],
-    "url": "https://bsky.app/profile/did:plc:7qsf5ypfoelbn4rnizzkhwts/post/3mndckpmhta2i"
+    "url": "https://bsky.app/profile/did:plc:ecunabgzqerqpf3ghaeytasm/post/3mri4mzjp522x"
    }
   ],
-  "iambic+kigo+stressPalindrome+stopless": [
+  "kigo+lipogramE+stressPalindrome": [
    {
     "lines": [
-     "Hi75",
-     "Lo73) Feels like",
-     "69F Wind"
+     "dough this morning split",
+     "into a focaccia",
+     "pizza and a small"
     ],
-    "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mn7mfqpzpv24"
-   },
-   {
-    "lines": [
-     "Hi75",
-     "Lo71) Feels like",
-     "68F Wind"
-    ],
-    "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mn7t4hrlta26"
-   },
-   {
-    "lines": [
-     "Hi103",
-     "Lo73) Feels like",
-     "92F Wind"
-    ],
-    "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mndsjf4gah22"
-   },
-   {
-    "lines": [
-     "Hi103",
-     "Lo73) Feels like",
-     "91F Wind"
-    ],
-    "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mndz7wgoxc2t"
-   },
-   {
-    "lines": [
-     "Hi103",
-     "Lo73) Feels like",
-     "82F Wind"
-    ],
-    "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mne7wjlduk2z"
+    "url": "https://bsky.app/profile/did:plc:5vgxnoiqyqt2p4m2jlvyblrt/post/3mri4kpebw22r"
    }
   ],
-  "iambic+lipogramE": [
+  "iambic+stopless": [
    {
     "lines": [
-     "Qualification",
-     "mobility is still too",
-     "slow, says Commission"
+     "just blame white people",
+     "Hispanics, black men, Asians",
+     "all gravitated"
     ],
-    "url": "https://bsky.app/profile/did:plc:enugjzmetevfyi4zjb7yd35r/post/3mn7mhykelk2y"
+    "url": "https://bsky.app/profile/did:plc:4i4y3wd374qoyi3k47n4ssfj/post/3mri4mo6k222d"
    },
    {
     "lines": [
-     "capitulation",
-     "to planning populism",
-     "as a solution"
+     "Koch funded effort",
+     "around eliminating",
+     "small business level"
     ],
-    "url": "https://bsky.app/profile/did:plc:w54u3awqan3b65j4rvauv4f6/post/3mn7ppe5e6c2e"
+    "url": "https://bsky.app/profile/did:plc:hwb7xa7tn2li2ozdijlw3w7h/post/3mri5452g3k2s"
    },
    {
     "lines": [
-     "financial windfall",
-     "of any kind. This is all",
-     "I can do right now"
+     "amid transparent",
+     "negotiation worries",
+     "Original source"
     ],
-    "url": "https://bsky.app/profile/did:plc:oyurulr53ymdghfa55bxydhs/post/3mna6nf5d4s2s"
+    "url": "https://bsky.app/profile/did:plc:3pj6u3zlnzjbdd3re4zkfknd/post/3mri62ghqfe2n"
    },
    {
     "lines": [
-     "HTTP(S",
-     "and DNS Canary",
-     "bot with Slack/Discord"
+     "More: Jeremy Swift",
+     "Biography: Wife, Age, Kids",
+     "Height, Net Worth, Movies"
     ],
-    "url": "https://bsky.app/profile/did:plc:ltjj43huonogytm4szn5hzkx/post/3mna7ert4kc26"
+    "url": "https://bsky.app/profile/did:plc:k7rslm2hwgqb3o254t5g4uds/post/3mri66lsu3j2q"
    },
    {
     "lines": [
-     "Still no word. I don't",
-     "know what to do. Still matching",
-     "but nothing matching"
+     "Immediately",
+     "Review American Bar",
+     "Association"
     ],
-    "url": "https://bsky.app/profile/did:plc:6csq4nt7yowkwyiylro3uu2t/post/3mnaphkuwwy26"
+    "url": "https://bsky.app/profile/did:plc:bgt62gzl3y5ke7b45xi5vkvu/post/3mri7eohxte2a"
    }
   ],
-  "iambic+rhyme13+stressPalindrome": [
+  "iambic+kigo": [
    {
     "lines": [
-     "administration",
-     "says those rules have led to more",
-     "discrimination"
+     "this perfect morning",
+     "into a memorable",
+     "one. What do you say"
     ],
-    "url": "https://bsky.app/profile/did:plc:vaged6uocai4jrd2s5pd2ebo/post/3mn7rdwqa5j2f"
+    "url": "https://bsky.app/profile/did:plc:cehao2kzt2lpv2m5t6hlkxaf/post/3mri4o32szk24"
    },
    {
     "lines": [
-     "administration",
-     "says those rules have led to more",
-     "discrimination"
+     "was too much wind shear",
+     "and dry air for it to hold",
+     "together, plus most"
     ],
-    "url": "https://bsky.app/profile/did:plc:63ftgjwdvmlaixvrqq6sonlz/post/3mn7rzitcat2g"
+    "url": "https://bsky.app/profile/did:plc:dk5rrbd72ydv7wutlpfgwig5/post/3mri4ocwbu22x"
    },
    {
     "lines": [
-     "administration",
-     "is actively pursuing",
-     "the integration"
+     "I sat down and read",
+     "this last night and I'm not sure",
+     "if you just haven't"
     ],
-    "url": "https://bsky.app/profile/did:plc:stcjaibae5ydvgzeruyvpviu/post/3mnajch2fy3g2"
+    "url": "https://bsky.app/profile/did:plc:s5zwyygnkcdgblepvwused47/post/3mri4ytnv6s2m"
    },
    {
     "lines": [
-     "A simulation",
-     "designed around effective",
-     "communication"
+     "not into super",
+     "sweet things but if I do crave",
+     "some it's just ice cream"
     ],
-    "url": "https://bsky.app/profile/did:plc:vstq5vct7nwez5vqzmenur6s/post/3mnd37yc4vs22"
+    "url": "https://bsky.app/profile/did:plc:zwpzfu64uvwd3jia3vkotsi4/post/3mri5aqsxks25"
    },
    {
     "lines": [
-     "and realized I’d",
-     "found its first home. I just feel",
-     "so lucky to see"
+     "hilarious, bombed",
+     "last night. His humor is all",
+     "about creating"
     ],
-    "url": "https://bsky.app/profile/did:plc:dgnjk5rf7gcdbnqifvier24w/post/3mne4bb5bt22y"
+    "url": "https://bsky.app/profile/did:plc:miczfsfixolk42l7343z3bpd/post/3mri5ggrsmk2z"
    }
   ],
-  "iambic+rhyme13": [
+  "iambic+stressPalindrome+isosyllabic": [
    {
     "lines": [
-     "If you or someone",
-     "close to you has been injured",
-     "by a hit and run"
+     "should check. Who should check",
+     "Should we check? He might be dead",
+     "How do we check? Not"
     ],
-    "url": "https://bsky.app/profile/did:plc:vimzw7wx5o4xgkzmqhzwyiid/post/3mn7scz55f22l"
+    "url": "https://bsky.app/profile/did:plc:s2hwc53n7xbrp7r7vib75tgk/post/3mri4q7ckuc2p"
    },
    {
     "lines": [
-     "your vote? Show me some",
-     "love and help me make a splash",
-     "in this contest! 🍒❤️  come"
+     "by the piece of shit",
+     "press corps who dressed up and went",
+     "and cheered and laughed like"
     ],
-    "url": "https://bsky.app/profile/did:plc:4dsaoavzev6irtmmlxpuftbr/post/3mnapque7v22o"
+    "url": "https://bsky.app/profile/did:plc:4e724cfav5xmtkikaf52y6m7/post/3mri4weicxs2s"
    },
    {
     "lines": [
-     "sales execution",
-     "distributor performance",
-     "and distribution"
+     "I have loved this song",
+     "since I was nine. It was nine",
+     "at the time as well"
     ],
-    "url": "https://bsky.app/profile/did:plc:3jtzfj5hax2fh2mep5g63542/post/3mnasfs3r2o2i"
+    "url": "https://bsky.app/profile/did:plc:k6orgxkypgzp3dmkzyu37qzk/post/3mri4xmvygk23"
    },
    {
     "lines": [
-     "now moving into",
-     "the world of music, having",
-     "released her first two"
+     "Watch your wife get fucked",
+     "by a real man while you sit",
+     "back and jerk off like"
     ],
-    "url": "https://bsky.app/profile/did:plc:irg3ow2tckaip2fdd2xrhmac/post/3mnckawpbmx2e"
+    "url": "https://bsky.app/profile/did:plc:ssftysqli7exhwv5o4h67ld3/post/3mri5awonji2j"
    },
    {
     "lines": [
-     "reveals which Birds stood",
-     "out most in this edition",
-     "of The Great, The Good"
+     "I know the AYN Thor",
+     "is in vogue but I was not",
+     "down for the price point"
     ],
-    "url": "https://bsky.app/profile/did:plc:td2rcrwjjazk2cc4vxlocibm/post/3mncklrku2s2k"
+    "url": "https://bsky.app/profile/did:plc:6l5jkynxxh62qawb7kbdzmta/post/3mri5ey4mfc2b"
    }
   ],
-  "lipogramE+stressPalindrome": [
+  "iambic+lipogramE+alphabetical+monovocalic+stressPalindrome+isosyllabic+stopless": [
    {
     "lines": [
-     "It's funny. It's not",
-     "funny. It's funny. It's not",
-     "funny. It's funny"
+     "No. No no no no",
+     "no. No. No no no no no",
+     "no no. No no no"
     ],
-    "url": "https://bsky.app/profile/did:plc:o545w5m67u6vtcasrwenlj2d/post/3mna2ek62uc2j"
+    "url": "https://bsky.app/profile/did:plc:qxjm3kwcaowqkcwmqv3iuaxn/post/3mri4s4h3b225"
    },
    {
     "lines": [
-     "I Know Who Wins Knicks",
-     "vs Spurs I Know Who Wins",
-     "Knicks vs Spurs Knicks"
+     "No! No! No no no",
+     "NO! NO NO NO NO NO NO",
+     "NO NO NO!!!!! NO! No"
     ],
-    "url": "https://bsky.app/profile/did:plc:zo7ppsdhdrry76iil7lwmflh/post/3mna3s63xsg23"
+    "url": "https://bsky.app/profile/did:plc:qxjm3kwcaowqkcwmqv3iuaxn/post/3mri4s4h3b225"
    },
    {
     "lines": [
-     "and I only found",
-     "out today that it's unpaid",
-     "so if you wanna"
+     "no no no no!!!! No",
+     "No no no no no!!! No! No",
+     "No no no no no"
     ],
-    "url": "https://bsky.app/profile/did:plc:mbvhxqztfiqpbsifwjgsbj3q/post/3mnfmoyikqk2p"
+    "url": "https://bsky.app/profile/did:plc:qxjm3kwcaowqkcwmqv3iuaxn/post/3mri4s4h3b225"
    },
    {
     "lines": [
-     "NOBODY, not just",
-     "nobody who's nobody",
-     "but nobody who's"
+     "no no. No. No no",
+     "No no no no!!! NO!!! NO NO",
+     "NO NO NO NO NO"
     ],
-    "url": "https://bsky.app/profile/did:plc:gswv3kqulurcqkwl2hhi3nzq/post/3mmjh4gtd2c2m"
+    "url": "https://bsky.app/profile/did:plc:qxjm3kwcaowqkcwmqv3iuaxn/post/3mri4s4h3b225"
    },
    {
     "lines": [
-     "want an instant mood",
-     "boost, find a playlist of light",
-     "music to load up"
+     "thighs thighs thighs thighs thighs",
+     "thighs thighs thighs thighs thighs thighs thighs",
+     "thighs thighs thighs thighs thighs"
     ],
-    "url": "https://bsky.app/profile/did:plc:qs2kuxirareirw3vobkjn7iw/post/3mmmatzyfwc2x"
+    "url": "https://bsky.app/profile/did:plc:y5pz5jnll7mnu3z57pkq6jvj/post/3mrife2nf722f"
    }
   ],
-  "rhyme13+rhymeAll+stopless": [
+  "kigo+stressPalindrome": [
    {
     "lines": [
-     "Port Maritime de",
-     "La Réunion et Djibouti",
-     "Shipping Company"
+     "oh right, i kinda",
+     "had an episode last night",
+     "and took down my rat"
     ],
-    "url": "https://bsky.app/profile/did:plc:bborek56dnu5ggcxayyhomss/post/3mna7nzjae32g"
+    "url": "https://bsky.app/profile/did:plc:ifme2tqt75n7g57fqbat37ud/post/3mri4sgtps22x"
+   },
+   {
+    "lines": [
+     "It was great to stop",
+     "by the Beckman Mill Ice Cream",
+     "Social! I enjoyed"
+    ],
+    "url": "https://bsky.app/profile/did:plc:pjx2a3brmmlj27uxkqvi276s/post/3mri53ztsrv23"
+   },
+   {
+    "lines": [
+     "it down to the ground",
+     "Kinda satisfying tho",
+     "to paint in the snow"
+    ],
+    "url": "https://bsky.app/profile/did:plc:cbjca4qyp4jqoupvatqe5aqu/post/3mri5abqcas2v"
+   },
+   {
+    "lines": [
+     "Wolf was a legend",
+     "last night. He will be the first",
+     "to get fired when"
+    ],
+    "url": "https://bsky.app/profile/did:plc:4e724cfav5xmtkikaf52y6m7/post/3mri5dbznrc2g"
+   },
+   {
+    "lines": [
+     "The Rain and then moved",
+     "onto Umbrella.  The whole",
+     "thing is so goddamn"
+    ],
+    "url": "https://bsky.app/profile/did:plc:xqvdqmbmzklcrmvx2hzq2pxy/post/3mri5fhrbus26"
    }
   ],
-  "iambic+isosyllabic": [
+  "rhyme13": [
    {
     "lines": [
-     "It's just not quite clear",
-     "to me who's in charge - it's seemed",
-     "for a while that there's"
+     "the publication",
+     "warranted a criminal",
+     "investigation"
     ],
-    "url": "https://bsky.app/profile/did:plc:tc3gn24zmzltpqtkhfo3vwai/post/3mnaazwn6dc2r"
+    "url": "https://bsky.app/profile/did:plc:hk5pmeon766yku362f27l3ur/post/3mri4twac2s2c"
    },
    {
     "lines": [
-     "It's now pride month! Lets",
-     "be loud and proud, here's whats planned",
-     "for the week of streams"
+     "of race in RE5",
+     "and found and quote your comments",
+     "on an MTV"
     ],
-    "url": "https://bsky.app/profile/did:plc:5arfjmglsg7oukqj2zquy4zu/post/3mnaf7vuke22f"
+    "url": "https://bsky.app/profile/did:plc:u4c2z2goqvhpoacj4grlirqs/post/3mri4w5kyws2m"
    },
    {
     "lines": [
-     "He hands her a key",
-     "and says, “This is yours.” No locks",
-     "No rules. Just a choice"
+     "play Tropical Freeze",
+     "complete radio silence",
+     "just finished it, he's"
     ],
-    "url": "https://bsky.app/profile/did:plc:fus6n22xgywizwkzmkfahxwt/post/3mmmexoncun2o"
+    "url": "https://bsky.app/profile/did:plc:e3dnhqnkeqnlgzzcoxjn6f7n/post/3mri4zcbrux2g"
    },
    {
     "lines": [
-     "This is what she's begged",
-     "me to do to her for weeks",
-     "and here we are... Wish"
+     "carried out without",
+     "any plausible basis",
+     "and solely out"
     ],
-    "url": "https://bsky.app/profile/did:plc:g7dprq4vqsjrxq4aazcp3p43/post/3mmetckm2qi25"
+    "url": "https://bsky.app/profile/did:plc:hsogstbdd4htnofbgowhszmb/post/3mri535ne322c"
    },
    {
     "lines": [
-     "It is best to take",
-     "a beer snob with you to watch",
-     "them blanch when the tour"
+     "after a long hot",
+     "shower and the maneuvers",
+     "is much better. Not"
     ],
-    "url": "https://bsky.app/profile/did:plc:yeumhgjprxvuysdzqozzsrmp/post/3mmnr6q5u722k"
+    "url": "https://bsky.app/profile/did:plc:2jmxqg2cjttrksrd7ez7w6y2/post/3mri542iymk23"
    }
   ],
-  "iambic+lipogramE+monovocalic+stressPalindrome+isosyllabic+stopless": [
+  "iambic+kigo+stressPalindrome": [
    {
     "lines": [
-     "Blood clot! Blood clot! Blood",
-     "clot! Blood clot! Blood clot! Blood clot",
-     "Blood clot! Blood clot! Blood"
+     "a river to lay",
+     "it to rest because he thinks",
+     "you put a tiny"
     ],
-    "url": "https://bsky.app/profile/did:plc:rbshpjxmeqp7juemm7cnr7xg/post/3mnaepthgik27"
+    "url": "https://bsky.app/profile/did:plc:ze54n7y4gb2tpf6mxggkeigu/post/3mri4wrwjl22f"
    },
    {
     "lines": [
-     "clot! Blood clot! Blood clot",
-     "Blood clot! Blood clot! Blood clot! Blood",
-     "clot! Blood clot! Blood clot"
+     "Last night the sun looked",
+     "like this. How odd, I thought. Then",
+     "this morning these weird"
     ],
-    "url": "https://bsky.app/profile/did:plc:rbshpjxmeqp7juemm7cnr7xg/post/3mnaepthgik27"
+    "url": "https://bsky.app/profile/did:plc:oqzzrcya5sg2czqrsx4jl5ez/post/3mri4xwwq422b"
+   },
+   {
+    "lines": [
+     "its goal to purchase",
+     "Moon Camp, a stretch of land less",
+     "than a mile from bald"
+    ],
+    "url": "https://bsky.app/profile/did:plc:edssbvuqx2niawv2mvoouuvc/post/3mri4z6zi3b2e"
+   },
+   {
+    "lines": [
+     "a Beautiful Life",
+     "if You Look. Big ass giant",
+     "leaf in the front yard"
+    ],
+    "url": "https://bsky.app/profile/did:plc:fv26zwkry7kykoxoyyapgoab/post/3mri5lzogvr24"
+   },
+   {
+    "lines": [
+     "uncomfortable",
+     "the whole night and when they hit",
+     "her with that water"
+    ],
+    "url": "https://bsky.app/profile/did:plc:d3jpcj3nxygm3i36jz3tp6pg/post/3mri7hdydb22m"
+   }
+  ],
+  "kigo+stopless": [
+   {
+    "lines": [
+     "Now: 64°F",
+     "Sunny | Day: ☀️ | Hi: 64",
+     "Lo: 58° | Wind"
+    ],
+    "url": "https://bsky.app/profile/did:plc:lvvgie7nqeq5o67xqdocoslq/post/3mri4zae4yk2u"
+   },
+   {
+    "lines": [
+     "Coventry Evening",
+     "Telegraph - 25 years",
+     "earlier, Doctor"
+    ],
+    "url": "https://bsky.app/profile/did:plc:blorwkilejbgj2auw5sm6vmc/post/3mri4zfiupq2j"
+   },
+   {
+    "lines": [
+     "Spaces lacking | Speed",
+     "green energy | Green-lighting",
+     "ICE. Mercury News"
+    ],
+    "url": "https://bsky.app/profile/did:plc:brk4hddiyzyfoy7ewjnmml75/post/3mri5a6kgam2i"
+   },
+   {
+    "lines": [
+     "immigration laws",
+     "changing how ICE makes arrests",
+     "Capital Gazette"
+    ],
+    "url": "https://bsky.app/profile/did:plc:ddo2sqibuwq4kqufq37ktwxj/post/3mri5s4sraz2r"
+   },
+   {
+    "lines": [
+     "Create idea",
+     "Standard DC Wind Turbine",
+     "Electricity"
+    ],
+    "url": "https://bsky.app/profile/did:plc:vuzs7jxarg2rqw6lgu6yrgqj/post/3mri6bpbqr42w"
+   }
+  ],
+  "iambic+lipogramE+stressPalindrome+isosyllabic+stopless": [
+   {
+    "lines": [
+     "DING DONG DING DONG DING",
+     "DONG DING DONG DING DONG DING DONG",
+     "DING DONG DING DONG DING"
+    ],
+    "url": "https://bsky.app/profile/did:plc:jimtyp4x65zh5gfwq2t2ncrc/post/3mri4zctidr2c"
+   },
+   {
+    "lines": [
+     "DING DONG DING DONG DING",
+     "DONG DING DONG DING DONG DING DONG",
+     "DING DONG DING DONG DING"
+    ],
+    "url": "https://bsky.app/profile/did:plc:jimtyp4x65zh5gfwq2t2ncrc/post/3mriaekvnt326"
+   },
+   {
+    "lines": [
+     "DING DONG DING DONG DING",
+     "DONG DING DONG DING DONG DING DONG",
+     "DING DONG DING DONG DING"
+    ],
+    "url": "https://bsky.app/profile/did:plc:jimtyp4x65zh5gfwq2t2ncrc/post/3mridqb3ebc2k"
+   },
+   {
+    "lines": [
+     "DING DONG DING DONG DING",
+     "DONG DING DONG DING DONG DING DONG",
+     "DING DONG DING DONG DING"
+    ],
+    "url": "https://bsky.app/profile/did:plc:jimtyp4x65zh5gfwq2t2ncrc/post/3mrih35onyh2d"
+   },
+   {
+    "lines": [
+     "CAR SHOW CAR SHOW CAR",
+     "SHOW CAR SHOW CAR SHOW CAR SHOW",
+     "CAR SHOW CAR SHOW CAR"
+    ],
+    "url": "https://bsky.app/profile/did:plc:kt3avz7yssynvjdb47ex5fjz/post/3mrijcpwds225"
+   }
+  ],
+  "kigo+alphabetical+stopless": [
+   {
+    "lines": [
+     "Harris   #Houston   #ICE",
+     "illegal   #immigration",
+     "investigator"
+    ],
+    "url": "https://bsky.app/profile/did:plc:mhqnbglrgmwiuz3kgexbi7uf/post/3mri53kdnfp2o"
+   },
+   {
+    "lines": [
+     "agents   #conviction",
+     "crime   #Force   #ICE   #immigration",
+     "Memphis   #President"
+    ],
+    "url": "https://bsky.app/profile/did:plc:mhqnbglrgmwiuz3kgexbi7uf/post/3mrmlcqkdjf2u"
+   }
+  ],
+  "stressPalindrome+stopless": [
+   {
+    "lines": [
+     "Shepherds Bush CC",
+     "1st XI v Crouch End CC",
+     "1st XI · Middlesex"
+    ],
+    "url": "https://bsky.app/profile/did:plc:kdr4lahowxsox357jcbqk4wr/post/3mri5e2u4ez2o"
+   },
+   {
+    "lines": [
+     "Ávila province reached",
+     "Mediterranean late",
+     "Thursday afternoon"
+    ],
+    "url": "https://bsky.app/profile/did:plc:cjf5cyja7mbog73soxw7y5lt/post/3mri6aay6ws24"
+   },
+   {
+    "lines": [
+     "Free/Clear Concentrate",
+     "195ct",
+     "Dryer Sheets) S&S"
+    ],
+    "url": "https://bsky.app/profile/did:plc:vrcsr5hdv3bsi47jqbtjmsxi/post/3mri6lieuhr2r"
+   },
+   {
+    "lines": [
+     "poser pas loin de",
+     "180M je",
+     "pense. Et si le club"
+    ],
+    "url": "https://bsky.app/profile/did:plc:qyjbuisiywc4bnq4anjawgm5/post/3mric7tktfc2l"
+   },
+   {
+    "lines": [
+     "Shepherds Bush CC",
+     "1st XI v Crouch End CC",
+     "1st XI · Middlesex"
+    ],
+    "url": "https://bsky.app/profile/did:plc:kdr4lahowxsox357jcbqk4wr/post/3mrihdzrffp2h"
    }
   ],
   "kigo+lipogramE": [
    {
     "lines": [
-     "Saturday morning",
-     "cartoons bad? Why was this show",
-     "so racist. Nothing"
+     "to say good morning",
+     "but now I can only think",
+     "of Gandalf scolding"
     ],
-    "url": "https://bsky.app/profile/did:plc:adqrkamfgwrthojiayf5k3to/post/3mnakffvyqk2u"
+    "url": "https://bsky.app/profile/did:plc:pz2oke4vnbgcz3wvjh76f65u/post/3mri5mfps5k2z"
    },
    {
     "lines": [
-     "its burrow as dusk",
-     "falls along a country road",
-     "today in rural"
+     "Last night was about",
+     "watching a room full of young",
+     "journalists taking"
     ],
-    "url": "https://bsky.app/profile/did:plc:46efdiu3iploplzqko3mfut7/post/3mmiowb3sec2d"
+    "url": "https://bsky.app/profile/did:plc:qsj7mu5q2hkkun2emrxbx5sd/post/3mriv7fgutk2j"
    },
    {
     "lines": [
-     "is a polar ring",
-     "galaxy. It has a ring",
-     "of gas, stars, and dust"
+     "was out all morning",
+     "w my mom what’s wrong",
+     "w my brain"
     ],
-    "url": "https://bsky.app/profile/did:plc:6fbafnhl3putariiozvwbuzh/post/3mmjhdyqkbx2l"
+    "url": "https://bsky.app/profile/did:plc:fowhe3scpd3esdqj2wd2rdnz/post/3mrj6xbtxcs2f"
    },
    {
     "lines": [
-     "Happy Birthday Bob",
-     "Dylan. This morning I found",
-     "this from my first Bob"
+     "that shit from his hands",
+     "and crow hop throw it as far",
+     "as I possibly"
     ],
-    "url": "https://bsky.app/profile/did:plc:3oc6lrpg6offp2nrw6s55pti/post/3mmlic6rgx224"
+    "url": "https://bsky.app/profile/did:plc:zihe6tlz7cwdox3zi3nyxsle/post/3mrjdxbos5s2k"
    },
    {
     "lines": [
-     "away, with colors",
-     "indicating young and old",
-     "star populations"
+     "kinda amusing",
+     "Although you would think a storm",
+     "would cool things down... Oh"
     ],
-    "url": "https://bsky.app/profile/did:plc:67biuxgw3trznhftjtfp6ud2/post/3mmgjgkpbna2x"
+    "url": "https://bsky.app/profile/did:plc:5polagaxtqjdhbazi3bq55gm/post/3mrjfdlf4ss2z"
    }
   ],
-  "iambic+rhyme13+kigo": [
+  "lipogramE+stopless": [
    {
     "lines": [
-     "We bloomed on Sunday",
-     "at Women Writers in Bloom",
-     "A beautiful way"
+     "psychological",
+     "manipulation tactic",
+     "WOW!!!  Sounds familiar"
     ],
-    "url": "https://bsky.app/profile/did:plc:s4hg3khwbea5pnqnhnthz2w3/post/3mnas7dnv4s2j"
+    "url": "https://bsky.app/profile/did:plc:foxvjp4d27c3ftfzt4tt2o5d/post/3mri5yfvcq22w"
+   },
+   {
+    "lines": [
+     "allow Communist",
+     "infiltration, Communist",
+     "indoctrination"
+    ],
+    "url": "https://bsky.app/profile/did:plc:rzyvo6g3v23c6ccxh2zxjj47/post/3mribwt36ck2u"
+   },
+   {
+    "lines": [
+     "chain mail, ring mail, mail",
+     "chain armor, chain armour, ring",
+     "armor, ring armour"
+    ],
+    "url": "https://bsky.app/profile/did:plc:pmx3b4zwpihdbhoqhbtikbj3/post/3mrippfphfz2e"
+   },
+   {
+    "lines": [
+     "Yoshi: I'm Roy I'm",
+     "Roy I'm Roy I'm Roy I'm Roy",
+     "I'm Roy I'm Roy I'm"
+    ],
+    "url": "https://bsky.app/profile/did:plc:ipcpy55u7ercqrtgf25rxknx/post/3mrivivun622q"
+   },
+   {
+    "lines": [
+     "sociology",
+     "Communist China. Banning",
+     "sociology"
+    ],
+    "url": "https://bsky.app/profile/did:plc:f3hazsq633jzmnjtwzgtvb6c/post/3mrivs6wcsk26"
    }
   ],
-  "rhyme13+lipogramE": [
+  "alphabetical+stopless": [
    {
     "lines": [
-     "judiciary",
-     "and bar association",
-     "disciplinary"
+     "Africa,Asia",
+     "descendants). Diversity",
+     "solidarity"
     ],
-    "url": "https://bsky.app/profile/did:plc:d7aypgjlw7svu7haeta7x63h/post/3mnb3xks52c2d"
+    "url": "https://bsky.app/profile/did:plc:6xf7jvmjwujbyfosh42mhiib/post/3mri65g6oes2m"
+   },
+   {
+    "lines": [
+     "Benin #Botswana",
+     "Burundi #Cameroon #Chad",
+     "Comoros #Congo"
+    ],
+    "url": "https://bsky.app/profile/did:plc:fgiqkkrmaycusjocndaqrpz3/post/3mribfpkec22k"
+   },
+   {
+    "lines": [
+     "killed   #Military",
+     "Palestinian   #people",
+     "soldiers   #violence"
+    ],
+    "url": "https://bsky.app/profile/did:plc:mhqnbglrgmwiuz3kgexbi7uf/post/3mrjl3se6ly24"
+   },
+   {
+    "lines": [
+     "Benin #Botswana",
+     "Burundi #Cameroon #Chad",
+     "Comoros #Congo"
+    ],
+    "url": "https://bsky.app/profile/did:plc:fgiqkkrmaycusjocndaqrpz3/post/3mrk66euep22u"
+   },
+   {
+    "lines": [
+     "Benin #Botswana",
+     "Burundi #Cameroon #Chad",
+     "Comoros #Congo"
+    ],
+    "url": "https://bsky.app/profile/did:plc:fgiqkkrmaycusjocndaqrpz3/post/3mrkepj3xbs2s"
    }
   ],
-  "rhyme13+kigo": [
+  "iambic+rhyme13": [
    {
     "lines": [
-     "It’s time to dive head",
-     "first into the Fog for some",
-     "motherfucking Dead"
+     "I pulled myself out",
+     "of the reactionary",
+     "new atheist route"
     ],
-    "url": "https://bsky.app/profile/did:plc:ugzu44vhpu5vrd22hmkrn54j/post/3mnbbwqvtak2c"
+    "url": "https://bsky.app/profile/did:plc:w6rl5krkbgghoeiw5y6ml22i/post/3mri65vh76s2a"
    },
    {
     "lines": [
-     "eons ago when",
-     "there were chariots flying",
-     "in the sky and men"
+     "It is still very",
+     "confusing how some people",
+     "think I look scary"
     ],
-    "url": "https://bsky.app/profile/did:plc:dw6mndaq65h6iztysiv7rbyu/post/3mmizer7z722f"
+    "url": "https://bsky.app/profile/did:plc:rf4gxgn2tvnnk6iixhbd34sw/post/3mriemdjaks2o"
    },
    {
     "lines": [
-     "here’s this morning show",
-     "which I hope you enjoy. I’ll",
-     "be back tomorrow"
+     "So Donnie Dumbass",
+     "and window licker Jr",
+     "should be charged for mass"
     ],
-    "url": "https://bsky.app/profile/did:plc:oisefzlvijkys3e52suho73e/post/3mmjp4i6xwk2o"
+    "url": "https://bsky.app/profile/did:plc:acto3qrmldrpea6qm3tqeg6e/post/3mrigsibifk2x"
    },
    {
     "lines": [
-     "Gets You Thru The Night",
-     "by John Lennon is on Great",
-     "Big Radio RIGHT"
+     "it's leaders, turned said",
+     "dead leaders into martyrs",
+     "and propped up said dead"
     ],
-    "url": "https://bsky.app/profile/did:plc:hdox6nl4wc4fboxnkluwdhxq/post/3mmjwe2aflr2p"
+    "url": "https://bsky.app/profile/did:plc:dpdn7r7rbuow5cuxwta6kia2/post/3mrihsrsp6c2o"
    },
    {
     "lines": [
-     "LATE NIGHT SATURDAY",
-     "SOUL STEW on  Classic Oldies",
-     "Radio UK"
+     "the population",
+     "In Russia's case, however",
+     "that explanation"
     ],
-    "url": "https://bsky.app/profile/did:plc:jssy5j57n6lkyszkmbahqh4v/post/3mmk6qe3ua42y"
-   }
-  ],
-  "iambic+lipogramE+stopless": [
-   {
-    "lines": [
-     "Dogs Doing Human",
-     "Things Colouring Book, Quirky",
-     "Activity Book"
-    ],
-    "url": "https://bsky.app/profile/did:plc:mmpx2adpbvrbyjxzonipjh4m/post/3mnbexd4aij2u"
-   },
-   {
-    "lines": [
-     "Dogs Doing Human",
-     "Things Colouring Book, Quirky",
-     "Activity Book"
-    ],
-    "url": "https://bsky.app/profile/did:plc:mmpx2adpbvrbyjxzonipjh4m/post/3mneculfe5v2m"
-   },
-   {
-    "lines": [
-     "Dogs Doing Human",
-     "Things Colouring Book, Quirky",
-     "Activity Book"
-    ],
-    "url": "https://bsky.app/profile/did:plc:mmpx2adpbvrbyjxzonipjh4m/post/3mmjia72oka2v"
-   },
-   {
-    "lines": [
-     "Dogs Doing Human",
-     "Things Colouring Book, Quirky",
-     "Activity Book"
-    ],
-    "url": "https://bsky.app/profile/did:plc:mmpx2adpbvrbyjxzonipjh4m/post/3mmfpibhhxn2c"
-   },
-   {
-    "lines": [
-     "Dogs Doing Human",
-     "Things Colouring Book, Quirky",
-     "Activity Book"
-    ],
-    "url": "https://bsky.app/profile/did:plc:mmpx2adpbvrbyjxzonipjh4m/post/3mmmtkq7hqk2v"
-   }
-  ],
-  "rhyme13+rhymeAll": [
-   {
-    "lines": [
-     "a sunny Tuesday",
-     "in the San Francisco Bay",
-     "the spout of a gray"
-    ],
-    "url": "https://bsky.app/profile/did:plc:sgoxvcaizltgekedoj4zeuly/post/3mncmibrp7x2n"
-   },
-   {
-    "lines": [
-     "a bunch of land through",
-     "Pheasants Forever a few",
-     "years ago.  This new"
-    ],
-    "url": "https://bsky.app/profile/did:plc:p2wwjajj2wk4rm54bclwnxjn/post/3mmh6hu5pxs22"
-   },
-   {
-    "lines": [
-     "never forget. Pay",
-     "them off...whatever. J6",
-     "was a CRIME. J6"
-    ],
-    "url": "https://bsky.app/profile/did:plc:p3fgi2lcndpmhwgeszmhzkok/post/3mmn73l4fdc22"
+    "url": "https://bsky.app/profile/did:plc:amyaqaizfw77behar7lprwn5/post/3mrijkezwvs2w"
    }
   ],
   "isosyllabic": [
    {
     "lines": [
-     "This is the first time",
-     "I’ve seen this. I don’t like Bill",
-     "Maher, and I don’t watch"
+     "You’re one of my best",
+     "friends. You can scream and yell all",
+     "you want, I’ll still care"
     ],
-    "url": "https://bsky.app/profile/did:plc:clrz2dor4orqkvvqr3qwrary/post/3mncw5mb7j22i"
+    "url": "https://bsky.app/profile/did:plc:mf2na5j7wyef4yykzm4u4ply/post/3mri67yzscs22"
    },
    {
     "lines": [
-     "Don’t know why I can’t",
-     "post this, but if this is true",
-     "It’s BIG. Can we trust"
+     "See they in the car",
+     "That’s not too bad. You can just",
+     "run to the car, get"
     ],
-    "url": "https://bsky.app/profile/did:plc:hhhjhggk7ch7drqtdb6hiwnm/post/3mnfjsjvysk2s"
+    "url": "https://bsky.app/profile/did:plc:nyic5fcuhpybqn3tk5gychuj/post/3mri7ptwupc2p"
    },
    {
     "lines": [
-     "Yes, here’s the link, I’d",
-     "like to have heard a bit more",
-     "from Ade but it’s nice"
+     "so real, plus i like",
+     "to bend my books in half when",
+     "i hold them and that’s"
     ],
-    "url": "https://bsky.app/profile/did:plc:ax3xlfyyaz3tbhpjhib5mb5e/post/3mmk2q42ogs2x"
+    "url": "https://bsky.app/profile/did:plc:wtlyufi6cybchvn5xqlxg3hn/post/3mri7puzk3c2y"
    },
    {
     "lines": [
-     "free to tell me why",
-     "you hate them…or if you’re one",
-     "of the rare few who"
+     "A life for a life",
+     "You took my life, so I’ll take",
+     "yours! You’re mine! You’re mine"
     ],
-    "url": "https://bsky.app/profile/did:plc:s2ahnyyou2ocsnkyjai3u3na/post/3mmfe3mjcns2o"
+    "url": "https://bsky.app/profile/did:plc:iabr4uw4lakiwxnmys2yxpdi/post/3mrimpu4emc2c"
+   },
+   {
+    "lines": [
+     "ya i feel like since",
+     "he’s here for a good time not",
+     "a long time, he’d find"
+    ],
+    "url": "https://bsky.app/profile/did:plc:pd7e64jh3nmwdqjkzygyq7l3/post/3mriszo5g5s2x"
    }
   ],
-  "alphabetical": [
+  "iambic+rhyme13+stressPalindrome": [
    {
     "lines": [
-     "Administration",
-     "amnesty for fraudulent",
-     "pandemic-era"
+     "God damn, how the hell",
+     "did any adaptation",
+     "of ghost in the shell"
     ],
-    "url": "https://bsky.app/profile/did:plc:5igputezbx7qpev3itf2jzil/post/3mncxso44es22"
+    "url": "https://bsky.app/profile/did:plc:tqpb6343pwlgyb3yh6wjmg23/post/3mri6l37vps2d"
    },
    {
     "lines": [
-     "an Arizona",
-     "detention facility",
-     "Health officials say"
+     "and Sophia hit",
+     "the showers. but Sophia",
+     "plans to get a bit"
     ],
-    "url": "https://bsky.app/profile/did:plc:wtl6kr4en2wbcbpmxvkieuqk/post/3mnfxxv5mxf2m"
+    "url": "https://bsky.app/profile/did:plc:uc2uwwpsojtxmrjgbr3l27tu/post/3mribbt2el52c"
+   },
+   {
+    "lines": [
+     "it in the weird way",
+     "hell no. I just feel more like",
+     "myself if I play"
+    ],
+    "url": "https://bsky.app/profile/did:plc:lm5ie4gqky4vjuucgyja6kaw/post/3mridi3fas22p"
+   },
+   {
+    "lines": [
+     "a good girl ever",
+     "told me to leave it in like",
+     "this, I might never"
+    ],
+    "url": "https://bsky.app/profile/did:plc:6hr5hdg6o7xsmrcnnxdwyajj/post/3mrivh7n7xk22"
+   },
+   {
+    "lines": [
+     "now changed to one way",
+     "from west to east BUT no signs",
+     "updated to say"
+    ],
+    "url": "https://bsky.app/profile/did:plc:mq76fsiywnkh6drc3qzrvxt6/post/3mrivrl5zfs2z"
    }
   ],
-  "iambic+kigo+stressPalindrome+isosyllabic": [
+  "iambic+lipogramE": [
    {
     "lines": [
-     "When life gives you red",
-     "and white stars, it’s time to shine",
-     "bright! Who needs a night"
+     "is such a wildly",
+     "unpopular thought right now",
+     "but you know what I'm"
     ],
-    "url": "https://bsky.app/profile/did:plc:gzrrxzgx4g5oe3epin6hqyku/post/3mnd3dqwtuz2r"
+    "url": "https://bsky.app/profile/did:plc:yjvayj5thzisljwor7yykhlx/post/3mri77gwgh22g"
    },
    {
     "lines": [
-     "And How You Can Too",
-     "Here's the thing that keeps me up",
-     "at night: I just ran"
+     "that's why i say it's",
+     "not a particularly",
+     "good look. i will say"
     ],
-    "url": "https://bsky.app/profile/did:plc:lvoh6kgyhsm7s52ppqm2wgoq/post/3mndecnc5p4n2"
+    "url": "https://bsky.app/profile/did:plc:kt3avz7yssynvjdb47ex5fjz/post/3mrillbtv7c2b"
    },
    {
     "lines": [
-     "Do or do not. There",
-     "is no try. Do or do not",
-     "There is no try.​ Star"
+     "Had a big salad",
+     "at lunch and can’t wait to find",
+     "out how things play out"
     ],
-    "url": "https://bsky.app/profile/did:plc:y7oeut6gv75ce6gpwogupmgm/post/3mne5lomxent2"
+    "url": "https://bsky.app/profile/did:plc:cfv7y56j7hsii4f44ue4obmf/post/3mrimineuck2o"
    },
    {
     "lines": [
-     "look up at the stars",
-     "and not down at your feet. Try",
-     "to make sense of what"
+     "is a lot of fun",
+     "so far, i think tomorrow",
+     "i might try doing"
     ],
-    "url": "https://bsky.app/profile/did:plc:ewo32dl4to7cu6ubgl6bk5pb/post/3mmiximuhpk2j"
+    "url": "https://bsky.app/profile/did:plc:3ukzpapc7qcpuheyo36gyhqe/post/3mrinhztrkc2f"
    },
    {
     "lines": [
-     "Get your Late night🌛🌑 news",
-     "views👀 & that GOOD GOOD HOT TEA☕ HERE",
-     "You just click the link"
+     "I'm in a singing",
+     "mood, but I'm also hungry",
+     "Cannot sing and snack"
     ],
-    "url": "https://bsky.app/profile/did:plc:nqdeb6u5x3srrcljtn4odsi5/post/3mmloxqubfc2g"
+    "url": "https://bsky.app/profile/did:plc:jjtz5y52qtf7lpfdrm6w5mz3/post/3mrioi64qjs2p"
    }
   ],
-  "kigo+stressPalindrome+stopless": [
+  "iambic+isosyllabic": [
    {
     "lines": [
-     "Seven states sue Trump",
-     "administration over",
-     "offshore wind project"
+     "ass to this bum ass",
+     "to this job just to do more",
+     "than I should for not"
     ],
-    "url": "https://bsky.app/profile/did:plc:ser5xww54j53ap7xj74ej4rp/post/3mndpfxbb3c2l"
+    "url": "https://bsky.app/profile/did:plc:ptisijdqbjy4klkgekyoh2lq/post/3mriaabi5zk2u"
    },
    {
     "lines": [
-     "Seven states sue Trump",
-     "administration over",
-     "offshore wind project"
+     "to back off. It feels",
+     "good that it feels bad.  This stuff",
+     "is the bite that scars"
     ],
-    "url": "https://bsky.app/profile/did:plc:o72fyuustva7nwkupjqcr5md/post/3mndt5vxzvk2h"
+    "url": "https://bsky.app/profile/did:plc:23kbvocd2gxobaiylpshyx2q/post/3mribvco2zc2q"
    },
    {
     "lines": [
-     "nest box,sparrow,Wood",
-     "Street,Concord,flowers,bluebird",
-     "chipmunk,lilacs,leap"
+     "fear is good, and fear",
+     "is safe. fear is good, and fear",
+     "is safe. fear is good"
     ],
-    "url": "https://bsky.app/profile/did:plc:xvm5gstm64eotj73dkr6l7tz/post/3mmmpuqmsrb2g"
+    "url": "https://bsky.app/profile/did:plc:nisukvmm4q6dk332d65ohbk7/post/3mrii7axcsk2v"
+   },
+   {
+    "lines": [
+     "have a huge soft spot",
+     "for it and like it a lot",
+     "is the thing. you know"
+    ],
+    "url": "https://bsky.app/profile/did:plc:4m44awi2zxqdeqmge5hd67ee/post/3mrikakpxmc2l"
+   },
+   {
+    "lines": [
+     "Oh fuck. For the love",
+     "all that is good in the world",
+     "we must end this now"
+    ],
+    "url": "https://bsky.app/profile/did:plc:uutzuuycc4ukwtj3d72fqhrg/post/3mriprnxzac2m"
+   }
+  ],
+  "iambic+rhyme13+rhymeAll+lipogramE": [
+   {
+    "lines": [
+     "organization",
+     "built on intimidation",
+     "manipulation"
+    ],
+    "url": "https://bsky.app/profile/did:plc:j2w2cfun7kam2chtajg22te4/post/3mriabnfiq22f"
+   }
+  ],
+  "rhyme13+stressPalindrome": [
+   {
+    "lines": [
+     "look at it bc",
+     "it made me click out at first",
+     "just so you can see"
+    ],
+    "url": "https://bsky.app/profile/did:plc:fnayimxlzx4xsi3lwetnzp67/post/3mribbatgos2m"
+   },
+   {
+    "lines": [
+     "It’s amazing how",
+     "drugs will both give you the weight",
+     "loss that will allow"
+    ],
+    "url": "https://bsky.app/profile/did:plc:5vnuczictdwhom3kdsrxgabp/post/3mricftuv3c2m"
+   },
+   {
+    "lines": [
+     "point should have inside",
+     "the Television Centre",
+     "instead of outside"
+    ],
+    "url": "https://bsky.app/profile/did:plc:sueerx3lvdeq7q424rvbd6l7/post/3mrij4rkuxqo2"
+   },
+   {
+    "lines": [
+     "thought this was about",
+     "the snack food for a second",
+     "and was about shout"
+    ],
+    "url": "https://bsky.app/profile/did:plc:wybj6sxshn4qd4yts6do2cw4/post/3mrilkyl35s2x"
+   },
+   {
+    "lines": [
+     "pissed. Of everything",
+     "they announced in Anaheim",
+     "that was/is the thing"
+    ],
+    "url": "https://bsky.app/profile/did:plc:nuztkr5rl47h62kw42uwcfvx/post/3mrin6deop227"
+   }
+  ],
+  "rhyme13+rhymeAll": [
+   {
+    "lines": [
+     "then he lied again",
+     "then he said something mean, then",
+     "he lied again, then"
+    ],
+    "url": "https://bsky.app/profile/did:plc:dlyrc4bsytmigcuznahko3gz/post/3mricphfsb22i"
+   },
+   {
+    "lines": [
+     "can find everything",
+     "in this country, anything",
+     "goes, and anything"
+    ],
+    "url": "https://bsky.app/profile/did:plc:hzs7k44mrrfmfbi6opv5u2cw/post/3mrijd3ke7m2h"
+   },
+   {
+    "lines": [
+     "can find everything",
+     "in this country, anything",
+     "goes, and anything"
+    ],
+    "url": "https://bsky.app/profile/did:plc:vizwdor43adw3277u2kkrssd/post/3mrijdgcswr2f"
+   },
+   {
+    "lines": [
+     "Destroy to enjoy",
+     "destroy to enjoy, destroy",
+     "to enjoy, destroy"
+    ],
+    "url": "https://bsky.app/profile/did:plc:hhg34rpjlj3onclarumivxkp/post/3mrjfxgilwn2b"
+   },
+   {
+    "lines": [
+     "For Sale - [B1P",
+     "Seiko 8B92",
+     "0AB0"
+    ],
+    "url": "https://bsky.app/profile/did:plc:rucahs7knm6whn3rq7oiyhrd/post/3mrkdti3i3h2m"
+   }
+  ],
+  "rhyme13+kigo": [
+   {
+    "lines": [
+     "Information Sea",
+     "waiting to be adopted",
+     "onto your PC"
+    ],
+    "url": "https://bsky.app/profile/did:plc:e6j262mqqmh7gykrfttywuii/post/3mridav3sjk2l"
+   },
+   {
+    "lines": [
+     "drinks, skeletons spawn",
+     "in, defend patrons and keep",
+     "feeding drink still dawn"
+    ],
+    "url": "https://bsky.app/profile/did:plc:hkkn5gfv3zwfzzeeqj3rssfn/post/3mrihqfzolk2l"
+   },
+   {
+    "lines": [
+     "golden sunrise light",
+     "goes over the cold castle",
+     "chamber walls, the knight"
+    ],
+    "url": "https://bsky.app/profile/did:plc:st46phfvirjfmbkjpgu3ws5a/post/3mriib3mi5c2n"
+   },
+   {
+    "lines": [
+     "LATE NIGHT SATURDAY",
+     "SOUL STEW on Classic Oldies",
+     "Radio UK"
+    ],
+    "url": "https://bsky.app/profile/did:plc:jssy5j57n6lkyszkmbahqh4v/post/3mrim46quyu2s"
+   },
+   {
+    "lines": [
+     "The rescheduled White",
+     "House Correspondents’ Dinner",
+     "took place Friday night"
+    ],
+    "url": "https://bsky.app/profile/did:plc:34jre5uqyb335dran2uocczn/post/3mriomqllyb2d"
+   }
+  ],
+  "iambic+alphabetical+stressPalindrome+isosyllabic+stopless": [
+   {
+    "lines": [
+     "PLEASE PLEASE PLEASE PLEASE PLEASE",
+     "PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE",
+     "PLEASE PLEASE PLEASE PLEASE PLEASE"
+    ],
+    "url": "https://bsky.app/profile/did:plc:7f2l6vn4oixqtoixcqtcovhb/post/3mridergyj227"
+   },
+   {
+    "lines": [
+     "PLEASE PLEASE PLEASE PLEASE PLEASE",
+     "PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE",
+     "PLEASE PLEASE PLEASE PLEASE PLEASE"
+    ],
+    "url": "https://bsky.app/profile/did:plc:7f2l6vn4oixqtoixcqtcovhb/post/3mridergyj227"
+   },
+   {
+    "lines": [
+     "please please please please please",
+     "please please please please please please please",
+     "please please please please please"
+    ],
+    "url": "https://bsky.app/profile/did:plc:7htj2giqzovhpb5i56bbx5y2/post/3mriebdtzzk2o"
+   },
+   {
+    "lines": [
+     "based based based based based",
+     "based based based based based based based",
+     "based based based based based"
+    ],
+    "url": "https://bsky.app/profile/did:plc:avltxicu5ydhe7k2iyucyke6/post/3mriol7b2e22f"
+   },
+   {
+    "lines": [
+     "Mine! Mine!Mine! Mine!Mine",
+     "Mine!Mine! Mine!Mine! Mine!Mine! Mine",
+     "Mine! Mine!Mine! Mine!Mine"
+    ],
+    "url": "https://bsky.app/profile/did:plc:7pgqaecezhshuuastf4w473i/post/3mrirdmp42k2q"
+   }
+  ],
+  "iambic+lipogramE+isosyllabic": [
+   {
+    "lines": [
+     "both, It's both, It's both",
+     "It's both, It's both, It's both, It's",
+     "both, It's both, It's both"
+    ],
+    "url": "https://bsky.app/profile/did:plc:6wfcz5jenfkyzfph76ww7u4o/post/3mridll722c2t"
+   },
+   {
+    "lines": [
+     "It's both, It's both, It's",
+     "both, It's both, It's both, It's both",
+     "It's both, It's both, It's"
+    ],
+    "url": "https://bsky.app/profile/did:plc:6wfcz5jenfkyzfph76ww7u4o/post/3mridll722c2t"
+   }
+  ],
+  "lipogramE+stressPalindrome": [
+   {
+    "lines": [
+     "it, but nobody's",
+     "DOING anything about",
+     "it? It's so awful"
+    ],
+    "url": "https://bsky.app/profile/did:plc:kp6ku7sy2gzic6dkbskmsrvj/post/3mriegk7epc2q"
+   },
+   {
+    "lines": [
+     "to switch off a bunch",
+     "of things just do that and stop",
+     "playing with random"
+    ],
+    "url": "https://bsky.app/profile/did:plc:a2pi3kxjcrwajrnegdg5e7gl/post/3mriguayw5k2j"
+   },
+   {
+    "lines": [
+     "Aw, thankyou so much",
+     "Nick! it was such a fun card",
+     "to draw, I always"
+    ],
+    "url": "https://bsky.app/profile/did:plc:53ilhntpel6ragn46lcubkmk/post/3mriiv725bs2j"
+   },
+   {
+    "lines": [
+     "Shit. I told my Mum",
+     "I was hanging out round yours",
+     "What if my Mum calls"
+    ],
+    "url": "https://bsky.app/profile/did:plc:a23zwn7ingoislx7cjbbrls3/post/3mrilqauxs22c"
+   },
+   {
+    "lines": [
+     "It's not coming.  I'm",
+     "an IT guy at a major",
+     "U.  It's not coming"
+    ],
+    "url": "https://bsky.app/profile/did:plc:5oxsm2eipwdb7iqkzgbw47sb/post/3mrj2qpiq6s2r"
+   }
+  ],
+  "rhyme13+stopless": [
+   {
+    "lines": [
+     "Potters Bar CC",
+     "203/3 | Potters",
+     "Bar CC - 1st XI"
+    ],
+    "url": "https://bsky.app/profile/did:plc:kdr4lahowxsox357jcbqk4wr/post/3mrierxi53h2h"
+   },
+   {
+    "lines": [
+     "Alert Weather Day",
+     "Scattered storms, isolated",
+     "flood threat Saturday"
+    ],
+    "url": "https://bsky.app/profile/did:plc:oij3kslf6ae75wq7vw37otsv/post/3mrifdrvfyf2r"
+   },
+   {
+    "lines": [
+     "small town audio",
+     "engineer soap + arrogant",
+     "big time radio"
+    ],
+    "url": "https://bsky.app/profile/did:plc:fybu3vvz2s5wf5ly3yqp63q7/post/3mriidyudk22m"
+   },
+   {
+    "lines": [
+     "país ni la Ley de",
+     "Montes, ni la Agenda",
+     "20-30, ni"
+    ],
+    "url": "https://bsky.app/profile/did:plc:dx5je5myk3uavb23e56nivhy/post/3mrizoilqls2i"
+   },
+   {
+    "lines": [
+     "7hrs, 3k",
+     "elevation gain. Summit",
+     "candy: Milky Way"
+    ],
+    "url": "https://bsky.app/profile/did:plc:4kv6vcrfedeveksvjkadvx26/post/3mrj3bnkrgk2x"
    }
   ],
   "sanmyaku+stopless": [
    {
     "lines": [
-     "Stockton homicide",
-     "suspect arrested during",
-     "Nevada County"
+     "Software Engineer",
+     "Browser Extension, Data",
+     "Protection (Hybrid"
     ],
-    "url": "https://bsky.app/profile/did:plc:xnv6b6aa4afikrhq5rlkgodf/post/3mndw5pcjd52o"
+    "url": "https://bsky.app/profile/did:plc:voa5jj4mjj2u76o7cp6qanjz/post/3mrifaf4v3f2o"
    },
    {
     "lines": [
-     "between Division",
-     "IA colleges during",
-     "regular season"
+     "visit Marion",
+     "County Mosquito Control",
+     "Mosquito season"
     ],
-    "url": "https://bsky.app/profile/did:plc:74imccy2ypi526rgtex26jk4/post/3mmiut5w7we2v"
+    "url": "https://bsky.app/profile/did:plc:fan4razkna5wvpxlyabb4rl3/post/3mrifh7i5xb25"
    },
    {
     "lines": [
-     "wordpress #agency",
-     "business #gallery #beauty",
-     "creative #fashion"
+     "Sega Genesis",
+     "Sega Genesis Sega",
+     "Genesis Sega"
     ],
-    "url": "https://bsky.app/profile/did:plc:bs46pnhkm4vd4ff6d2rl6ulk/post/3mmlpmpipf32b"
+    "url": "https://bsky.app/profile/did:plc:qxi22ungq6qok4urqamq6s4y/post/3mrjbps5nn22z"
    },
    {
     "lines": [
-     "over dangerous",
-     "driving conditions into",
-     "organized action"
+     "Sega Genesis",
+     "Sega Genesis Sega",
+     "Genesis Sega"
     ],
-    "url": "https://bsky.app/profile/did:plc:rshibtcbcif6qukicpuktnm6/post/3mmgcoijqxd2u"
+    "url": "https://bsky.app/profile/did:plc:qxi22ungq6qok4urqamq6s4y/post/3mrjbps5nn22z"
    },
    {
     "lines": [
-     "Affects: Studio",
-     "viewers, Studio viewers",
-     "Studio viewers"
+     "Sega Genesis",
+     "Sega Genesis Sega",
+     "Genesis Sega"
     ],
-    "url": "https://bsky.app/profile/did:plc:3qx3wgjvwbhbr2uvbv5qnot4/post/3mmgkjq5sz42h"
+    "url": "https://bsky.app/profile/did:plc:qxi22ungq6qok4urqamq6s4y/post/3mrjbps5nn22z"
    }
   ],
-  "iambic+stressPalindrome+stopless": [
+  "iambic+kigo+stressPalindrome+isosyllabic": [
    {
     "lines": [
-     "Suzuki Raider",
-     "R150 Blade",
-     "Edition. Visit"
+     "I thought I might clear",
+     "a bunch last night but did get",
+     "La Grange too. A Train"
     ],
-    "url": "https://bsky.app/profile/did:plc:tobm6mrf5o7m76jvt4asmbqh/post/3mne5mjynmk2t"
+    "url": "https://bsky.app/profile/did:plc:jqxl2y7zrfqpdvbgzx43fwsh/post/3mrigfcr7fk2g"
    },
    {
     "lines": [
-     "dive into Python",
-     "types, functions & libraries while",
-     "designing projects"
+     "on the thing I sketched",
+     "out last night and part is like",
+     "oh my god just wait"
     ],
-    "url": "https://bsky.app/profile/did:plc:36yujs2v7rzgoci2fsx4i4d2/post/3mnfbgqhhvw26"
+    "url": "https://bsky.app/profile/did:plc:n5opb5yxx2anwqq6ehwwlsuv/post/3mrihu5to3k2d"
    },
    {
     "lines": [
-     "Dominican chant",
-     "exploring human–nature",
-     "interconnection"
+     "was to get to hang",
+     "out on the edge and look down",
+     "and watch the clouds go"
     ],
-    "url": "https://bsky.app/profile/did:plc:mggvlqwu5d7oht6g3xlvibza/post/3mnfjxx22zs22"
+    "url": "https://bsky.app/profile/did:plc:bagzmgfinv2miv7j4y2yjxle/post/3mriloz5tz22c"
    },
    {
     "lines": [
-     "Hi78",
-     "Lo73) Feels like",
-     "71F"
+     "If we make it through",
+     "the night, if we live to see",
+     "the dawn.                                                         We will search"
     ],
-    "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mmiy7llo2h2e"
+    "url": "https://bsky.app/profile/did:plc:5md66fht7wdagydqwuz64sad/post/3mriutlvwi624"
    },
    {
     "lines": [
-     "estrella en el",
-     "Paseo de la Fama",
-     "de Hollywood con"
+     "SO, as a good spouse",
+     "I picked a small fight, he got",
+     "to be mad & storm off"
     ],
-    "url": "https://bsky.app/profile/did:plc:2e4bpotb3wcniy643vo6xg57/post/3mmiyx252qs2i"
+    "url": "https://bsky.app/profile/did:plc:2cuekvetitnxmijbtxi3c7gv/post/3mrjfsfgpl22u"
    }
   ],
-  "iambic+lipogramE+stressPalindrome+isosyllabic": [
+  "iambic+lipogramE+stopless": [
    {
     "lines": [
-     "If you want to know",
-     "why I fight so hard for trans",
-     "rights, and why I don't"
+     "Hungarian Grand",
+     "Prix - Final Qualifying",
+     "Classification"
     ],
-    "url": "https://bsky.app/profile/did:plc:tlcvxo7swx34fkwxsnvqfjbr/post/3mnfnu7d7tc2w"
-   }
-  ],
-  "rhyme13+lipogramE+stopless": [
-   {
-    "lines": [
-     "Clarification",
-     "Aaron W about",
-     "All information"
-    ],
-    "url": "https://bsky.app/profile/did:plc:luqklzbsnbqr37mcgvnesvi7/post/3mngbcmw44u2u"
-   }
-  ],
-  "iambic+lipogramE+stressPalindrome": [
-   {
-    "lines": [
-     "How much do you know",
-     "about Barack Obama",
-     "Find out with this fun"
-    ],
-    "url": "https://bsky.app/profile/did:plc:h7dfm3xvswww543aqou2ogwe/post/3mnggfydusk24"
+    "url": "https://bsky.app/profile/did:plc:mhlwrf26lmrlgusrpbi2li4o/post/3mrigvi335q2e"
    },
    {
     "lines": [
-     "wants to fill my mouth",
-     "with cum? I'm dying to fuck",
-     "a fan and upload"
+     "Dogs Doing Human",
+     "Things Colouring Book, Quirky",
+     "Activity Book"
     ],
-    "url": "https://bsky.app/profile/did:plc:wjug3l6hmnjfifnmee2k4gfz/post/3mmfhf6pswk2y"
-   }
-  ],
-  "rhyme13+stressPalindrome+stopless": [
-   {
-    "lines": [
-     "Famous Brands expands",
-     "into two new African",
-     "countries: Famous Brands"
-    ],
-    "url": "https://bsky.app/profile/did:plc:42han5exrxyrgdsbwosrp7sy/post/3mmjfqnu64y2e"
+    "url": "https://bsky.app/profile/did:plc:mmpx2adpbvrbyjxzonipjh4m/post/3mrj5dp6fge2w"
    },
    {
     "lines": [
-     "Dodgers haters got",
-     "conspicuously quiet",
-     "after Tanner Scott"
+     "Dogs Doing Human",
+     "Things Colouring Book, Quirky",
+     "Activity Book"
     ],
-    "url": "https://bsky.app/profile/did:plc:lgxwokjfnegutejxknkdpqwj/post/3mmopijig442m"
-   }
-  ],
-  "rhyme13+kigo+stressPalindrome": [
-   {
-    "lines": [
-     "vs Chicago",
-     "Stars, and San Diego Wave",
-     "vs Orlando"
-    ],
-    "url": "https://bsky.app/profile/did:plc:iy2zdnktyl3rvq24nohhrlkm/post/3mmkskit4rj2z"
+    "url": "https://bsky.app/profile/did:plc:mmpx2adpbvrbyjxzonipjh4m/post/3mrlh54waex2i"
    },
    {
     "lines": [
-     "vs Chicago",
-     "Stars, and San Diego Wave",
-     "vs Orlando"
+     "Dogs Doing Human",
+     "Things Colouring Book, Quirky",
+     "Activity Book"
     ],
-    "url": "https://bsky.app/profile/did:plc:sgoxvcaizltgekedoj4zeuly/post/3mmmypk7hl32k"
-   }
-  ],
-  "lipogramE+sanmyaku+stopless": [
+    "url": "https://bsky.app/profile/did:plc:mmpx2adpbvrbyjxzonipjh4m/post/3mrmw3qwtgk2y"
+   },
    {
     "lines": [
-     "uk#portugal",
-     "poland#latvia#oman",
-     "italy#scotland"
+     "capacity, though",
+     "consolidating aphid",
+     "hallucination"
     ],
-    "url": "https://bsky.app/profile/did:plc:yv4ez7b4scwd54hwdpwps72e/post/3mmh2nkymrk2s"
+    "url": "https://bsky.app/profile/did:plc:35vhrw4vfcilzxggzbhxukyy/post/3mrnco4sra22s"
    }
   ],
   "iambic+lipogramE+alphabetical+stressPalindrome+isosyllabic+stopless": [
    {
     "lines": [
-     "Boats Boats Boats Boats Boats",
-     "Boats Boats Boats Boats Boats Boats Boats",
-     "Boats Boats Boats Boats Boats"
+     "Why why why why why",
+     "why why why why why why why",
+     "why why why why why"
     ],
-    "url": "https://bsky.app/profile/did:plc:lpea7l2w55fldrz2ev7hobak/post/3mmnzgnfups2t"
+    "url": "https://bsky.app/profile/did:plc:pvw7v5yy5pjxg5t7auzysy3z/post/3mrij3kmn5k22"
+   },
+   {
+    "lines": [
+     "why why why why why",
+     "why why why why why why why",
+     "why why why why why"
+    ],
+    "url": "https://bsky.app/profile/did:plc:pvw7v5yy5pjxg5t7auzysy3z/post/3mrij3kmn5k22"
+   },
+   {
+    "lines": [
+     "why why why why why",
+     "why why why why why why why",
+     "why why why why why"
+    ],
+    "url": "https://bsky.app/profile/did:plc:pvw7v5yy5pjxg5t7auzysy3z/post/3mrij3kmn5k22"
+   },
+   {
+    "lines": [
+     "why why why why why",
+     "why why why why why why why",
+     "why why why why why"
+    ],
+    "url": "https://bsky.app/profile/did:plc:pvw7v5yy5pjxg5t7auzysy3z/post/3mrij3kmn5k22"
+   },
+   {
+    "lines": [
+     "Trains 🚂 trains 🚂 trains 🚂 trains 🚂 trains",
+     "trains 🚂 trains 🚂 trains 🚂 trains 🚂 trains 🚆 trains 🚆 trains",
+     "trains 🚆 trains 🚆 trains 🚆 trains 🚊 trains"
+    ],
+    "url": "https://bsky.app/profile/did:plc:4plgedlwmatltpfz6davuahn/post/3mrn72n3fik2n"
+   }
+  ],
+  "iambic+rhyme13+stressPalindrome+isosyllabic": [
+   {
+    "lines": [
+     "I mean….its been shit",
+     "for a long time so I guess",
+     "this means it won’t get"
+    ],
+    "url": "https://bsky.app/profile/did:plc:luaimif42ulwlylchiyxd5by/post/3mrijfo3vf22u"
+   },
+   {
+    "lines": [
+     "Like, sure, you might try",
+     "to class it up, but don't. It's",
+     "not like a Mai Tai"
+    ],
+    "url": "https://bsky.app/profile/did:plc:xslzkilxfu7dspyqw5c7a7qt/post/3mrls64hak22h"
+   }
+  ],
+  "rhyme13+kigo+stressPalindrome": [
+   {
+    "lines": [
+     "ICE murdered a son",
+     "a nurse, and a kind, loving",
+     "person, and no one"
+    ],
+    "url": "https://bsky.app/profile/did:plc:ji7lroxun3yvv2pxhcf7jqsn/post/3mrimkl5k7k2s"
+   }
+  ],
+  "iambic+kigo+stopless": [
+   {
+    "lines": [
+     "include chip vendors",
+     "clouds, model builders, software",
+     "firms, open-source groups"
+    ],
+    "url": "https://bsky.app/profile/did:plc:4j7exarb62djxycrgdfhuulr/post/3mrio3l5bmo2u"
+   },
+   {
+    "lines": [
+     "HTML file",
+     "entire office suite. No",
+     "install, no cloud, no"
+    ],
+    "url": "https://bsky.app/profile/did:plc:uzctzf6d6wkvefppurjpt76r/post/3mrmfbad3i22s"
+   },
+   {
+    "lines": [
+     "Dawn x64",
+     "compatibility mode",
+     "steam/Linux. After"
+    ],
+    "url": "https://bsky.app/profile/did:plc:kvzj3wmilxylrl4z3txs5b3c/post/3mrn3iieoik22"
+   },
+   {
+    "lines": [
+     "Depression Rabbit",
+     "Snow Limited Edition",
+     "Available Now"
+    ],
+    "url": "https://bsky.app/profile/did:plc:jymq7u67cwefz42mvt2gqche/post/3mrnbfhygtr2b"
+   },
+   {
+    "lines": [
+     "sea yo, no soy la",
+     "persona más alegre",
+     "del mundo, pero"
+    ],
+    "url": "https://bsky.app/profile/did:plc:gmsg34cwordoxc3cojifyi35/post/3mrniu76aps2a"
+   }
+  ],
+  "iambic+lipogramE+stressPalindrome+isosyllabic": [
+   {
+    "lines": [
+     "If your tail was too",
+     "long, how would you wrap it up",
+     "in a way that won't"
+    ],
+    "url": "https://bsky.app/profile/did:plc:mihig54imhdunlqhvrc7qxqi/post/3mripftp4s22s"
+   },
+   {
+    "lines": [
+     "all your hot cum & piss",
+     "down my throat!!  Gulp, gulp, gulp, gulp",
+     "gulp, gulp, gulp, gulp, gulp"
+    ],
+    "url": "https://bsky.app/profile/did:plc:aoyt6qmf4dkz3ejeonad5le5/post/3mrjxiblxdk2e"
+   },
+   {
+    "lines": [
+     "cum & piss down my throat",
+     "Gulp, gulp, gulp, gulp, gulp, gulp, gulp",
+     "gulp, gulp, gulp, gulp, gulp"
+    ],
+    "url": "https://bsky.app/profile/did:plc:aoyt6qmf4dkz3ejeonad5le5/post/3mrjxxbtvqs2e"
+   },
+   {
+    "lines": [
+     "at yu* *paws at yu",
+     "paws at yu* *paws at yu* *paws",
+     "at yu* *paws at yu"
+    ],
+    "url": "https://bsky.app/profile/did:plc:dglm2wiwinqe554e25cix4cl/post/3mrlhlchfg22a"
+   },
+   {
+    "lines": [
+     "AND FUCK THIS BOOK FUCK",
+     "FUCK FUCK FUCK FUCK FUCK FUCK FUCK",
+     "FUCK FUCK FUCK FUCK FUCK"
+    ],
+    "url": "https://bsky.app/profile/did:plc:jksyhr3jgq3mcxa7fwblilqj/post/3mrljg5alzk2k"
+   }
+  ],
+  "iambic+lipogramE+stressPalindrome": [
+   {
+    "lines": [
+     "I want this armor",
+     "I want this armor I want",
+     "this armor I want"
+    ],
+    "url": "https://bsky.app/profile/did:plc:6mjkmqtwswnebvfctqvuhop3/post/3mripqjanvs2u"
+   },
+   {
+    "lines": [
+     "no and i don't know",
+     "why you would want that to work",
+     "on android its hard"
+    ],
+    "url": "https://bsky.app/profile/did:plc:eieavxftth5reku5ysxyd76b/post/3mrklixqctk2p"
+   },
+   {
+    "lines": [
+     "it's gonna fuck up",
+     "my algorithm of D",
+     "D animation"
+    ],
+    "url": "https://bsky.app/profile/did:plc:k6d4vsobjpqsd5zacwpakdwz/post/3mrmlp5ubys23"
+   },
+   {
+    "lines": [
+     "good taking him out",
+     "was also such a ramp up",
+     "in difficulty"
+    ],
+    "url": "https://bsky.app/profile/did:plc:ddfqwo3dizaop77rrna7cuxj/post/3mrmycebm7s24"
+   }
+  ],
+  "iambic+lipogramE+alphabetical+monovocalic+stressPalindrome+isosyllabic": [
+   {
+    "lines": [
+     "A ha ha ha ha",
+     "ha ha ha ha ha ha ha",
+     "ha ha ha ha ha"
+    ],
+    "url": "https://bsky.app/profile/did:plc:xqenhtpstxg6fjmkdvydlh3o/post/3mriqaxf3js2h"
+   }
+  ],
+  "kigo+sanmyaku+stopless": [
+   {
+    "lines": [
+     "algae contractor",
+     "faces scrutiny over",
+     "Tijuana River"
+    ],
+    "url": "https://bsky.app/profile/did:plc:y36meptquzzobgkbzlgppozd/post/3mriqm6nkas2w"
+   },
+   {
+    "lines": [
+     "algae contractor",
+     "faces scrutiny over",
+     "Tijuana River"
+    ],
+    "url": "https://bsky.app/profile/did:plc:th4kcbbh6cvts3z24dgxux4j/post/3mrj7avehsc2t"
+   }
+  ],
+  "iambic+rhyme13+lipogramE": [
+   {
+    "lines": [
+     "I was just stating",
+     "a fact of human body",
+     "Not advocating"
+    ],
+    "url": "https://bsky.app/profile/did:plc:d6nktahntszv6dl2cz6axpgu/post/3mrivq5gob22d"
+   }
+  ],
+  "iambic+stressPalindrome+isosyllabic+stopless": [
+   {
+    "lines": [
+     "pet pet pet pet pet",
+     "pet pet pet pat pat pat pat",
+     "pet pet pet pet pat"
+    ],
+    "url": "https://bsky.app/profile/did:plc:2lgqko3ycmmugootekc2e6jf/post/3mrixdxznoc2z"
+   },
+   {
+    "lines": [
+     "Love girls love girls love",
+     "girls love girls love girls love girls",
+     "love girls Love girls love"
+    ],
+    "url": "https://bsky.app/profile/did:plc:3agnmeatfxd6pzndrl2j3rji/post/3mrjdxx33mk2f"
+   },
+   {
+    "lines": [
+     "girls love girls love girls",
+     "love girls love girls love girls Love",
+     "girls love girls love girls"
+    ],
+    "url": "https://bsky.app/profile/did:plc:3agnmeatfxd6pzndrl2j3rji/post/3mrjdxx33mk2f"
+   },
+   {
+    "lines": [
+     "GET KANE OUT GET KANE",
+     "OUT GET KANE OUT GET KANE OUT",
+     "GET KANE OUT GET KANE"
+    ],
+    "url": "https://bsky.app/profile/did:plc:5xvsv7jnxrmfgbjfs4gd4cde/post/3mrkd6n4sik26"
+   },
+   {
+    "lines": [
+     "SHARK WEEK! SHARK WEEK! SHARK",
+     "WEEK! SHARK WEEK! SHARK WEEK! SHARK WEEK",
+     "SHARK WEEK! SHARK WEEK! SHARK"
+    ],
+    "url": "https://bsky.app/profile/did:plc:dozrjbrbblzylhsgwswmnl3u/post/3mrkewmxs5k2q"
+   }
+  ],
+  "iambic+monovocalic+stressPalindrome+isosyllabic+stopless": [
+   {
+    "lines": [
+     "well well well... well wells",
+     "well wells well well well well wells",
+     "well wells well well well"
+    ],
+    "url": "https://bsky.app/profile/did:plc:b5pg6ggbppl2fdgoks5bl73j/post/3mrj45fflw22x"
+   }
+  ],
+  "kigo+isosyllabic": [
+   {
+    "lines": [
+     "The crack of the bat",
+     "The smell of the grass. The roar",
+     "of the crowd. You’ve just"
+    ],
+    "url": "https://bsky.app/profile/did:plc:6xcqsnllix7ieg7lziuxttqm/post/3mrj7sc5ffk2o"
+   },
+   {
+    "lines": [
+     "He’s prob still on ice",
+     "they’ll wheel him out in a week",
+     "or so and say oh"
+    ],
+    "url": "https://bsky.app/profile/did:plc:qkxww356wdisqlcwljc6ecaq/post/3mrjgulic7k2f"
+   }
+  ],
+  "lipogramE+monovocalic+stopless": [
+   {
+    "lines": [
+     "Spicy chips spicy",
+     "chips spicy chips spicy chips",
+     "spicy chips spicy"
+    ],
+    "url": "https://bsky.app/profile/did:plc:gdvrmszcusp4in5466dl56rj/post/3mrjaruq2cs2g"
+   },
+   {
+    "lines": [
+     "bok bok's bok-bok bok",
+     "bok bok bok bok's bok bok Bok",
+     "Bok, bok bok bok bok"
+    ],
+    "url": "https://bsky.app/profile/did:plc:3zclaifs2ivthsrjsyuaasy4/post/3mrl2ebu7q5n2"
+   },
+   {
+    "lines": [
+     "Bok bok bok bok bok",
+     "bok bok bok bok bok bok bok",
+     "bok-bok Bok Bok: Bok"
+    ],
+    "url": "https://bsky.app/profile/did:plc:3zclaifs2ivthsrjsyuaasy4/post/3mrmcl6zrv2h2"
+   }
+  ],
+  "iambic+lipogramE+stressPalindrome+stopless": [
+   {
+    "lines": [
+     "addict drug addict",
+     "drug addict drug addict drug",
+     "addict drug addict"
+    ],
+    "url": "https://bsky.app/profile/did:plc:zj5jqcitqtam4oje46gzaefq/post/3mrjb6ge2xk2b"
+   },
+   {
+    "lines": [
+     "addict drug addict",
+     "drug addict drug addict drug",
+     "addict drug addict"
+    ],
+    "url": "https://bsky.app/profile/did:plc:zj5jqcitqtam4oje46gzaefq/post/3mrjb6ge2xk2b"
+   },
+   {
+    "lines": [
+     "addict drug addict",
+     "drug addict drug addict drug",
+     "addict drug addict"
+    ],
+    "url": "https://bsky.app/profile/did:plc:zj5jqcitqtam4oje46gzaefq/post/3mrjb6ge2xk2b"
+   },
+   {
+    "lines": [
+     "addict drug addict",
+     "drug addict drug addict drug",
+     "addict drug addict"
+    ],
+    "url": "https://bsky.app/profile/did:plc:zj5jqcitqtam4oje46gzaefq/post/3mrjb6ge2xk2b"
+   }
+  ],
+  "iambic+stressPalindrome+stopless": [
+   {
+    "lines": [
+     "Adaptive Smart Home",
+     "Assistant using Local",
+     "Small Language Models"
+    ],
+    "url": "https://bsky.app/profile/did:plc:hxncmsbjayftx2xncvs4xg54/post/3mrjebc5go52x"
+   },
+   {
+    "lines": [
+     "Protecting bees means",
+     "protecting life. Protecting",
+     "life means protecting"
+    ],
+    "url": "https://bsky.app/profile/did:plc:nya7nzbchrf3tbp5pgclutyt/post/3mrjphdbja22r"
+   },
+   {
+    "lines": [
+     "Hawaiian Tropic",
+     "Hawaiian Tropic Weightless",
+     "Hydration Lotion"
+    ],
+    "url": "https://bsky.app/profile/did:plc:k4otialq52dp5on36kycoinp/post/3mrjsiadc3h2p"
+   },
+   {
+    "lines": [
+     "they're dead they're gone no",
+     "one lasts forever they're dead",
+     "they're gone no one lasts"
+    ],
+    "url": "https://bsky.app/profile/did:plc:si63amyy3faqspqwx6j5hbz5/post/3mrkvctxjx22y"
+   },
+   {
+    "lines": [
+     "excessive data",
+     "collection being data",
+     "collection greater"
+    ],
+    "url": "https://bsky.app/profile/did:plc:nhtfqnptngli775vthkeuoz2/post/3mrkx2igj622o"
+   }
+  ],
+  "rhyme13+isosyllabic": [
+   {
+    "lines": [
+     "And they want to call",
+     "it a drug but I don’t see",
+     "it that way at all"
+    ],
+    "url": "https://bsky.app/profile/did:plc:r3haqjmmk6mlzlpjn4vrrgoa/post/3mrjhc5shgc2m"
+   }
+  ],
+  "lipogramE+stressPalindrome+stopless": [
+   {
+    "lines": [
+     "contribution ko",
+     "na lang ay yung thoughts na kung",
+     "ano ano yung"
+    ],
+    "url": "https://bsky.app/profile/did:plc:sefie3zi4wnv55haxi4ih2hg/post/3mrk5osisgk2z"
+   },
+   {
+    "lines": [
+     "i'm disgusting i'm",
+     "disgusting i'm disgusting",
+     "im disgusting im"
+    ],
+    "url": "https://bsky.app/profile/did:plc:nlqf7y26nqtl75yohmbfzsfk/post/3mrkzhwrkec2i"
+   },
+   {
+    "lines": [
+     "im not okay im",
+     "not okay im not okay",
+     "im not okay im"
+    ],
+    "url": "https://bsky.app/profile/did:plc:mxixiti3uxfunmbusujlnnh7/post/3mrlfzcxvds2i"
+   },
+   {
+    "lines": [
+     "not okay im not",
+     "okay im not okay im",
+     "not okay im not"
+    ],
+    "url": "https://bsky.app/profile/did:plc:mxixiti3uxfunmbusujlnnh7/post/3mrlfzcxvds2i"
+   },
+   {
+    "lines": [
+     "im not okay im",
+     "not okay im not okay",
+     "im not okay im"
+    ],
+    "url": "https://bsky.app/profile/did:plc:mxixiti3uxfunmbusujlnnh7/post/3mrlfzcxvds2i"
+   }
+  ],
+  "rhyme13+lipogramE": [
+   {
+    "lines": [
+     "from politics! All",
+     "moving and rising/falling",
+     "as it turns. I call"
+    ],
+    "url": "https://bsky.app/profile/did:plc:qojrbsrjmgaaxc72nmhgujus/post/3mrk63sda3s2l"
+   }
+  ],
+  "rhyme13+rhymeAll+stressPalindrome": [
+   {
+    "lines": [
+     "card is empty though",
+     "no architecture notes, no",
+     "training data, no"
+    ],
+    "url": "https://bsky.app/profile/did:plc:daexpe52ebb4bwh3ybzyvmkz/post/3mrkcgxpymz2k"
+   },
+   {
+    "lines": [
+     "Love that everyone",
+     "is having fun with this one",
+     "had to have some fun"
+    ],
+    "url": "https://bsky.app/profile/did:plc:m6xfslhtqrw6wrya4c5z6xmo/post/3mrlsphbs2c2y"
    }
   ],
   "iambic+alphabetical": [
    {
     "lines": [
-     "accommodation",
-     "activities, and dining",
-     "experiences"
+     "HI HI HI HI HI",
+     "HI HI HI HI HI HI HI",
+     "HI HI I REALLY"
     ],
-    "url": "https://bsky.app/profile/did:plc:sov7mhzyfmqqavfbtdi7ctku/post/3mmo257dycc2u"
+    "url": "https://bsky.app/profile/did:plc:vff2psubuiw7wdqapd72fjqz/post/3mrkcp4vht22u"
+   }
+  ],
+  "lipogramE+sanmyaku+stopless": [
+   {
+    "lines": [
+     "ROSA MARIA",
+     "ROSA MARIA ROSA",
+     "MARIA ROSA"
+    ],
+    "url": "https://bsky.app/profile/did:plc:vxah7rqeqsjdrfehu236v5ni/post/3mrkiiqoawc2o"
+   },
+   {
+    "lines": [
+     "ROSA MARIA",
+     "ROSA MARIA ROSA",
+     "MARIA ROSA"
+    ],
+    "url": "https://bsky.app/profile/did:plc:vxah7rqeqsjdrfehu236v5ni/post/3mrkiiqoawc2o"
+   },
+   {
+    "lines": [
+     "ROSA MARIA",
+     "ROSA MARIA ROSA",
+     "MARIA ROSA"
+    ],
+    "url": "https://bsky.app/profile/did:plc:vxah7rqeqsjdrfehu236v5ni/post/3mrkiiqoawc2o"
+   },
+   {
+    "lines": [
+     "ROSA MARIA",
+     "ROSA MARIA ROSA",
+     "MARIA ROSA"
+    ],
+    "url": "https://bsky.app/profile/did:plc:vxah7rqeqsjdrfehu236v5ni/post/3mrkiiqoawc2o"
+   },
+   {
+    "lines": [
+     "ROSA MARIA",
+     "ROSA MARIA ROSA",
+     "MARIA ROSA"
+    ],
+    "url": "https://bsky.app/profile/did:plc:vxah7rqeqsjdrfehu236v5ni/post/3mrkiiqoawc2o"
+   }
+  ],
+  "lipogramE+isosyllabic": [
+   {
+    "lines": [
+     "I say high, you say",
+     "low. You say why and I say",
+     "I don’t know. Oh no"
+    ],
+    "url": "https://bsky.app/profile/did:plc:ycusxitbhg4c27ouolujrizq/post/3mrkiq5wurg2e"
+   }
+  ],
+  "iambic+kigo+lipogramE": [
+   {
+    "lines": [
+     "Alright I'm gonna",
+     "go play a round of disc golf",
+     "this morning, gonna"
+    ],
+    "url": "https://bsky.app/profile/did:plc:fsatg7bvtpsqwcpegmq4jj67/post/3mrkj3pvbvc2u"
+   },
+   {
+    "lines": [
+     "Congratulations",
+     "on climbing up that mountain",
+     "it is hard stuff! I’m"
+    ],
+    "url": "https://bsky.app/profile/did:plc:hr7q2gkdlst4q4jylugrptlt/post/3mrln34vc6223"
+   }
+  ],
+  "iambic+lipogramE+monovocalic+stressPalindrome+isosyllabic+stopless": [
+   {
+    "lines": [
+     "Munch crunch Munch crunch Munch",
+     "crunch Munch crunch Munch crunch Munch crunch",
+     "Munch crunch Munch crunch Munch"
+    ],
+    "url": "https://bsky.app/profile/did:plc:ub3n2nms4vtukje3beftbff4/post/3mrkus4xrw22w"
+   },
+   {
+    "lines": [
+     "crunch Munch crunch Munch crunch",
+     "Munch crunch Munch crunch Munch crunch Munch",
+     "crunch Munch crunch Munch crunch"
+    ],
+    "url": "https://bsky.app/profile/did:plc:ub3n2nms4vtukje3beftbff4/post/3mrkus4xrw22w"
+   }
+  ],
+  "iambic+rhyme13+kigo": [
+   {
+    "lines": [
+     "Expect to be there",
+     "for someone. As I'm reading",
+     "the tea leaves, and they're"
+    ],
+    "url": "https://bsky.app/profile/did:plc:z7lyiaxap3hf4yfpilukphj4/post/3mrlgjqbzw62j"
+   },
+   {
+    "lines": [
+     "excited to see",
+     "you everyone becoming",
+     "a Caspian Sea"
+    ],
+    "url": "https://bsky.app/profile/did:plc:gpo2nymsta3qijri5baft6t5/post/3mrlhhwyx5c2x"
+   },
+   {
+    "lines": [
+     "Thanks everyone who",
+     "showed up to todays Summer",
+     "Of Z stream! Played through"
+    ],
+    "url": "https://bsky.app/profile/did:plc:f7nx5hvr6yi6fcmrjra3xtop/post/3mrlipfp2b22x"
+   },
+   {
+    "lines": [
+     "that I love. I went",
+     "to a great rockabilly",
+     "jam last night, and spent"
+    ],
+    "url": "https://bsky.app/profile/did:plc:z3htj23zig6zi2k5x3koquw5/post/3mrmmvlpm4k2c"
+   },
+   {
+    "lines": [
+     "wish that i could take",
+     "you to the stars, i'd never",
+     "let you fall and break"
+    ],
+    "url": "https://bsky.app/profile/did:plc:bfndhxf34y7wdjfrotpdr6bi/post/3mrnjxjaf752y"
+   }
+  ],
+  "iambic+kigo+isosyllabic": [
+   {
+    "lines": [
+     "but the old folk say",
+     "it's just a rock with a hole",
+     "in it that the wind"
+    ],
+    "url": "https://bsky.app/profile/did:plc:ncabxiu7kxgvokyuguujsxhe/post/3mrlp5nl4oc2w"
+   }
+  ],
+  "iambic+lipogramE+monovocalic+stressPalindrome+isosyllabic": [
+   {
+    "lines": [
+     "my god oh my god",
+     "oh my god oh my god oh",
+     "my god oh my god"
+    ],
+    "url": "https://bsky.app/profile/did:plc:wuma675n42ript4yre4emvph/post/3mrmbds7yvs2v"
+   }
+  ],
+  "kigo+stressPalindrome+stopless": [
+   {
+    "lines": [
+     "Survivor - Black Sea",
+     "Shreveport, LA, USA ; Hard",
+     "Rock / Heavy Metal"
+    ],
+    "url": "https://bsky.app/profile/did:plc:wv2gr2o7ax7r3ns5yjcyckgm/post/3mrmiiohww725"
+   },
+   {
+    "lines": [
+     "DOG SUMMER PUNK DOG",
+     "SUMMER PUNK DOG SUMMER PUNK",
+     "DOG SUMMER PUNK DOG"
+    ],
+    "url": "https://bsky.app/profile/did:plc:q56zr6uvul3qxymdaghhogg2/post/3mrnd3oawwk2b"
+   }
+  ],
+  "alphabetical": [
+   {
+    "lines": [
+     "Collaboration",
+     "from KPMG's Latest",
+     "Study #USA"
+    ],
+    "url": "https://bsky.app/profile/did:plc:hslirr7h6d7livppaxty435b/post/3mrmyq7ejwy2i"
+   },
+   {
+    "lines": [
+     "boost efficiency",
+     "Entrepreneurship → Profit",
+     "risk-taking that ties"
+    ],
+    "url": "https://bsky.app/profile/did:plc:ldh5ft3baf6qkelrdu6xsauh/post/3mrnftfqoys2c"
+   }
+  ],
+  "iambic+alphabetical+monovocalic+stressPalindrome+isosyllabic+stopless": [
+   {
+    "lines": [
+     "YES YES YES YES YES",
+     "YES YES YES YES YES YES YES",
+     "YES YES YES YES YES"
+    ],
+    "url": "https://bsky.app/profile/did:plc:rx3v2teaufibsf6t5rsq3hi6/post/3mrnktdothk27"
    }
   ]
  },
  "topShinies": [
   {
    "lines": [
-    "Port Maritime de",
-    "La Réunion et Djibouti",
-    "Shipping Company"
+    "dough this morning split",
+    "into a focaccia",
+    "pizza and a small"
    ],
-   "mask": "rhyme13+rhymeAll+stopless",
+   "mask": "kigo+lipogramE+stressPalindrome",
    "u": 1,
    "shine": {
-    "rarity": 3117811,
+    "rarity": 6753255,
     "tier": "🌟🌟🌟",
     "badges": [
-     "rhyme13",
-     "rhymeAll",
-     "stopless"
+     "kigo",
+     "lipogramE",
+     "stressPalindrome"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:bborek56dnu5ggcxayyhomss/post/3mna7nzjae32g"
+   "url": "https://bsky.app/profile/did:plc:5vgxnoiqyqt2p4m2jlvyblrt/post/3mri4kpebw22r"
   },
   {
    "lines": [
-    "We bloomed on Sunday",
-    "at Women Writers in Bloom",
-    "A beautiful way"
+    "organization",
+    "built on intimidation",
+    "manipulation"
    ],
-   "mask": "iambic+rhyme13+kigo",
+   "mask": "iambic+rhyme13+rhymeAll+lipogramE",
    "u": 1,
    "shine": {
-    "rarity": 3117811,
+    "rarity": 6753255,
     "tier": "🌟🌟🌟",
     "badges": [
      "iambic",
      "rhyme13",
-     "kigo"
+     "rhymeAll",
+     "lipogramE"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:s4hg3khwbea5pnqnhnthz2w3/post/3mnas7dnv4s2j"
+   "url": "https://bsky.app/profile/did:plc:j2w2cfun7kam2chtajg22te4/post/3mriabnfiq22f"
   },
   {
    "lines": [
-    "Clarification",
-    "Aaron W about",
-    "All information"
+    "ICE murdered a son",
+    "a nurse, and a kind, loving",
+    "person, and no one"
    ],
-   "mask": "rhyme13+lipogramE+stopless",
+   "mask": "rhyme13+kigo+stressPalindrome",
    "u": 1,
    "shine": {
-    "rarity": 3117811,
+    "rarity": 6753255,
     "tier": "🌟🌟🌟",
     "badges": [
      "rhyme13",
-     "lipogramE",
-     "stopless"
+     "kigo",
+     "stressPalindrome"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:luqklzbsnbqr37mcgvnesvi7/post/3mngbcmw44u2u"
+   "url": "https://bsky.app/profile/did:plc:ji7lroxun3yvv2pxhcf7jqsn/post/3mrimkl5k7k2s"
   },
   {
    "lines": [
-    "uk#portugal",
-    "poland#latvia#oman",
-    "italy#scotland"
+    "Survivor - Black Sea",
+    "Shreveport, LA, USA ; Hard",
+    "Rock / Heavy Metal"
    ],
-   "mask": "lipogramE+sanmyaku+stopless",
+   "mask": "kigo+stressPalindrome+stopless",
    "u": 1,
    "shine": {
-    "rarity": 3117811,
+    "rarity": 6753255,
     "tier": "🌟🌟🌟",
     "badges": [
+     "kigo",
+     "stressPalindrome",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:wv2gr2o7ax7r3ns5yjcyckgm/post/3mrmiiohww725"
+  },
+  {
+   "lines": [
+    "Harris   #Houston   #ICE",
+    "illegal   #immigration",
+    "investigator"
+   ],
+   "mask": "kigo+alphabetical+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 3376628,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "kigo",
+     "alphabetical",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:mhqnbglrgmwiuz3kgexbi7uf/post/3mri53kdnfp2o"
+  },
+  {
+   "lines": [
+    "I mean….its been shit",
+    "for a long time so I guess",
+    "this means it won’t get"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome+isosyllabic",
+   "u": 1,
+   "shine": {
+    "rarity": 3376628,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "stressPalindrome",
+     "isosyllabic"
+    ],
+    "isoN": 1
+   },
+   "url": "https://bsky.app/profile/did:plc:luaimif42ulwlylchiyxd5by/post/3mrijfo3vf22u"
+  },
+  {
+   "lines": [
+    "If your tail was too",
+    "long, how would you wrap it up",
+    "in a way that won't"
+   ],
+   "mask": "iambic+lipogramE+stressPalindrome+isosyllabic",
+   "u": 1,
+   "shine": {
+    "rarity": 3376628,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "iambic",
      "lipogramE",
+     "stressPalindrome",
+     "isosyllabic"
+    ],
+    "isoN": 1
+   },
+   "url": "https://bsky.app/profile/did:plc:mihig54imhdunlqhvrc7qxqi/post/3mripftp4s22s"
+  },
+  {
+   "lines": [
+    "algae contractor",
+    "faces scrutiny over",
+    "Tijuana River"
+   ],
+   "mask": "kigo+sanmyaku+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 3376628,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "kigo",
      "sanmyaku",
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:yv4ez7b4scwd54hwdpwps72e/post/3mmh2nkymrk2s"
+   "url": "https://bsky.app/profile/did:plc:y36meptquzzobgkbzlgppozd/post/3mriqm6nkas2w"
   },
   {
    "lines": [
-    "accommodation",
-    "activities, and dining",
-    "experiences"
+    "I was just stating",
+    "a fact of human body",
+    "Not advocating"
    ],
-   "mask": "iambic+alphabetical",
+   "mask": "iambic+rhyme13+lipogramE",
    "u": 1,
    "shine": {
-    "rarity": 3117811,
+    "rarity": 3376628,
     "tier": "🌟🌟🌟",
     "badges": [
      "iambic",
-     "alphabetical"
+     "rhyme13",
+     "lipogramE"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:sov7mhzyfmqqavfbtdi7ctku/post/3mmo257dycc2u"
+   "url": "https://bsky.app/profile/did:plc:d6nktahntszv6dl2cz6axpgu/post/3mrivq5gob22d"
   },
   {
    "lines": [
-    "judiciary",
-    "and bar association",
-    "disciplinary"
+    "Congratulations",
+    "on climbing up that mountain",
+    "it is hard stuff! I’m"
+   ],
+   "mask": "iambic+kigo+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 3376628,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "iambic",
+     "kigo",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:hr7q2gkdlst4q4jylugrptlt/post/3mrln34vc6223"
+  },
+  {
+   "lines": [
+    "also Hollywood",
+    "basically cannot adapt",
+    "anything without"
+   ],
+   "mask": "lipogramE+stressPalindrome+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 3376628,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "lipogramE",
+     "stressPalindrome",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:2bij7yypmcuvwyz4gyqwtluy/post/3mrlodjzcd22v"
+  },
+  {
+   "lines": [
+    "that knows far too much",
+    "for its own good; it can think",
+    "through a lot of things"
+   ],
+   "mask": "iambic+lipogramE+stressPalindrome+isosyllabic",
+   "u": 1,
+   "shine": {
+    "rarity": 3376628,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "iambic",
+     "lipogramE",
+     "stressPalindrome",
+     "isosyllabic"
+    ],
+    "isoN": 1
+   },
+   "url": "https://bsky.app/profile/did:plc:6ifsih3ovovuolidhgxhqfup/post/3mrlrx4aetk2o"
+  },
+  {
+   "lines": [
+    "agents   #conviction",
+    "crime   #Force   #ICE   #immigration",
+    "Memphis   #President"
+   ],
+   "mask": "kigo+alphabetical+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 3376628,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "kigo",
+     "alphabetical",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:mhqnbglrgmwiuz3kgexbi7uf/post/3mrmlcqkdjf2u"
+  },
+  {
+   "lines": [
+    "And they want to call",
+    "it a drug but I don’t see",
+    "it that way at all"
+   ],
+   "mask": "rhyme13+isosyllabic",
+   "u": 1,
+   "shine": {
+    "rarity": 2251085,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "rhyme13",
+     "isosyllabic"
+    ],
+    "isoN": 1
+   },
+   "url": "https://bsky.app/profile/did:plc:r3haqjmmk6mlzlpjn4vrrgoa/post/3mrjhc5shgc2m"
+  },
+  {
+   "lines": [
+    "from politics! All",
+    "moving and rising/falling",
+    "as it turns. I call"
    ],
    "mask": "rhyme13+lipogramE",
    "u": 1,
    "shine": {
-    "rarity": 1558906,
+    "rarity": 2251085,
     "tier": "🌟🌟🌟",
     "badges": [
      "rhyme13",
      "lipogramE"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:d7aypgjlw7svu7haeta7x63h/post/3mnb3xks52c2d"
+   "url": "https://bsky.app/profile/did:plc:qojrbsrjmgaaxc72nmhgujus/post/3mrk63sda3s2l"
   },
   {
    "lines": [
-    "Dodgers haters got",
-    "conspicuously quiet",
-    "after Tanner Scott"
+    "Hungarian Grand",
+    "Prix - Final Qualifying",
+    "Classification"
    ],
-   "mask": "rhyme13+stressPalindrome+stopless",
+   "mask": "iambic+lipogramE+stopless",
    "u": 1,
    "shine": {
-    "rarity": 1558906,
+    "rarity": 1350651,
     "tier": "🌟🌟🌟",
     "badges": [
-     "rhyme13",
+     "iambic",
+     "lipogramE",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:mhlwrf26lmrlgusrpbi2li4o/post/3mrigvi335q2e"
+  },
+  {
+   "lines": [
+    "include chip vendors",
+    "clouds, model builders, software",
+    "firms, open-source groups"
+   ],
+   "mask": "iambic+kigo+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 1350651,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "iambic",
+     "kigo",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:4j7exarb62djxycrgdfhuulr/post/3mrio3l5bmo2u"
+  },
+  {
+   "lines": [
+    "Adaptive Smart Home",
+    "Assistant using Local",
+    "Small Language Models"
+   ],
+   "mask": "iambic+stressPalindrome+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 1350651,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "iambic",
      "stressPalindrome",
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:lgxwokjfnegutejxknkdpqwj/post/3mmopijig442m"
+   "url": "https://bsky.app/profile/did:plc:hxncmsbjayftx2xncvs4xg54/post/3mrjebc5go52x"
   },
   {
    "lines": [
-    "How much do you know",
-    "about Barack Obama",
-    "Find out with this fun"
+    "no and i don't know",
+    "why you would want that to work",
+    "on android its hard"
    ],
    "mask": "iambic+lipogramE+stressPalindrome",
    "u": 1,
    "shine": {
-    "rarity": 1039270,
+    "rarity": 1350651,
     "tier": "🌟🌟🌟",
     "badges": [
      "iambic",
@@ -1773,18 +2565,94 @@
      "stressPalindrome"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:h7dfm3xvswww543aqou2ogwe/post/3mnggfydusk24"
+   "url": "https://bsky.app/profile/did:plc:eieavxftth5reku5ysxyd76b/post/3mrklixqctk2p"
   },
   {
    "lines": [
-    "wants to fill my mouth",
-    "with cum? I'm dying to fuck",
-    "a fan and upload"
+    "Expect to be there",
+    "for someone. As I'm reading",
+    "the tea leaves, and they're"
+   ],
+   "mask": "iambic+rhyme13+kigo",
+   "u": 1,
+   "shine": {
+    "rarity": 1350651,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "kigo"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:z7lyiaxap3hf4yfpilukphj4/post/3mrlgjqbzw62j"
+  },
+  {
+   "lines": [
+    "excited to see",
+    "you everyone becoming",
+    "a Caspian Sea"
+   ],
+   "mask": "iambic+rhyme13+kigo",
+   "u": 1,
+   "shine": {
+    "rarity": 1350651,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "kigo"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:gpo2nymsta3qijri5baft6t5/post/3mrlhhwyx5c2x"
+  },
+  {
+   "lines": [
+    "Thanks everyone who",
+    "showed up to todays Summer",
+    "Of Z stream! Played through"
+   ],
+   "mask": "iambic+rhyme13+kigo",
+   "u": 1,
+   "shine": {
+    "rarity": 1350651,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "kigo"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:f7nx5hvr6yi6fcmrjra3xtop/post/3mrlipfp2b22x"
+  },
+  {
+   "lines": [
+    "that I love. I went",
+    "to a great rockabilly",
+    "jam last night, and spent"
+   ],
+   "mask": "iambic+rhyme13+kigo",
+   "u": 1,
+   "shine": {
+    "rarity": 1350651,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "kigo"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:z3htj23zig6zi2k5x3koquw5/post/3mrmmvlpm4k2c"
+  },
+  {
+   "lines": [
+    "good taking him out",
+    "was also such a ramp up",
+    "in difficulty"
    ],
    "mask": "iambic+lipogramE+stressPalindrome",
    "u": 1,
    "shine": {
-    "rarity": 1039270,
+    "rarity": 1350651,
     "tier": "🌟🌟🌟",
     "badges": [
      "iambic",
@@ -1792,93 +2660,461 @@
      "stressPalindrome"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:wjug3l6hmnjfifnmee2k4gfz/post/3mmfhf6pswk2y"
+   "url": "https://bsky.app/profile/did:plc:ddfqwo3dizaop77rrna7cuxj/post/3mrmycebm7s24"
   },
   {
    "lines": [
-    "a sunny Tuesday",
-    "in the San Francisco Bay",
-    "the spout of a gray"
+    "Seattle Shooting",
+    "Heir Operator · 🌍 Wars Merge",
+    "Brazil Refuses"
    ],
-   "mask": "rhyme13+rhymeAll",
+   "mask": "iambic+stressPalindrome+stopless",
    "u": 1,
    "shine": {
-    "rarity": 779453,
-    "tier": "🌟🌟",
+    "rarity": 1350651,
+    "tier": "🌟🌟🌟",
     "badges": [
-     "rhyme13",
-     "rhymeAll"
+     "iambic",
+     "stressPalindrome",
+     "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:sgoxvcaizltgekedoj4zeuly/post/3mncmibrp7x2n"
+   "url": "https://bsky.app/profile/did:plc:mv6loxcddhj3i6pzfvzicc36/post/3mrn2u5o4a22i"
   },
   {
    "lines": [
-    "a bunch of land through",
-    "Pheasants Forever a few",
-    "years ago.  This new"
+    "Dawn x64",
+    "compatibility mode",
+    "steam/Linux. After"
    ],
-   "mask": "rhyme13+rhymeAll",
+   "mask": "iambic+kigo+stopless",
    "u": 1,
    "shine": {
-    "rarity": 779453,
-    "tier": "🌟🌟",
+    "rarity": 1350651,
+    "tier": "🌟🌟🌟",
     "badges": [
-     "rhyme13",
-     "rhymeAll"
+     "iambic",
+     "kigo",
+     "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:p2wwjajj2wk4rm54bclwnxjn/post/3mmh6hu5pxs22"
+   "url": "https://bsky.app/profile/did:plc:kvzj3wmilxylrl4z3txs5b3c/post/3mrn3iieoik22"
   },
   {
    "lines": [
-    "If you want to know",
-    "why I fight so hard for trans",
-    "rights, and why I don't"
+    "Depression Rabbit",
+    "Snow Limited Edition",
+    "Available Now"
    ],
-   "mask": "iambic+lipogramE+stressPalindrome+isosyllabic",
-   "u": 0.89,
+   "mask": "iambic+kigo+stopless",
+   "u": 1,
    "shine": {
-    "rarity": 591985,
-    "tier": "🌟🌟",
+    "rarity": 1350651,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "iambic",
+     "kigo",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:jymq7u67cwefz42mvt2gqche/post/3mrnbfhygtr2b"
+  },
+  {
+   "lines": [
+    "capacity, though",
+    "consolidating aphid",
+    "hallucination"
+   ],
+   "mask": "iambic+lipogramE+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 1350651,
+    "tier": "🌟🌟🌟",
     "badges": [
      "iambic",
      "lipogramE",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:35vhrw4vfcilzxggzbhxukyy/post/3mrnco4sra22s"
+  },
+  {
+   "lines": [
+    "sea yo, no soy la",
+    "persona más alegre",
+    "del mundo, pero"
+   ],
+   "mask": "iambic+kigo+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 1350651,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "iambic",
+     "kigo",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:gmsg34cwordoxc3cojifyi35/post/3mrniu76aps2a"
+  },
+  {
+   "lines": [
+    "wish that i could take",
+    "you to the stars, i'd never",
+    "let you fall and break"
+   ],
+   "mask": "iambic+rhyme13+kigo",
+   "u": 1,
+   "shine": {
+    "rarity": 1350651,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "kigo"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:bfndhxf34y7wdjfrotpdr6bi/post/3mrnjxjaf752y"
+  },
+  {
+   "lines": [
+    "no charge*. Specific",
+    "eligibility terms",
+    "apply. Email sales"
+   ],
+   "mask": "iambic+stressPalindrome+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 1350651,
+    "tier": "🌟🌟🌟",
+    "badges": [
+     "iambic",
+     "stressPalindrome",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:jgwqyvitxwxs4pgu7uvarwu2/post/3mrnjyfqknk2r"
+  },
+  {
+   "lines": [
+    "Alright I'm gonna",
+    "go play a round of disc golf",
+    "this morning, gonna"
+   ],
+   "mask": "iambic+kigo+lipogramE",
+   "u": 0.9,
+   "shine": {
+    "rarity": 750991,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "kigo",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:fsatg7bvtpsqwcpegmq4jj67/post/3mrkj3pvbvc2u"
+  },
+  {
+   "lines": [
+    "Like, sure, you might try",
+    "to class it up, but don't. It's",
+    "not like a Mai Tai"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome+isosyllabic",
+   "u": 0.9,
+   "shine": {
+    "rarity": 750991,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
      "stressPalindrome",
      "isosyllabic"
     ],
     "isoN": 1
    },
-   "url": "https://bsky.app/profile/did:plc:tlcvxo7swx34fkwxsnvqfjbr/post/3mnfnu7d7tc2w"
+   "url": "https://bsky.app/profile/did:plc:xslzkilxfu7dspyqw5c7a7qt/post/3mrls64hak22h"
+  },
+  {
+   "lines": [
+    "For Sale - [B1P",
+    "Seiko 8B92",
+    "0AB0"
+   ],
+   "mask": "rhyme13+rhymeAll",
+   "u": 1,
+   "shine": {
+    "rarity": 675326,
+    "tier": "🌟🌟",
+    "badges": [
+     "rhyme13",
+     "rhymeAll"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:rucahs7knm6whn3rq7oiyhrd/post/3mrkdti3i3h2m"
+  },
+  {
+   "lines": [
+    "continues in NE",
+    "Argentina, #Uruguay",
+    "Paraguay & far SE"
+   ],
+   "mask": "rhyme13+rhymeAll",
+   "u": 1,
+   "shine": {
+    "rarity": 675326,
+    "tier": "🌟🌟",
+    "badges": [
+     "rhyme13",
+     "rhymeAll"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:lxpudwpbmg4bqajqyr54xroq/post/3mrmrkgd2bk2c"
+  },
+  {
+   "lines": [
+    "it would take is TWO",
+    "reporters given a few",
+    "minutes interview"
+   ],
+   "mask": "rhyme13+rhymeAll",
+   "u": 1,
+   "shine": {
+    "rarity": 675326,
+    "tier": "🌟🌟",
+    "badges": [
+     "rhyme13",
+     "rhymeAll"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:zhe7gepsb2hkfdcbshrugltg/post/3mrnkiy74722a"
+  },
+  {
+   "lines": [
+    "to say good morning",
+    "but now I can only think",
+    "of Gandalf scolding"
+   ],
+   "mask": "kigo+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 450217,
+    "tier": "🌟🌟",
+    "badges": [
+     "kigo",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:pz2oke4vnbgcz3wvjh76f65u/post/3mri5mfps5k2z"
+  },
+  {
+   "lines": [
+    "Last night was about",
+    "watching a room full of young",
+    "journalists taking"
+   ],
+   "mask": "kigo+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 450217,
+    "tier": "🌟🌟",
+    "badges": [
+     "kigo",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:qsj7mu5q2hkkun2emrxbx5sd/post/3mriv7fgutk2j"
+  },
+  {
+   "lines": [
+    "that shit from his hands",
+    "and crow hop throw it as far",
+    "as I possibly"
+   ],
+   "mask": "kigo+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 450217,
+    "tier": "🌟🌟",
+    "badges": [
+     "kigo",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:zihe6tlz7cwdox3zi3nyxsle/post/3mrjdxbos5s2k"
+  },
+  {
+   "lines": [
+    "kinda amusing",
+    "Although you would think a storm",
+    "would cool things down... Oh"
+   ],
+   "mask": "kigo+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 450217,
+    "tier": "🌟🌟",
+    "badges": [
+     "kigo",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:5polagaxtqjdhbazi3bq55gm/post/3mrjfdlf4ss2z"
+  },
+  {
+   "lines": [
+    "Finally got round",
+    "to finishing Star City",
+    "What a fantastic"
+   ],
+   "mask": "kigo+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 450217,
+    "tier": "🌟🌟",
+    "badges": [
+     "kigo",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:3ka3mdarwzwp2a6offa7cyn6/post/3mrktedpoxs2h"
+  },
+  {
+   "lines": [
+    "City, USA",
+    "tomorrow morning (but not",
+    "arriving until"
+   ],
+   "mask": "kigo+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 450217,
+    "tier": "🌟🌟",
+    "badges": [
+     "kigo",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:x2cfihxseuhi7cq54aufxix6/post/3mrlaxtsct22p"
+  },
+  {
+   "lines": [
+    "Morning Alan, thank",
+    "you for your always kind words",
+    "and thanks for showing"
+   ],
+   "mask": "kigo+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 450217,
+    "tier": "🌟🌟",
+    "badges": [
+     "kigo",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:tcsmnoyxr4tbr2qbia3kd7nd/post/3mrmcfcdgsc24"
+  },
+  {
+   "lines": [
+    "a bird, but I saw",
+    "my first British Hummingbird",
+    "Hawk-Moth this morning"
+   ],
+   "mask": "kigo+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 450217,
+    "tier": "🌟🌟",
+    "badges": [
+     "kigo",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:aujlqa6fed73m6r67d6tz2j4/post/3mrmfguuv4s2q"
   },
   {
    "lines": [
     "Saturday morning",
-    "cartoons bad? Why was this show",
-    "so racist. Nothing"
+    "following a collision",
+    "with an SUV"
    ],
    "mask": "kigo+lipogramE",
    "u": 1,
    "shine": {
-    "rarity": 519635,
+    "rarity": 450217,
     "tier": "🌟🌟",
     "badges": [
      "kigo",
      "lipogramE"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:adqrkamfgwrthojiayf5k3to/post/3mnakffvyqk2u"
+   "url": "https://bsky.app/profile/did:plc:jldwyrazfdid3c7qyxq2eyyf/post/3mrmzm7exq22n"
   },
   {
    "lines": [
-    "When life gives you red",
-    "and white stars, it’s time to shine",
-    "bright! Who needs a night"
+    "That was a fun swim",
+    "to work this morning, looking",
+    "forward to doing"
+   ],
+   "mask": "kigo+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 450217,
+    "tier": "🌟🌟",
+    "badges": [
+     "kigo",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:hw73s5yuemeju3d3vzpqgdgm/post/3mrnd67l3ic2a"
+  },
+  {
+   "lines": [
+    "my morning working",
+    "up a layout for a bird",
+    "painting commission"
+   ],
+   "mask": "kigo+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 450217,
+    "tier": "🌟🌟",
+    "badges": [
+     "kigo",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:rcuw37omqud7tokjtqv2zr4q/post/3mrnehxhdt22e"
+  },
+  {
+   "lines": [
+    "Software Engineer",
+    "Browser Extension, Data",
+    "Protection (Hybrid"
+   ],
+   "mask": "sanmyaku+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 422078,
+    "tier": "🌟🌟",
+    "badges": [
+     "sanmyaku",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:voa5jj4mjj2u76o7cp6qanjz/post/3mrifaf4v3f2o"
+  },
+  {
+   "lines": [
+    "I thought I might clear",
+    "a bunch last night but did get",
+    "La Grange too. A Train"
    ],
    "mask": "iambic+kigo+stressPalindrome+isosyllabic",
    "u": 1,
    "shine": {
-    "rarity": 519635,
+    "rarity": 422078,
     "tier": "🌟🌟",
     "badges": [
      "iambic",
@@ -1888,18 +3124,18 @@
     ],
     "isoN": 1
    },
-   "url": "https://bsky.app/profile/did:plc:gzrrxzgx4g5oe3epin6hqyku/post/3mnd3dqwtuz2r"
+   "url": "https://bsky.app/profile/did:plc:jqxl2y7zrfqpdvbgzx43fwsh/post/3mrigfcr7fk2g"
   },
   {
    "lines": [
-    "And How You Can Too",
-    "Here's the thing that keeps me up",
-    "at night: I just ran"
+    "on the thing I sketched",
+    "out last night and part is like",
+    "oh my god just wait"
    ],
    "mask": "iambic+kigo+stressPalindrome+isosyllabic",
    "u": 1,
    "shine": {
-    "rarity": 519635,
+    "rarity": 422078,
     "tier": "🌟🌟",
     "badges": [
      "iambic",
@@ -1909,36 +3145,18 @@
     ],
     "isoN": 1
    },
-   "url": "https://bsky.app/profile/did:plc:lvoh6kgyhsm7s52ppqm2wgoq/post/3mndecnc5p4n2"
+   "url": "https://bsky.app/profile/did:plc:n5opb5yxx2anwqq6ehwwlsuv/post/3mrihu5to3k2d"
   },
   {
    "lines": [
-    "its burrow as dusk",
-    "falls along a country road",
-    "today in rural"
-   ],
-   "mask": "kigo+lipogramE",
-   "u": 1,
-   "shine": {
-    "rarity": 519635,
-    "tier": "🌟🌟",
-    "badges": [
-     "kigo",
-     "lipogramE"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:46efdiu3iploplzqko3mfut7/post/3mmiowb3sec2d"
-  },
-  {
-   "lines": [
-    "look up at the stars",
-    "and not down at your feet. Try",
-    "to make sense of what"
+    "was to get to hang",
+    "out on the edge and look down",
+    "and watch the clouds go"
    ],
    "mask": "iambic+kigo+stressPalindrome+isosyllabic",
    "u": 1,
    "shine": {
-    "rarity": 519635,
+    "rarity": 422078,
     "tier": "🌟🌟",
     "badges": [
      "iambic",
@@ -1948,825 +3166,18 @@
     ],
     "isoN": 1
    },
-   "url": "https://bsky.app/profile/did:plc:ewo32dl4to7cu6ubgl6bk5pb/post/3mmiximuhpk2j"
+   "url": "https://bsky.app/profile/did:plc:bagzmgfinv2miv7j4y2yjxle/post/3mriloz5tz22c"
   },
   {
    "lines": [
-    "away, with colors",
-    "indicating young and old",
-    "star populations"
-   ],
-   "mask": "kigo+lipogramE",
-   "u": 1,
-   "shine": {
-    "rarity": 519635,
-    "tier": "🌟🌟",
-    "badges": [
-     "kigo",
-     "lipogramE"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:67biuxgw3trznhftjtfp6ud2/post/3mmgjgkpbna2x"
-  },
-  {
-   "lines": [
-    "A futuristic",
-    "morning in Tunisian souk",
-    "with a stormy sky"
-   ],
-   "mask": "kigo+lipogramE",
-   "u": 1,
-   "shine": {
-    "rarity": 519635,
-    "tier": "🌟🌟",
-    "badges": [
-     "kigo",
-     "lipogramE"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:xa2kibjcx3mnyg75xs4tk6yx/post/3mmnjj5p5hql2"
-  },
-  {
-   "lines": [
-    "and I only found",
-    "out today that it's unpaid",
-    "so if you wanna"
-   ],
-   "mask": "lipogramE+stressPalindrome",
-   "u": 1,
-   "shine": {
-    "rarity": 445402,
-    "tier": "🌟🌟",
-    "badges": [
-     "lipogramE",
-     "stressPalindrome"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:mbvhxqztfiqpbsifwjgsbj3q/post/3mnfmoyikqk2p"
-  },
-  {
-   "lines": [
-    "want an instant mood",
-    "boost, find a playlist of light",
-    "music to load up"
-   ],
-   "mask": "lipogramE+stressPalindrome",
-   "u": 1,
-   "shine": {
-    "rarity": 445402,
-    "tier": "🌟🌟",
-    "badges": [
-     "lipogramE",
-     "stressPalindrome"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:qs2kuxirareirw3vobkjn7iw/post/3mmmatzyfwc2x"
-  },
-  {
-   "lines": [
-    "It's amazing how",
-    "Tom Tiffany can lick Trump's",
-    "boots and kiss his ass"
-   ],
-   "mask": "lipogramE+stressPalindrome",
-   "u": 1,
-   "shine": {
-    "rarity": 445402,
-    "tier": "🌟🌟",
-    "badges": [
-     "lipogramE",
-     "stressPalindrome"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:2ta7jasyjf4ipiwyn4voqu3b/post/3mmfrc3di6s2n"
-  },
-  {
-   "lines": [
-    "Stockton homicide",
-    "suspect arrested during",
-    "Nevada County"
-   ],
-   "mask": "sanmyaku+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 311781,
-    "tier": "🌟🌟",
-    "badges": [
-     "sanmyaku",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:xnv6b6aa4afikrhq5rlkgodf/post/3mndw5pcjd52o"
-  },
-  {
-   "lines": [
-    "between Division",
-    "IA colleges during",
-    "regular season"
-   ],
-   "mask": "sanmyaku+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 311781,
-    "tier": "🌟🌟",
-    "badges": [
-     "sanmyaku",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:74imccy2ypi526rgtex26jk4/post/3mmiut5w7we2v"
-  },
-  {
-   "lines": [
-    "wordpress #agency",
-    "business #gallery #beauty",
-    "creative #fashion"
-   ],
-   "mask": "sanmyaku+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 311781,
-    "tier": "🌟🌟",
-    "badges": [
-     "sanmyaku",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:bs46pnhkm4vd4ff6d2rl6ulk/post/3mmlpmpipf32b"
-  },
-  {
-   "lines": [
-    "over dangerous",
-    "driving conditions into",
-    "organized action"
-   ],
-   "mask": "sanmyaku+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 311781,
-    "tier": "🌟🌟",
-    "badges": [
-     "sanmyaku",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:rshibtcbcif6qukicpuktnm6/post/3mmgcoijqxd2u"
-  },
-  {
-   "lines": [
-    "blowjob orgasm",
-    "big-dick bbc orgy",
-    "anal-sex chubby"
-   ],
-   "mask": "sanmyaku+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 311781,
-    "tier": "🌟🌟",
-    "badges": [
-     "sanmyaku",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:iv7tdnt4vnkxql2x7tc3hhvl/post/3mmgr3easxc2d"
-  },
-  {
-   "lines": [
-    "Discord, arguing",
-    "online messaging platform",
-    "endangered children"
-   ],
-   "mask": "sanmyaku+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 311781,
-    "tier": "🌟🌟",
-    "badges": [
-     "sanmyaku",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:h6ju2yaiha3kohbqjyd2udjs/post/3mmonawalxr2f"
-  },
-  {
-   "lines": [
-    "Liman’s upcoming",
-    "crypto satire Bitcoin",
-    "already sounded"
-   ],
-   "mask": "sanmyaku+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 311781,
-    "tier": "🌟🌟",
-    "badges": [
-     "sanmyaku",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:rwuqizds4m5nwuvmnhgbriol/post/3mmoyy7vpgq2g"
-  },
-  {
-   "lines": [
-    "Congo hospital",
-    "treating Ebola patients",
-    "demanding bodies"
-   ],
-   "mask": "sanmyaku+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 311781,
-    "tier": "🌟🌟",
-    "badges": [
-     "sanmyaku",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:lc6hdhnjkgccd6ysi7e23pll/post/3mmnreji2kt2j"
-  },
-  {
-   "lines": [
-    "Hi75",
-    "Lo73) Feels like",
-    "69F Wind"
-   ],
-   "mask": "iambic+kigo+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 283437,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "kigo",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mn7mfqpzpv24"
-  },
-  {
-   "lines": [
-    "Hi75",
-    "Lo71) Feels like",
-    "68F Wind"
-   ],
-   "mask": "iambic+kigo+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 283437,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "kigo",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mn7t4hrlta26"
-  },
-  {
-   "lines": [
-    "Hi103",
-    "Lo73) Feels like",
-    "92F Wind"
-   ],
-   "mask": "iambic+kigo+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 283437,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "kigo",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mndsjf4gah22"
-  },
-  {
-   "lines": [
-    "Hi103",
-    "Lo73) Feels like",
-    "91F Wind"
-   ],
-   "mask": "iambic+kigo+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 283437,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "kigo",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mndz7wgoxc2t"
-  },
-  {
-   "lines": [
-    "Hi103",
-    "Lo73) Feels like",
-    "82F Wind"
-   ],
-   "mask": "iambic+kigo+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 283437,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "kigo",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mne7wjlduk2z"
-  },
-  {
-   "lines": [
-    "Hi97",
-    "Lo73) Feels like",
-    "91F Wind"
-   ],
-   "mask": "iambic+kigo+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 283437,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "kigo",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mnfouifvww23"
-  },
-  {
-   "lines": [
-    "Hi101",
-    "Lo73) Feels like",
-    "91F Wind"
-   ],
-   "mask": "iambic+kigo+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 283437,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "kigo",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mnfvl5nby22k"
-  },
-  {
-   "lines": [
-    "Hi104",
-    "Lo73) Feels like",
-    "94F Wind"
-   ],
-   "mask": "iambic+kigo+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 283437,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "kigo",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mng4bmtucc27"
-  },
-  {
-   "lines": [
-    "Hi105",
-    "Lo73) Feels like",
-    "92F Wind"
-   ],
-   "mask": "iambic+kigo+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 283437,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "kigo",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mngcydcicx2a"
-  },
-  {
-   "lines": [
-    "Hi78",
-    "Lo71) Feels like",
-    "68F Wind"
-   ],
-   "mask": "iambic+kigo+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 283437,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "kigo",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mmj6w63ap22a"
-  },
-  {
-   "lines": [
-    "Hi87",
-    "Lo72) Feels like",
-    "82F Wind"
-   ],
-   "mask": "iambic+kigo+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 283437,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "kigo",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mmotxokkha2w"
-  },
-  {
-   "lines": [
-    "vs Chicago",
-    "Stars, and San Diego Wave",
-    "vs Orlando"
-   ],
-   "mask": "rhyme13+kigo+stressPalindrome",
-   "u": 0.88,
-   "shine": {
-    "rarity": 262251,
-    "tier": "🌟🌟",
-    "badges": [
-     "rhyme13",
-     "kigo",
-     "stressPalindrome"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:iy2zdnktyl3rvq24nohhrlkm/post/3mmkskit4rj2z"
-  },
-  {
-   "lines": [
-    "It’s time to dive head",
-    "first into the Fog for some",
-    "motherfucking Dead"
-   ],
-   "mask": "rhyme13+kigo",
-   "u": 1,
-   "shine": {
-    "rarity": 259818,
-    "tier": "🌟🌟",
-    "badges": [
-     "rhyme13",
-     "kigo"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:ugzu44vhpu5vrd22hmkrn54j/post/3mnbbwqvtak2c"
-  },
-  {
-   "lines": [
-    "eons ago when",
-    "there were chariots flying",
-    "in the sky and men"
-   ],
-   "mask": "rhyme13+kigo",
-   "u": 1,
-   "shine": {
-    "rarity": 259818,
-    "tier": "🌟🌟",
-    "badges": [
-     "rhyme13",
-     "kigo"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:dw6mndaq65h6iztysiv7rbyu/post/3mmizer7z722f"
-  },
-  {
-   "lines": [
-    "here’s this morning show",
-    "which I hope you enjoy. I’ll",
-    "be back tomorrow"
-   ],
-   "mask": "rhyme13+kigo",
-   "u": 1,
-   "shine": {
-    "rarity": 259818,
-    "tier": "🌟🌟",
-    "badges": [
-     "rhyme13",
-     "kigo"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:oisefzlvijkys3e52suho73e/post/3mmjp4i6xwk2o"
-  },
-  {
-   "lines": [
-    "Gets You Thru The Night",
-    "by John Lennon is on Great",
-    "Big Radio RIGHT"
-   ],
-   "mask": "rhyme13+kigo",
-   "u": 1,
-   "shine": {
-    "rarity": 259818,
-    "tier": "🌟🌟",
-    "badges": [
-     "rhyme13",
-     "kigo"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:hdox6nl4wc4fboxnkluwdhxq/post/3mmjwe2aflr2p"
-  },
-  {
-   "lines": [
-    "LATE NIGHT SATURDAY",
-    "SOUL STEW on  Classic Oldies",
-    "Radio UK"
-   ],
-   "mask": "rhyme13+kigo",
-   "u": 1,
-   "shine": {
-    "rarity": 259818,
-    "tier": "🌟🌟",
-    "badges": [
-     "rhyme13",
-     "kigo"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:jssy5j57n6lkyszkmbahqh4v/post/3mmk6qe3ua42y"
-  },
-  {
-   "lines": [
-    "Comedic Web Show",
-    "1/4 Cup Of 90s",
-    "Morning Radio"
-   ],
-   "mask": "rhyme13+kigo",
-   "u": 1,
-   "shine": {
-    "rarity": 259818,
-    "tier": "🌟🌟",
-    "badges": [
-     "rhyme13",
-     "kigo"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:zkbpxojn5n6dgakl4x6xzby4/post/3mmeuun2cy52y"
-  },
-  {
-   "lines": [
-    "on my member site",
-    "DGBV1 Tied Up",
-    "on a Summer Night"
-   ],
-   "mask": "rhyme13+kigo",
-   "u": 1,
-   "shine": {
-    "rarity": 259818,
-    "tier": "🌟🌟",
-    "badges": [
-     "rhyme13",
-     "kigo"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:6vupdq3qrzcrvkxxi7ksnujp/post/3mmfcv3yabe2s"
-  },
-  {
-   "lines": [
-    "cot at Ocean View",
-    "High School Gymnasium, which",
-    "has been turned into"
-   ],
-   "mask": "rhyme13+kigo",
-   "u": 1,
-   "shine": {
-    "rarity": 259818,
-    "tier": "🌟🌟",
-    "badges": [
-     "rhyme13",
-     "kigo"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:lkmm2r7zciuu4n25mccrhb26/post/3mmnlhtbccb2m"
-  },
-  {
-   "lines": [
-    "administration",
-    "says those rules have led to more",
-    "discrimination"
-   ],
-   "mask": "iambic+rhyme13+stressPalindrome",
-   "u": 1,
-   "shine": {
-    "rarity": 222701,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "rhyme13",
-     "stressPalindrome"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:vaged6uocai4jrd2s5pd2ebo/post/3mn7rdwqa5j2f"
-  },
-  {
-   "lines": [
-    "administration",
-    "is actively pursuing",
-    "the integration"
-   ],
-   "mask": "iambic+rhyme13+stressPalindrome",
-   "u": 1,
-   "shine": {
-    "rarity": 222701,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "rhyme13",
-     "stressPalindrome"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:stcjaibae5ydvgzeruyvpviu/post/3mnajch2fy3g2"
-  },
-  {
-   "lines": [
-    "A simulation",
-    "designed around effective",
-    "communication"
-   ],
-   "mask": "iambic+rhyme13+stressPalindrome",
-   "u": 1,
-   "shine": {
-    "rarity": 222701,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "rhyme13",
-     "stressPalindrome"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:vstq5vct7nwez5vqzmenur6s/post/3mnd37yc4vs22"
-  },
-  {
-   "lines": [
-    "Seven states sue Trump",
-    "administration over",
-    "offshore wind project"
-   ],
-   "mask": "kigo+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 222701,
-    "tier": "🌟🌟",
-    "badges": [
-     "kigo",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:ser5xww54j53ap7xj74ej4rp/post/3mndpfxbb3c2l"
-  },
-  {
-   "lines": [
-    "and realized I’d",
-    "found its first home. I just feel",
-    "so lucky to see"
-   ],
-   "mask": "iambic+rhyme13+stressPalindrome",
-   "u": 1,
-   "shine": {
-    "rarity": 222701,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "rhyme13",
-     "stressPalindrome"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:dgnjk5rf7gcdbnqifvier24w/post/3mne4bb5bt22y"
-  },
-  {
-   "lines": [
-    "that instrumental",
-    "and vocal tracks are added",
-    "for supplemental"
-   ],
-   "mask": "iambic+rhyme13+stressPalindrome",
-   "u": 1,
-   "shine": {
-    "rarity": 222701,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "rhyme13",
-     "stressPalindrome"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:cnji73kgq2tgmgx5abmtcopi/post/3mnejwz76qs2t"
-  },
-  {
-   "lines": [
-    "where he delved into",
-    "detail composing music",
-    "for Fate/Strange Fake, Blue"
-   ],
-   "mask": "iambic+rhyme13+stressPalindrome",
-   "u": 1,
-   "shine": {
-    "rarity": 222701,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "rhyme13",
-     "stressPalindrome"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:n2nxmrqilghpmndz2w4fkc5r/post/3mmis6vsods2e"
-  },
-  {
-   "lines": [
-    "This combination",
-    "ensures a comprehensive",
-    "evaluation"
-   ],
-   "mask": "iambic+rhyme13+stressPalindrome",
-   "u": 1,
-   "shine": {
-    "rarity": 222701,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "rhyme13",
-     "stressPalindrome"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:47ukz5svch7g2jmqu674y7b5/post/3mmjeqt2cxa2r"
-  },
-  {
-   "lines": [
-    "While it’s true that most",
-    "of the United States’ wine",
-    "comes from the West Coast"
-   ],
-   "mask": "iambic+rhyme13+stressPalindrome",
-   "u": 1,
-   "shine": {
-    "rarity": 222701,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "rhyme13",
-     "stressPalindrome"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:aattexikjlpex2xxdod2el5y/post/3mmmowh66dt2o"
-  },
-  {
-   "lines": [
-    "nest box,sparrow,Wood",
-    "Street,Concord,flowers,bluebird",
-    "chipmunk,lilacs,leap"
-   ],
-   "mask": "kigo+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 222701,
-    "tier": "🌟🌟",
-    "badges": [
-     "kigo",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:xvm5gstm64eotj73dkr6l7tz/post/3mmmpuqmsrb2g"
-  },
-  {
-   "lines": [
-    "Get your Late night🌛🌑 news",
-    "views👀 & that GOOD GOOD HOT TEA☕ HERE",
-    "You just click the link"
+    "If we make it through",
+    "the night, if we live to see",
+    "the dawn.                                                         We will search"
    ],
    "mask": "iambic+kigo+stressPalindrome+isosyllabic",
-   "u": 0.92,
+   "u": 1,
    "shine": {
-    "rarity": 188812,
+    "rarity": 422078,
     "tier": "🌟🌟",
     "badges": [
      "iambic",
@@ -2776,246 +3187,622 @@
     ],
     "isoN": 1
    },
-   "url": "https://bsky.app/profile/did:plc:nqdeb6u5x3srrcljtn4odsi5/post/3mmloxqubfc2g"
+   "url": "https://bsky.app/profile/did:plc:5md66fht7wdagydqwuz64sad/post/3mriutlvwi624"
   },
   {
    "lines": [
-    "dead: Former child star",
-    "dies after cancer battle",
-    "Celebrity News"
+    "SO, as a good spouse",
+    "I picked a small fight, he got",
+    "to be mad & storm off"
    ],
-   "mask": "iambic+kigo+stopless",
+   "mask": "iambic+kigo+stressPalindrome+isosyllabic",
    "u": 1,
    "shine": {
-    "rarity": 164095,
+    "rarity": 422078,
     "tier": "🌟🌟",
     "badges": [
      "iambic",
      "kigo",
-     "stopless"
-    ]
+     "stressPalindrome",
+     "isosyllabic"
+    ],
+    "isoN": 1
    },
-   "url": "https://bsky.app/profile/did:plc:sxbfu7giy35hcpekhb7khwer/post/3mn6qnrt55g2f"
+   "url": "https://bsky.app/profile/did:plc:2cuekvetitnxmijbtxi3c7gv/post/3mrjfsfgpl22u"
   },
   {
    "lines": [
-    "STAR LIBERTY PAC",
-    "spent $380K",
-    "supporting PAXTON"
+    "biggest unanswered",
+    "questions surrounding Iran's",
+    "nuclear program"
    ],
-   "mask": "iambic+kigo+stopless",
+   "mask": "sanmyaku+stopless",
    "u": 1,
    "shine": {
-    "rarity": 164095,
+    "rarity": 422078,
+    "tier": "🌟🌟",
+    "badges": [
+     "sanmyaku",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:xzwu6jegddswa346kctytgqi/post/3mrktkbqfy22n"
+  },
+  {
+   "lines": [
+    "Former NBA",
+    "Player Isaiah Rider",
+    "Arrested Again"
+   ],
+   "mask": "sanmyaku+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 422078,
+    "tier": "🌟🌟",
+    "badges": [
+     "sanmyaku",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:drwh37ctfbbgpduog3dnkphr/post/3mrlh7pyvza2j"
+  },
+  {
+   "lines": [
+    "Lombard Odier",
+    "Asset Management Europe",
+    "Ltd increased"
+   ],
+   "mask": "sanmyaku+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 422078,
+    "tier": "🌟🌟",
+    "badges": [
+     "sanmyaku",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:kqj4vuyjvmtnptvvdt2xijtk/post/3mrli77hnxd25"
+  },
+  {
+   "lines": [
+    "Lombard Odier",
+    "Asset Management Europe",
+    "Ltd decreased"
+   ],
+   "mask": "sanmyaku+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 422078,
+    "tier": "🌟🌟",
+    "badges": [
+     "sanmyaku",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:kqj4vuyjvmtnptvvdt2xijtk/post/3mrlsck43j42c"
+  },
+  {
+   "lines": [
+    "for me, so the next",
+    "day that and of course I got",
+    "him lunch and ice cream"
+   ],
+   "mask": "iambic+kigo+stressPalindrome+isosyllabic",
+   "u": 1,
+   "shine": {
+    "rarity": 422078,
     "tier": "🌟🌟",
     "badges": [
      "iambic",
      "kigo",
-     "stopless"
-    ]
+     "stressPalindrome",
+     "isosyllabic"
+    ],
+    "isoN": 1
    },
-   "url": "https://bsky.app/profile/did:plc:xds4luusktvkqqzea6iwd6bc/post/3mmiybvrngd2i"
+   "url": "https://bsky.app/profile/did:plc:jlencxxcurwf3scbmetku54v/post/3mrme73zitc2w"
   },
   {
    "lines": [
-    "Rain chances over",
-    "Memorial Day weekend",
-    "becoming warmer"
+    "Take a look right here",
+    "at this bag, it has the winds",
+    "of the storm all trapped"
    ],
-   "mask": "iambic+kigo+stopless",
+   "mask": "iambic+kigo+stressPalindrome+isosyllabic",
    "u": 1,
    "shine": {
-    "rarity": 164095,
+    "rarity": 422078,
     "tier": "🌟🌟",
     "badges": [
      "iambic",
      "kigo",
-     "stopless"
-    ]
+     "stressPalindrome",
+     "isosyllabic"
+    ],
+    "isoN": 1
    },
-   "url": "https://bsky.app/profile/did:plc:kq6jfz2rx6vj2snqdix26tft/post/3mmex5vxv3xx2"
+   "url": "https://bsky.app/profile/did:plc:txdfyg5c7djn7ricfj5blbh7/post/3mrmsjat2gn2t"
   },
   {
    "lines": [
-    "comedian who",
-    "created parody ICE",
-    "tip website (Aura"
+    "have a wild night out",
+    "and have so much fun I just",
+    "said fuck it and slap"
    ],
-   "mask": "iambic+kigo+stopless",
+   "mask": "iambic+kigo+stressPalindrome+isosyllabic",
    "u": 1,
    "shine": {
-    "rarity": 164095,
+    "rarity": 422078,
     "tier": "🌟🌟",
     "badges": [
      "iambic",
      "kigo",
-     "stopless"
-    ]
+     "stressPalindrome",
+     "isosyllabic"
+    ],
+    "isoN": 1
    },
-   "url": "https://bsky.app/profile/did:plc:yxwuluq3ksl4hur6mopcl5el/post/3mmfjmb6p652b"
+   "url": "https://bsky.app/profile/did:plc:betpaer5h724v7itnzklqk6q/post/3mrmsxfjw5226"
   },
   {
    "lines": [
-    "Es probable que",
-    "San Jorge sea el santo",
-    "más popular de"
+    "music releases",
+    "one-man one-puppet zombie",
+    "musicals, other"
    ],
-   "mask": "iambic+kigo+stopless",
+   "mask": "sanmyaku+stopless",
    "u": 1,
    "shine": {
-    "rarity": 164095,
+    "rarity": 422078,
+    "tier": "🌟🌟",
+    "badges": [
+     "sanmyaku",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:3hqcr2xlbxdraah4alos5wnk/post/3mrmtrt6cqs23"
+  },
+  {
+   "lines": [
+    "monthly donations",
+    "into Supporters Circle",
+    "membership, without"
+   ],
+   "mask": "sanmyaku+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 422078,
+    "tier": "🌟🌟",
+    "badges": [
+     "sanmyaku",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:cppwlq7g6sij5wvv7bawxayl/post/3mrmwdle3is2d"
+  },
+  {
+   "lines": [
+    "Future: Atlantic",
+    "City Electric's Massive",
+    "Battery Project"
+   ],
+   "mask": "sanmyaku+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 422078,
+    "tier": "🌟🌟",
+    "badges": [
+     "sanmyaku",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:n55fosfkcpb7cgl2yo5btaiv/post/3mrmyd42v7r2t"
+  },
+  {
+   "lines": [
+    "you should get a tramp",
+    "stamp of Shrek. The third crow knows",
+    "which way the wind blows"
+   ],
+   "mask": "iambic+kigo+stressPalindrome+isosyllabic",
+   "u": 1,
+   "shine": {
+    "rarity": 422078,
     "tier": "🌟🌟",
     "badges": [
      "iambic",
      "kigo",
+     "stressPalindrome",
+     "isosyllabic"
+    ],
+    "isoN": 1
+   },
+   "url": "https://bsky.app/profile/did:plc:z7lyiaxap3hf4yfpilukphj4/post/3mrmyk4u6nm2l"
+  },
+  {
+   "lines": [
+    "TACOs formula",
+    "predicts ceasefire amidst",
+    "Iran-US tensions"
+   ],
+   "mask": "sanmyaku+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 422078,
+    "tier": "🌟🌟",
+    "badges": [
+     "sanmyaku",
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:uuy6rhc7rc5gowpb6ggve3jy/post/3mmmxnoyrys22"
+   "url": "https://bsky.app/profile/did:plc:darasevwpslhqq6mcy5mey56/post/3mrmyl47chy2r"
   },
   {
    "lines": [
-    "Qualification",
-    "mobility is still too",
-    "slow, says Commission"
+    "night on the floor. Took",
+    "the cone off and we both slept",
+    "kind of, for the next"
    ],
-   "mask": "iambic+lipogramE",
+   "mask": "iambic+kigo+stressPalindrome+isosyllabic",
    "u": 1,
    "shine": {
-    "rarity": 148467,
+    "rarity": 422078,
     "tier": "🌟🌟",
     "badges": [
      "iambic",
-     "lipogramE"
-    ]
+     "kigo",
+     "stressPalindrome",
+     "isosyllabic"
+    ],
+    "isoN": 1
    },
-   "url": "https://bsky.app/profile/did:plc:enugjzmetevfyi4zjb7yd35r/post/3mn7mhykelk2y"
+   "url": "https://bsky.app/profile/did:plc:myypba7d47gzqbyhczi3p6fn/post/3mrn5koafsk2y"
   },
   {
    "lines": [
-    "capitulation",
-    "to planning populism",
-    "as a solution"
+    "ICE and the White House",
+    "had hopes that if they could find",
+    "drugs in the work van"
    ],
-   "mask": "iambic+lipogramE",
+   "mask": "iambic+kigo+stressPalindrome+isosyllabic",
    "u": 1,
    "shine": {
-    "rarity": 148467,
+    "rarity": 422078,
     "tier": "🌟🌟",
     "badges": [
      "iambic",
-     "lipogramE"
-    ]
+     "kigo",
+     "stressPalindrome",
+     "isosyllabic"
+    ],
+    "isoN": 1
    },
-   "url": "https://bsky.app/profile/did:plc:w54u3awqan3b65j4rvauv4f6/post/3mn7ppe5e6c2e"
+   "url": "https://bsky.app/profile/did:plc:sgti3jsgu3luif24tokvth3a/post/3mrn7bog4ns2c"
   },
   {
    "lines": [
-    "financial windfall",
-    "of any kind. This is all",
-    "I can do right now"
+    "but the old folk say",
+    "it's just a rock with a hole",
+    "in it that the wind"
    ],
-   "mask": "iambic+lipogramE",
+   "mask": "iambic+kigo+isosyllabic",
    "u": 1,
    "shine": {
-    "rarity": 148467,
+    "rarity": 397250,
     "tier": "🌟🌟",
     "badges": [
      "iambic",
-     "lipogramE"
-    ]
+     "kigo",
+     "isosyllabic"
+    ],
+    "isoN": 1
    },
-   "url": "https://bsky.app/profile/did:plc:oyurulr53ymdghfa55bxydhs/post/3mna6nf5d4s2s"
+   "url": "https://bsky.app/profile/did:plc:ncabxiu7kxgvokyuguujsxhe/post/3mrlp5nl4oc2w"
   },
   {
    "lines": [
-    "HTTP(S",
-    "and DNS Canary",
-    "bot with Slack/Discord"
+    "Love that everyone",
+    "is having fun with this one",
+    "had to have some fun"
    ],
-   "mask": "iambic+lipogramE",
-   "u": 1,
+   "mask": "rhyme13+rhymeAll+stressPalindrome",
+   "u": 0.86,
    "shine": {
-    "rarity": 148467,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "lipogramE"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:ltjj43huonogytm4szn5hzkx/post/3mna7ert4kc26"
-  },
-  {
-   "lines": [
-    "contamination",
-    "and brings about both worldly",
-    "and spiritual"
-   ],
-   "mask": "iambic+lipogramE",
-   "u": 1,
-   "shine": {
-    "rarity": 148467,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "lipogramE"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:3dnbrktfyz3eabknk3dkfu5z/post/3mnddahmqjk2m"
-  },
-  {
-   "lines": [
-    "a living room wall",
-    "this canvas print brings a touch",
-    "of Hollywood cool"
-   ],
-   "mask": "iambic+lipogramE",
-   "u": 1,
-   "shine": {
-    "rarity": 148467,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "lipogramE"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:oezdbawymfjmrpu4z4so2z4p/post/3mmjvhihkc42x"
-  },
-  {
-   "lines": [
-    "contracts is coming",
-    "soon. I'm participating",
-    "by running a Full"
-   ],
-   "mask": "iambic+lipogramE",
-   "u": 1,
-   "shine": {
-    "rarity": 148467,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "lipogramE"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:qmmekxgvqdpi34x5hynq4rfk/post/3mmmta3zrpc2q"
-  },
-  {
-   "lines": [
-    "never forget. Pay",
-    "them off...whatever. J6",
-    "was a CRIME. J6"
-   ],
-   "mask": "rhyme13+rhymeAll",
-   "u": 0.88,
-   "shine": {
-    "rarity": 142993,
+    "rarity": 394314,
     "tier": "🌟🌟",
     "badges": [
      "rhyme13",
-     "rhymeAll"
+     "rhymeAll",
+     "stressPalindrome"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:p3fgi2lcndpmhwgeszmhzkok/post/3mmn73l4fdc22"
+   "url": "https://bsky.app/profile/did:plc:m6xfslhtqrw6wrya4c5z6xmo/post/3mrlsphbs2c2y"
+  },
+  {
+   "lines": [
+    "God damn, how the hell",
+    "did any adaptation",
+    "of ghost in the shell"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "stressPalindrome"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:tqpb6343pwlgyb3yh6wjmg23/post/3mri6l37vps2d"
+  },
+  {
+   "lines": [
+    "it in the weird way",
+    "hell no. I just feel more like",
+    "myself if I play"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "stressPalindrome"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:lm5ie4gqky4vjuucgyja6kaw/post/3mridi3fas22p"
+  },
+  {
+   "lines": [
+    "a good girl ever",
+    "told me to leave it in like",
+    "this, I might never"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "stressPalindrome"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:6hr5hdg6o7xsmrcnnxdwyajj/post/3mrivh7n7xk22"
+  },
+  {
+   "lines": [
+    "now changed to one way",
+    "from west to east BUT no signs",
+    "updated to say"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "stressPalindrome"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:mq76fsiywnkh6drc3qzrvxt6/post/3mrivrl5zfs2z"
+  },
+  {
+   "lines": [
+    "it from them, too. When",
+    "I told him as much, he. . made",
+    "things even, and then"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "stressPalindrome"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:j5xlhirqna47v2l3qad2sviu/post/3mrj5w53eqs22"
+  },
+  {
+   "lines": [
+    "The crack of the bat",
+    "The smell of the grass. The roar",
+    "of the crowd. You’ve just"
+   ],
+   "mask": "kigo+isosyllabic",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "kigo",
+     "isosyllabic"
+    ],
+    "isoN": 1
+   },
+   "url": "https://bsky.app/profile/did:plc:6xcqsnllix7ieg7lziuxttqm/post/3mrj7sc5ffk2o"
+  },
+  {
+   "lines": [
+    "The new 4k one",
+    "I have it and just have t",
+    "put it in yet.   Fun"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "stressPalindrome"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:y4znzsf52bamhw2bgpgczvct/post/3mrjdfyo47k2n"
+  },
+  {
+   "lines": [
+    "He’s prob still on ice",
+    "they’ll wheel him out in a week",
+    "or so and say oh"
+   ],
+   "mask": "kigo+isosyllabic",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "kigo",
+     "isosyllabic"
+    ],
+    "isoN": 1
+   },
+   "url": "https://bsky.app/profile/did:plc:qkxww356wdisqlcwljc6ecaq/post/3mrjgulic7k2f"
+  },
+  {
+   "lines": [
+    "to post, because real",
+    "life is apparently too",
+    "much for him to deal"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "stressPalindrome"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:otuaa5ds7zzolez6wef7cp6o/post/3mrli333wds2t"
+  },
+  {
+   "lines": [
+    "out rather than try",
+    "to mend  things with her daughter",
+    "She cited the high"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "stressPalindrome"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:lugjh4p4tlujku7wz2vxpbts/post/3mrlpa2uutc2n"
+  },
+  {
+   "lines": [
+    "then one with white ink",
+    "or like- a branding iron",
+    "or scars?? I just think"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "stressPalindrome"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:4rnvojn6fb6j2quw7nig3kcm/post/3mrmjtthzo22o"
+  },
+  {
+   "lines": [
+    "for you AND a new",
+    "book coming out tomorrow",
+    "But that's still a few"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "stressPalindrome"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:essr4u4ftn5ysix7jxf7pq4g/post/3mrn3epdsax2e"
+  },
+  {
+   "lines": [
+    "and being told what",
+    "to do all day. Good to see",
+    "his ALPHA MALE strut"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "stressPalindrome"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:bmbz3tq3q5mezkff3pvkyvst/post/3mrnbzgzyy22q"
+  },
+  {
+   "lines": [
+    "or something, that way",
+    "all you guys can have a hand",
+    "in helping me stay"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "stressPalindrome"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:3a2rmrnf6kwv57bgpldyoniu/post/3mrncsziauk2f"
+  },
+  {
+   "lines": [
+    "I have done this. When",
+    "my boy was napping I worked",
+    "myself up and then"
+   ],
+   "mask": "iambic+rhyme13+stressPalindrome",
+   "u": 1,
+   "shine": {
+    "rarity": 355434,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "rhyme13",
+     "stressPalindrome"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:s22kga4a56jyzx2uhv26jhia/post/3mrngimvsxk2f"
   },
   {
    "lines": [
@@ -3026,7 +3813,7 @@
    "mask": "iambic+lipogramE+stopless",
    "u": 0.89,
    "shine": {
-    "rarity": 120398,
+    "rarity": 281431,
     "tier": "🌟🌟",
     "badges": [
      "iambic",
@@ -3034,457 +3821,277 @@
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:mmpx2adpbvrbyjxzonipjh4m/post/3mnbexd4aij2u"
+   "url": "https://bsky.app/profile/did:plc:mmpx2adpbvrbyjxzonipjh4m/post/3mrj5dp6fge2w"
   },
   {
    "lines": [
-    "Netherlands Poland",
-    "Portugal Romania",
-    "Slovakia Spain"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:zgsrmiu3wrajqa4kw65fa5rr/post/3mn6oiiwbws2n"
-  },
-  {
-   "lines": [
-    "carnival #cruising",
-    "dictatorship #gay #hitman",
-    "murder #past #police"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:5rvuhwzkodw5c7nqfukybmps/post/3mn7whj7mas2p"
-  },
-  {
-   "lines": [
-    "design #digital",
-    "environment #fantasy",
-    "game #illustration"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:o224oldiblsrbf4skepqlygb/post/3mna3xlzcdk23"
-  },
-  {
-   "lines": [
-    "Aboriginal",
-    "Community Controlled Health",
-    "Organisation"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:hp3t4k35yyjxczb3vuhoegyy/post/3mnays7oyjt2e"
-  },
-  {
-   "lines": [
-    "Netherlands, Poland",
-    "Portugal, Romania",
-    "Slovakia Spain"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:zgsrmiu3wrajqa4kw65fa5rr/post/3mnb5eqgh4s2l"
-  },
-  {
-   "lines": [
-    "behavioral health",
-    "homelessness, infrastructure",
-    "public services"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:jxkbtdbonhabjsbtkoe4k5hp/post/3mnbayju7i22l"
-  },
-  {
-   "lines": [
-    "accommodation",
-    "booking #business #holiday",
-    "hotel #luxury"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:bs46pnhkm4vd4ff6d2rl6ulk/post/3mnc6a7b2bc25"
-  },
-  {
-   "lines": [
-    "agency #business",
-    "clean #creative #elegant",
-    "minimal #modern"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:bs46pnhkm4vd4ff6d2rl6ulk/post/3mngayfudv526"
-  },
-  {
-   "lines": [
-    "ailing businesses",
-    "diversifying into",
-    "semiconductor"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:aday7msfnpqba7psqpjq3pij/post/3mmiszxwkkc2c"
-  },
-  {
-   "lines": [
-    "afford another",
-    "bullpen disaster heading",
-    "into Saturday"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:lgxwokjfnegutejxknkdpqwj/post/3mml6mjsg5m24"
-  },
-  {
-   "lines": [
-    "angular #bootstrap",
-    "clean #crm #dashboard #flat",
-    "modern #responsive"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:bs46pnhkm4vd4ff6d2rl6ulk/post/3mmlgonap7d2r"
-  },
-  {
-   "lines": [
-    "acoustic #guitar",
-    "halloween #instrumental",
-    "Philadelphia"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:tkdzbd3rs6vfzreetvcxtyuy/post/3mmlmzvhjdto2"
-  },
-  {
-   "lines": [
-    "Madison, Northern",
-    "Oneida, Onondaga",
-    "Otsego, Schuyler"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:jr7ikvv7kp7t2qzq42aenh33/post/3mmfyacqbpj2a"
-  },
-  {
-   "lines": [
-    "creative #fashion",
-    "food #gutenberg #instagram",
-    "lifestyle #minimal"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:bs46pnhkm4vd4ff6d2rl6ulk/post/3mmob7gb2pt2o"
-  },
-  {
-   "lines": [
-    "Examination",
-    "Preparation Seminar",
-    "Tokyo Venue"
-   ],
-   "mask": "alphabetical+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 115474,
-    "tier": "🌟🌟",
-    "badges": [
-     "alphabetical",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:u5fjl3gvzclsv2yak4jzxaqw/post/3mmnuh3ahwc2d"
-  },
-  {
-   "lines": [
-    "paranoia: White",
-    "House Launches Immigration",
-    "Enforcement Website"
+    "Alert Weather Day",
+    "Scattered storms, isolated",
+    "flood threat Saturday"
    ],
    "mask": "rhyme13+stopless",
    "u": 1,
    "shine": {
-    "rarity": 111350,
+    "rarity": 259741,
     "tier": "🌟🌟",
     "badges": [
      "rhyme13",
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:nncuaxbaa7m4ywitalrp5kfz/post/3mn7iq4ifn22c"
+   "url": "https://bsky.app/profile/did:plc:oij3kslf6ae75wq7vw37otsv/post/3mrifdrvfyf2r"
   },
   {
    "lines": [
-    "Conflict/War…Midday",
-    "June 1, 2026",
-    "Iran backs Away"
+    "small town audio",
+    "engineer soap + arrogant",
+    "big time radio"
    ],
    "mask": "rhyme13+stopless",
    "u": 1,
    "shine": {
-    "rarity": 111350,
+    "rarity": 259741,
     "tier": "🌟🌟",
     "badges": [
      "rhyme13",
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:wjx4gtldkaqrsntrc7blii4x/post/3mnamtha3ps2e"
+   "url": "https://bsky.app/profile/did:plc:fybu3vvz2s5wf5ly3yqp63q7/post/3mriidyudk22m"
   },
   {
    "lines": [
-    "money flows into",
-    "maine senate race through susan",
-    "collins' donors, who"
+    "7hrs, 3k",
+    "elevation gain. Summit",
+    "candy: Milky Way"
    ],
    "mask": "rhyme13+stopless",
    "u": 1,
    "shine": {
-    "rarity": 111350,
+    "rarity": 259741,
     "tier": "🌟🌟",
     "badges": [
      "rhyme13",
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:3s4yefqenph2uxsf3rje3avq/post/3mnamysinqc2a"
+   "url": "https://bsky.app/profile/did:plc:4kv6vcrfedeveksvjkadvx26/post/3mrj3bnkrgk2x"
   },
   {
    "lines": [
-    "plant conservation",
-    "knowledge exchange through science",
-    "collaboration"
+    "capitalism",
+    "that’s censorship, which happens",
+    "under fascism"
    ],
    "mask": "rhyme13+stopless",
    "u": 1,
    "shine": {
-    "rarity": 111350,
+    "rarity": 259741,
     "tier": "🌟🌟",
     "badges": [
      "rhyme13",
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:grqk5m2vmkhjjbdnzk2k2jxj/post/3mncr4bpv4s25"
+   "url": "https://bsky.app/profile/did:plc:flztnp4jahyb467phvez6fna/post/3mrjvv7v6gs23"
   },
   {
    "lines": [
-    "La estrella de",
-    "Spider-Man, Tom Holland, dice",
-    "que Brand New Day le"
+    "challenges appear",
+    "Focus #Mindset #Leadership",
+    "Growth #Success #Career"
    ],
    "mask": "rhyme13+stopless",
    "u": 1,
    "shine": {
-    "rarity": 111350,
+    "rarity": 259741,
     "tier": "🌟🌟",
     "badges": [
      "rhyme13",
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:7qsf5ypfoelbn4rnizzkhwts/post/3mndckpmhta2i"
+   "url": "https://bsky.app/profile/did:plc:ilwovrxeaajtpltsy7hbyftu/post/3mrk3pwtvss25"
   },
   {
    "lines": [
-    "Andrew Yang's Noble",
-    "Acquires Crypto-Fueled",
-    "Helium Mobile"
+    "just adopted two",
+    "tier citizenship, I’m not",
+    "really sure that’s true"
    ],
    "mask": "rhyme13+stopless",
    "u": 1,
    "shine": {
-    "rarity": 111350,
+    "rarity": 259741,
     "tier": "🌟🌟",
     "badges": [
      "rhyme13",
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:553eofo6hvuxcsxo7qfidxjs/post/3mnddlwqzon2j"
+   "url": "https://bsky.app/profile/did:plc:pbsa4ybnr25rqm43v5wdqzyr/post/3mrkcb5bnjc2f"
   },
   {
    "lines": [
-    "Washington, DC",
-    "June 02, 2026",
-    "GLOBE NEWSWIRE) — Thirty"
+    "Spider-Man : Brand New",
+    "Day : Rosario Dawson",
+    "coupée au montage du"
    ],
    "mask": "rhyme13+stopless",
    "u": 1,
    "shine": {
-    "rarity": 111350,
+    "rarity": 259741,
     "tier": "🌟🌟",
     "badges": [
      "rhyme13",
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:2peokmtjhl25zflu4o2tde72/post/3mndf3rdx342j"
+   "url": "https://bsky.app/profile/did:plc:zx7dlw3qndi4bwwtkowbpgio/post/3mrkssvkfh22w"
   },
   {
    "lines": [
-    "Join Illinois State",
-    "Geological Survey",
-    "Help evaluate"
+    "2/ One tradition",
+    "never changes: everyone",
+    "shares which edition"
    ],
    "mask": "rhyme13+stopless",
    "u": 1,
    "shine": {
-    "rarity": 111350,
+    "rarity": 259741,
     "tier": "🌟🌟",
     "badges": [
      "rhyme13",
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:tuct2jsh7snpsd7ddrvdscki/post/3mnfbp4rsw42c"
+   "url": "https://bsky.app/profile/did:plc:45hta5chnx367co5vx5l2jlc/post/3mrkwl5yj5s2f"
   },
   {
    "lines": [
-    "California ’s",
-    "11th Congressional",
-    "District, CBS"
+    "directly provide",
+    "over 150",
+    "000 jobs worldwide"
    ],
    "mask": "rhyme13+stopless",
    "u": 1,
    "shine": {
-    "rarity": 111350,
+    "rarity": 259741,
     "tier": "🌟🌟",
     "badges": [
      "rhyme13",
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:jxkbtdbonhabjsbtkoe4k5hp/post/3mnffnnw6ss2h"
+   "url": "https://bsky.app/profile/did:plc:ylad34udmgv64bxk2ozj3yda/post/3mrkzp2yknk2x"
   },
   {
    "lines": [
-    "child  exploitation",
-    "offenses. FBI-led",
-    "investigation"
+    "just destabilize",
+    "society when people",
+    "rightly realize"
    ],
    "mask": "rhyme13+stopless",
    "u": 1,
    "shine": {
-    "rarity": 111350,
+    "rarity": 259741,
     "tier": "🌟🌟",
     "badges": [
      "rhyme13",
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:syzebrqcvpw4umy7ywb5l5h3/post/3mmjvpw5ews2s"
+   "url": "https://bsky.app/profile/did:plc:3jzn52efmt4qneh4cccl5ruv/post/3mrlgimchks2t"
+  },
+  {
+   "lines": [
+    "production value",
+    "exclusivity & demand",
+    "Don't undervalue"
+   ],
+   "mask": "rhyme13+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 259741,
+    "tier": "🌟🌟",
+    "badges": [
+     "rhyme13",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:agznwsltoltzjvgs7x3r7lsr/post/3mrlivkw32r25"
+  },
+  {
+   "lines": [
+    "Surface Blow up Chair",
+    "Folding Portable Flocking",
+    "Inflatable Air"
+   ],
+   "mask": "rhyme13+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 259741,
+    "tier": "🌟🌟",
+    "badges": [
+     "rhyme13",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:vrcsr5hdv3bsi47jqbtjmsxi/post/3mrllxp54j62n"
+  },
+  {
+   "lines": [
+    "credibility",
+    "Markets sniff out leadership",
+    "instability"
+   ],
+   "mask": "rhyme13+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 259741,
+    "tier": "🌟🌟",
+    "badges": [
+     "rhyme13",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:v6hq6nf64vem4b7skthbrgs2/post/3mrm6ml2hlw2g"
+  },
+  {
+   "lines": [
+    "Business Central short",
+    "video: Simplified bank",
+    "statement file import"
+   ],
+   "mask": "rhyme13+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 259741,
+    "tier": "🌟🌟",
+    "badges": [
+     "rhyme13",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:odsn2oc5riljwhwmvtu7hbe5/post/3mrmdgswokc2i"
+  },
+  {
+   "lines": [
+    "SIM registration",
+    "call awaiting Parliament's",
+    "communication"
+   ],
+   "mask": "rhyme13+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 259741,
+    "tier": "🌟🌟",
+    "badges": [
+     "rhyme13",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:pk5nq3gedpdb6xedfeobsm52/post/3mrms3x3b7k2w"
   }
  ]
 }
