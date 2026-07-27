@@ -1,3 +1,15 @@
+2026-07-26 - spam out of the prior
+
+The operator asked where a quoted rarity number came from, and the answer
+exposed two faults at once: I had asserted a flair without checking the
+table (the combination had sightings), and the sightings were the Blood
+clot spam — whose display score the uniqueness exponent had crushed, but
+whose mask still polluted the rarity prior. Finds below 0.5 uniqueness are
+now excluded from mask counts, on the same logic as the display discount:
+repetition may not define how rare a combination is. After the resurvey,
+isosyllabic+stopless is honestly unseen and the secret achievement's
+1-in-3,050,618 is real.
+
 2026-07-26 - 七歩之才
 
 The secret achievement: when the isosyllabic badge fires at n=7, the flair

@@ -17,34 +17,32 @@
   "stopless": 9745
  },
  "masks": {
-  "iambic+stressPalindrome": 826,
+  "iambic+stressPalindrome": 825,
   "kigo": 3053,
   "plain": 85389,
   "iambic": 5059,
   "stressPalindrome": 2388,
-  "stopless": 9204,
+  "stopless": 9194,
   "kigo+stopless": 358,
   "iambic+stressPalindrome+isosyllabic": 60,
   "iambic+kigo": 187,
   "alphabetical+stopless": 10,
   "rhyme13": 155,
-  "stressPalindrome+stopless": 38,
+  "stressPalindrome+stopless": 35,
   "kigo+stressPalindrome": 108,
   "iambic+kigo+stopless": 3,
   "iambic+stopless": 87,
   "rhyme13+stressPalindrome": 11,
   "iambic+kigo+stressPalindrome": 23,
-  "lipogramE+stopless": 14,
+  "lipogramE+stopless": 13,
   "lipogramE": 74,
   "rhyme13+stopless": 10,
   "iambic+kigo+stressPalindrome+stopless": 9,
   "iambic+lipogramE": 8,
   "iambic+rhyme13+stressPalindrome": 7,
   "iambic+rhyme13": 10,
-  "lipogramE+stressPalindrome": 3,
   "rhyme13+rhymeAll+stopless": 1,
   "iambic+isosyllabic": 2,
-  "iambic+lipogramE+monovocalic+stressPalindrome+isosyllabic+stopless": 2,
   "kigo+lipogramE": 1,
   "iambic+rhyme13+kigo": 1,
   "rhyme13+lipogramE": 1,
@@ -57,6 +55,7 @@
   "kigo+stressPalindrome+stopless": 2,
   "sanmyaku+stopless": 1,
   "iambic+stressPalindrome+stopless": 3,
+  "lipogramE+stressPalindrome": 1,
   "iambic+lipogramE+stressPalindrome+isosyllabic": 1,
   "rhyme13+lipogramE+stopless": 1,
   "iambic+lipogramE+stressPalindrome": 1
@@ -1449,6 +1448,25 @@
   },
   {
    "lines": [
+    "How much do you know",
+    "about Barack Obama",
+    "Find out with this fun"
+   ],
+   "mask": "iambic+lipogramE+stressPalindrome",
+   "u": 1,
+   "shine": {
+    "rarity": 762655,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "lipogramE",
+     "stressPalindrome"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:h7dfm3xvswww543aqou2ogwe/post/3mnggfydusk24"
+  },
+  {
+   "lines": [
     "When life gives you red",
     "and white stars, it’s time to shine",
     "bright! Who needs a night"
@@ -1463,7 +1481,8 @@
      "kigo",
      "stressPalindrome",
      "isosyllabic"
-    ]
+    ],
+    "isoN": 1
    },
    "url": "https://bsky.app/profile/did:plc:gzrrxzgx4g5oe3epin6hqyku/post/3mnd3dqwtuz2r"
   },
@@ -1483,28 +1502,49 @@
      "kigo",
      "stressPalindrome",
      "isosyllabic"
-    ]
+    ],
+    "isoN": 1
    },
    "url": "https://bsky.app/profile/did:plc:lvoh6kgyhsm7s52ppqm2wgoq/post/3mndecnc5p4n2"
   },
   {
    "lines": [
-    "How much do you know",
-    "about Barack Obama",
-    "Find out with this fun"
+    "and I only found",
+    "out today that it's unpaid",
+    "so if you wanna"
    ],
-   "mask": "iambic+lipogramE+stressPalindrome",
+   "mask": "lipogramE+stressPalindrome",
    "u": 1,
    "shine": {
-    "rarity": 381327,
+    "rarity": 508436,
     "tier": "🌟🌟",
     "badges": [
-     "iambic",
      "lipogramE",
      "stressPalindrome"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:h7dfm3xvswww543aqou2ogwe/post/3mnggfydusk24"
+   "url": "https://bsky.app/profile/did:plc:mbvhxqztfiqpbsifwjgsbj3q/post/3mnfmoyikqk2p"
+  },
+  {
+   "lines": [
+    "If you want to know",
+    "why I fight so hard for trans",
+    "rights, and why I don't"
+   ],
+   "mask": "iambic+lipogramE+stressPalindrome+isosyllabic",
+   "u": 0.89,
+   "shine": {
+    "rarity": 313558,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "lipogramE",
+     "stressPalindrome",
+     "isosyllabic"
+    ],
+    "isoN": 1
+   },
+   "url": "https://bsky.app/profile/did:plc:tlcvxo7swx34fkwxsnvqfjbr/post/3mnfnu7d7tc2w"
   },
   {
    "lines": [
@@ -1600,24 +1640,6 @@
     ]
    },
    "url": "https://bsky.app/profile/did:plc:cnji73kgq2tgmgx5abmtcopi/post/3mnejwz76qs2t"
-  },
-  {
-   "lines": [
-    "and I only found",
-    "out today that it's unpaid",
-    "so if you wanna"
-   ],
-   "mask": "lipogramE+stressPalindrome",
-   "u": 1,
-   "shine": {
-    "rarity": 217901,
-    "tier": "🌟🌟",
-    "badges": [
-     "lipogramE",
-     "stressPalindrome"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:mbvhxqztfiqpbsifwjgsbj3q/post/3mnfmoyikqk2p"
   },
   {
    "lines": [
@@ -1798,6 +1820,25 @@
     ]
    },
    "url": "https://bsky.app/profile/did:plc:m66ppaawlo6xnok2i5jpfwbe/post/3mngcydcicx2a"
+  },
+  {
+   "lines": [
+    "Dogs Doing Human",
+    "Things Colouring Book, Quirky",
+    "Activity Book"
+   ],
+   "mask": "iambic+lipogramE+stopless",
+   "u": 0.89,
+   "shine": {
+    "rarity": 169331,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "lipogramE",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:mmpx2adpbvrbyjxzonipjh4m/post/3mnbexd4aij2u"
   },
   {
    "lines": [
@@ -2001,6 +2042,78 @@
   },
   {
    "lines": [
+    "Qualification",
+    "mobility is still too",
+    "slow, says Commission"
+   ],
+   "mask": "iambic+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 127109,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:enugjzmetevfyi4zjb7yd35r/post/3mn7mhykelk2y"
+  },
+  {
+   "lines": [
+    "capitulation",
+    "to planning populism",
+    "as a solution"
+   ],
+   "mask": "iambic+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 127109,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:w54u3awqan3b65j4rvauv4f6/post/3mn7ppe5e6c2e"
+  },
+  {
+   "lines": [
+    "financial windfall",
+    "of any kind. This is all",
+    "I can do right now"
+   ],
+   "mask": "iambic+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 127109,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:oyurulr53ymdghfa55bxydhs/post/3mna6nf5d4s2s"
+  },
+  {
+   "lines": [
+    "HTTP(S",
+    "and DNS Canary",
+    "bot with Slack/Discord"
+   ],
+   "mask": "iambic+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 127109,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:ltjj43huonogytm4szn5hzkx/post/3mna7ert4kc26"
+  },
+  {
+   "lines": [
     "Conflict/War…Midday",
     "June 1, 2026",
     "Iran backs Away"
@@ -2090,6 +2203,24 @@
   },
   {
    "lines": [
+    "contamination",
+    "and brings about both worldly",
+    "and spiritual"
+   ],
+   "mask": "iambic+lipogramE",
+   "u": 1,
+   "shine": {
+    "rarity": 127109,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "lipogramE"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:3dnbrktfyz3eabknk3dkfu5z/post/3mnddahmqjk2m"
+  },
+  {
+   "lines": [
     "Andrew Yang's Noble",
     "Acquires Crypto-Fueled",
     "Helium Mobile"
@@ -2123,6 +2254,44 @@
     ]
    },
    "url": "https://bsky.app/profile/did:plc:2peokmtjhl25zflu4o2tde72/post/3mndf3rdx342j"
+  },
+  {
+   "lines": [
+    "Suzuki Raider",
+    "R150 Blade",
+    "Edition. Visit"
+   ],
+   "mask": "iambic+stressPalindrome+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 127109,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "stressPalindrome",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:tobm6mrf5o7m76jvt4asmbqh/post/3mne5mjynmk2t"
+  },
+  {
+   "lines": [
+    "dive into Python",
+    "types, functions & libraries while",
+    "designing projects"
+   ],
+   "mask": "iambic+stressPalindrome+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 127109,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "stressPalindrome",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:36yujs2v7rzgoci2fsx4i4d2/post/3mnfbgqhhvw26"
   },
   {
    "lines": [
@@ -2162,6 +2331,25 @@
   },
   {
    "lines": [
+    "Dominican chant",
+    "exploring human–nature",
+    "interconnection"
+   ],
+   "mask": "iambic+stressPalindrome+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 127109,
+    "tier": "🌟🌟",
+    "badges": [
+     "iambic",
+     "stressPalindrome",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:mggvlqwu5d7oht6g3xlvibza/post/3mnfjxx22zs22"
+  },
+  {
+   "lines": [
     "an Arizona",
     "detention facility",
     "Health officials say"
@@ -2179,189 +2367,165 @@
   },
   {
    "lines": [
-    "If you want to know",
-    "why I fight so hard for trans",
-    "rights, and why I don't"
+    "Motors, Maruti",
+    "Suzuki, Hyundai Motor",
+    "India, Ashok"
    ],
-   "mask": "iambic+lipogramE+stressPalindrome+isosyllabic",
-   "u": 0.89,
-   "shine": {
-    "rarity": 118089,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "lipogramE",
-     "stressPalindrome",
-     "isosyllabic"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:tlcvxo7swx34fkwxsnvqfjbr/post/3mnfnu7d7tc2w"
-  },
-  {
-   "lines": [
-    "Qualification",
-    "mobility is still too",
-    "slow, says Commission"
-   ],
-   "mask": "iambic+lipogramE",
+   "mask": "lipogramE+stopless",
    "u": 1,
    "shine": {
-    "rarity": 108951,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "lipogramE"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:enugjzmetevfyi4zjb7yd35r/post/3mn7mhykelk2y"
-  },
-  {
-   "lines": [
-    "capitulation",
-    "to planning populism",
-    "as a solution"
-   ],
-   "mask": "iambic+lipogramE",
-   "u": 1,
-   "shine": {
-    "rarity": 108951,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "lipogramE"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:w54u3awqan3b65j4rvauv4f6/post/3mn7ppe5e6c2e"
-  },
-  {
-   "lines": [
-    "financial windfall",
-    "of any kind. This is all",
-    "I can do right now"
-   ],
-   "mask": "iambic+lipogramE",
-   "u": 1,
-   "shine": {
-    "rarity": 108951,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "lipogramE"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:oyurulr53ymdghfa55bxydhs/post/3mna6nf5d4s2s"
-  },
-  {
-   "lines": [
-    "HTTP(S",
-    "and DNS Canary",
-    "bot with Slack/Discord"
-   ],
-   "mask": "iambic+lipogramE",
-   "u": 1,
-   "shine": {
-    "rarity": 108951,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "lipogramE"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:ltjj43huonogytm4szn5hzkx/post/3mna7ert4kc26"
-  },
-  {
-   "lines": [
-    "contamination",
-    "and brings about both worldly",
-    "and spiritual"
-   ],
-   "mask": "iambic+lipogramE",
-   "u": 1,
-   "shine": {
-    "rarity": 108951,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "lipogramE"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:3dnbrktfyz3eabknk3dkfu5z/post/3mnddahmqjk2m"
-  },
-  {
-   "lines": [
-    "Suzuki Raider",
-    "R150 Blade",
-    "Edition. Visit"
-   ],
-   "mask": "iambic+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 108951,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:tobm6mrf5o7m76jvt4asmbqh/post/3mne5mjynmk2t"
-  },
-  {
-   "lines": [
-    "dive into Python",
-    "types, functions & libraries while",
-    "designing projects"
-   ],
-   "mask": "iambic+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 108951,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:36yujs2v7rzgoci2fsx4i4d2/post/3mnfbgqhhvw26"
-  },
-  {
-   "lines": [
-    "Dominican chant",
-    "exploring human–nature",
-    "interconnection"
-   ],
-   "mask": "iambic+stressPalindrome+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 108951,
-    "tier": "🌟🌟",
-    "badges": [
-     "iambic",
-     "stressPalindrome",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:mggvlqwu5d7oht6g3xlvibza/post/3mnfjxx22zs22"
-  },
-  {
-   "lines": [
-    "Dogs Doing Human",
-    "Things Colouring Book, Quirky",
-    "Activity Book"
-   ],
-   "mask": "iambic+lipogramE+stopless",
-   "u": 0.89,
-   "shine": {
-    "rarity": 91444,
+    "rarity": 95332,
     "tier": "🌟",
     "badges": [
-     "iambic",
      "lipogramE",
      "stopless"
     ]
    },
-   "url": "https://bsky.app/profile/did:plc:mmpx2adpbvrbyjxzonipjh4m/post/3mnbexd4aij2u"
+   "url": "https://bsky.app/profile/did:plc:zibx3delbo24mdsccz6s7qa4/post/3mn6zwtl6i725"
+  },
+  {
+   "lines": [
+    "Maximilian",
+    "L. Ach, Konstantin",
+    "S. Jakob, Christian"
+   ],
+   "mask": "lipogramE+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 95332,
+    "tier": "🌟",
+    "badges": [
+     "lipogramE",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:uxjdkwlgj5ptelt2x4e3zrzr/post/3mn76yqr4v72k"
+  },
+  {
+   "lines": [
+    "individuals",
+    "who publicly justify",
+    "russia's war against"
+   ],
+   "mask": "lipogramE+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 95332,
+    "tier": "🌟",
+    "badges": [
+     "lipogramE",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:kztn3wd3n45j3l4yr6dz6isl/post/3mn7yuh2wq227"
+  },
+  {
+   "lines": [
+    "Colorful Abstract",
+    "Musician\" acrylic print",
+    "transforms bland into"
+   ],
+   "mask": "lipogramE+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 95332,
+    "tier": "🌟",
+    "badges": [
+     "lipogramE",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:oezdbawymfjmrpu4z4so2z4p/post/3mnca6kjprc2j"
+  },
+  {
+   "lines": [
+    "BMW",
+    "Charity Pro-Am shows how",
+    "sport + giving build trust"
+   ],
+   "mask": "lipogramE+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 95332,
+    "tier": "🌟",
+    "badges": [
+     "lipogramE",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:ovt35xz6ixxmzxtm4sf7dm2s/post/3mncagibe2c2a"
+  },
+  {
+   "lines": [
+    "amazing gaming",
+    "community who support",
+    "high quality print"
+   ],
+   "mask": "lipogramE+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 95332,
+    "tier": "🌟",
+    "badges": [
+     "lipogramE",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:zlog2fnusb3empn7k2gbjbcz/post/3mncfkeanwk2s"
+  },
+  {
+   "lines": [
+    "Purification",
+    "Utility Solutions",
+    "across India"
+   ],
+   "mask": "lipogramE+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 95332,
+    "tier": "🌟",
+    "badges": [
+     "lipogramE",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:xhatjyntwvwcbouvdpxemffh/post/3mnelxf3i222p"
+  },
+  {
+   "lines": [
+    "gas suffocation",
+    "Alabama, Arkansas",
+    "Louisiana"
+   ],
+   "mask": "lipogramE+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 95332,
+    "tier": "🌟",
+    "badges": [
+     "lipogramE",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:dlvsa4ip25q3qwhqd5oygp3d/post/3mnf3ep7ag22w"
+  },
+  {
+   "lines": [
+    "Sally Mann book sounds",
+    "promising, mostly about",
+    "inputs not outputs"
+   ],
+   "mask": "lipogramE+stopless",
+   "u": 1,
+   "shine": {
+    "rarity": 95332,
+    "tier": "🌟",
+    "badges": [
+     "lipogramE",
+     "stopless"
+    ]
+   },
+   "url": "https://bsky.app/profile/did:plc:vuo434kuz5qxwxpn3zeanalm/post/3mnffc4tt6c2x"
   },
   {
    "lines": [
@@ -2722,168 +2886,6 @@
     ]
    },
    "url": "https://bsky.app/profile/did:plc:gvk6ylwl47vqafbaouzjs2t4/post/3mngczfwlzk27"
-  },
-  {
-   "lines": [
-    "Motors, Maruti",
-    "Suzuki, Hyundai Motor",
-    "India, Ashok"
-   ],
-   "mask": "lipogramE+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 80279,
-    "tier": "🌟",
-    "badges": [
-     "lipogramE",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:zibx3delbo24mdsccz6s7qa4/post/3mn6zwtl6i725"
-  },
-  {
-   "lines": [
-    "Maximilian",
-    "L. Ach, Konstantin",
-    "S. Jakob, Christian"
-   ],
-   "mask": "lipogramE+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 80279,
-    "tier": "🌟",
-    "badges": [
-     "lipogramE",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:uxjdkwlgj5ptelt2x4e3zrzr/post/3mn76yqr4v72k"
-  },
-  {
-   "lines": [
-    "individuals",
-    "who publicly justify",
-    "russia's war against"
-   ],
-   "mask": "lipogramE+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 80279,
-    "tier": "🌟",
-    "badges": [
-     "lipogramE",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:kztn3wd3n45j3l4yr6dz6isl/post/3mn7yuh2wq227"
-  },
-  {
-   "lines": [
-    "Colorful Abstract",
-    "Musician\" acrylic print",
-    "transforms bland into"
-   ],
-   "mask": "lipogramE+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 80279,
-    "tier": "🌟",
-    "badges": [
-     "lipogramE",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:oezdbawymfjmrpu4z4so2z4p/post/3mnca6kjprc2j"
-  },
-  {
-   "lines": [
-    "BMW",
-    "Charity Pro-Am shows how",
-    "sport + giving build trust"
-   ],
-   "mask": "lipogramE+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 80279,
-    "tier": "🌟",
-    "badges": [
-     "lipogramE",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:ovt35xz6ixxmzxtm4sf7dm2s/post/3mncagibe2c2a"
-  },
-  {
-   "lines": [
-    "amazing gaming",
-    "community who support",
-    "high quality print"
-   ],
-   "mask": "lipogramE+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 80279,
-    "tier": "🌟",
-    "badges": [
-     "lipogramE",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:zlog2fnusb3empn7k2gbjbcz/post/3mncfkeanwk2s"
-  },
-  {
-   "lines": [
-    "Purification",
-    "Utility Solutions",
-    "across India"
-   ],
-   "mask": "lipogramE+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 80279,
-    "tier": "🌟",
-    "badges": [
-     "lipogramE",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:xhatjyntwvwcbouvdpxemffh/post/3mnelxf3i222p"
-  },
-  {
-   "lines": [
-    "gas suffocation",
-    "Alabama, Arkansas",
-    "Louisiana"
-   ],
-   "mask": "lipogramE+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 80279,
-    "tier": "🌟",
-    "badges": [
-     "lipogramE",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:dlvsa4ip25q3qwhqd5oygp3d/post/3mnf3ep7ag22w"
-  },
-  {
-   "lines": [
-    "Sally Mann book sounds",
-    "promising, mostly about",
-    "inputs not outputs"
-   ],
-   "mask": "lipogramE+stopless",
-   "u": 1,
-   "shine": {
-    "rarity": 80279,
-    "tier": "🌟",
-    "badges": [
-     "lipogramE",
-     "stopless"
-    ]
-   },
-   "url": "https://bsky.app/profile/did:plc:vuo434kuz5qxwxpn3zeanalm/post/3mnffc4tt6c2x"
   },
   {
    "lines": [

@@ -59,7 +59,11 @@ for await (const line of rl) {
     stats.strictFinds++;
     const b = badges(find.poem, find.span, meter);
     const mask = badgeMask(b);
-    maskCounts[mask] = (maskCounts[mask] || 0) + 1;
+    const u = uniqueness(find.poem);
+    // repetition spam may not define the rarity prior: a find that is mostly
+    // one word repeated ("Blood clot!" nine times) is excluded from the mask
+    // counts, exactly as the display-time discount would have crushed it
+    if (u >= 0.5 || mask === 'plain') maskCounts[mask] = (maskCounts[mask] || 0) + 1;
     for (const n of BADGE_NAMES) {
       if (b[n]) badgeCounts[n]++;
     }
@@ -75,7 +79,7 @@ for await (const line of rl) {
         lines: find.poem.lines.map((l) => l.text),
         badges: b,
         mask,
-        u: uniqueness(find.poem),
+        u,
         url: post.did && post.rkey ? `https://bsky.app/profile/${post.did}/post/${post.rkey}` : null,
       });
     }
