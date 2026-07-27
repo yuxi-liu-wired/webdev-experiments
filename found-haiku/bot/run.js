@@ -1,8 +1,11 @@
 // One poll cycle: read unseen mentions, answer each, mark them seen.
 
 import { parseCommand } from './parse.js';
-import { corpusFromPosts, findBest } from './engine.js';
-import { poemReply, notFoundReply, errorReply, graphemes, POST_LIMIT } from './compose.js';
+import { corpusFromPosts, findBest, rengaChain } from './engine.js';
+import {
+  poemReply, notFoundReply, errorReply, rengaStanzaReply, rengaMissReply,
+  graphemes, POST_LIMIT,
+} from './compose.js';
 import {
   ensureSession, dropSession, listNotifications, updateSeen,
   resolveHandle, authorPosts, postReply, alreadyAnswered,
@@ -10,11 +13,39 @@ import {
 
 const MAX_PER_CYCLE = 5; // the rest stay unread and are picked up next cycle
 
-/** The reply a mention deserves. Exported for the dry run. */
+/**
+ * The reply a mention deserves — a single reply object, or, for a renga,
+ * { thread: [reply, ...] } posted as a chain. Exported for the dry run.
+ */
 export async function replyFor(mention, botHandles, env = process.env) {
   const pinned = env.BOT_PINNED_URL || 'https://found-haiku.netlify.app/';
   const cmd = parseCommand(mention.record?.text || '', botHandles, mention.record?.facets);
   if (cmd.error) return errorReply(cmd.error, pinned);
+
+  if (cmd.formatName === 'renga') {
+    // the mentioner opens with the hokku; guests follow in the order named
+    const voices = [{ handle: mention.author.handle, did: mention.author.did }];
+    for (const t of cmd.renga) {
+      const did = t.did || await resolveHandle(t.handle);
+      if (!did) return errorReply('user does not exist', pinned);
+      voices.push({ handle: t.handle, did });
+    }
+    for (const v of voices) {
+      let posts;
+      try {
+        posts = await authorPosts(v.did, 5);
+      } catch {
+        return errorReply('user does not exist', pinned);
+      }
+      v.corpus = corpusFromPosts(posts);
+    }
+    const chain = rengaChain(voices);
+    if (chain.missing) return rengaMissReply(chain.missing, chain.pattern);
+    const total = chain.stanzas.length;
+    const thread = chain.stanzas.map((st, i) => rengaStanzaReply(st, i, total)).filter(Boolean);
+    if (thread.length < total) return rengaMissReply(voices[thread.length].handle, [5, 7, 5]);
+    return { thread };
+  }
 
   let did = mention.author.did;
   let aboutSelf = true;
@@ -66,9 +97,20 @@ export async function pollOnce(env = process.env, log = console.log) {
         continue;
       }
       const reply = await replyFor(mention, botHandles, env);
-      await postReply(session, mention, reply);
-      answered++;
-      log(`answered @${mention.author.handle}: ${reply.text.split('\n')[0].slice(0, 60)}`);
+      if (reply.thread) {
+        // a renga posts stanza by stanza, each hanging off the last
+        let parent = mention;
+        for (const stanza of reply.thread) {
+          const posted = await postReply(session, parent, stanza);
+          parent = { uri: posted.uri, cid: posted.cid, record: { reply: { root: mention.record?.reply?.root || { uri: mention.uri, cid: mention.cid } } } };
+        }
+        answered++;
+        log(`answered @${mention.author.handle}: renga in ${reply.thread.length} stanzas`);
+      } else {
+        await postReply(session, mention, reply);
+        answered++;
+        log(`answered @${mention.author.handle}: ${reply.text.split('\n')[0].slice(0, 60)}`);
+      }
     } catch (e) {
       // A failed mention is left unread for the next cycle rather than lost.
       log(`failed on @${mention.author.handle}: ${e.message}`);

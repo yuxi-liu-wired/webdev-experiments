@@ -30,9 +30,16 @@ const mention = {
 
 console.log(`mention by @${author}: ${JSON.stringify(text)}\n`);
 const reply = await replyFor(mention, ['found-haiku', 'found-haiku.bsky.social'], process.env);
-console.log('--- reply text ---');
-console.log(reply.text);
-if (reply.facets) {
-  console.log('--- facets ---');
-  console.log(JSON.stringify(reply.facets));
+if (reply.thread) {
+  for (const [i, r] of reply.thread.entries()) {
+    console.log(`--- stanza post ${i + 1} ---`);
+    console.log(r.text);
+  }
+} else {
+  console.log('--- reply text ---');
+  console.log(reply.text);
+  if (reply.facets) {
+    console.log('--- facets ---');
+    console.log(JSON.stringify(reply.facets));
+  }
 }

@@ -141,6 +141,7 @@ while True:
         "text": text,
         "langs": rec.get("langs"),
         "isReply": rec.get("reply") is not None,
+        "parent": ((rec.get("reply") or {}).get("parent") or {}).get("uri"),
         "time_us": ev.get("time_us"),
     }, ensure_ascii=False) + "\n"
     f.write(line)

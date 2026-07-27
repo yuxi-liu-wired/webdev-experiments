@@ -25,6 +25,39 @@ export function poemReply(poem, url) {
   };
 }
 
+/**
+ * One stanza of a renga thread: attribution, verse, source. The mention facet
+ * credits the voice; the link facet points at the found post.
+ */
+export function rengaStanzaReply(stanza, index, total) {
+  const head = `${index + 1}/${total} — @${stanza.handle}`;
+  const body = stanza.poem.lines.map((l) => l.text).join('\n');
+  const text = `${head}\n\n${body}\n\n${stanza.url}`;
+  if (graphemes(text) > POST_LIMIT) return null;
+  const handleStart = utf8len(`${index + 1}/${total} — `);
+  const urlStart = utf8len(`${head}\n\n${body}\n\n`);
+  return {
+    text,
+    facets: [
+      ...(stanza.did ? [{
+        index: { byteStart: handleStart, byteEnd: handleStart + utf8len(`@${stanza.handle}`) },
+        features: [{ $type: 'app.bsky.richtext.facet#mention', did: stanza.did }],
+      }] : []),
+      {
+        index: { byteStart: urlStart, byteEnd: urlStart + utf8len(stanza.url) },
+        features: [{ $type: 'app.bsky.richtext.facet#link', uri: stanza.url }],
+      },
+    ],
+  };
+}
+
+/** Reply when a renga voice has no stanza of the needed shape. */
+export function rengaMissReply(handle, pattern) {
+  return {
+    text: `Cannot find a ${pattern.join('-')} stanza in @${handle}'s corpus. A renga needs every voice.`,
+  };
+}
+
 /** Reply when the corpus holds no poem of the asked shape. */
 export function notFoundReply(aboutSelf) {
   return {

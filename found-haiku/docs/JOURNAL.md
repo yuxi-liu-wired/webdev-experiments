@@ -1,3 +1,22 @@
+2026-07-27 - renga
+
+The operator's idea, and the historically inevitable one: haiku began as the
+hokku of renga, so the bot now restores it to company. "renga @a @b" chains
+one found stanza per voice — mentioner opens 5-7-5, guests alternate 7-7 and
+5-7-5 in the order named, up to four guests — posted as a thread, one
+attributed stanza per post, every stanza genuinely found in that voice's own
+corpus under the full strict gates. A voice with no stanza declines the
+whole renga by name. Built and fixture-tested entirely offline at an airport
+gate; the wakiku fixture came out accidentally lovely: "silent morning fog
+covers / the harbor slowly turning".
+
+Also groundwork for the found tan-renga — a stranger's reply accidentally
+completing a stranger's post: the capture now records the reply parent uri,
+which the slim schema had dropped. Naive post+reply coincidences would be
+thousands a day (one post in fourteen holds a 5-7-5), so the miner, when a
+parent-bearing capture exists, will demand whole-post stanzas: the post IS
+the hokku, the reply IS the wakiku. That one is rare enough to be an event.
+
 2026-07-27 - the unfiltered table
 
 6,753,255 unique posts, about 52 continuous hours of the whole network,

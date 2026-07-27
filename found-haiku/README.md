@@ -168,7 +168,12 @@ poem found in someone's posts. The grammar, both slots optional, in any order
 
 `format` is `haiku`, `tanka`, `tanaga`, or 3-9 digits each 3-9, one per line
 (`577` is a 5-7-7). `@someone` redirects the search from the mentioner to that
-account. Malformed commands, unknown formats, out-of-bounds digits, and
+account. `renga @a @b` (up to four guests) starts a linked chain: the
+mentioner opens with a found 5-7-5 hokku, then each guest contributes an
+alternating found 7-7 or 5-7-5 from their own posts, posted as a thread with
+one attributed stanza per post — the bot as renga master. If any voice's
+corpus lacks its stanza, the whole renga declines: a renga needs every
+voice. Malformed commands, unknown formats, out-of-bounds digits, and
 missing users each get their exact error reply, linking the pinned usage post.
 Mentions typed with the client's autocomplete carry the target's DID in the
 post facets, the protocol's own parser; hand-typed handles go through

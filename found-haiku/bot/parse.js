@@ -20,6 +20,13 @@ const NAMED = {
   tanaga: FORMS.tanaga.pattern,
 };
 
+// A renga chains one found stanza per voice, alternating 5-7-5 and 7-7 from
+// the hokku down. The mentioner opens; each named account follows in order.
+export const RENGA_MAX_GUESTS = 4;
+export function rengaPattern(i) {
+  return i % 2 === 0 ? [5, 7, 5] : [7, 7];
+}
+
 const HANDLE = /^@[a-zA-Z0-9.-]+$/;
 
 /** Map handle text -> did from the post's mention facets. */
@@ -54,20 +61,32 @@ export function parseCommand(text, botHandles, facets) {
 
   // The slots may come in any order: a token names the slot by its shape —
   // @-prefixed fills the target, anything else fills the format. Filling
-  // either slot twice is malformed.
+  // either slot twice is malformed — except renga, which invites several.
   let format = null;
   let target = null;
+  const targets = [];
+  const isRenga = tokens.some((t) => t.toLowerCase() === 'renga');
 
   for (const t of tokens) {
     if (t.startsWith('@')) {
-      if (target) return { error: 'malformed request' };
       if (!HANDLE.test(t)) return { error: 'malformed request' };
       const handle = t.slice(1).toLowerCase();
-      target = { handle, did: mentions.get(handle) || null };
+      const entry = { handle, did: mentions.get(handle) || null };
+      if (isRenga) {
+        targets.push(entry);
+        if (targets.length > RENGA_MAX_GUESTS) return { error: 'malformed request' };
+        continue;
+      }
+      if (target) return { error: 'malformed request' };
+      target = entry;
       continue;
     }
     if (format) return { error: 'malformed request' };
     const lower = t.toLowerCase();
+    if (lower === 'renga') {
+      format = { pattern: null, name: 'renga' };
+      continue;
+    }
     if (NAMED[lower]) {
       format = { pattern: NAMED[lower], name: lower };
     } else if (/^[0-9]+$/.test(t)) {
@@ -78,6 +97,10 @@ export function parseCommand(text, botHandles, facets) {
     }
   }
 
+  if (isRenga) {
+    if (!targets.length) return { error: 'malformed request' }; // a renga needs guests
+    return { formatName: 'renga', renga: targets, pattern: null, target: null };
+  }
   return {
     pattern: format ? format.pattern : NAMED.haiku,
     formatName: format ? format.name : 'haiku',

@@ -9,6 +9,7 @@ import { join } from 'node:path';
 import { decodeExceptions, SyllableCounter } from '../public/src/syllables.js';
 import { joinPosts, spanAt, atUriToUrl } from '../public/src/posts.js';
 import { strictFinds } from '../tools/strict-lib.mjs';
+import { rengaPattern } from './parse.js';
 
 let counter = null;
 
@@ -46,6 +47,22 @@ export function corpusFromPosts(posts) {
  * then comma-straddling runs. `fits` lets the caller reject poems whose reply
  * would overflow a post.
  */
+/**
+ * A renga: one found stanza per voice, alternating 5-7-5 / 7-7 from the
+ * hokku down. Returns { stanzas } or { missing } naming the first voice
+ * whose corpus holds no stanza of the required shape.
+ */
+export function rengaChain(voices) {
+  const stanzas = [];
+  for (let i = 0; i < voices.length; i++) {
+    const pattern = rengaPattern(i);
+    const found = findBest(voices[i].corpus, pattern);
+    if (!found) return { missing: voices[i].handle, pattern };
+    stanzas.push({ handle: voices[i].handle, did: voices[i].did, ...found, pattern });
+  }
+  return { stanzas };
+}
+
 export function findBest(corpus, pattern, fits = () => true) {
   const c = loadCounter();
   const BREATH = /[.!?…‽]/;

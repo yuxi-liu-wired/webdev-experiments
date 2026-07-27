@@ -2,7 +2,8 @@ import { expect, test, describe } from 'bun:test';
 import { readFileSync } from 'node:fs';
 import { parseCommand, facetMentions } from '../bot/parse.js';
 import { poemReply, notFoundReply, errorReply, graphemes } from '../bot/compose.js';
-import { corpusFromPosts, findBest, loadCounter } from '../bot/engine.js';
+import { corpusFromPosts, findBest, loadCounter, rengaChain } from '../bot/engine.js';
+import { rengaStanzaReply, rengaMissReply } from '../bot/compose.js';
 import { shininess, flair, pickRarest } from '../public/src/shiny.js';
 import { decodeMeter, badges, uniqueness } from '../public/src/badges.js';
 import { findPoems } from '../public/src/finder.js';
@@ -226,6 +227,63 @@ describe('shininess', () => {
       { id: 'c', badges: {} },
     ]);
     expect(best.id).toBe('b');
+  });
+});
+
+describe('renga', () => {
+  const hokkuCorpus = corpusFromPosts([
+    { text: 'the old silent pond where a green frog jumps into the still cold water', uri: 'at://a/app.bsky.feed.post/h' },
+  ]);
+  const wakiCorpus = corpusFromPosts([
+    { text: 'silent morning fog covers the harbor slowly turning', uri: 'at://b/app.bsky.feed.post/w' },
+  ]);
+
+  test('renga command parses several guests in order', () => {
+    const c = parseCommand('@found-haiku renga @first.bsky.social @second.bsky.social', BOT, null);
+    expect(c.formatName).toBe('renga');
+    expect(c.renga.map((t) => t.handle)).toEqual(['first.bsky.social', 'second.bsky.social']);
+    expect(parseCommand('@found-haiku renga', BOT, null).error).toBe('malformed request');
+    expect(parseCommand('@found-haiku renga @a @b @c @d @e', BOT, null).error).toBe('malformed request');
+  });
+
+  test('the chain alternates 5-7-5 and 7-7, one voice each', () => {
+    const chain = rengaChain([
+      { handle: 'a', did: 'did:a', corpus: hokkuCorpus },
+      { handle: 'b', did: 'did:b', corpus: wakiCorpus },
+    ]);
+    expect(chain.missing).toBeUndefined();
+    expect(chain.stanzas.length).toBe(2);
+    expect(chain.stanzas[0].pattern).toEqual([5, 7, 5]);
+    expect(chain.stanzas[1].pattern).toEqual([7, 7]);
+    expect(chain.stanzas[1].poem.lines.map((l) => l.text)).toEqual([
+      'silent morning fog covers', 'the harbor slowly turning',
+    ]);
+  });
+
+  test('a voice with no stanza names the miss', () => {
+    const chain = rengaChain([
+      { handle: 'a', did: 'did:a', corpus: hokkuCorpus },
+      { handle: 'empty', did: 'did:e', corpus: corpusFromPosts([{ text: 'too short', uri: 'at://e/app.bsky.feed.post/x' }]) },
+    ]);
+    expect(chain.missing).toBe('empty');
+    expect(rengaMissReply(chain.missing, chain.pattern).text)
+      .toBe("Cannot find a 7-7 stanza in @empty's corpus. A renga needs every voice.");
+  });
+
+  test('stanza posts carry attribution and exact facet offsets', () => {
+    const chain = rengaChain([
+      { handle: 'a.bsky.social', did: 'did:a', corpus: hokkuCorpus },
+      { handle: 'b.bsky.social', did: 'did:b', corpus: wakiCorpus },
+    ]);
+    const r = rengaStanzaReply(chain.stanzas[0], 0, 2);
+    expect(r.text.startsWith('1/2 — @a.bsky.social')).toBe(true);
+    const bytes = new TextEncoder().encode(r.text);
+    for (const f of r.facets) {
+      const slice = new TextDecoder().decode(bytes.slice(f.index.byteStart, f.index.byteEnd));
+      const feat = f.features[0];
+      if (feat.$type.endsWith('#mention')) expect(slice).toBe('@a.bsky.social');
+      else expect(slice).toBe(chain.stanzas[0].url);
+    }
   });
 });
 
