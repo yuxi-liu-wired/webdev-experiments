@@ -1,3 +1,17 @@
+2026-07-26 - three operator badges
+
+isosyllabic (every word the same count; for a 5-7-5 the arithmetic permits
+only n=1, while a tanaga could hold four seven-syllable words), sanmyaku 山脈
+(2-3 / 2-3-2 / 3-2), and stopless (no function words). Badge logic now
+genuinely lives once in public/src/badges.js — the earlier consolidation
+claim was half-true, and adding badges in two places is how it got caught.
+The survey re-measured everything: isosyllabic 1 in 21,790, stopless 1 in
+157 (the corpus is headlines, which are already telegraphic), and sanmyaku,
+after banning digit posts from the structural badges (lottery results scan
+as "thirty / twenty-one" mountains), exactly one sighting in 1,525,309:
+"Stockton homicide / suspect arrested during / Nevada County". A crime
+headline is the rarest accidental shape of the week.
+
 2026-07-26 - shininess on the website
 
 The whole rarity apparatus now runs in the browser: public/src/badges.js is

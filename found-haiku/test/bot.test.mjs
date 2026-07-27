@@ -1,8 +1,11 @@
 import { expect, test, describe } from 'bun:test';
+import { readFileSync } from 'node:fs';
 import { parseCommand, facetMentions } from '../bot/parse.js';
 import { poemReply, notFoundReply, errorReply, graphemes } from '../bot/compose.js';
-import { corpusFromPosts, findBest } from '../bot/engine.js';
-import { shininess, flair, pickRarest } from '../bot/shiny.js';
+import { corpusFromPosts, findBest, loadCounter } from '../bot/engine.js';
+import { shininess, flair, pickRarest } from '../public/src/shiny.js';
+import { decodeMeter, badges, uniqueness } from '../public/src/badges.js';
+import { findPoems } from '../public/src/finder.js';
 
 const BOT = ['found-haiku.bsky.social', 'found-haiku'];
 
@@ -111,6 +114,44 @@ describe('reply composition', () => {
     const bytes = new TextEncoder().encode(r.text);
     expect(new TextDecoder().decode(bytes.slice(f.index.byteStart, f.index.byteEnd)))
       .toBe('https://bsky.app/profile/x/post/pin');
+  });
+});
+
+describe('the operator badges', () => {
+  const counter = loadCounter();
+  const meter = decodeMeter(readFileSync(new URL('../public/data/meter.txt', import.meta.url).pathname, 'utf8'));
+  const poemOf = (text) => {
+    const { poems } = findPoems(text, counter, { pattern: [5, 7, 5], scope: 'span', alternates: false });
+    expect(poems.length).toBeGreaterThan(0);
+    return poems[0];
+  };
+  const badgesOf = (text) => {
+    const p = poemOf(text);
+    return badges(p, text.slice(p.start, p.end), meter);
+  };
+
+  test('isosyllabic: an all-monosyllable haiku (the only n a 5-7-5 permits)', () => {
+    const b = badgesOf('big frogs jump in ponds when soft rain falls down on them at dusk each spring day');
+    expect(b.isosyllabic).toBe(true);
+    expect(badgesOf('the old silent pond where a green frog jumps into the still cold water').isosyllabic).toBe(false);
+  });
+
+  test('sanmyaku: word syllables rise and fall 2-3 / 2-3-2 / 3-2', () => {
+    const b = badgesOf('quiet elephant hidden elephant walking elephant sleeping');
+    expect(b.sanmyaku).toBe(true);
+    expect(badgesOf('the old silent pond where a green frog jumps into the still cold water').sanmyaku).toBe(false);
+  });
+
+  test('stopless: no function words anywhere', () => {
+    const b = badgesOf('elephants wander seventeen syllables land perfectly today');
+    expect(b.stopless).toBe(true);
+    expect(b.isosyllabic).toBe(false);
+    expect(badgesOf('big frogs jump in ponds when soft rain falls down on them at dusk each spring day').stopless).toBe(false);
+  });
+
+  test('uniqueness discounts the elephant refrain', () => {
+    const p = poemOf('quiet elephant hidden elephant walking elephant sleeping');
+    expect(uniqueness(p)).toBeCloseTo(5 / 7); // 7 content tokens, elephant thrice -> 5 distinct
   });
 });
 

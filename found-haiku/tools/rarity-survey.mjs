@@ -14,9 +14,8 @@
 import { createReadStream, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { createInterface } from 'node:readline';
 import { decodeExceptions, SyllableCounter } from '../public/src/syllables.js';
-import { loadCmudict } from './meter-lib.mjs';
-import { strictFinds, badges, badgeMask, uniqueness, stripLinks, BADGE_NAMES } from './strict-lib.mjs';
-import { shininess, flair } from '../bot/shiny.js';
+import { strictFinds, badges, badgeMask, uniqueness, stripLinks, BADGE_NAMES, decodeMeter } from './strict-lib.mjs';
+import { shininess, flair } from '../public/src/shiny.js';
 
 const path = process.argv[2];
 if (!path) {
@@ -27,7 +26,7 @@ const LIMIT = Number(process.argv[3] || 0);
 
 const counter = new SyllableCounter(decodeExceptions(
   readFileSync(new URL('../public/data/syllables.txt', import.meta.url).pathname, 'utf8')));
-const cmudict = loadCmudict();
+const meter = decodeMeter(readFileSync(new URL('../public/data/meter.txt', import.meta.url).pathname, 'utf8'));
 
 const stats = { scanned: 0, strictFinds: 0 };
 const badgeCounts = Object.fromEntries(BADGE_NAMES.map((n) => [n, 0]));
@@ -58,7 +57,7 @@ for await (const line of rl) {
 
   for (const find of strictFinds(stripLinks(original), counter)) {
     stats.strictFinds++;
-    const b = badges(find, cmudict);
+    const b = badges(find.poem, find.span, meter);
     const mask = badgeMask(b);
     maskCounts[mask] = (maskCounts[mask] || 0) + 1;
     for (const n of BADGE_NAMES) {
@@ -76,7 +75,7 @@ for await (const line of rl) {
         lines: find.poem.lines.map((l) => l.text),
         badges: b,
         mask,
-        u: uniqueness(find),
+        u: uniqueness(find.poem),
         url: post.did && post.rkey ? `https://bsky.app/profile/${post.did}/post/${post.rkey}` : null,
       });
     }

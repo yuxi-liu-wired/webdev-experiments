@@ -49,7 +49,8 @@ export function shininess(table, badgeObj, u = 1) {
 const PRETTY = {
   iambic: 'iambic', rhyme13: 'rhymed', rhymeAll: 'triple-rhymed', kigo: 'kigo',
   lipogramE: 'lipogram in e', alphabetical: 'alphabetical', monovocalic: 'monovocalic',
-  stressPalindrome: 'stress-palindromic',
+  stressPalindrome: 'stress-palindromic', isosyllabic: 'isosyllabic',
+  sanmyaku: 'sanmyaku 山脈', stopless: 'stopword-free',
 };
 
 /** The flair line for the post: "🌟 1 in 240,000 · iambic, rhymed". */

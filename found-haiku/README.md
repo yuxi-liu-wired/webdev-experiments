@@ -107,7 +107,13 @@ Poems that survive the strict rules (every word known and unambiguous, clean
 line endings, no letter soup) are checked for badges: iambic scansion, rhyme
 between first and last line, triple rhyme, kigo (season words, with a
 collocation blocklist so Star Wars is not spring), an e-lipogram, alphabetical
-word order, a single vowel letter, and a palindromic stress pattern. The badge
+word order, a single vowel letter, a palindromic stress pattern, isosyllabic
+(every word the same syllable count — for a 5-7-5 only monosyllables are
+arithmetically possible, since n must divide lines whose gcd is 1), sanmyaku
+山脈 (word syllables rising and falling 2-3 / 2-3-2 / 3-2), and stopword-free.
+Digit-heavy posts cannot claim the written-form or structural badges: their
+spoken words are not their written ones, and lottery results were farming the
+mountain shape. The badge
 combination's rarity was measured empirically on 1.5 million deduplicated
 firehose posts (`tools/rarity-survey.mjs`), and each poem's score is that
 rarity raised to its content-word uniqueness ratio, so repeating a word

@@ -134,11 +134,30 @@ export function badges(poem, span, meter) {
     });
   }
 
+  const hasNumbers = words.some((w) => w.source === 'number');
+
   // Written-form badges are only claimable by text actually written in
   // letters; digit-heavy spans are spoken as words the page never shows.
-  const written = !words.some((w) => w.source === 'number')
-    && letters.length >= 15 && wordList.length >= 5;
+  const written = !hasNumbers && letters.length >= 15 && wordList.length >= 5;
   const vowelsUsed = new Set(letters.replace(/[^aeiou]/g, ''));
+
+  // every word the same syllable count. For a 5-7-5 only n=1 is arithmetically
+  // possible (n must divide each line and gcd(5,7,5)=1); other patterns allow
+  // greater n — a tanaga of four seven-syllable words would qualify at n=7.
+  // Digit posts ("30] [21") farm the shape through their spoken form, so the
+  // structural badges also demand actual written language.
+  const counts = words.map((w) => w.counts[0]);
+  const isosyllabic = !hasNumbers && counts.length > 1 && counts.every((c) => c === counts[0]);
+
+  // 山脈: the words' syllable counts rise and fall as 2-3 / 2-3-2 / 3-2
+  const SANMYAKU = [[2, 3], [2, 3, 2], [3, 2]];
+  const sanmyaku = !hasNumbers && poem.lines.length === 3 && poem.lines.every((line, i) => {
+    const shape = line.words.map((w) => w.counts[0]);
+    return shape.length === SANMYAKU[i].length && shape.every((c, k) => c === SANMYAKU[i][k]);
+  });
+
+  // no function words at all: telegraphic, content the whole way down
+  const stopless = wordList.length > 0 && !wordList.some((w) => WEAK_ENDINGS.has(w));
 
   return {
     iambic,
@@ -149,6 +168,9 @@ export function badges(poem, span, meter) {
     alphabetical: written && wordList.every((w, i) => i === 0 || wordList[i - 1] <= w),
     monovocalic: written && vowelsUsed.size === 1,
     stressPalindrome,
+    isosyllabic,
+    sanmyaku,
+    stopless,
   };
 }
 
@@ -165,4 +187,9 @@ export function uniqueness(poem) {
   return new Set(pool).size / pool.length;
 }
 
-export const BADGE_NAMES = ['iambic', 'rhyme13', 'rhymeAll', 'kigo', 'lipogramE', 'alphabetical', 'monovocalic', 'stressPalindrome'];
+export const BADGE_NAMES = ['iambic', 'rhyme13', 'rhymeAll', 'kigo', 'lipogramE', 'alphabetical',
+  'monovocalic', 'stressPalindrome', 'isosyllabic', 'sanmyaku', 'stopless'];
+
+export function badgeMask(b) {
+  return BADGE_NAMES.filter((n) => b[n]).join('+') || 'plain';
+}
