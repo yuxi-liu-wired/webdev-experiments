@@ -251,6 +251,25 @@ describe('server-side finding', () => {
     expect(found.url).toContain('/post/clause');
   });
 
+  test('apostrophes are decided by the dictionary, not banned', () => {
+    const posts = [{
+      text: "don't fret the old pond 'cause a green frog jumps into the boys' cold water",
+      uri: 'at://d/app.bsky.feed.post/apos',
+    }];
+    // don't(1) fret(1) the(1) old(1) pond(1) | 'cause->cause(1) a(1) green(1) frog(1) jumps(1) into(2) | the(1) boys'(1) cold(1) water(2)
+    const found = findBest(corpusFromPosts(posts), [5, 7, 5]);
+    expect(found).not.toBe(null);
+    expect(found.poem.lines[0].text).toContain("don't");
+  });
+
+  test("single-quoted text is still a citation", () => {
+    const posts = [{
+      text: "she wrote 'the old silent pond where a green frog jumps into the still cold water' once",
+      uri: 'at://d/app.bsky.feed.post/sq',
+    }];
+    expect(findBest(corpusFromPosts(posts), [5, 7, 5])).toBe(null);
+  });
+
   test('quoted text is not the author speaking', () => {
     const posts = [{
       text: 'she said "the old silent pond where a green frog jumps into the still cold water" today',

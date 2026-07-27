@@ -1,3 +1,16 @@
+2026-07-26 - apostrophes, decided
+
+The operator conjectured apostrophes were decidable by dictionary, and the
+data proved her right: leading-apostrophe English is a closed class of
+fifteen words ('bout 'cause 'course 'cuse 'em 'frisco 'gain 'kay 'm 'n
+'round 's 'til 'tis 'twas), and CMUdict lists all 810 trailing-apostrophe
+forms, with s'-possessives productive beyond it. The quote gate now
+classifies each single quote: interior = always linguistic; leading = the
+fifteen or a quotation; trailing = dictionary hit or s' or a quotation;
+isolated or opening-curly = quotation. So don't, boys', goin' and 'em pass
+where 'quoted verse' is rejected as cited voice — contractions sacred,
+citations barred, nothing hand-waved.
+
 2026-07-26 - quotation marks are someone else's voice
 
 The operator asked how quotes are handled; the honest answer was
