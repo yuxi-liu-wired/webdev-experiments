@@ -1,3 +1,17 @@
+2026-07-26 - 七歩之才
+
+The secret achievement: when the isosyllabic badge fires at n=7, the flair
+names it 七歩之才 — Cao Zhi's talent of seven paces, the poem composed under
+an impossible constraint. Implementation is exactly the trivial change it
+sounds like: isoN rides out of badges() as an annotation (excluded from the
+mask, so the rarity table is untouched), and flair() renames the badge when
+it equals seven. The dictionary holds 105 plain seven-syllable words
+(epidemiologist, heterogeneity, incompatibility...), so a 7-7-7-7 tanaga is
+composable as deliberate bait but has never once occurred wild in 1.5M
+posts. That asymmetry is the point: the intent filters catch formatting, not
+determination, and moots farming the unlock by posting polysyllabic
+monstrosities is the battle economy working as designed.
+
 2026-07-26 - three operator badges
 
 isosyllabic (every word the same count; for a 5-7-5 the arithmetic permits

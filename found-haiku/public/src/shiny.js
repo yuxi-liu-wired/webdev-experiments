@@ -7,6 +7,8 @@
 // superset too, and an unprecedented combination scores as rarer than
 // anything in the table rather than dividing by zero.
 
+import { BADGE_NAMES } from './badges.js';
+
 export const TIERS = [
   [1e6, '🌟🌟🌟'],  // never seen in a million posts: the shiny
   [1e5, '🌟🌟'],
@@ -37,13 +39,14 @@ function supersetCount(table, wanted) {
  * nine times from six figures to single digits.
  */
 export function shininess(table, badgeObj, u = 1) {
-  const wanted = Object.entries(badgeObj).filter(([, v]) => v).map(([k]) => k);
+  // only true badges enter the mask; annotations like isoN ride separately
+  const wanted = BADGE_NAMES.filter((n) => badgeObj[n]);
   const count = supersetCount(table, wanted);
   // an unseen combination is at least rarer than one sighting would make it
   const raw = table.scanned / Math.max(count, 1) * (count ? 1 : 2);
   const rarity = Math.max(1, Math.round(raw ** u));
   const tier = TIERS.find(([floor]) => rarity >= floor)[1];
-  return { rarity, tier, badges: wanted };
+  return { rarity, tier, badges: wanted, isoN: badgeObj.isoN };
 }
 
 const PRETTY = {
@@ -56,7 +59,12 @@ const PRETTY = {
 /** The flair line for the post: "🌟 1 in 240,000 · iambic, rhymed". */
 export function flair(shine) {
   if (!shine.badges.length) return '';
-  const names = shine.badges.map((b) => PRETTY[b] || b).join(', ');
+  const names = shine.badges.map((b) => {
+    // the secret achievement: every word seven syllables — Cao Zhi's seven
+    // paces, the poem composed under an impossible constraint
+    if (b === 'isosyllabic' && shine.isoN === 7) return '七歩之才';
+    return PRETTY[b] || b;
+  }).join(', ');
   return `${shine.tier ? `${shine.tier} ` : ''}1 in ${shine.rarity.toLocaleString()} · ${names}`;
 }
 

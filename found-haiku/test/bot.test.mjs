@@ -149,6 +149,20 @@ describe('the operator badges', () => {
     expect(badgesOf('big frogs jump in ponds when soft rain falls down on them at dusk each spring day').stopless).toBe(false);
   });
 
+  test('七歩之才: every word seven syllables unlocks the secret name', () => {
+    // telecommunications=7, unavailability=7, verified against the table
+    const text = 'telecommunications unavailability';
+    const { poems } = findPoems(text, counter, { pattern: [7, 7], scope: 'span', alternates: false });
+    expect(poems.length).toBe(1);
+    const b = badges(poems[0], text, meter);
+    expect(b.isosyllabic).toBe(true);
+    expect(b.isoN).toBe(7);
+    const table = { scanned: 1_000_000, masks: { plain: 1000 } };
+    const line = flair(shininess(table, b, 1));
+    expect(line).toContain('七歩之才');
+    expect(line).not.toContain('isoN');
+  });
+
   test('uniqueness discounts the elephant refrain', () => {
     const p = poemOf('quiet elephant hidden elephant walking elephant sleeping');
     expect(uniqueness(p)).toBeCloseTo(5 / 7); // 7 content tokens, elephant thrice -> 5 distinct

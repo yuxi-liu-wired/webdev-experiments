@@ -148,6 +148,8 @@ export function badges(poem, span, meter) {
   // structural badges also demand actual written language.
   const counts = words.map((w) => w.counts[0]);
   const isosyllabic = !hasNumbers && counts.length > 1 && counts.every((c) => c === counts[0]);
+  // isoN rides along for the flair: n=7 unlocks 七歩之才, Cao Zhi's seven paces
+  const isoN = isosyllabic ? counts[0] : undefined;
 
   // 山脈: the words' syllable counts rise and fall as 2-3 / 2-3-2 / 3-2
   const SANMYAKU = [[2, 3], [2, 3, 2], [3, 2]];
@@ -171,6 +173,7 @@ export function badges(poem, span, meter) {
     isosyllabic,
     sanmyaku,
     stopless,
+    isoN,
   };
 }
 
