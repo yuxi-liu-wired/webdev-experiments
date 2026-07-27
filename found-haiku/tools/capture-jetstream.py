@@ -12,9 +12,14 @@ is no CAR decoding and no dependency on the atproto package.
 Writes slim JSONL for tools/rarity-survey.mjs: did, rkey, text, langs,
 isReply, time_us.
 
+Connections drop; the capture does not: on any socket loss it reconnects
+with the cursor at the last event seen, so coverage is continuous and the
+survey's did/rkey dedupe absorbs the small replay overlap.
+
 Env:
   OUT           /workspace/firehose-data/jetstream-all.jsonl
   HOURS_BACK    rewind the cursor this many hours (server clamps to its buffer)
+  CURSOR_US     resume from an exact jetstream cursor (overrides HOURS_BACK)
   HARD_STOP_SEC stop after this many seconds (default: run until signalled)
   MAX_POSTS     stop after this many posts
   JETSTREAM     wss://jetstream2.us-east.bsky.network/subscribe
@@ -37,10 +42,15 @@ HOURS_BACK = float(os.environ.get("HOURS_BACK", "0"))
 HARD_STOP_SEC = float(os.environ.get("HARD_STOP_SEC", "0"))
 MAX_POSTS = int(os.environ.get("MAX_POSTS", "0"))
 
-url = JET + "?wantedCollections=app.bsky.feed.post"
-if HOURS_BACK > 0:
-    cursor_us = int((time.time() - HOURS_BACK * 3600) * 1_000_000)
-    url += f"&cursor={cursor_us}"
+def make_url(cursor_us):
+    u = JET + "?wantedCollections=app.bsky.feed.post"
+    if cursor_us:
+        u += f"&cursor={cursor_us}"
+    return u
+
+
+cursor_us = int(os.environ.get("CURSOR_US", "0")) or (
+    int((time.time() - HOURS_BACK * 3600) * 1_000_000) if HOURS_BACK > 0 else None)
 
 proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
 proxy_kwargs = {}
@@ -50,7 +60,7 @@ if proxy:
 
 start = time.time()
 stats = {"started_iso": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(start)),
-         "url": url, "events": 0, "posts": 0, "written_bytes": 0,
+         "url": JET, "events": 0, "posts": 0, "written_bytes": 0,
          "first_time_us": None, "last_time_us": None}
 f = open(OUT, "a", buffering=1 << 20)
 
@@ -74,19 +84,40 @@ def bail(sig=None, frame=None):
 signal.signal(signal.SIGTERM, bail)
 signal.signal(signal.SIGINT, bail)
 
-print(f"connecting: {url}\nproxy: {proxy or 'none'}", file=sys.stderr)
-ws = websocket.WebSocket()
-ws.connect(url, **proxy_kwargs)
 last_report = start
+ws = None
 
 while True:
     if HARD_STOP_SEC and time.time() - start >= HARD_STOP_SEC:
         bail()
     if MAX_POSTS and stats["posts"] >= MAX_POSTS:
         bail()
+    if ws is None:
+        resume = stats["last_time_us"] or cursor_us
+        u = make_url(resume)
+        print(f"connecting: {u}\nproxy: {proxy or 'none'}", file=sys.stderr, flush=True)
+        try:
+            ws = websocket.WebSocket()
+            ws.connect(u, **proxy_kwargs)
+        except Exception as e:
+            print(f"connect failed ({e}); retrying in 10s", file=sys.stderr, flush=True)
+            ws = None
+            time.sleep(10)
+            continue
     try:
         raw = ws.recv()
     except websocket.WebSocketTimeoutException:
+        continue
+    except Exception as e:
+        print(f"stream lost ({e}); reconnecting from cursor", file=sys.stderr, flush=True)
+        try:
+            ws.close()
+        except Exception:
+            pass
+        ws = None
+        flush_stats()
+        f.flush()
+        time.sleep(5)
         continue
     if not raw:
         continue
