@@ -1,3 +1,16 @@
+2026-07-26 - the firehose comes home
+
+The operator rebuilt the box's egress as a hostname-policy squid proxy and
+allowlisted .bsky.app/.bsky.social/.bsky.network. Everything this project
+was missing follows at once: tools/capture-jetstream.py subscribes to
+Jetstream through the proxy (websocket-client speaks HTTP CONNECT; frames
+are JSON, so no CAR decoding), writing slim survey-ready records. First run
+replays the buffer at ~485 posts/s. The mention bot's read path also works
+direct now — bun's fetch follows the proxy env — so byparr returns to being
+the anti-bot renderer only. The unfiltered rarity table, the thing every
+number so far has carried a bias-asterisk for, is now just an accumulation
+delay away.
+
 2026-07-26 - all the home data, one table
 
 The survey now takes multiple captures and dedupes across them; every file
