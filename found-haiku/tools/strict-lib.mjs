@@ -100,14 +100,21 @@ export function badges(find, cmudict) {
     });
   }
 
+  // The orthographic badges judge the written form, so they are only
+  // claimable by poems that are actually written in letters: a span carried
+  // by digits ("2026 10:09 PM") is spoken as words the page never shows, and
+  // number-heavy posts were farming all three.
+  const written = !find.words.some((w) => w.source === 'number')
+    && letters.length >= 15 && wordList.length >= 5;
+
   return {
     iambic,
     rhyme13,
     rhymeAll,
     kigo: kigo.length > 0,
-    lipogramE: letters.length > 0 && !letters.includes('e'),
-    alphabetical: wordList.length > 2 && wordList.every((w, i) => i === 0 || wordList[i - 1] <= w),
-    monovocalic: vowelsUsed.size === 1,
+    lipogramE: written && !letters.includes('e'),
+    alphabetical: written && wordList.every((w, i) => i === 0 || wordList[i - 1] <= w),
+    monovocalic: written && vowelsUsed.size === 1,
     stressPalindrome,
   };
 }

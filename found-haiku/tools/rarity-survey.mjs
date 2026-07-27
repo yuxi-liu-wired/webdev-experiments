@@ -15,7 +15,8 @@ import { createReadStream, readFileSync, writeFileSync, mkdirSync } from 'node:f
 import { createInterface } from 'node:readline';
 import { decodeExceptions, SyllableCounter } from '../public/src/syllables.js';
 import { loadCmudict } from './meter-lib.mjs';
-import { strictFinds, badges, badgeMask, stripLinks, BADGE_NAMES } from './strict-lib.mjs';
+import { strictFinds, badges, badgeMask, uniqueness, stripLinks, BADGE_NAMES } from './strict-lib.mjs';
+import { shininess, flair } from '../bot/shiny.js';
 
 const path = process.argv[2];
 if (!path) {
@@ -32,6 +33,7 @@ const stats = { scanned: 0, strictFinds: 0 };
 const badgeCounts = Object.fromEntries(BADGE_NAMES.map((n) => [n, 0]));
 const maskCounts = {};
 const specimens = {}; // per mask, a few examples each — the rare ones all survive
+const shinyCandidates = []; // every badged find, scored at the end against the full table
 const t0 = performance.now();
 
 const seenPosts = new Set(); // relay captures double-deliver; count each post once
@@ -70,6 +72,13 @@ for await (const line of rl) {
           url: post.did && post.rkey ? `https://bsky.app/profile/${post.did}/post/${post.rkey}` : null,
         });
       }
+      shinyCandidates.push({
+        lines: find.poem.lines.map((l) => l.text),
+        badges: b,
+        mask,
+        u: uniqueness(find),
+        url: post.did && post.rkey ? `https://bsky.app/profile/${post.did}/post/${post.rkey}` : null,
+      });
     }
   }
 }
@@ -87,6 +96,25 @@ for (const [m, c] of Object.entries(maskCounts).sort((a, b) => a[1] - b[1])) {
   if (m !== 'plain' && m.includes('+')) console.log(`  ${String(c).padStart(6)}  ${m}`);
 }
 
+// score every badged find with the finished table, uniqueness-adjusted
+const tableForScoring = { scanned: stats.scanned, masks: maskCounts };
+const seenText = new Set();
+const shinies = [];
+for (const c of shinyCandidates) {
+  const key = c.lines.join(' ').toLowerCase().replace(/\s+/g, ' ');
+  if (seenText.has(key)) continue;
+  seenText.add(key);
+  const shine = shininess(tableForScoring, c.badges, c.u);
+  shinies.push({ lines: c.lines, mask: c.mask, u: Number(c.u.toFixed(2)), shine, url: c.url });
+}
+shinies.sort((a, b) => b.shine.rarity - a.shine.rarity);
+console.log('\nthe shiniest of the corpus (uniqueness-adjusted):\n');
+for (const s of shinies.slice(0, 15)) {
+  console.log(s.lines.map((l) => `  ${l}`).join('\n'));
+  console.log(`      ${flair(s.shine)}  (u=${s.u})`);
+  console.log(`      ${s.url || ''}\n`);
+}
+
 mkdirSync(new URL('../data', import.meta.url).pathname, { recursive: true });
 const out = {
   source: path,
@@ -96,6 +124,7 @@ const out = {
   badges: badgeCounts,
   masks: maskCounts,
   specimens,
+  topShinies: shinies.slice(0, 100),
 };
 const dest = new URL('../data/rarity.json', import.meta.url).pathname;
 writeFileSync(dest, JSON.stringify(out, null, 1));

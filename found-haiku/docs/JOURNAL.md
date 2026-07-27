@@ -1,3 +1,16 @@
+2026-07-26 - reading the shinies
+
+Actually reading the ranked anthology caught the next exploit: digit-heavy
+posts ("2026 10:09 PM") farmed all three orthographic badges, because those
+badges judge written letters while digits are spoken as unseen words. The
+written-form badges now require prose that is actually written: no
+number-source words, at least 15 letters and 5 alphabetic words. That purge
+promoted a new co-champion, unique in 1.5M posts: "Saturday morning /
+cartoons bad? Why was this show / so racist. Nothing" (kigo + e-lipogram).
+Remaining known cheapness, tolerated for now: -ation suffix rhymes are
+abundant enough that three near-identical bureaucratic poems tie at 1 in
+218k; rhymes within one suffix family could be discounted someday.
+
 2026-07-26 - uniqueness-adjusted shininess
 
 The operator's formula, rarity^(unique/total), closes the repetition exploit:
