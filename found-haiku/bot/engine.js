@@ -7,8 +7,8 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { decodeExceptions, SyllableCounter } from '../public/src/syllables.js';
-import { findPoems } from '../public/src/finder.js';
 import { joinPosts, spanAt, atUriToUrl } from '../public/src/posts.js';
+import { strictFinds } from '../tools/strict-lib.mjs';
 
 let counter = null;
 
@@ -39,19 +39,22 @@ export function corpusFromPosts(posts) {
 
 /**
  * The best poem of the given shape in the corpus, with its source permalink.
- * Whole clauses read best, so scopes cascade: a poem that IS a clause wins
- * over one cut from the middle of a sentence, which wins over one straddling
- * punctuation. `fits` lets the caller reject poems whose reply would overflow
- * a post.
+ * Every candidate passes the full strict gates (the pinned manual's promise:
+ * dictionary words, unambiguous counts, clean endings, unintended), plus a
+ * bot-only rule: a reply poem is one breath — it may cross commas but never a
+ * sentence ender. Whole clauses are tried first, then runs inside a clause,
+ * then comma-straddling runs. `fits` lets the caller reject poems whose reply
+ * would overflow a post.
  */
 export function findBest(corpus, pattern, fits = () => true) {
   const c = loadCounter();
+  const BREATH = /[.!?…‽]/;
   for (const scope of ['segment', 'span', 'cross']) {
-    const { poems } = findPoems(corpus.text, c, { pattern, scope, limit: 50 });
-    for (const poem of poems) {
-      const span = spanAt(corpus.spans, poem.start);
+    for (const find of strictFinds(corpus.text, c, pattern, scope)) {
+      if (BREATH.test(find.span)) continue;
+      const span = spanAt(corpus.spans, find.poem.start);
       const url = span && atUriToUrl(span.uri);
-      if (url && fits(poem, url)) return { poem, url };
+      if (url && fits(find.poem, url)) return { poem: find.poem, url };
     }
   }
   return null;

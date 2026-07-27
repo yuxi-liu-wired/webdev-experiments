@@ -46,6 +46,13 @@ export async function resolveHandle(handle) {
   return r.ok ? r.data.did : null;
 }
 
+/** Has this account already replied in the thread under `uri`? */
+export async function alreadyAnswered(uri, did) {
+  const r = await publicGet('app.bsky.feed.getPostThread', { uri, depth: '1' });
+  if (!r.ok) return false; // on doubt, answer; the guard is best-effort
+  return (r.data?.thread?.replies || []).some((rep) => rep?.post?.author?.did === did);
+}
+
 /** Up to `pages` x 100 of an author's own posts: [{ text, uri }]. */
 export async function authorPosts(did, pages = 10) {
   const posts = [];

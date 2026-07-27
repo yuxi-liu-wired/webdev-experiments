@@ -18,9 +18,9 @@ const DELIM = /[,/]/;
  * single source line, dictionary words, unambiguous counts, clean endings,
  * unintended (author delimiters at every break disqualify), not letter-soup.
  */
-export function strictFinds(text, counter, pattern = [5, 7, 5]) {
+export function strictFinds(text, counter, pattern = [5, 7, 5], scope = 'cross') {
   const out = [];
-  const { poems } = findPoems(text, counter, { pattern, scope: 'cross', alternates: false, limit: 20 });
+  const { poems } = findPoems(text, counter, { pattern, scope, alternates: false, limit: 20 });
   for (const poem of poems) {
     const span = text.slice(poem.start, poem.end);
     if (span.includes('\n')) continue;

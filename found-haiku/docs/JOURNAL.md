@@ -1,3 +1,19 @@
+2026-07-26 - first contact, two lessons
+
+The bot's first real evening produced its first two bugs, both from the
+operator's own mentions. One: a mention was answered twice — the daemon was
+killed for an env reload in the window between posting a reply and marking
+the notification seen, and its successor answered again. Replies are now
+idempotent: the bot checks the thread for its own reply before answering,
+which also covers serverless cold-start double-fires. Two: "tanka" returned
+a metrically perfect 5-7-5-7-7 that read as word salad, straddling "..." and
+"?" — the permissive cascade's cross scope, which the site's defaults never
+show and the pinned manual's "strict rules" never promised. findBest now
+applies the full strict gates plus a bot-only rule: a reply poem is one
+breath, crossing commas but never a sentence ender. Under the new gates the
+operator's command gets the honest "Cannot find one in your corpus", which
+agrees with the website. The duplicate reply was deleted.
+
 2026-07-26 - the firehose comes home
 
 The operator rebuilt the box's egress as a hostname-policy squid proxy and

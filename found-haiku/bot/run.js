@@ -5,7 +5,7 @@ import { corpusFromPosts, findBest } from './engine.js';
 import { poemReply, notFoundReply, errorReply, graphemes, POST_LIMIT } from './compose.js';
 import {
   ensureSession, dropSession, listNotifications, updateSeen,
-  resolveHandle, authorPosts, postReply,
+  resolveHandle, authorPosts, postReply, alreadyAnswered,
 } from './bsky.js';
 
 const MAX_PER_CYCLE = 5; // the rest stay unread and are picked up next cycle
@@ -59,6 +59,12 @@ export async function pollOnce(env = process.env, log = console.log) {
 
   for (const mention of mentions) {
     try {
+      // restart/cold-start insurance: never answer the same post twice
+      if (await alreadyAnswered(mention.uri, session.did)) {
+        log(`already answered @${mention.author.handle}, skipping`);
+        lastSeen = mention.indexedAt;
+        continue;
+      }
       const reply = await replyFor(mention, botHandles, env);
       await postReply(session, mention, reply);
       answered++;
