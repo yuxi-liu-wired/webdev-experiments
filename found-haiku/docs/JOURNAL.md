@@ -1,3 +1,17 @@
+2026-07-26 - all the home data, one table
+
+The survey now takes multiple captures and dedupes across them; every file
+in /workspace/firehose-data is folded in: 3,117,811 unique posts, 207,349
+strict finds, 330 seconds. Precision notes at the new scale: monovocalic is
+the rarest single badge (1 in 1.56M), sanmyaku settles at 1 in 240k (the
+May windows held a dozen more mountains, including a geography-hashtag post
+whose country names form a perfect 2-3/2-3-2/3-2), and the three-badge
+crowns tie at 1 in 3.1M — Port Maritime now leads on badge count, since
+being French makes it stopword-free in English. The firehose capture for an
+unfiltered table remains one host-side paste (tools/capture-posts.py); the
+egress-proxy redesign that would make such walls stop mattering is filed in
+CONTAINERFILE-REQUESTS.md.
+
 2026-07-26 - spam out of the prior
 
 The operator asked where a quoted rarity number came from, and the answer

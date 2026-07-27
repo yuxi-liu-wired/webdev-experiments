@@ -17,12 +17,14 @@ import { decodeExceptions, SyllableCounter } from '../public/src/syllables.js';
 import { strictFinds, badges, badgeMask, uniqueness, stripLinks, BADGE_NAMES, decodeMeter } from './strict-lib.mjs';
 import { shininess, flair } from '../public/src/shiny.js';
 
-const path = process.argv[2];
-if (!path) {
-  console.error('usage: bun tools/rarity-survey.mjs capture.jsonl [limitPosts]');
+const NUMERIC = new RegExp('^[0-9]+$');
+const args = process.argv.slice(2);
+const paths = args.filter((a) => !NUMERIC.test(a));
+const LIMIT = Number(args.find((a) => NUMERIC.test(a)) || 0);
+if (!paths.length) {
+  console.error('usage: bun tools/rarity-survey.mjs capture.jsonl [more.jsonl...] [limitPosts]');
   process.exit(2);
 }
-const LIMIT = Number(process.argv[3] || 0);
 
 const counter = new SyllableCounter(decodeExceptions(
   readFileSync(new URL('../public/data/syllables.txt', import.meta.url).pathname, 'utf8')));
@@ -36,6 +38,10 @@ const shinyCandidates = []; // every badged find, scored at the end against the 
 const t0 = performance.now();
 
 const seenPosts = new Set(); // relay captures double-deliver; count each post once
+let hitLimit = false;
+for (const path of paths) {
+if (hitLimit) break;
+console.log(`reading ${path}`);
 const rl = createInterface({ input: createReadStream(path), crlfDelay: Infinity });
 for await (const line of rl) {
   if (!line) continue;
@@ -49,7 +55,7 @@ for await (const line of rl) {
     seenPosts.add(id);
   }
   stats.scanned++;
-  if (LIMIT && stats.scanned > LIMIT) break;
+  if (LIMIT && stats.scanned > LIMIT) { hitLimit = true; break; }
   if (stats.scanned % 250000 === 0) {
     const rate = stats.scanned / ((performance.now() - t0) / 1000);
     console.log(`  ${stats.scanned.toLocaleString()} posts · ${stats.strictFinds.toLocaleString()} finds · ${Math.round(rate)}/s`);
@@ -84,6 +90,7 @@ for await (const line of rl) {
       });
     }
   }
+}
 }
 
 const elapsed = (performance.now() - t0) / 1000;
@@ -120,7 +127,7 @@ for (const s of shinies.slice(0, 15)) {
 
 mkdirSync(new URL('../data', import.meta.url).pathname, { recursive: true });
 const out = {
-  source: path,
+  source: paths.join(' + '),
   capturedBias: 'link-posts only (url-feed capture)',
   scanned: stats.scanned,
   strictFinds: stats.strictFinds,
