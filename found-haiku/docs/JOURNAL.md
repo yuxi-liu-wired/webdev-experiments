@@ -1,3 +1,16 @@
+2026-07-26 - quotation marks are someone else's voice
+
+The operator asked how quotes are handled; the honest answer was
+"incoherently". Now: the strict stack and bot replies reject any poem
+containing a double-quote-family mark or sitting immediately beside one —
+quoted text is cited voice, and the machine must not discover Basho in
+someone's quotation and attribute him to the poster. Apostrophes are
+deliberately untouched, since 'quote' and don't cannot be told apart without
+parsing and contractions are sacred. The site's opt-in straddle mode keeps
+its permissive aesthetic. The first version of the gate only checked inside
+the span and the test caught it: segmentation cuts at the quote marks, so a
+fully quoted poem contains none — the gate now checks the neighbors too.
+
 2026-07-26 - first contact, two lessons
 
 The bot's first real evening produced its first two bugs, both from the

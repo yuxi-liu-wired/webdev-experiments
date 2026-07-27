@@ -251,6 +251,14 @@ describe('server-side finding', () => {
     expect(found.url).toContain('/post/clause');
   });
 
+  test('quoted text is not the author speaking', () => {
+    const posts = [{
+      text: 'she said "the old silent pond where a green frog jumps into the still cold water" today',
+      uri: 'at://d/app.bsky.feed.post/q',
+    }];
+    expect(findBest(corpusFromPosts(posts), [5, 7, 5])).toBe(null);
+  });
+
   test('nothing to find returns null', () => {
     expect(findBest(corpusFromPosts([{ text: 'too short', uri: 'at://d/app.bsky.feed.post/x' }]), [5, 7, 5])).toBe(null);
   });

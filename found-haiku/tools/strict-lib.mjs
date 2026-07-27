@@ -13,6 +13,11 @@ export const stripLinks = (t) => String(t)
 
 const DELIM = /[,/]/;
 
+// Quoted text is someone else's voice: a found poem may not contain any of
+// the double-quote family, or it risks attributing a citation to the author.
+// Apostrophes are untouchable — 'quote' and don't are indistinguishable.
+const QUOTES = /["\u201c\u201d\u201e\u00ab\u00bb`]/;
+
 /**
  * All poems in one post's text passing the base strict stack:
  * single source line, dictionary words, unambiguous counts, clean endings,
@@ -24,6 +29,11 @@ export function strictFinds(text, counter, pattern = [5, 7, 5], scope = 'cross')
   for (const poem of poems) {
     const span = text.slice(poem.start, poem.end);
     if (span.includes('\n')) continue;
+    // a quote mark inside the span is a straddle; one immediately beside it
+    // means the poem lives inside quotation — either way, cited voice
+    const before = text.slice(Math.max(0, poem.start - 2), poem.start);
+    const after = text.slice(poem.end, poem.end + 2);
+    if (QUOTES.test(span) || QUOTES.test(before) || QUOTES.test(after)) continue;
     const words = poem.lines.flatMap((l) => l.words);
     if (!words.every((w) => w.source === 'dict' || w.source === 'number')) continue;
     if (!words.every((w) => new Set(w.counts).size === 1)) continue;
