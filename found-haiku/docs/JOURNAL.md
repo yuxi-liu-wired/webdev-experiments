@@ -1,3 +1,15 @@
+2026-07-26 - shininess on the website
+
+The whole rarity apparatus now runs in the browser: public/src/badges.js is
+the shared badge module (the node tools keep their own loaders but the logic
+lives once), public/data/meter.txt carries per-word stress and rhyme tails
+front-coded (2.3 MB raw, ~700 KB compressed, loaded eagerly at boot — the
+operator's ruling: people stream 10 MB images, stop being precious), and
+public/data/rarity.json is the slim measured table. Badge-eligible poems get
+flair and the results are ranked shiniest first; the e2e suite plants the
+whale poem mid-prose and checks it comes back badged and on top. The mention
+bot shares the same modules, so site and bot cannot disagree about glory.
+
 2026-07-26 - reading the shinies
 
 Actually reading the ranked anthology caught the next exploit: digit-heavy

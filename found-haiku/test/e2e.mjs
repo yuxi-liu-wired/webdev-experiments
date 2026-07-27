@@ -109,6 +109,20 @@ const pasted = await page.$eval('.results li .poem', (el) => el.innerText.replac
 check('a pasted haiku comes back split 5-7-5',
   /the old silent pond[\s\S]*where a green frog jumps into[\s\S]*the still cold water/.test(pasted), pasted.replace(/\n/g, ' / '));
 
+// --- shininess --------------------------------------------------------------
+// the whale: triple-rhymed (Tuesday/Bay/gray) + kigo (sea... sunny? Tuesday);
+// embedded mid-prose so it is found, not written
+await page.fill('#text', 'we went out on the water. a sunny Tuesday in the San Francisco Bay the spout of a gray whale rose. amazing day.');
+await page.click('#sc-span + label');
+await page.click('#go');
+await page.waitForFunction(() => !document.getElementById('go').disabled, { timeout: 20000 });
+await page.waitForFunction(() => document.querySelector('.results li .shine'), { timeout: 20000 });
+const shineChip = await page.$eval('.results li .shine', (el) => el.textContent);
+check('a badged poem shows its shininess and ranks first',
+  /1 in [\d,]+ · .*rhymed/.test(shineChip), shineChip);
+await page.click('#sc-seg + label');
+await page.fill('#text', 'Hello there. the old silent pond where a green frog jumps into the still cold water. Goodbye.');
+
 // --- settings changes re-run by themselves ----------------------------------
 await page.click('#fm-tanka + label'); // 17 syllables can never be a tanka
 await page.waitForFunction(() => document.getElementById('empty').style.display === 'block', { timeout: 10000 });

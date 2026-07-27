@@ -1,6 +1,8 @@
 import { SyllableCounter } from './src/syllables.js';
 import { findPoems, FORMS, parsePattern } from './src/finder.js';
 import { atUriToUrl, joinPosts, spanAt } from './src/posts.js';
+import { decodeMeter, badges, badgeEligible, uniqueness } from './src/badges.js';
+import { shininess, flair } from './src/shiny.js';
 
 const $ = (id) => document.getElementById(id);
 const results = $('results');
@@ -13,6 +15,37 @@ let cancelled = false;
 let running = false;
 let queuedRerun = false;
 let bskyCache = null; // { key: lowercased handle, data: { text, spans } }
+let shinyData = null; // { meter, table } once both files have arrived
+let shinyLoading = null;
+
+// The meter table (stress + rhyme) and the measured rarity table load once,
+// lazily, in the background; results render immediately and get their
+// shininess when the data lands.
+function loadShiny() {
+  if (shinyData || shinyLoading) return shinyLoading;
+  shinyLoading = (async () => {
+    try {
+      const [meterRes, tableRes] = await Promise.all([
+        fetch('./data/meter.txt'), fetch('./data/rarity.json'),
+      ]);
+      if (!meterRes.ok || !tableRes.ok) throw new Error('shiny data unavailable');
+      shinyData = { meter: decodeMeter(await meterRes.text()), table: await tableRes.json() };
+    } catch {
+      shinyData = null; // the site works unshiny
+    }
+    return shinyData;
+  })();
+  return shinyLoading;
+}
+
+/** Shine for one poem, or null when ineligible or the data is missing. */
+function shineFor(poem, text) {
+  if (!shinyData || !badgeEligible(poem)) return null;
+  const span = text.slice(poem.start, poem.end);
+  const b = badges(poem, span, shinyData.meter);
+  const shine = shininess(shinyData.table, b, uniqueness(poem));
+  return shine.badges.length ? shine : null;
+}
 
 function setStatus(msg, isErr) {
   statusEl.innerHTML = isErr ? `<span class="err">${esc(msg)}</span>` : msg;
@@ -127,6 +160,13 @@ function renderPoem(poem, text, options, liveUrl) {
     ctx.classList.toggle('on');
   });
   meta.append(copy, ctxBtn);
+  if (poem.shine) {
+    const chip = document.createElement('span');
+    chip.className = 'shine';
+    chip.textContent = flair(poem.shine);
+    chip.title = 'rarity measured against 1.5 million real posts, discounted by word repetition';
+    meta.append(chip);
+  }
   if (liveUrl) {
     const live = document.createElement('a');
     live.className = 'live';
@@ -253,7 +293,11 @@ async function run(ev, { useCache = false, auto = false } = {}) {
     });
     barI.style.width = '100%';
 
-    const shown = poems;
+    await loadShiny();
+    for (const poem of poems) poem.shine = shineFor(poem, text);
+    // shiny first, rarest first; the unbadged keep their found order
+    const shown = poems.map((p, i) => [p, i]).sort((a, b) =>
+      (b[0].shine?.rarity || 0) - (a[0].shine?.rarity || 0) || a[1] - b[1]).map(([p]) => p);
     $('s-words').textContent = n(words);
     $('s-segments').textContent = n(segments);
     $('s-found').textContent = n(shown.length);
@@ -388,3 +432,4 @@ if (q.get('handle')) {
 }
 
 dictionary().catch((e) => setStatus(e.message, true));
+loadShiny(); // stress + rarity data: ~700 KB compressed, no reason to wait

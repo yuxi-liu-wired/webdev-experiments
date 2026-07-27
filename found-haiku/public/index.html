@@ -125,6 +125,7 @@ button:disabled { opacity: 0.4; cursor: default; }
   margin-top: 0.6rem; display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: center;
 }
 .meta .warn { color: var(--gold); }
+.meta .shine { color: var(--gold); font-weight: 600; }
 .meta button {
   font-size: 0.6rem; padding: 0.15rem 0.5rem; border-radius: 4px;
   background: transparent; color: var(--sky); border-color: var(--rule);
@@ -214,6 +215,10 @@ footer b { color: var(--text); }
   in the results so you know which numbers are a guess. Numbers are read aloud before counting
   (<span style="font-family:var(--mono)">1984</span> is five syllables). Then it looks for runs of
   whole words whose syllables partition exactly into the chosen shape.
+  Poems that survive the strict rules earn <b>badges</b> — iambic scansion, rhyme, kigo,
+  lipograms and stranger things — and a <span style="color:var(--gold)">shininess</span>: how rare that
+  combination is, measured against 1.5 million real posts and discounted by word repetition.
+  Results are ranked shiniest first.
   Nothing leaves your browser unless you ask it for a Bluesky account, which is fetched read-only.
   <br>Layout and typography after <a href="https://b.mino.mobi/unique/">unique</a>, by b.mino.mobi.
   Sample text is <i>Alice's Adventures in Wonderland</i>, public domain.

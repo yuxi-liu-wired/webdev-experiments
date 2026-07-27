@@ -101,6 +101,22 @@ pattern re-run it after a short pause. There is no apply step. Bluesky posts are
 fetched once per handle and reused for settings changes; only the find button
 fetches again.
 
+Shininess
+
+Poems that survive the strict rules (every word known and unambiguous, clean
+line endings, no letter soup) are checked for badges: iambic scansion, rhyme
+between first and last line, triple rhyme, kigo (season words, with a
+collocation blocklist so Star Wars is not spring), an e-lipogram, alphabetical
+word order, a single vowel letter, and a palindromic stress pattern. The badge
+combination's rarity was measured empirically on 1.5 million deduplicated
+firehose posts (`tools/rarity-survey.mjs`), and each poem's score is that
+rarity raised to its content-word uniqueness ratio, so repeating a word
+discounts the glory proportionally. Results are ranked shiniest first, with
+the flair on the card: `🌟🌟 1 in 762,655 · rhymed, triple-rhymed`. The browser
+loads the stress-and-rhyme table (`public/data/meter.txt`, built by
+`tools/build-meter.mjs`) and the measured table (`public/data/rarity.json`)
+alongside the dictionary; Netlify's edge compression carries both cheaply.
+
 Deep links: `?form=tanka`, `?pattern=2-4-6-8-2`, `?scope=cross`, `?handle=x.bsky.social`.
 
 Layout
