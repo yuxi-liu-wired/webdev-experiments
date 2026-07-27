@@ -1,3 +1,16 @@
+2026-07-26 - uniqueness-adjusted shininess
+
+The operator's formula, rarity^(unique/total), closes the repetition exploit:
+in log space the uniqueness ratio scales the bits of rarity, so repeated
+words proportionally discount a find's claim on its badges. One refinement:
+the ratio runs over content words only (function words neither pay nor pad),
+since repeating "the" is grammar while repeating "blood clot" is farming.
+Result on the real table: the Bloom poem keeps 1 in 1,525,309; "Blood clot!"
+nine times drops from 1 in 762,655 to 1 in 5 with its badge list intact,
+which reads as exactly the joke it deserves. pickRarest() now takes each
+find's uniqueness into account, so an honest single-badge poem beats
+decorated spam.
+
 2026-07-26 - the rarity survey and the shininess measure
 
 The week corpus turned out to be the url-feed's own captures in

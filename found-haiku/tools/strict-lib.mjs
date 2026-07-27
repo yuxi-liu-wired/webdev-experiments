@@ -112,6 +112,20 @@ export function badges(find, cmudict) {
   };
 }
 
+/**
+ * Distinct content words over total content words. Function-word repeats are
+ * ordinary grammar and do not count either way; repeating content words is
+ * how "Blood clot!" nine times farms badges. With no content words at all,
+ * every token counts.
+ */
+export function uniqueness(find) {
+  const all = find.words.map((w) => wordKey(w).replace(/[^a-z]/g, '')).filter(Boolean);
+  const content = all.filter((w) => !WEAK_ENDINGS.has(w));
+  const pool = content.length >= 2 ? content : all;
+  if (!pool.length) return 1;
+  return new Set(pool).size / pool.length;
+}
+
 export const BADGE_NAMES = ['iambic', 'rhyme13', 'rhymeAll', 'kigo', 'lipogramE', 'alphabetical', 'monovocalic', 'stressPalindrome'];
 
 export function badgeMask(b) {

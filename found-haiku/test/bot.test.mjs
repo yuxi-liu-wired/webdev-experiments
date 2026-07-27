@@ -144,6 +144,26 @@ describe('shininess', () => {
     expect(flair(shininess(table, {}))).toBe('');
   });
 
+  test('uniqueness discounts rarity in log space', () => {
+    const badged = { iambic: true, kigo: true, rhyme13: true };
+    const clean = shininess(table, badged, 1);
+    const spam = shininess(table, badged, 2 / 17); // "Blood clot!" nine times
+    const mild = shininess(table, badged, 11 / 12); // one repeated content word
+    expect(clean.rarity).toBe(500000);
+    expect(spam.rarity).toBeLessThan(10);
+    expect(spam.tier).toBe('');
+    expect(mild.rarity).toBeGreaterThan(100000);
+    expect(mild.rarity).toBeLessThan(clean.rarity);
+  });
+
+  test('pickRarest is uniqueness-adjusted', () => {
+    const best = pickRarest(table, [
+      { id: 'spam', badges: { iambic: true, kigo: true }, uniqueness: 0.15 },
+      { id: 'honest', badges: { iambic: true }, uniqueness: 1 },
+    ]);
+    expect(best.id).toBe('honest'); // fewer badges, but it earned them
+  });
+
   test('pickRarest takes the rarest of the batch', () => {
     const best = pickRarest(table, [
       { id: 'a', badges: { iambic: true } },
