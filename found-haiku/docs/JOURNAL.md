@@ -1,3 +1,23 @@
+2026-07-28 - the network has been writing renga all along
+
+The miner ran over 9,994,756 posts, 1,486,035 of them with reply parents
+(twelve hours of join keys), and the answer to "does accidental linked verse
+exist" is: overwhelmingly. The matrix, cross-author: 12,560 tan-renga
+(575 then 77), 11,736 inverted, 30,868 double-77, 4,927 haiku answered by
+haiku — plus 14,745 poetic chains of three or more posts. Self-renga (one
+author completing themselves) runs at roughly two-thirds the cross rate.
+
+The deep result is not the count but the quality: reply pairs read as REAL
+renga because tsukeai — the linking of stanzas — is enforced by conversation
+itself. A reply is semantically linked to its parent by design, so the reply
+graph is a za, and the renga masters' hardest rule comes free. Crown finds:
+a primary-election denunciation completed by a stranger ("This is someone
+who / doesn't want to and should not / win her primary — A coward who will
+never / work for her constituents", coverage 0.98) and a genuinely classical
+nature link about a mother bear. At whole-post strictness (coverage >= 0.9)
+the daily rate is around ten — event-grade, as designed. Top 200 saved in
+data/renga-finds.json.
+
 2026-07-27 - renga
 
 The operator's idea, and the historically inevitable one: haiku began as the

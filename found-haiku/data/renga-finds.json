@@ -1,0 +1,3028 @@
+{
+ "stats": {
+  "scanned": 9994756,
+  "withParent": 1486035,
+  "poetic": 1316870
+ },
+ "matrix": {
+  "77>77": {
+   "cross": 30868,
+   "self": 19872
+  },
+  "77>575": {
+   "cross": 11736,
+   "self": 8619
+  },
+  "575>77": {
+   "cross": 12560,
+   "self": 8638
+  },
+  "575>575": {
+   "cross": 4927,
+   "self": 3895
+  }
+ },
+ "chains": 14745,
+ "tanRenga": [
+  {
+   "kind": "cross",
+   "coverage": 0.98,
+   "hokku": [
+    "This is someone who",
+    "doesn’t want to and should not",
+    "win her primary"
+   ],
+   "waki": [
+    "A coward who will never",
+    "work for her constituents"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:l3k4ivyknlg4yv4as4b6anmt/post/3mrpa3kwnck2a",
+   "wakiUrl": "https://bsky.app/profile/did:plc:yua2dpsg6gbkmnkmdsnf6fj3/post/3mrpaliwtfk2k"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.9661016949152542,
+   "hokku": [
+    "okay i gotta",
+    "double check this shit later",
+    "cause that can't be right"
+   ],
+   "waki": [
+    "like that even your measure",
+    "tape is making a shocked face"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:upzt4cwgjyscez5cmgdx52nm/post/3mrnonsrru22a",
+   "wakiUrl": "https://bsky.app/profile/did:plc:whm7w4a6yusvdz3g6b7dk5vf/post/3mrnoq6m5fs2y"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.9558823529411765,
+   "hokku": [
+    "a patriots fan",
+    "this warms the cold, unfeeling",
+    "cockles of my heart"
+   ],
+   "waki": [
+    "accidentally shooting",
+    "yourself > playing for the jets"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:6hit5rjdbmlnscmuk4bbtmuc/post/3mrpqimyb4c2p",
+   "wakiUrl": "https://bsky.app/profile/did:plc:szhwqv4rgd62by7vt46jinlh/post/3mrpqmmd5ls2p"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.953125,
+   "hokku": [
+    "holy shit, I’m glad",
+    "you’re safe although I know you’d",
+    "put him in the ground"
+   ],
+   "waki": [
+    "i would have shit in his face",
+    "in a bad way) thank you though"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:il37rdfs63lzd4slzx4ah5bh/post/3mro76qpuws2y",
+   "wakiUrl": "https://bsky.app/profile/did:plc:m4ix5zwzgsnwsu2xjcm3bcnu/post/3mro7bkpke22v"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.9130434782608695,
+   "hokku": [
+    "Bear makes sure her cubs",
+    "safe then let’s another bear",
+    "know to stay away"
+   ],
+   "waki": [
+    "Because she’s aware that male",
+    "bears can and sometimes will kill"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:3zfcjrvskqxjksbcfapyefyb/post/3mrnz6wysl22b",
+   "wakiUrl": "https://bsky.app/profile/did:plc:eqde64pne7l7ageq3uytx2s6/post/3mro63tr3fs27"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8985507246376812,
+   "hokku": [
+    "I'm in my sixties",
+    "I feel i've drifted even",
+    "further to the left"
+   ],
+   "waki": [
+    "I've always been left leaning",
+    "and that will never change thank"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:qfuzk74w2kbi36tjt4ipxf4v/post/3mroucifqck23",
+   "wakiUrl": "https://bsky.app/profile/did:plc:a4jekiqb2ydu7vdu3eby74lq/post/3mrpglml45s2d"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.896551724137931,
+   "hokku": [
+    "It’s class mate, only",
+    "just stumbled on it, will need",
+    "to source their album"
+   ],
+   "waki": [
+    "So hard to stand out these days",
+    "and have an original"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:m6vshonsp4cct4ropbxozd7t/post/3mro3j7djr22w",
+   "wakiUrl": "https://bsky.app/profile/did:plc:njw7ooqffobzpas56o2mzwxb/post/3mro3yiwqds2e"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8961038961038961,
+   "hokku": [
+    "fact that those problems",
+    "were/are insignificant",
+    "will suck most of all"
+   ],
+   "waki": [
+    "In that way they will suck one",
+    "last time for eternity"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:u4p4mzethzbuovsc55tzbdhw/post/3mrnwhnvro22g",
+   "wakiUrl": "https://bsky.app/profile/did:plc:6ixhocm5tk3fsqbclrbq36mf/post/3mrnwlym5yc2k"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8918918918918919,
+   "hokku": [
+    "More than anything",
+    "I'm upset he'd ruin good",
+    "oysters with that much"
+   ],
+   "waki": [
+    "He's just both way to eager",
+    "but also cagey about"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:lshyr4yhc7hqaty5rpdwippb/post/3mrnv2gaiic2k",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ldfczup72gbrila23yfe54x5/post/3mrnwdi35ps2m"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8873239436619719,
+   "hokku": [
+    "talk to Drew about",
+    "this conversation challenge",
+    "BB28"
+   ],
+   "waki": [
+    "have to go to sleep, but please",
+    "take good notes if this happens"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:qzqqxxsbfamk2uhgh5n5tltk/post/3mroy3wzis22x",
+   "wakiUrl": "https://bsky.app/profile/did:plc:lqwoq5uc7l7mynm6mbh2ykqw/post/3mroy74thoc2a"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8857142857142857,
+   "hokku": [
+    "I got deep rock which",
+    "is great but then I never",
+    "message anyone"
+   ],
+   "waki": [
+    "Deep rock does seem like a fun",
+    "game, not played it yet x3"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ta2tolv2m45v3jzqxgq5wtqy/post/3mrnbb6niks2s",
+   "wakiUrl": "https://bsky.app/profile/did:plc:xtx3ksvhs76ts5ltxxbhoe3n/post/3mrnl72tc222i"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8765432098765432,
+   "hokku": [
+    "Cherry is hoping",
+    "you are staying cool + taking",
+    "care of yourself & loved"
+   ],
+   "waki": [
+    "A mountain becomes a beach",
+    "one grain of sand at a time"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:hr64pdwwuvd4bnqe6zxno7ks/post/3mrn3ow3ms22n",
+   "wakiUrl": "https://bsky.app/profile/did:plc:q4lf7bkxxook2nxnkw5dy3ez/post/3mro2ooitpc2q"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.875,
+   "hokku": [
+    "Check out the network",
+    "of Huey Newton Gun Clubs",
+    "and Pink Pistols too"
+   ],
+   "waki": [
+    "the local Pink Pistols head",
+    "they're a pretty rad person"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:q4lf7bkxxook2nxnkw5dy3ez/post/3mrnthb3qzs2q",
+   "wakiUrl": "https://bsky.app/profile/did:plc:rglmzbwcjqcms4nywzusltki/post/3mrpgvhj4as2i"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8695652173913043,
+   "hokku": [
+    "this person SO FAST",
+    "it'd rip a hole the space",
+    "time continuum"
+   ],
+   "waki": [
+    "put those big EXIT handles",
+    "on the plane for a reason"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:32tmb7e4moteid6ppr76yupt/post/3mrpvmxgsdk2j",
+   "wakiUrl": "https://bsky.app/profile/did:plc:rf55ab44st4yks3lflkhykzk/post/3mrpvqprtqc27"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8656716417910447,
+   "hokku": [
+    "was not created",
+    "by any normal person",
+    "I can y'all that much"
+   ],
+   "waki": [
+    "Death's impact in puss in boots",
+    "cannot be ignored either"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:6jsrbgbrk5d7bimsa2de3bdf/post/3mrpm2jytqc2e",
+   "wakiUrl": "https://bsky.app/profile/did:plc:6l3ime3c7el7o2wembglz54o/post/3mrpm76ygac22"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8636363636363636,
+   "hokku": [
+    "gray flashing damage",
+    "is obviously something",
+    "else entirely"
+   ],
+   "waki": [
+    "that just means im running out",
+    "of time in this dimension"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:c6madtljwsuwbzbhpfy376mi/post/3mrnpndz23s2r",
+   "wakiUrl": "https://bsky.app/profile/did:plc:wfwr3vfa3tcxeu6zj2pce2qw/post/3mrnpp4jk6226"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8625,
+   "hokku": [
+    "funny and telling",
+    "that they left fetterman's name",
+    "out of the headline"
+   ],
+   "waki": [
+    "dude's such an ogre he makes",
+    "shrek look like a normal dude"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:tj7v53uzi7a3ozcxsonmuyyb/post/3mrpeg6rj4c22",
+   "wakiUrl": "https://bsky.app/profile/did:plc:sutg7jigqzmglzoak6bchccd/post/3mrpkeyw4jc2m"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8571428571428571,
+   "hokku": [
+    "There’s something about",
+    "the peeling on its own string",
+    "cheese that is deeply"
+   ],
+   "waki": [
+    "is tentacle adjacent",
+    "and not in a fun sexy"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:mbf5gvh5nnvutdhbwgorf4u5/post/3mrprcxyfgs2e",
+   "wakiUrl": "https://bsky.app/profile/did:plc:jvzdtfvzuqdgk36wncgl2dnp/post/3mrprhikrf227"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8470588235294118,
+   "hokku": [
+    "when Trump tore down half",
+    "the White House and everyone",
+    "just forgot about"
+   ],
+   "waki": [
+    "Yes, he should have to pay out",
+    "of his pocket to rebuild"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:loioxuzamtqif6qemywpksmz/post/3mrpfmxvxuk23",
+   "wakiUrl": "https://bsky.app/profile/did:plc:viqbjhui3ywq2ualbsj2xiar/post/3mrppqbra7k2h"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8461538461538461,
+   "hokku": [
+    "According to Dan",
+    "no other team should bother",
+    "to show up against"
+   ],
+   "waki": [
+    "really carried this story",
+    "right out the back of the end"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:unoeut23mw5yqhuugxo6pvo7/post/3mrofqvxhjc2b",
+   "wakiUrl": "https://bsky.app/profile/did:plc:obvq5j7fxvbnz4w6mvk6p43a/post/3mrojsu5gw226"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8428571428571429,
+   "hokku": [
+    "scary to be left",
+    "alone when you’re already",
+    "so vulnerable"
+   ],
+   "waki": [
+    "What are the recommended",
+    "actions that strangers should take"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:cguwfiesizkt4ssgx6q7d6yy/post/3mro5novvn22z",
+   "wakiUrl": "https://bsky.app/profile/did:plc:62s5koa5dls3onopao6gwdxs/post/3mro6orbido2y"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8421052631578947,
+   "hokku": [
+    "i plan on watching",
+    "the odyssey on my phone",
+    "during breaks at work"
+   ],
+   "waki": [
+    "That will be an odyssey",
+    "in and of itself, Rufus"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ux3kcnxza3fck4avj4c3nlzh/post/3mrnzpyv3wc2y",
+   "wakiUrl": "https://bsky.app/profile/did:plc:tc64ppbzqxgyosog5dqutnkd/post/3mrnzqzojxc2k"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8382352941176471,
+   "hokku": [
+    "First cat ever who",
+    "knows how to properly use",
+    "a semi-colon"
+   ],
+   "waki": [
+    "accept this praise; he does what",
+    "he can to keep his human"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ugdbpyzhyqr7e32qrzvb3u4q/post/3mrpa35tsxk27",
+   "wakiUrl": "https://bsky.app/profile/did:plc:6q4wh6gvjlcd2ohraus6mslw/post/3mrpnmzufdk2v"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8382352941176471,
+   "hokku": [
+    "well they need at least",
+    "one of the games to be Grand",
+    "Theft South Figaro"
+   ],
+   "waki": [
+    "It's all fun and games until",
+    "Locke takes the Tunnel Armor"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:fskw3554y2tv5y2zr7645tck/post/3mro4k6qrvk23",
+   "wakiUrl": "https://bsky.app/profile/did:plc:cny63ds74itziuse2yrmrhxk/post/3mro5fb4ypc24"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8360655737704918,
+   "hokku": [
+    "cambrian era",
+    "of software but everyone's",
+    "really mad about"
+   ],
+   "waki": [
+    "of this stuff will not survive",
+    "the coming cataclysm"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:f4bsajpa2wunskqs53tasuvl/post/3mrog2ikwcs26",
+   "wakiUrl": "https://bsky.app/profile/did:plc:o7kc3e22v7cxms67f4gbpryi/post/3mrogltqv2k22"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.835820895522388,
+   "hokku": [
+    "tail swish adds a lot",
+    "of positive energy",
+    "im happy about"
+   ],
+   "waki": [
+    "tail wag on this character",
+    "once and then never went back"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ci4calxob44khipxxnawqf2w/post/3mrpzghewc22z",
+   "wakiUrl": "https://bsky.app/profile/did:plc:t4wtmfbigfbu7ix5br6gdlyo/post/3mrpznmqhjk2f"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.835820895522388,
+   "hokku": [
+    "I appears some folks",
+    "are finally catching up",
+    "with what's been going"
+   ],
+   "waki": [
+    "Catching up or just stealing",
+    "my work, as long as it gets"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:64luxclrk3fhiwecrf7ink5n/post/3mrpmumxsl22o",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ow7tgmaps7eizgdvcredvkas/post/3mrpo2gvalc2j"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8356164383561644,
+   "hokku": [
+    "for him to succumb",
+    "to one of the diseases",
+    "he says don’t exist"
+   ],
+   "waki": [
+    "It would be an excellent",
+    "comeback and very funny"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:7ugwxbselyp3bd5pkpl5pd5m/post/3mrnhwot6xc2h",
+   "wakiUrl": "https://bsky.app/profile/did:plc:qi266okqzvfhayoetduiypqx/post/3mrnt7ilu472a"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8356164383561644,
+   "hokku": [
+    "for him to succumb",
+    "to one of the diseases",
+    "he says don’t exist"
+   ],
+   "waki": [
+    "It would be an excellent",
+    "feedback and very funny"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:7ugwxbselyp3bd5pkpl5pd5m/post/3mrnhwot6xc2h",
+   "wakiUrl": "https://bsky.app/profile/did:plc:qi266okqzvfhayoetduiypqx/post/3mrnt5crpw72a"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8333333333333334,
+   "hokku": [
+    "I'm in my sixties",
+    "I feel i've drifted even",
+    "further to the left"
+   ],
+   "waki": [
+    "yes and even further left",
+    "in my seventies, husband"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:qfuzk74w2kbi36tjt4ipxf4v/post/3mroucifqck23",
+   "wakiUrl": "https://bsky.app/profile/did:plc:3dh55y5mbnsmd4pm5weyfh5g/post/3mrpag5ulmk26"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8333333333333334,
+   "hokku": [
+    "it is once again",
+    "time to get on the finding",
+    "a new job train, choo"
+   ],
+   "waki": [
+    "sorry kibby that's a shit",
+    "train to be on ;w"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:x5u3bh4zerpyh77tjgrqw446/post/3mroaeyfc2c2r",
+   "wakiUrl": "https://bsky.app/profile/did:plc:3lqqonsz3l7j6ug7jqzwnmn5/post/3mrodqzijdk2b"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8307692307692308,
+   "hokku": [
+    "I have acquired",
+    "1000 pairs of Freddy’s",
+    "Dead 3D glasses"
+   ],
+   "waki": [
+    "Is it burdensome being",
+    "the coolest guy of all time"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:6fuado43jiu73mwkxsc3qoyh/post/3mrnxtwbh3k25",
+   "wakiUrl": "https://bsky.app/profile/did:plc:lmmhh62ci6xgiy3bxx2vu7fi/post/3mrob4ptkvk2h"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8305084745762712,
+   "hokku": [
+    "not enough people",
+    "out here talking about how",
+    "therapy is hard"
+   ],
+   "waki": [
+    "REAL I had to go and get",
+    "myself a milkshake after"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:tpfq3x3d5ykt7j5bjipvd4ev/post/3mrpo25blu22k",
+   "wakiUrl": "https://bsky.app/profile/did:plc:45agf52y5rmv6r3wkgiammmc/post/3mrpoltjaxc23"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8292682926829268,
+   "hokku": [
+    "realised it’s not",
+    "Poly’s post and I’ve just jumped",
+    "in without asking"
+   ],
+   "waki": [
+    "worries at all, I love when",
+    "my posts get conversations"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:jtnjwrrg6u3lhoyxqkiqrocf/post/3mrpxkpag2s2p",
+   "wakiUrl": "https://bsky.app/profile/did:plc:w5piffuqepcuz3dxvs4wrxd5/post/3mrpy2zkdrc2g"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8292682926829268,
+   "hokku": [
+    "glad me and Tangle",
+    "showed up on time just to wait",
+    "around in the cold"
+   ],
+   "waki": [
+    "the middle of summer, what",
+    "cold are you talking about"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:vsv5eeabh27e3p4vjqvikvzw/post/3mroeasawc22h",
+   "wakiUrl": "https://bsky.app/profile/did:plc:srd4vjgdnuspk7yd5qucrvbu/post/3mroepp7yb22p"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8260869565217391,
+   "hokku": [
+    "you hear about what",
+    "cops were like even when Trump",
+    "wasn't president"
+   ],
+   "waki": [
+    "fascist president egging",
+    "them on makes them so much worse"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:wfy4l5sl22lgb2lakf6kwqvw/post/3mro4k6s6t22c",
+   "wakiUrl": "https://bsky.app/profile/did:plc:hp6v3iuhqngu42s6y7m4tpad/post/3mro4pf2mq22i"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8225806451612904,
+   "hokku": [
+    "Montreal to boost",
+    "security following",
+    "Berlin Pride attack"
+   ],
+   "waki": [
+    "watched this documentary",
+    "and we are going backwards"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:6hnkpvshsxjgot5figjyardd/post/3mrplmh557k22",
+   "wakiUrl": "https://bsky.app/profile/did:plc:gfvuan7x27wvojv2qjl4v5er/post/3mrpmonlqts2r"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8214285714285714,
+   "hokku": [
+    "Lisa McClain, who",
+    "can barely see over Trump's",
+    "lectern, wants to speak"
+   ],
+   "waki": [
+    "tRump keeps it up, Canada's",
+    "going to close the border"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:4llrhdclvdlmmynkwsmg5tdc/post/3mrnoudin3l2x",
+   "wakiUrl": "https://bsky.app/profile/did:plc:mgvrlbikf5n2dfglo7hzw24g/post/3mrnqf7pw222q"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.819672131147541,
+   "hokku": [
+    "huh uh huh alot",
+    "of talking and not alot",
+    "of showing the art"
+   ],
+   "waki": [
+    "at my pc anymore",
+    "nerd, besides still not convinced"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ujpagplvmlfhtsobaqncjiog/post/3mro7c4jlks2m",
+   "wakiUrl": "https://bsky.app/profile/did:plc:nk63ony3psifjukoggkw2hdp/post/3mro7e5kfis2i"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8125,
+   "hokku": [
+    "which Benno Nagel",
+    "finally just takes the mask",
+    "off and admits he's"
+   ],
+   "waki": [
+    "to know which American",
+    "Values he thinks are missing"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ivlffuolvmnk33anekl362pp/post/3mroixbyzds24",
+   "wakiUrl": "https://bsky.app/profile/did:plc:juovxkioy4pkrnysexq3urrw/post/3mroqydjxq22s"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8088235294117647,
+   "hokku": [
+    "don’t understand how",
+    "some humans so easily",
+    "just accept bad things"
+   ],
+   "waki": [
+    "it's easy, they just grow up",
+    "while never getting to see"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:k42bzrrkxnnkzrgaceyqbupr/post/3mro6rcbml226",
+   "wakiUrl": "https://bsky.app/profile/did:plc:4w2jkxx3d5ugo4ihvxjzcaka/post/3mroot4cuz22y"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8076923076923077,
+   "hokku": [
+    "ever considered",
+    "that maybe nature is just",
+    "cribbing off your art"
+   ],
+   "waki": [
+    "nah nature has had way more",
+    "time to practice coolness ;3"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:sfvpv6dfrug3rnjewn7gyx62/post/3mro24wyvk22g",
+   "wakiUrl": "https://bsky.app/profile/did:plc:cfrjwfksgilcuoinojux6bzz/post/3mro2jfe4oc23"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8055555555555556,
+   "hokku": [
+    "like a casino",
+    "ad for a half baked magic",
+    "act matinee show"
+   ],
+   "waki": [
+    "All that’s missing is the car",
+    "with no doors and the broken"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:x25qwr2t66qorjqcs5k2phg6/post/3mrobf6fmjc2a",
+   "wakiUrl": "https://bsky.app/profile/did:plc:jxianvmmbxr2io2k4efyzvbs/post/3mrom3rfa4s2h"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8048780487804879,
+   "hokku": [
+    "get more sovereign blade",
+    "simple you just need more sword",
+    "have you considered"
+   ],
+   "waki": [
+    "my blade single hit record",
+    "is 398"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:nku6hqfdohkbyoxsik2ksosw/post/3mrnntciz2224",
+   "wakiUrl": "https://bsky.app/profile/did:plc:fxc5hiaxne7zg2o76mi66gs4/post/3mrnnw3pay22l"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.803030303030303,
+   "hokku": [
+    "the Carolinas",
+    "are nice in the fall, perhaps",
+    "I'll give that a whirl"
+   ],
+   "waki": [
+    "partial to Outer Banks; just",
+    "be careful of hurricanes"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:7kix7wonxqkwiyb2r3ygxw5q/post/3mrnyojbkt223",
+   "wakiUrl": "https://bsky.app/profile/did:plc:v236vf3ssjtirzezvwicjuvn/post/3mro2r66tcs2s"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8023255813953488,
+   "hokku": [
+    "Depends on how much",
+    "infrastructure we're willing",
+    "to build out to keep"
+   ],
+   "waki": [
+    "In a perfect world that’s where",
+    "the money would go, hell I’d"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:affwpqgxes7ctrpkfwen63h2/post/3mro22jwdu22k",
+   "wakiUrl": "https://bsky.app/profile/did:plc:us3l5bnvql3okhenioa3vtrk/post/3mro3a5d7zs2i"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.8,
+   "hokku": [
+    "I have a moral",
+    "obligation to support",
+    "Nano in The War"
+   ],
+   "waki": [
+    "There’s no war against me, just",
+    "two friends who I care about"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:kjjvjk3hk4gske4lajyeufqu/post/3mrnnu3i5ck2e",
+   "wakiUrl": "https://bsky.app/profile/did:plc:flp3n7ds7vkflao36nci24hn/post/3mrnnvf5jbk2a"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7945205479452054,
+   "hokku": [
+    "I'd like the song more",
+    "as a deep cut but I don't",
+    "know as a single"
+   ],
+   "waki": [
+    "Which makes one nervous about",
+    "what the deep cuts are going"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:2xmyrlbajfevm6xebndvbyu4/post/3mrpwmx3uvk22",
+   "wakiUrl": "https://bsky.app/profile/did:plc:f3wgyyxmrcnzajqqrbngfdzy/post/3mrpwqao7ds2x"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7906976744186046,
+   "hokku": [
+    "Seeing commercials",
+    "for Draft Kings during sporting",
+    "events will never"
+   ],
+   "waki": [
+    "I’m certain all this betting",
+    "will kill sports or be outlawed"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:uwb5dp4332iemp3snc4ejywq/post/3mrlhjwihwk2r",
+   "wakiUrl": "https://bsky.app/profile/did:plc:kg6qy67zzcmaxfy2gpbd5kc2/post/3mrntplr5fc2g"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7903225806451613,
+   "hokku": [
+    "is awesome and I'm",
+    "tired of pretending it's",
+    "not (most of the time"
+   ],
+   "waki": [
+    "used with intent and not just",
+    "as a visual gimmick"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:enfyuvrovvshtkfye3kq5k23/post/3mrnlezowes2l",
+   "wakiUrl": "https://bsky.app/profile/did:plc:n3fcf2mdivvmhdvrz3eptesr/post/3mrnloit3nk2k"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7901234567901234,
+   "hokku": [
+    "The system isn't",
+    "perfect but I simply don't",
+    "believe in killing"
+   ],
+   "waki": [
+    "There’s some room between killing",
+    "and hoping they will live long"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:3a2vqx5jnnywl7jeap5d6xab/post/3mrp72nyblc2u",
+   "wakiUrl": "https://bsky.app/profile/did:plc:6al3zzbu2lftak2kbzz3ao5g/post/3mrpao3mkic2d"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7878787878787878,
+   "hokku": [
+    "You don’t need to tap",
+    "to exit — the doors open",
+    "automatically"
+   ],
+   "waki": [
+    "on the station and what mode",
+    "the gates are operating"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:eqadihmlcybmhnpfkksybshg/post/3mrpvfgsi6k2c",
+   "wakiUrl": "https://bsky.app/profile/did:plc:aurmefxl2s4lglfindwdlpy5/post/3mrpzjaozbk2m"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7866666666666666,
+   "hokku": [
+    "to go to the spot",
+    "to get some oils and incense",
+    "anybody want"
+   ],
+   "waki": [
+    "sure you get some WD-40",
+    "for those old ass joints you got"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:62jnlcsohnkrvhybxe53gfux/post/3mrnlmnhik22c",
+   "wakiUrl": "https://bsky.app/profile/did:plc:hdom6cvatj2nm7ejqkp5xcig/post/3mrnluqlyvc25"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7833333333333333,
+   "hokku": [
+    "want to make a smart",
+    "belt buckle so dudes look down",
+    "and shout voice commands"
+   ],
+   "waki": [
+    "know the communication",
+    "goes the other direction"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:muhesxre7yfcuqi5ss2fskjc/post/3mrns7ge3zk2w",
+   "wakiUrl": "https://bsky.app/profile/did:plc:akimez7zoyw7yvdtfhuezsui/post/3mrnthajrtk22"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7831325301204819,
+   "hokku": [
+    "believe there's almost",
+    "a thousand people looking",
+    "at my fat padded"
+   ],
+   "waki": [
+    "I mean, it's a fat padded",
+    "ass, that makes it a nice ass"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:cywiamdgljw7dmvqsjk5bi7s/post/3mrpuxlcuds2c",
+   "wakiUrl": "https://bsky.app/profile/did:plc:kf5xbjohebz5gezpqglvmagw/post/3mrpv2a6vgk23"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7831325301204819,
+   "hokku": [
+    "is the second time",
+    "that account has made me want",
+    "to read a Mickey"
+   ],
+   "waki": [
+    "Yeah some of these Italian",
+    "productions look amazing"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:c75tyn67kuicpqhnsdcoabh4/post/3mrof5kmta22x",
+   "wakiUrl": "https://bsky.app/profile/did:plc:xakq6slcwkpjuny6i5aq7i35/post/3mrokwqqov22v"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7831325301204819,
+   "hokku": [
+    "truly understand",
+    "and let koth into your heart",
+    "is to learn to love"
+   ],
+   "waki": [
+    "love Bill is to love yourself",
+    "during your lowest moments"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:zgvsjugwr2sxzjwripyhx52q/post/3mrnth44r5c2c",
+   "wakiUrl": "https://bsky.app/profile/did:plc:dy7vtdrlxk2g5fmj7rxasoo5/post/3mrntjywq7c2k"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7804878048780488,
+   "hokku": [
+    "Iran’s largest jail",
+    "sew lips shut in hunger strike",
+    "as executions"
+   ],
+   "waki": [
+    "that couple of motorbike",
+    "tourists ever get released"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:vovinwhtulbsx4mwfw26r5ni/post/3mrpa35omkp2s",
+   "wakiUrl": "https://bsky.app/profile/did:plc:nlvpb3aiu2rhyidy6e5o7svt/post/3mrpai4g7es2h"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7804878048780488,
+   "hokku": [
+    "They’re using random",
+    "ass plugins to justify",
+    "their mass psychosis"
+   ],
+   "waki": [
+    "I'm getting negatively",
+    "polarized into watching"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:s6uwytvvpihxcqyzvcltzmrr/post/3mrnpk7gd322d",
+   "wakiUrl": "https://bsky.app/profile/did:plc:lhmcwmycwaznpa5bitdvc2oe/post/3mrnpnepksc2b"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7794117647058824,
+   "hokku": [
+    "number of people",
+    "in employment is also",
+    "at record levels"
+   ],
+   "waki": [
+    "just check the unemployment",
+    "figures the last 20 years"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:jtwm3hubkzxbo2s5etkju6e3/post/3mrpc5bekuc2d",
+   "wakiUrl": "https://bsky.app/profile/did:plc:agigfaro3f3kmcujr6zz2pqw/post/3mrpdsk6ndc23"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7792207792207793,
+   "hokku": [
+    "I haven’t seen such",
+    "a calm reply in long time",
+    "complimentary"
+   ],
+   "waki": [
+    "I'm working very very",
+    "very very very hard"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:umkdmppnmbfkz65p3xdwxyjc/post/3mro4drh7dl2h",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ogwattsr55qdrjmtbovoa7za/post/3mro4g3yjg22h"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7777777777777778,
+   "hokku": [
+    "preachers are turning",
+    "airplanes into unwanted",
+    "worship services"
+   ],
+   "waki": [
+    "If that happened on a flight",
+    "I was on, I’d start yelling"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:hnxjky2nkryh73jrmfhiyaqy/post/3mrpv7wltns25",
+   "wakiUrl": "https://bsky.app/profile/did:plc:2cydzsoovcoj76igpddwdzvv/post/3mrpumznjtk2s"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7777777777777778,
+   "hokku": [
+    "stopped in ohio",
+    "just to take a shit b4",
+    "scurrying away"
+   ],
+   "waki": [
+    "being so close but so far",
+    "away momentarily"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:vopi2mv22jfb2gdxwy3umqro/post/3mrphvblpus2w",
+   "wakiUrl": "https://bsky.app/profile/did:plc:74ooe3ydzeusd4w5idwtt47i/post/3mrpjf52lm222"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.776595744680851,
+   "hokku": [
+    "hurts my brain to think",
+    "about the fact that Phil then",
+    "was 2 years younger"
+   ],
+   "waki": [
+    "To Phil’s credit he never",
+    "wore blouses no matter how"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:lupvg4gxl4u3eqtbxl4d52jp/post/3mroiyfnekk2h",
+   "wakiUrl": "https://bsky.app/profile/did:plc:kfhw3bel2i4rjzciuapjwwyq/post/3mroj4a7hfc2z"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7727272727272727,
+   "hokku": [
+    "dunno, I still think",
+    "I need a demonstration",
+    "for visual aid"
+   ],
+   "waki": [
+    "it's something I've happily",
+    "been able to draw a few"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:foeffvni22i6fhxgty3hmfnd/post/3mrphb4h4wc2w",
+   "wakiUrl": "https://bsky.app/profile/did:plc:dk742lgzu3fpnrhyrjjrfchx/post/3mrpijx3c6k2v"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7727272727272727,
+   "hokku": [
+    "to be platonic",
+    "or can i have blatantly",
+    "romantic intent"
+   ],
+   "waki": [
+    "be blatantly romantic",
+    "but lets do both just to make"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:4xidio5yuuey35tkr3asncde/post/3mro5ubvblc24",
+   "wakiUrl": "https://bsky.app/profile/did:plc:k4o6psq5gnzgoglfs75ik4ws/post/3mro6qwlyjc2k"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7721518987341772,
+   "hokku": [
+    "Hello Kitty, it's",
+    "so nice to see you again",
+    "and what a pretty"
+   ],
+   "waki": [
+    "pretty box is wide open",
+    "and ready for company"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:e5tnacmfpfxi457ohj2i3khy/post/3mrp3pbppcc2c",
+   "wakiUrl": "https://bsky.app/profile/did:plc:jbnmreraiu3y3jzommni62xo/post/3mrplmywc422s"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7721518987341772,
+   "hokku": [
+    "One of the hand-carved",
+    "cave sculpted by artist Ra",
+    "Paulette in the New"
+   ],
+   "waki": [
+    "glad I'm not the carpenter",
+    "who's got to build the bookshelves"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:3zfcjrvskqxjksbcfapyefyb/post/3mroc47xahs2y",
+   "wakiUrl": "https://bsky.app/profile/did:plc:bv7pjtn4xonglr5vhawkd6fm/post/3mrodzeidok27"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7682926829268293,
+   "hokku": [
+    "hate it when I dash",
+    "off a really scathing text",
+    "and auto correct"
+   ],
+   "waki": [
+    "I had to post something three",
+    "times because of a spelling"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:w5zmqksx4hzyr5ek553hk4yo/post/3mrpqpzpu2k2r",
+   "wakiUrl": "https://bsky.app/profile/did:plc:sn74lrgzkisufdz4qocqf2rq/post/3mrprlyftac2g"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7682926829268293,
+   "hokku": [
+    "still a fatalist",
+    "about Texas but boy Trump",
+    "really picked a hell"
+   ],
+   "waki": [
+    "I'm sure I sure another",
+    "poll today that had Paxton"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:2orsuabrdskjpuglpru77po2/post/3mrpe472ems2d",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ilckf2hv3le2d726nqefhnvj/post/3mrpegyap2c25"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7682926829268293,
+   "hokku": [
+    "do not read my posts",
+    "in his voice it will ruin",
+    "the entire thing"
+   ],
+   "waki": [
+    "too late you big chin bitch, go",
+    "back to managing bluesky"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:6bfobt7ssw6scat2h3uzvg25/post/3mrp7pumki22l",
+   "wakiUrl": "https://bsky.app/profile/did:plc:tcgjtly5tro3tq5y6oodsqaf/post/3mrp7u2pnvs25"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.765625,
+   "hokku": [
+    "are going to use",
+    "the biology angle",
+    "for gay people next"
+   ],
+   "waki": [
+    "What is with these freaks being",
+    "so openly anti no"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:x7lau62tmlfyddwgiasqqohk/post/3mrnpienw7s26",
+   "wakiUrl": "https://bsky.app/profile/did:plc:hnq5hz6s56mld6w4szqmdxu3/post/3mrnz5nsi2c27"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.765625,
+   "hokku": [
+    "Lisa McClain, who",
+    "can barely see over Trump's",
+    "lectern, wants to speak"
+   ],
+   "waki": [
+    "to punt that fascist Karen",
+    "into the Detroit river"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:4llrhdclvdlmmynkwsmg5tdc/post/3mrnoudin3l2x",
+   "wakiUrl": "https://bsky.app/profile/did:plc:7gl357dq6r7jecauosvoa6bp/post/3mrnoxbmmcc2q"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7647058823529411,
+   "hokku": [
+    "Spider-Man: Brand New",
+    "Day is the best live action",
+    "Spider-Man movie"
+   ],
+   "waki": [
+    "it matter if you have seen",
+    "the last Spider-Man movie"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ef3vbqjmnunqy52tsaniyfsw/post/3mrpndwdvmk2t",
+   "wakiUrl": "https://bsky.app/profile/did:plc:bosjjp65xdhltlg2xf3mo25r/post/3mrpzfspahk2u"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7636363636363637,
+   "hokku": [
+    "I mean he would get",
+    "absorbed into Edison",
+    "like all the other"
+   ],
+   "waki": [
+    "least problematic canon",
+    "solution available"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:hcy4treg7hs5u7iddffna4no/post/3mrohpxewf22r",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ykfmg4kzubg3rjvzkhqmxk7n/post/3mrohrd3dfs2f"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7627118644067796,
+   "hokku": [
+    "They’re using random",
+    "ass plugins to justify",
+    "their mass psychosis"
+   ],
+   "waki": [
+    "their stupid ass plugin shows",
+    "16,000 verified"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:s6uwytvvpihxcqyzvcltzmrr/post/3mrnpk7gd322d",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ykdk7j4zzsqcrlxqorvmz2xb/post/3mro3cliiyw2j"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7619047619047619,
+   "hokku": [
+    "cushy microsoft",
+    "job and this is what he spends",
+    "his free time doing"
+   ],
+   "waki": [
+    "And he doesn't even know",
+    "how to edit the margins"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:pk7qwhf2iouyiu7s4bjksndd/post/3mrnspp5zls2t",
+   "wakiUrl": "https://bsky.app/profile/did:plc:6ik3kdyqcslxq7ib6dwciuzy/post/3mro6knvsqs2j"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7611940298507462,
+   "hokku": [
+    "i plan on watching",
+    "the odyssey on my phone",
+    "during breaks at work"
+   ],
+   "waki": [
+    "you keep the phone vertical",
+    "to get that imax aspect"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ux3kcnxza3fck4avj4c3nlzh/post/3mrnzpyv3wc2y",
+   "wakiUrl": "https://bsky.app/profile/did:plc:2wrmxheyymrcudltbejiqjzc/post/3mro4wzrgo22d"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7608695652173914,
+   "hokku": [
+    "tops crispy hash brown",
+    "patty with egg, Salisbury",
+    "steak, mushroom gravy"
+   ],
+   "waki": [
+    "I hate it when billionaires",
+    "get on social media"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:f5kysktiyhdm7mb2i6ma3c2t/post/3mrn3op7lrk2b",
+   "wakiUrl": "https://bsky.app/profile/did:plc:sugb4usbz5x5ksyor5lqcuh2/post/3mrpi3yjduc2d"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7604166666666666,
+   "hokku": [
+    "You know Aug 5th",
+    "his death will be announced; it's",
+    "creep show with a side"
+   ],
+   "waki": [
+    "and then the fraud surrounding",
+    "this will just blow over bec"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:hqihltd4f6rhxii7nubdthsw/post/3mrnm55zse22g",
+   "wakiUrl": "https://bsky.app/profile/did:plc:e4plp7wljosxam7hhsny6vs3/post/3mrnm74gktk2x"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7592592592592593,
+   "hokku": [
+    "Stole it from people",
+    "who were campaigning against",
+    "scientology"
+   ],
+   "waki": [
+    "for giving attribution",
+    "to the originators"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:eyssbmqxckqlmu6vsu6lfgwm/post/3mrpttxxk432k",
+   "wakiUrl": "https://bsky.app/profile/did:plc:5fil3qamehqsubz7bhos334r/post/3mrpzwckjx22v"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7590361445783133,
+   "hokku": [
+    "I had to get up",
+    "at 4am for a work call",
+    "that was then cancelled"
+   ],
+   "waki": [
+    "Did the pups at least say thank",
+    "you for warming their spot when"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:bjhunchtz2humbk4htqf3oto/post/3mrpm7yoppk2r",
+   "wakiUrl": "https://bsky.app/profile/did:plc:qimpysg3pnctalqphuguri3b/post/3mrpmcir2tc2z"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7586206896551724,
+   "hokku": [
+    "when Angela gets",
+    "out of the house she sees how",
+    "wrong she was about"
+   ],
+   "waki": [
+    "don't think that self-reflection",
+    "and Angela have ever"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:dxk37ievcmnq5rc6e276taig/post/3mrpmrmk6dk2z",
+   "wakiUrl": "https://bsky.app/profile/did:plc:vnrhz6ijrv62yx4754x5vwkc/post/3mrpq5pwaok2i"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7564102564102564,
+   "hokku": [
+    "Survivor casting",
+    "is like leaps and bounds above",
+    "Big Brother casting"
+   ],
+   "waki": [
+    "casting is like the only",
+    "thing they have gotten right since"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:i2asknd4fycn2odjghytqlct/post/3mro2saxgtc2h",
+   "wakiUrl": "https://bsky.app/profile/did:plc:mx4bfdtfzwo6fupqhfs2ohmz/post/3mrohglindc2d"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7560975609756098,
+   "hokku": [
+    "they are not looking",
+    "at voter registration",
+    "they are surveying"
+   ],
+   "waki": [
+    "It was just an example",
+    "of how lax these statistics"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:p5yoii26kayabauhkym3vtms/post/3mrnnmrnrr22j",
+   "wakiUrl": "https://bsky.app/profile/did:plc:clwqslsmegls3a5nnhn7gwyv/post/3mrnoerz5ns2q"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7558139534883721,
+   "hokku": [
+    "don't know anything",
+    "about Christopher Nolan",
+    "and I think I'm quite"
+   ],
+   "waki": [
+    "here - I'm so bad at movie",
+    "stuff and directors and such"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:bzmnhwi2a642mp3cs5zeigor/post/3mrpd7eywsc22",
+   "wakiUrl": "https://bsky.app/profile/did:plc:wyt4negimpqzlttimqnlecg2/post/3mrphxunipc2e"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7555555555555555,
+   "hokku": [
+    "Been haunted for years",
+    "by Bosch's Veronica",
+    "who seems rather pleased"
+   ],
+   "waki": [
+    "glance, I thought she was growing",
+    "a Janus-like second head"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:aq6ucuguuc67yqwu4x4eipro/post/3mrnkxgmvik2e",
+   "wakiUrl": "https://bsky.app/profile/did:plc:pouy2p6hb74l7ml5pu4kn4w4/post/3mrnuhxqqgc2u"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7540983606557377,
+   "hokku": [
+    "that doesn’t have bones",
+    "as boneless will always make",
+    "me chortle a bit"
+   ],
+   "waki": [
+    "asking about various",
+    "beverages with or without"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ssmo63j3y2lkxuxjrz5ovyqo/post/3mrpwahnoms2k",
+   "wakiUrl": "https://bsky.app/profile/did:plc:676niu7fson3xkdvd5bpwlau/post/3mrpwcmk6l22y"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7536231884057971,
+   "hokku": [
+    "Italian Disney",
+    "comics have Tibetan monks",
+    "with psychic powers"
+   ],
+   "waki": [
+    "tell me they did a Batman",
+    "joke with them considering"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:igdsycziambghcg7wughi6qv/post/3mrpmothhok2p",
+   "wakiUrl": "https://bsky.app/profile/did:plc:vf3ar4kau74mmyfvupvwwct4/post/3mrptlqwck22l"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7534246575342466,
+   "hokku": [
+    "As an atheist",
+    "I'm like ok that's a lot",
+    "of godding going"
+   ],
+   "waki": [
+    "big killing machine, that says",
+    "so much about religion"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:vla7mibkk7tieiukaq66y7ud/post/3mrouqr63ws2x",
+   "wakiUrl": "https://bsky.app/profile/did:plc:jgzfen3jr4zhrlcicakj2rcn/post/3mroxaumpgk2f"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.75,
+   "hokku": [
+    "It makes you wonder",
+    "what 1996 Ice",
+    "Cube would do about"
+   ],
+   "waki": [
+    "you wonder what nowadays",
+    "Ryan Garcia would tweet"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:zeedg3glqpqfluod7q6kjieu/post/3mrptccjajk2v",
+   "wakiUrl": "https://bsky.app/profile/did:plc:qyasxjgq5fqgr4qxn6clpong/post/3mrptlo4oes2k"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.75,
+   "hokku": [
+    "the teacher dispute",
+    "as a former minister",
+    "for education"
+   ],
+   "waki": [
+    "bet they’ll come to a short term",
+    "agreement to be reviewed"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:q334gqswdtwa26hakzmzs5jk/post/3mrodiqc7ss2p",
+   "wakiUrl": "https://bsky.app/profile/did:plc:clfdxyimbwp65lz35arwnu3x/post/3mrodurnhgc26"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.75,
+   "hokku": [
+    "seeing huge anti",
+    "abortion signs with graphic",
+    "pictures hanging up"
+   ],
+   "waki": [
+    "And the lame people holding",
+    "them up 🫩 bro get a hobby"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:aexeibpia56ifgsn6mh6utkx/post/3mrnv3o4dn22n",
+   "wakiUrl": "https://bsky.app/profile/did:plc:vhbp7nvzu2nrdhe4k3vkuo64/post/3mrnv7l2yo22f"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7472527472527473,
+   "hokku": [
+    "culture will invent",
+    "fusion to protect themselves",
+    "while everyone else"
+   ],
+   "waki": [
+    "is the world's most expensive",
+    "method of heating water"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:et654awzw3gsmokxr7psuzor/post/3mrpcz2zfs22m",
+   "wakiUrl": "https://bsky.app/profile/did:plc:h6swkesn4lp2xovibx5cnbg5/post/3mrpf66yzxk22"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7468354430379747,
+   "hokku": [
+    "don’t understand how",
+    "some humans so easily",
+    "just accept bad things"
+   ],
+   "waki": [
+    "not just accept them, but go",
+    "out of their way to shout down"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:k42bzrrkxnnkzrgaceyqbupr/post/3mro6rcbml226",
+   "wakiUrl": "https://bsky.app/profile/did:plc:rmtcpecgjg2hddknfmsfk52d/post/3mrov42clkk2c"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7468354430379747,
+   "hokku": [
+    "incredible play",
+    "or indie film or concept",
+    "album or something"
+   ],
+   "waki": [
+    "fully on board with turning",
+    "Robinson into a folk"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ksolpsjhv5bz3xzuixrbgae4/post/3mrolnp7qk22o",
+   "wakiUrl": "https://bsky.app/profile/did:plc:lpoau23qvj36m6hrafedqghu/post/3mrolrdqrnc2z"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7468354430379747,
+   "hokku": [
+    "Trump holding onto",
+    "railing while talking to golf",
+    "club guests this weekend"
+   ],
+   "waki": [
+    "He looks so bad and also",
+    "like he smells of death, mothballs"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:7upoypvlxudsiv4pzbi5jtwf/post/3mrntd3ggz22z",
+   "wakiUrl": "https://bsky.app/profile/did:plc:z7jhyf5tfocrf7zlz34ygk2a/post/3mrnzk3nims2i"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7464788732394366,
+   "hokku": [
+    "He's starting to look",
+    "like if Jon Moxley washed up",
+    "on a beach after"
+   ],
+   "waki": [
+    "to Jon Moxley washing up",
+    "on a beach after three weeks"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:kantbjknxawhddtqh52fce4r/post/3mrpwyxw4ks2c",
+   "wakiUrl": "https://bsky.app/profile/did:plc:s4pui2ymwjp57x5qwuscw3vy/post/3mrpxa2ikac2v"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7464788732394366,
+   "hokku": [
+    "what's used nowadays",
+    "is way less toxic than lead",
+    "but I could be wrong"
+   ],
+   "waki": [
+    "Apparently there are some",
+    "substitutes but it's mostly"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:dyh4zirjnndqfrd2yif74fi3/post/3mro2tmqmps2a",
+   "wakiUrl": "https://bsky.app/profile/did:plc:sncyzkt6cyttsqrilrioyxu6/post/3mro3ammr322v"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7446808510638298,
+   "hokku": [
+    "is doing that thing",
+    "I hate, & stalking Liverpool",
+    "players & Liverpool’s"
+   ],
+   "waki": [
+    "I was in Kirkby before",
+    "and saw him at the AXA"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:fcvn55cgwxbim7a432fe2pzq/post/3mrpqvsox6s2w",
+   "wakiUrl": "https://bsky.app/profile/did:plc:j4kiyfmuqbs26sfpm3td2j4h/post/3mrpraxhn6c22"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7428571428571429,
+   "hokku": [
+    "Kennedy kicked off",
+    "the tax cutting when he took",
+    "it from 93"
+   ],
+   "waki": [
+    "That's still a relatively",
+    "high amount but either way"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:jg26tgiicwgbdn7swtmpsalr/post/3mrntownla22o",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ssrp4wgfm35wy46uu6opqo5a/post/3mrnu7ghwgs2k"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7386363636363636,
+   "hokku": [
+    "two years when i get",
+    "around to watching nolan’s",
+    "odyssey i’ll care"
+   ],
+   "waki": [
+    "You should watch that shit as soon",
+    "as you can it is very"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ppgb7qus2yvfqk5llioro7uy/post/3mrpxa4fkf22w",
+   "wakiUrl": "https://bsky.app/profile/did:plc:zrw2fhnmf6wib5byjniwqgtv/post/3mrpxaxuwz22k"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7384615384615385,
+   "hokku": [
+    "entire country",
+    "is going to be one big",
+    "data center soon"
+   ],
+   "waki": [
+    "vacation and i've started",
+    "to see pro-data center"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:pzz25ob6orep4gkksaxvn3gd/post/3mrnswj3a6c2r",
+   "wakiUrl": "https://bsky.app/profile/did:plc:zkawfji3ciis3pirf6gad5jt/post/3mrnt2fq4pc2q"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7358490566037735,
+   "hokku": [
+    "those robots function",
+    "like his death trap cars and trucks",
+    "know they are going"
+   ],
+   "waki": [
+    "It's pointless for a guy who",
+    "couldn't pass the first med school"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:g2h5rroexaeiahejxmmzptli/post/3mrpl7kvhgc2u",
+   "wakiUrl": "https://bsky.app/profile/did:plc:tzbejo47iuwporhd4v2iuoas/post/3mrplblyzas2u"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7307692307692307,
+   "hokku": [
+    "have no idea",
+    "what audiences would make",
+    "of Cow and Chicken"
+   ],
+   "waki": [
+    "a week goes by when I don't",
+    "sing the cow and chicken song"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:bjsyop3pfdy3ot7hao4iw4fc/post/3mrntr2ie322a",
+   "wakiUrl": "https://bsky.app/profile/did:plc:o7o7wiszrp7layas2iqvmup4/post/3mrnwbyahcc2v"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7307692307692307,
+   "hokku": [
+    "like a very fun",
+    "ride, even if it isn't",
+    "the one you wanted"
+   ],
+   "waki": [
+    "Its a tough one with a few",
+    "steep hills but definitely"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:zyschvc6yrwcks342co5a3ce/post/3mrnpanggas24",
+   "wakiUrl": "https://bsky.app/profile/did:plc:t2d2gveos5yik33kl5weawqs/post/3mrnq6hiqxc22"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7297297297297297,
+   "hokku": [
+    "I have really bad",
+    "news for these people about",
+    "how most cuisines came"
+   ],
+   "waki": [
+    "Can't wait to enjoy chinese",
+    "food without the influence"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:3s5wtzqrvrsvbxl6afiko2yw/post/3mrop5qj2gk2s",
+   "wakiUrl": "https://bsky.app/profile/did:plc:2n5aococwgzih3mu3am2q5fy/post/3mropm6ixfc2c"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7282608695652174,
+   "hokku": [
+    "to not let it get",
+    "me down but this has really",
+    "been the hardest year"
+   ],
+   "waki": [
+    "I’m sorry my dude :( I hope",
+    "some ease and joy head your way"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:vc6d6waikdvrxypdnrtbxnpz/post/3mrphj5bm5223",
+   "wakiUrl": "https://bsky.app/profile/did:plc:fqb47cp2mi36wh2lfgidah4w/post/3mrpnqd3zyc2i"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7272727272727273,
+   "hokku": [
+    "In which Fray/Pyrite",
+    "regrets checking out a new",
+    "club with these two tall"
+   ],
+   "waki": [
+    "It was fun to see you two",
+    "though, even if I couldn't"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:xuylfwgrmpjwlipxusnb5t2z/post/3mrpxqhbyuc2a",
+   "wakiUrl": "https://bsky.app/profile/did:plc:6jhodkfjgycsczgs5h5yid4x/post/3mrpyf3c2ns2n"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7272727272727273,
+   "hokku": [
+    "if your opponent",
+    "can do a very shitty",
+    "combo if they mash"
+   ],
+   "waki": [
+    "the person who paid $60",
+    "to hit some buttons hit some"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:3murml67clbrsrdwu5gw6nhr/post/3mronbameaz27",
+   "wakiUrl": "https://bsky.app/profile/did:plc:d7pin6vdl5zissx2blx3lxhh/post/3mroodffhqs2u"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7261904761904762,
+   "hokku": [
+    "I would simply make",
+    "zero changes and assume",
+    "the client is too"
+   ],
+   "waki": [
+    "about to make a single",
+    "change which is to no longer"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:t7udhskkkpryd3deyozcgwj3/post/3mroygs6j322r",
+   "wakiUrl": "https://bsky.app/profile/did:plc:mufb7p4tbkuplcozguculjfs/post/3mroynqtstk23"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7244897959183674,
+   "hokku": [
+    "I'd like to thank all",
+    "participants in Old Man",
+    "Smooth Jazz chat, and I'd"
+   ],
+   "waki": [
+    "I got lost when you started",
+    "pulling out Steely Dan deep"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:dykakxlh2uvy45cczbnq3ufy/post/3mroflrwzd22i",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ubhmfseodx6zjexcdwiu3uzb/post/3mrofoi6lxk2y"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7228915662650602,
+   "hokku": [
+    "Nah someone's gonna",
+    "do like, a remake but like",
+    "in Rome or something"
+   ],
+   "waki": [
+    "God, I hope they don't rename",
+    "Zeus into some weird name like"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:3tyowpf7zfavrbsw3vtolmu2/post/3mrocw23t6c2k",
+   "wakiUrl": "https://bsky.app/profile/did:plc:pjqsl5nkrbvtzavxy642tw3m/post/3mrod2e6wck25"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.72,
+   "hokku": [
+    "I do not believe",
+    "there was ever a cooler",
+    "front man in music"
+   ],
+   "waki": [
+    "I looked at the video",
+    "first and thought you were going"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:7i5c7spmy6rbpywwo5add7w3/post/3mrpyelsp3s2l",
+   "wakiUrl": "https://bsky.app/profile/did:plc:iraoww5g5ypdazeeokkfch7n/post/3mrpyghzxx22a"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.72,
+   "hokku": [
+    "you think no one cares",
+    "whether you’re alive or dead",
+    "just skip a handful"
+   ],
+   "waki": [
+    "still don't really care if you're",
+    "dead if they get their money"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:3b73zdtjx2n2dgfeumzwsyby/post/3mro5iiftlk2w",
+   "wakiUrl": "https://bsky.app/profile/did:plc:nlou2rruguziwpzs4ttjoldl/post/3mrpmcg6hbk2l"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.719626168224299,
+   "hokku": [
+    "Japan's south-western",
+    "Kyushu island has been struck",
+    "by two strong earthquakes"
+   ],
+   "waki": [
+    "reason to think that climate",
+    "change does NOT influence earth"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:rjuel2idbd5cvtf3toemjznp/post/3mrpebboorq2w",
+   "wakiUrl": "https://bsky.app/profile/did:plc:2crmaewu37d56wql7vgdcevj/post/3mrpezkyklc2b"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7195121951219512,
+   "hokku": [
+    "i need more people",
+    "to make tests like this because",
+    "i weirdly enjoy"
+   ],
+   "waki": [
+    "yeah I'm on their contact list",
+    "now for jobs and stuff after"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:23e6qmug2vwcnsfv2fywuy4b/post/3mrpam67eqk2a",
+   "wakiUrl": "https://bsky.app/profile/did:plc:epepxj5thqqr4o2x5vqfkkss/post/3mrpcvgkquc2d"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7195121951219512,
+   "hokku": [
+    "it will be simply",
+    "impossible for LeBron",
+    "James to figure out"
+   ],
+   "waki": [
+    "lived in London when he played",
+    "for Manchester United"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:5ugikifmojjxikpr4bptpros/post/3mrn4vzkvic2e",
+   "wakiUrl": "https://bsky.app/profile/did:plc:4xcigw4yd4bbscvucaszvasj/post/3mrnsisn5bs2h"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.717948717948718,
+   "hokku": [
+    "The rock star-breakfast",
+    "cereal promo axis",
+    "has a long and proud"
+   ],
+   "waki": [
+    "Go-Betweens has his own brand",
+    "of health-conscious cereal"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:2ecjse2vspta6f5veqlhynlg/post/3mrkrczw6t22s",
+   "wakiUrl": "https://bsky.app/profile/did:plc:sixlb7vznfhbh22q52ptbhyl/post/3mrntlkdpys2i"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.717948717948718,
+   "hokku": [
+    "diabolical",
+    "days, I was out here making",
+    "hennessy root beer"
+   ],
+   "waki": [
+    "It's the Raiders gear that makes",
+    "this chaotic, otherwise"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:7s2nftzuiyp3px3s2zqwy2zt/post/3mrnq3qlxm223",
+   "wakiUrl": "https://bsky.app/profile/did:plc:5y4euut6szrtwiroo6l46lri/post/3mrnqmg6akk2v"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7171717171717171,
+   "hokku": [
+    "then because I've heard",
+    "harder beats from electric",
+    "keyboard demo tracks"
+   ],
+   "waki": [
+    "And by electric keyboard",
+    "we mean the tot ones for 2"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:d4of55mhkzue3r36cuapqoft/post/3mrpggtalek2e",
+   "wakiUrl": "https://bsky.app/profile/did:plc:cm77kitf5e7s5hhnqksttn2e/post/3mrphcyh7ck2w"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7160493827160493,
+   "hokku": [
+    "decades to repair",
+    "all the damage Trump has done",
+    "to America"
+   ],
+   "waki": [
+    "Pretty sure that was Putin’s",
+    "point in helping this Admin"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:yzbzv5ihboupb64muatowams/post/3mrptrweh7c2u",
+   "wakiUrl": "https://bsky.app/profile/did:plc:4hkeqnrptfgpalk7cbhyrmvs/post/3mrpuawsc3s2w"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7159090909090909,
+   "hokku": [
+    "I appreciate",
+    "the strength but bullets don't care",
+    "how many pull ups"
+   ],
+   "waki": [
+    "someone who needs dragging out",
+    "of harm's way who's been injured"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:aw2i2ljbg2iaf4uuud3p3sky/post/3mroqh4p73k2x",
+   "wakiUrl": "https://bsky.app/profile/did:plc:bdsshlxfjmfufvhnfezdylcg/post/3mrpbmdgtcs2m"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7127659574468085,
+   "hokku": [
+    "MACK record-breaking",
+    "coaster is coming to Six",
+    "Flags Great Adventure"
+   ],
+   "waki": [
+    "The logo's tail being shaped",
+    "like the spike is so clever"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ew64qhtbkohwzlmnvoroytv3/post/3mrpmewzlec2y",
+   "wakiUrl": "https://bsky.app/profile/did:plc:u5fq47ve2yjke2kc3oks6aoc/post/3mrpu2hk2nk2c"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7127659574468085,
+   "hokku": [
+    "that this is over",
+    "with, I need someone to break",
+    "my back like a glow"
+   ],
+   "waki": [
+    "You gotta give me the T",
+    "first before you get the D"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:nzyybpuxnm3ud7wfytkbbclf/post/3mrofkcx2ek26",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ptql2djmb7v4diujhbd27cn7/post/3mrofoptexs2c"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7126436781609196,
+   "hokku": [
+    "Republicans want",
+    "you to think that allowing",
+    "poor people to see"
+   ],
+   "waki": [
+    "And they’ll be sure to attend",
+    "church services this Sunday"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:t4i3a4fawuzge3dsw2i2h2fw/post/3mrpijcvfac2e",
+   "wakiUrl": "https://bsky.app/profile/did:plc:yqegzcx2i7vu6ijx6xjc73bb/post/3mrpincyzpk2v"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7126436781609196,
+   "hokku": [
+    "Teases Another",
+    "Presidential Run at White",
+    "House Correspondents’"
+   ],
+   "waki": [
+    "only thing he has running",
+    "is the ooze from his diaper"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:yosojsta3nm5qiod5zqixzur/post/3mrnocy25ok2t",
+   "wakiUrl": "https://bsky.app/profile/did:plc:tbw3f3vxukqu5an2e7her7aq/post/3mrnpfc4i2s2p"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7125,
+   "hokku": [
+    "For clarity: I'm",
+    "not suggesting YOU ALSO",
+    "eat over my side"
+   ],
+   "waki": [
+    "Too late *Pulls up chair to eat",
+    "a greasy  burger getting"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:2ysn335q6y55y2zhqgqkyhoe/post/3mrnmoxiu2c24",
+   "wakiUrl": "https://bsky.app/profile/did:plc:2afjwvn4yrv2iut5grafhkpe/post/3mrnvu44vrc24"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7123287671232876,
+   "hokku": [
+    "gave a small, polite",
+    "clap as his spouse was stepping",
+    "up to testify"
+   ],
+   "waki": [
+    "Do these council members not",
+    "realize there are going"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ekts44pfepbmryv2h633onqu/post/3mrocvvzgd22f",
+   "wakiUrl": "https://bsky.app/profile/did:plc:hxkss7c2v7qpqebqkbc46jvq/post/3mrodgjdcuk24"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7073170731707317,
+   "hokku": [
+    "King Arthur Baking",
+    "Company has possibly",
+    "the strongest logo"
+   ],
+   "waki": [
+    "strikingly memorable",
+    "for a modern redesign"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:k2vj6detgsgrzndtcbby2vpq/post/3mro4p6djw22u",
+   "wakiUrl": "https://bsky.app/profile/did:plc:kd7pdhsemwqjfacvexf5mglg/post/3mro4twzrc224"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7065217391304348,
+   "hokku": [
+    "Impeach, then impeach",
+    "again and the Democrat",
+    "Speaker of the House"
+   ],
+   "waki": [
+    "Johnson, the 3rd-in-line",
+    "traitor of america"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:6blqqb6y4o3ivqmmyayernh3/post/3mrnrvhlzok2q",
+   "wakiUrl": "https://bsky.app/profile/did:plc:rg6chhijpq6pxa4nmyqrl7ov/post/3mrnvbfi46s23"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7032967032967034,
+   "hokku": [
+    "Fetterman Hits Back",
+    "After Progressive Senate",
+    "Candidate Threatens"
+   ],
+   "waki": [
+    "Maybe you guys could have picked",
+    "a photo where he doesn’t"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:4m2mvqumu72dar3pcm2tpebi/post/3mrnt5656ds2z",
+   "wakiUrl": "https://bsky.app/profile/did:plc:so3zrjfx5nnsy3ahz6uypsii/post/3mrovbrllak2k"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7032967032967034,
+   "hokku": [
+    "Fetterman Hits Back",
+    "After Progressive Senate",
+    "Candidate Threatens"
+   ],
+   "waki": [
+    "sure he brings the translator",
+    "with him to process his words"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:4m2mvqumu72dar3pcm2tpebi/post/3mrnt5656ds2z",
+   "wakiUrl": "https://bsky.app/profile/did:plc:is3jbjcva34vrh5odjrfv7mg/post/3mro7qj4wqk2p"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7032967032967034,
+   "hokku": [
+    "Fetterman Hits Back",
+    "After Progressive Senate",
+    "Candidate Threatens"
+   ],
+   "waki": [
+    "I'm sure once he gets away",
+    "from his bridge he'll have real stern"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:4m2mvqumu72dar3pcm2tpebi/post/3mrnt5656ds2z",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ywjgmtg6vh5aayl3yskl26ef/post/3mrnv4uvu5k2x"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7032967032967034,
+   "hokku": [
+    "Fetterman Hits Back",
+    "After Progressive Senate",
+    "Candidate Threatens"
+   ],
+   "waki": [
+    "question pictured here, pointing",
+    "at the villagers chasing"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:4m2mvqumu72dar3pcm2tpebi/post/3mrnt5656ds2z",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ov5q466crkm5tmjpkkxfihwm/post/3mrntj6fu5c2k"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7032967032967034,
+   "hokku": [
+    "Fetterman Hits Back",
+    "After Progressive Senate",
+    "Candidate Threatens"
+   ],
+   "waki": [
+    "Ogre pictured here pointing",
+    "at the villagers chasing"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:4m2mvqumu72dar3pcm2tpebi/post/3mrnt5656ds2z",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ov5q466crkm5tmjpkkxfihwm/post/3mrntbycm4k2e"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.7023809523809523,
+   "hokku": [
+    "i got mad about",
+    "being back to work like 6",
+    "minutes into work"
+   ],
+   "waki": [
+    "its the awful hole they put",
+    "girls into and then shovel"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:3b4vju4hf44pz5w52sfxqkf7/post/3mrpiiq432c2p",
+   "wakiUrl": "https://bsky.app/profile/did:plc:6mtfzoohfxh5hy22eu6b4fr7/post/3mrpjeqjinc2o"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6987951807228916,
+   "hokku": [
+    "Follow-up question",
+    "which would you rather see trapped",
+    "in an exploding"
+   ],
+   "waki": [
+    "plus Andre would know which wine",
+    "to pair with an exploding"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:2mvegtjtk2f7bx7o6mn7v23l/post/3mrnjgrl5o226",
+   "wakiUrl": "https://bsky.app/profile/did:plc:efq5xet5m7wx6ctx5ruyuyro/post/3mrnp7dftv22o"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6973684210526315,
+   "hokku": [
+    "Bear makes sure her cubs",
+    "safe then let’s another bear",
+    "know to stay away"
+   ],
+   "waki": [
+    "has at least 70pounds",
+    "on her, not counting his height"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:3zfcjrvskqxjksbcfapyefyb/post/3mrnz6wysl22b",
+   "wakiUrl": "https://bsky.app/profile/did:plc:lwo4yvmq4gehporiuop4phhj/post/3mro77kr6xc2j"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.696969696969697,
+   "hokku": [
+    "killed his wife, six kids",
+    "before taking his own life",
+    "in west Michigan"
+   ],
+   "waki": [
+    "Surely you guys know what you're",
+    "doing with these images"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:45vdy7ylz5mn3xjepjpr42t7/post/3mrncfkzvl22w",
+   "wakiUrl": "https://bsky.app/profile/did:plc:p7ritecxh3lm7q3msh6zb7hf/post/3mrno2osslc2p"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.696969696969697,
+   "hokku": [
+    "killed his wife, six kids",
+    "before taking his own life",
+    "in west Michigan"
+   ],
+   "waki": [
+    "I don't think I've ever liked",
+    "so many jet ski photos"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:45vdy7ylz5mn3xjepjpr42t7/post/3mrncfkzvl22w",
+   "wakiUrl": "https://bsky.app/profile/did:plc:nrsbipantscjiczj7eyjomi6/post/3mrnnnkcous2k"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6956521739130435,
+   "hokku": [
+    "without checking, then",
+    "the responsibility",
+    "falls on his shoulders"
+   ],
+   "waki": [
+    "looking for ANY reason",
+    "to neg on him holy shit"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:2bf5dcld7re5jwraxeik6p72/post/3mrngdicahk2t",
+   "wakiUrl": "https://bsky.app/profile/did:plc:yw7f4vnmcli7l5m2jhtrs7y5/post/3mrooacfjq223"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6956521739130435,
+   "hokku": [
+    "still think Long Face slaps",
+    "I don't care what anyone",
+    "says (in-universe"
+   ],
+   "waki": [
+    "like it, but I love the bit",
+    "of it being terrible"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ufqrlzaq2pboouj7jb7l223i/post/3mrnox3f4j22h",
+   "wakiUrl": "https://bsky.app/profile/did:plc:azacjvv2oltrbcenzabieqp5/post/3mrnp4epl522p"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6944444444444444,
+   "hokku": [
+    "I like when a band’s",
+    "snare sounds like they’re just punching",
+    "a metal barrel"
+   ],
+   "waki": [
+    "Agent Orange used a trash",
+    "can cover for percussion"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:6oybzmww5vixruvtkfj336w7/post/3mrnvhscobs2k",
+   "wakiUrl": "https://bsky.app/profile/did:plc:7epuxuhdjvm6mtagoqs4tiex/post/3mrnztfj6cc2y"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6941176470588235,
+   "hokku": [
+    "on state voter rolls",
+    "seen as unlikely to boost",
+    "SAVE America"
+   ],
+   "waki": [
+    "the Trump administration",
+    "propaganda anymore"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:zjywsdqkpebxem6mzg7povcd/post/3mrpyupkrni25",
+   "wakiUrl": "https://bsky.app/profile/did:plc:wgcex3fkvjuyd3233uav7yk5/post/3mrpzr3j4ac25"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6941176470588235,
+   "hokku": [
+    "stop denigrating",
+    "who we were and recognize",
+    "who we are today"
+   ],
+   "waki": [
+    "is corrupt governor stitt",
+    "from Oklahoma doing"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:khkaorxvl6o5xvmzmuxn2rl5/post/3mro2bhzbq22y",
+   "wakiUrl": "https://bsky.app/profile/did:plc:q7bryrtbegpxw6ylranxjr7i/post/3mrpdg6i36k2r"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6933333333333334,
+   "hokku": [
+    "a podcast today",
+    "about when I got over",
+    "being a purist"
+   ],
+   "waki": [
+    "When one is supposed to get",
+    "over being a purist"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:kajj2mf4wdcfj745lm3edxse/post/3mrp7wzv3z22j",
+   "wakiUrl": "https://bsky.app/profile/did:plc:xm4enmnxqdzvd3mmefpy6rmn/post/3mrp7zyrj2c2g"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6923076923076923,
+   "hokku": [
+    "updated the rules",
+    "a while ago -- pop into",
+    "the original"
+   ],
+   "waki": [
+    "Yeah they still exclude most queer",
+    "men they changed very little"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:vrbb2ohmlo7peozxo2sepsa6/post/3mrpy35thhk2x",
+   "wakiUrl": "https://bsky.app/profile/did:plc:2jrxu6a7kqr34kbzucy7klb4/post/3mrpybfvyd226"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6914893617021277,
+   "hokku": [
+    "does care though, he cares",
+    "about doing everything",
+    "possible to get"
+   ],
+   "waki": [
+    "doesn’t care if people die",
+    "because his goal is ethnic"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:n5fpnaays5nc4svmkhew5hmc/post/3mrpoofwjjs2d",
+   "wakiUrl": "https://bsky.app/profile/did:plc:3a5ph4is4fipphnzxpnr5jh4/post/3mrpy7ddaq226"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.691358024691358,
+   "hokku": [
+    "and strength to Carly",
+    "Simon as she navigates",
+    "these health challenges"
+   ],
+   "waki": [
+    "love and healing ❤️‍🩹 energy",
+    "to this musical 🎶 goddess"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:646ka4ydg2msrynu7w6rbtju/post/3mrncexiqos2m",
+   "wakiUrl": "https://bsky.app/profile/did:plc:otpebx4u6w6rv5rdwa6fu5ai/post/3mroncpbch22b"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.691358024691358,
+   "hokku": [
+    "so sick and tired",
+    "of this abhorrent lying",
+    "administration"
+   ],
+   "waki": [
+    "But they’re too incompetent",
+    "to hide their incompetence"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:t4q27bc5gswob4zskgcqi4b6/post/3mrl5lbuk522r",
+   "wakiUrl": "https://bsky.app/profile/did:plc:6c3ppvprzmlwhbiw6emdkq37/post/3mrnq7ucnps2z"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6911764705882353,
+   "hokku": [
+    "know that Dakota",
+    "Johnson gives any film more",
+    "than 40 minutes"
+   ],
+   "waki": [
+    "I think I must enjoy more",
+    "Dakota Johnson movies"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:4mj6m3bakcz37zfeb2vfg446/post/3mrnmgm3cas2y",
+   "wakiUrl": "https://bsky.app/profile/did:plc:a5bfs3hwb35ipz3nckorox76/post/3mrnnzdkaw22l"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6896551724137931,
+   "hokku": [
+    "but multiple times",
+    "until you're a big wet mess",
+    "that can't move after"
+   ],
+   "waki": [
+    "The forbidden and secret",
+    "fourth technique, never thought I’d"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:nkiujbtbjxvmqdcyvarqzaly/post/3mrnp6fmg4k27",
+   "wakiUrl": "https://bsky.app/profile/did:plc:mdbjo6ptbwkbopefodc5xmun/post/3mrnpbvlgek2b"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6891891891891891,
+   "hokku": [
+    "looks great presented",
+    "as a series too after",
+    "seeing them piecemeal"
+   ],
+   "waki": [
+    "to the series but I need",
+    "to finish some commissions"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:geyoxfw47pnhaqjgizsra4uo/post/3mro4a6ufhc26",
+   "wakiUrl": "https://bsky.app/profile/did:plc:dmr52m33hea3yo7mgqmkxhog/post/3mrpkgphvqs2f"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6881720430107527,
+   "hokku": [
+    "Well at least I got",
+    "to spend vacation doing",
+    "something productive"
+   ],
+   "waki": [
+    "ofc y'know me, can't",
+    "help but lookin' at the feet"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:5astwzhhfgc5kow5hmmzt5ey/post/3mrnfbukpq22l",
+   "wakiUrl": "https://bsky.app/profile/did:plc:oevfzexs4kzkcaajrxlvh6py/post/3mrnmold2g22p"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6875,
+   "hokku": [
+    "is a guy wearing",
+    "this shirt at day camp dropoff",
+    "and why can’t people"
+   ],
+   "waki": [
+    "hope they all get retraining",
+    "orders against him as soon"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:zfrlpqonbijcl6hnk6zj3r26/post/3mrpoqfzoas2x",
+   "wakiUrl": "https://bsky.app/profile/did:plc:bqslpcvatosdm7cstgyi7jt6/post/3mrpovqrh3222"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6875,
+   "hokku": [
+    "God finding a place",
+    "to live in this day and age",
+    "is so exhausting"
+   ],
+   "waki": [
+    "A society in which",
+    "humans can barely survive"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:tide4px5jeiybhpfdmj5kam6/post/3mrnxqviw7s2b",
+   "wakiUrl": "https://bsky.app/profile/did:plc:gtfuxxao2is5jfaavfw5dys4/post/3mrnxuhhuek2k"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6865671641791045,
+   "hokku": [
+    "wanna help i just",
+    "think i need some platonic",
+    "tongue being shoved down"
+   ],
+   "waki": [
+    "it have to be platonic",
+    "or can i have blatantly"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:k4o6psq5gnzgoglfs75ik4ws/post/3mro5rhi5is23",
+   "wakiUrl": "https://bsky.app/profile/did:plc:4xidio5yuuey35tkr3asncde/post/3mro5ubvblc24"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6857142857142857,
+   "hokku": [
+    "Weekly Connections",
+    "Part 2, July 20th",
+    "July 26th"
+   ],
+   "waki": [
+    "Thank you Donald 😊 I always",
+    "appreciate being im"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:yyh4jvem6rx4kwsqxdmh3kow/post/3mrnktxcmdc2i",
+   "wakiUrl": "https://bsky.app/profile/did:plc:2ahvfuud2mbarwgkz4nsnhj3/post/3mrpndwm4dn2p"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6835443037974683,
+   "hokku": [
+    "Need to figure out",
+    "how to get my production",
+    "up to this level"
+   ],
+   "waki": [
+    "you think I'm gonna let one",
+    "drop go to a shirt instead"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:lppz47m46dbhi3nhp4kqy2yd/post/3mrojfqzuyk2y",
+   "wakiUrl": "https://bsky.app/profile/did:plc:2kmcmcocqjsi4zhsqjjsldtz/post/3mroswbzfas2c"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6825396825396826,
+   "hokku": [
+    "to have a *very",
+    "high IQ to understand",
+    "Christopher Nolan"
+   ],
+   "waki": [
+    "gave me 100 million",
+    "dollars to make a movie"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:hx6zvh55i3656dkhifzyrwzg/post/3mroihz2zhs2e",
+   "wakiUrl": "https://bsky.app/profile/did:plc:yygc4sv5vylwmigcx2ader6y/post/3mroljwhp4s2w"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6818181818181818,
+   "hokku": [
+    "blatant defiance",
+    "of physics, he rolls a dice",
+    "that only has 1"
+   ],
+   "waki": [
+    "So dense i bet he could give",
+    "Lead a run for its money"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:m6bp6xupmvs4rrfw3tx3z5dd/post/3mrp23qdz422l",
+   "wakiUrl": "https://bsky.app/profile/did:plc:sngyscwaaosa6zcq5ane4gao/post/3mrp2gcykn22w"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6813186813186813,
+   "hokku": [
+    "lot of Doritos",
+    "and now I want Doritos",
+    "BB28"
+   ],
+   "waki": [
+    "something they’re eating until",
+    "this very cottage cheese filled"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:lqwoq5uc7l7mynm6mbh2ykqw/post/3mrot7hfpz224",
+   "wakiUrl": "https://bsky.app/profile/did:plc:tri2tjwnhayxgginwuca2tgr/post/3mrotbemmlc2r"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6785714285714286,
+   "hokku": [
+    "a very Southeast",
+    "Asian/Singaporean",
+    "thing to have hot soup"
+   ],
+   "waki": [
+    "Other end of the vector",
+    "from the Midwestern craving"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:7kjc7zzv54jl6yxuyjkpdvbx/post/3mrolpbu62k2s",
+   "wakiUrl": "https://bsky.app/profile/did:plc:nmvatxh4p3d4azda32sbhze6/post/3mrom4ycxfs2i"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6785714285714286,
+   "hokku": [
+    "killed his wife, six kids",
+    "before taking his own life",
+    "in west Michigan"
+   ],
+   "waki": [
+    "I think it's odd that Detroit",
+    "channel 4 used the same pic"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:45vdy7ylz5mn3xjepjpr42t7/post/3mrncfkzvl22w",
+   "wakiUrl": "https://bsky.app/profile/did:plc:n3ig6ftjusqiqbaw3nyxn6ov/post/3mrnt5q7sm22y"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6777777777777778,
+   "hokku": [
+    "even mentioning",
+    "Gem, 3 Vestal, 45",
+    "Small Mottled Willow"
+   ],
+   "waki": [
+    "Seems like a fresh wave of home",
+    "grown goodies will be hitting"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:xxnls4uj7rmgz63w5gdmtqax/post/3mrpffabnqk2x",
+   "wakiUrl": "https://bsky.app/profile/did:plc:yvl4ezvnxs4kvg4qr4lchogc/post/3mrpgulkeg226"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6777777777777778,
+   "hokku": [
+    "Dirty Diesel: How",
+    "Swiss Traders Flood Africa",
+    "with Toxic Fuels"
+   ],
+   "waki": [
+    "swiss traders are poisoning",
+    "africa's air one tanker"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:lb7v3uq23wmm5spv2a27kehv/post/3mrnpvgm42a2f",
+   "wakiUrl": "https://bsky.app/profile/did:plc:yi75tgilvcbpesdvtxrxcb7m/post/3mrnpxgfgj324"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6770833333333334,
+   "hokku": [
+    "Well the shelter just",
+    "gave him to me so I guess",
+    "he’s been adopted"
+   ],
+   "waki": [
+    "know you'll give that sweet baby",
+    "a safe, comfortable home"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:qdcrtszsols5wmoyzdfxusrt/post/3mrnt32e3ts2s",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ljpy2fbxwlsagmhogo7dukhq/post/3mro7r2jr4225"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6770833333333334,
+   "hokku": [
+    "Well the shelter just",
+    "gave him to me so I guess",
+    "he’s been adopted"
+   ],
+   "waki": [
+    "Better give him lots of ❤️🥰🤗💋 He'll",
+    "give you plenty in response"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:qdcrtszsols5wmoyzdfxusrt/post/3mrnt32e3ts2s",
+   "wakiUrl": "https://bsky.app/profile/did:plc:wf33aa64bnvlgewmdmbxdpjn/post/3mro3q4ewfc23"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6764705882352942,
+   "hokku": [
+    "your press the burger",
+    "patty really flat while it's",
+    "cooking to it gets"
+   ],
+   "waki": [
+    "Huh, I genuinely just",
+    "never heard the term before"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:clkpx4w2rw6duitumlvjprh4/post/3mrnnhjd3qc2r",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ynxacr57at5ijmdjf2nal2zr/post/3mrnnjxsd4c2q"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6759259259259259,
+   "hokku": [
+    "first sip of coffee",
+    "in the morning is 💯 the best",
+    "feeling in the world"
+   ],
+   "waki": [
+    "My day isn’t considered",
+    "started until that moment"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:scjb3scmo2redibtntz26heg/post/3mrowdwadcs2s",
+   "wakiUrl": "https://bsky.app/profile/did:plc:cxiwjwu3lvmkpadvajuh7bsn/post/3mrpzsyn6xk2a"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6756756756756757,
+   "hokku": [
+    "According to Dan",
+    "no other team should bother",
+    "to show up against"
+   ],
+   "waki": [
+    "They’re making an argument",
+    "to not pay sports media"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:unoeut23mw5yqhuugxo6pvo7/post/3mrofqvxhjc2b",
+   "wakiUrl": "https://bsky.app/profile/did:plc:bio22r4fn7rn5avmlfyf4ykg/post/3mroj2qlkqk2c"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6753246753246753,
+   "hokku": [
+    "to tell whether Trump’s",
+    "repeated use of tariffs",
+    "is a fixation"
+   ],
+   "waki": [
+    "And all the more ironic",
+    "for the fact that he clearly"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:agxhun7wf2fm3fdfj6zrm33y/post/3mrozccum2r2o",
+   "wakiUrl": "https://bsky.app/profile/did:plc:jugpweelmjroxgypee6czxpr/post/3mrp35mf4uc26"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6746987951807228,
+   "hokku": [
+    "If you don't know how",
+    "to tie a cleat hitch, don't move",
+    "other people's boats"
+   ],
+   "waki": [
+    "a old cannon with a line",
+    "on that line that will convince"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:derghmimmo6xpn7husy4gnzk/post/3mrn3lywdgc25",
+   "wakiUrl": "https://bsky.app/profile/did:plc:34uqzhtfvdbaia7omyijvh35/post/3mrnt4y6kfc2x"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6741573033707865,
+   "hokku": [
+    "Dee agree they need",
+    "to get rid of Mallory",
+    "now to weaken Drew"
+   ],
+   "waki": [
+    "This is gonna change 90",
+    "million times in the next 4"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:3ovfbpy4lnx4i43k4742rxfi/post/3mrnolxvsqk2i",
+   "wakiUrl": "https://bsky.app/profile/did:plc:d6i6i2y6h424z7rpcvaox6vw/post/3mrnooizcfs2e"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6739130434782609,
+   "hokku": [
+    "New York Times wouldn't",
+    "let me write about the Age",
+    "of Diarrhea"
+   ],
+   "waki": [
+    "come we got diarrhea",
+    "lettuce instead of legal"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:2xzjzuyrgz6dmjy2xdhlawgl/post/3mro4lcdfh223",
+   "wakiUrl": "https://bsky.app/profile/did:plc:yiefig7fzrxhhii3fv44pjdd/post/3mroc7s6hbc2g"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6712328767123288,
+   "hokku": [
+    "cap and limited",
+    "ability to trade draft",
+    "picks makes me think no"
+   ],
+   "waki": [
+    "I agree also a lot",
+    "of the names most talked about"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:tfd6vbuadjfcugbpeltqsphc/post/3mrnzexgihs25",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ue3m5rjj37g6tgajxus5xoyh/post/3mrnzkh6uws26"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6712328767123288,
+   "hokku": [
+    "I have acquired",
+    "1000 pairs of Freddy’s",
+    "Dead 3D glasses"
+   ],
+   "waki": [
+    "will be the new currency",
+    "once the apocalypse hits"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:6fuado43jiu73mwkxsc3qoyh/post/3mrnxtwbh3k25",
+   "wakiUrl": "https://bsky.app/profile/did:plc:a7zvzcmpk4um5wrlg2vleeis/post/3mrny7xpsck2g"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6708860759493671,
+   "hokku": [
+    "Cruz Montana (Mike",
+    "Santana) Says His New Ring",
+    "Name Is A Tribute"
+   ],
+   "waki": [
+    "But why did he never want",
+    "to honour his late father's"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:d5o7dlhk2qmb2ilajs5opibx/post/3mrnxmmlgfm2m",
+   "wakiUrl": "https://bsky.app/profile/did:plc:cjvykxqkqkpq7vlktsedib6e/post/3mrnz2d4tps2s"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6707317073170732,
+   "hokku": [
+    "mean, I think shopping",
+    "for school supplies is a year",
+    "round activity"
+   ],
+   "waki": [
+    "love shopping for them as long",
+    "as it’s not specifically"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:sqscqusgsn3wxg26jjtjzjhq/post/3mrpwutkjis2m",
+   "wakiUrl": "https://bsky.app/profile/did:plc:jzjxjttyb2v4xtoft56uueks/post/3mrpwyzozu22p"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6707317073170732,
+   "hokku": [
+    "seeing people gas",
+    "up the Emily Wilson",
+    "review, it’s very"
+   ],
+   "waki": [
+    "never heard of her so I'm",
+    "confused altogether lol"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:ygnmmrekxuh2asppdi4agemz/post/3mrpqlnx44s2h",
+   "wakiUrl": "https://bsky.app/profile/did:plc:2lobi7ndpx65s6n45kfmloun/post/3mrpuwnxqlk2v"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6666666666666666,
+   "hokku": [
+    "when Biden and Trump",
+    "are both dead I hope they get",
+    "buried together"
+   ],
+   "waki": [
+    "w their favourite",
+    "anime body cushion"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:xdhgdu46zn2rzppbl55toqa3/post/3mrpvvxctik22",
+   "wakiUrl": "https://bsky.app/profile/did:plc:2bxfqrquzicluosmz24ctjgs/post/3mrpw5wjiis2l"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6666666666666666,
+   "hokku": [
+    "so sick and tired",
+    "of this abhorrent lying",
+    "administration"
+   ],
+   "waki": [
+    "But they’re too incompetent",
+    "to hide their incompetence"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:t4q27bc5gswob4zskgcqi4b6/post/3mrl5lbuk522r",
+   "wakiUrl": "https://bsky.app/profile/did:plc:6c3ppvprzmlwhbiw6emdkq37/post/3mrnqb2y2fk2z"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6666666666666666,
+   "hokku": [
+    "Thought for sure Uncle",
+    "Pen would have gotten a spin",
+    "going on 10 years"
+   ],
+   "waki": [
+    "he’d pop up on 94",
+    "night but I guess he could show"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:lqanhftsrp5dqwaivexrskwj/post/3mrnnmss3uk2j",
+   "wakiUrl": "https://bsky.app/profile/did:plc:spzwkcbjbw5uz3cjivhd2q4p/post/3mrnou5xx6s2a"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6629213483146067,
+   "hokku": [
+    "to be fair, i don’t",
+    "really see her talk about",
+    "it so i legit"
+   ],
+   "waki": [
+    "She talks about software all",
+    "the time what are you talking"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:eob75vcjtmbaef2tn4evc4sl/post/3mrnzmpryrs23",
+   "wakiUrl": "https://bsky.app/profile/did:plc:qy5pluw2bsuq2x6albsgkvx3/post/3mrnzwauysc2x"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6627906976744186,
+   "hokku": [
+    "for sure elements",
+    "of both sentiments playing",
+    "off each each other"
+   ],
+   "waki": [
+    "think ur right they're perfectly",
+    "compatible, it's not one"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:tl6xqs3dk5f6xh6lbysftjow/post/3mrpywf3rf22o",
+   "wakiUrl": "https://bsky.app/profile/did:plc:77mxbvlnk5viaev42txkwpe5/post/3mrpyzgfvq22n"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6617647058823529,
+   "hokku": [
+    "you can go back one",
+    "further and Pfeiffer in Grease",
+    "2 is hard to beat"
+   ],
+   "waki": [
+    "of the hospital before",
+    "I go starting any more"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:svtdjzv6uhmkb34sydbxq2xi/post/3mrpvj7pdvc23",
+   "wakiUrl": "https://bsky.app/profile/did:plc:2lfbhlu2k7viw54qx7sggr6w/post/3mrpvocn6o22l"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.660377358490566,
+   "hokku": [
+    "don't neuter Gorsuch",
+    "and his five christo-fascist",
+    "buddies on the court"
+   ],
+   "waki": [
+    "court is already in Mitch",
+    "McConnell territory"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:kycibja4oi773iabf7zsbz74/post/3mrpxzymk3k2n",
+   "wakiUrl": "https://bsky.app/profile/did:plc:d6ehsajlj6b7i34dnkv6aoiu/post/3mrpzlxml222p"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6588235294117647,
+   "hokku": [
+    "I have been making",
+    "the wrong IKEA menu",
+    "decisions this whole"
+   ],
+   "waki": [
+    "wanted to do this last time",
+    "we were there but the bistro"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:vjbujnluxcb6f4kagmml5uul/post/3mroasthzrk2z",
+   "wakiUrl": "https://bsky.app/profile/did:plc:zhlot7ol7k6mccru4kzvr5xi/post/3mroon7v2vs2t"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6585365853658537,
+   "hokku": [
+    "Born to think about",
+    "Duel Monsters, forced to work",
+    "in Microsoft Apps"
+   ],
+   "waki": [
+    "just wanna play children’s card",
+    "games on my motorcycle"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:uco36m4mu3zkxy65gre55ozt/post/3mrngxssz6k2t",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ka4bw3v5puopwtv3lu4m53wu/post/3mrnle3k4e225"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.65625,
+   "hokku": [
+    "stuff like the shitty",
+    "Tesco ads, the Superman",
+    "comic he co-wrote"
+   ],
+   "waki": [
+    "starred in a series of South",
+    "African kids comedies"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:2tjsq6a4vn6pww2iva5qj23v/post/3mrp4gati2223",
+   "wakiUrl": "https://bsky.app/profile/did:plc:eoxcthogj2fhzvhuo3prsau5/post/3mrpau7rdvs2k"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.65625,
+   "hokku": [
+    "robbie is the most",
+    "LA character of all time",
+    "because he is bound"
+   ],
+   "waki": [
+    "this is one of those posts i'll",
+    "remember out of nowhere"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:65mxwwok5avnmk2ip73vj3x2/post/3mrnqiusvec2o",
+   "wakiUrl": "https://bsky.app/profile/did:plc:bltugfdbw7v7mymitjcn7xi7/post/3mrnr3hfhx22e"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6545454545454545,
+   "hokku": [
+    "Florida man pissed",
+    "that AT&T trucks are working",
+    "outside his house shoots"
+   ],
+   "waki": [
+    "But he will vote for people",
+    "who want to put up data"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:udnac33pmf2iwcblpeai5a5p/post/3mroh6xprfk24",
+   "wakiUrl": "https://bsky.app/profile/did:plc:nrxmomzg3tf3nakroiohcywb/post/3mrokkcwzbk2l"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6545454545454545,
+   "hokku": [
+    "Florida man pissed",
+    "that AT&T trucks are working",
+    "outside his house shoots"
+   ],
+   "waki": [
+    "a more recent Florida",
+    "Man who maybe also hates"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:udnac33pmf2iwcblpeai5a5p/post/3mroh6xprfk24",
+   "wakiUrl": "https://bsky.app/profile/did:plc:qfztryd2u7bnf6wqrgmoypul/post/3mroidylvsk2e"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6545454545454545,
+   "hokku": [
+    "Florida man pissed",
+    "that AT&T trucks are working",
+    "outside his house shoots"
+   ],
+   "waki": [
+    "Like they are going to go",
+    "anywhere with flat tires"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:udnac33pmf2iwcblpeai5a5p/post/3mroh6xprfk24",
+   "wakiUrl": "https://bsky.app/profile/did:plc:ahoqm47zsomr24mwijurf7cg/post/3mrohdha6gk2u"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6534653465346535,
+   "hokku": [
+    "This disgusting bitch",
+    "is a horrible person",
+    "for young girls to look"
+   ],
+   "waki": [
+    "I suppose she can beat Bitch",
+    "MacConnell one on one too"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:56e7yw4nkilbpsc5dzhq4xdf/post/3mrpprojuws2m",
+   "wakiUrl": "https://bsky.app/profile/did:plc:opmmrofze6zlelulh6hgmgzc/post/3mrpvr3gkik2r"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6534653465346535,
+   "hokku": [
+    "This disgusting bitch",
+    "is a horrible person",
+    "for young girls to look"
+   ],
+   "waki": [
+    "these special cross necklaces",
+    "worn by these special christians"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:56e7yw4nkilbpsc5dzhq4xdf/post/3mrpprojuws2m",
+   "wakiUrl": "https://bsky.app/profile/did:plc:xjvluqunh7jpnmrnqgvw3o7z/post/3mrpqwlyz2s2m"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6526315789473685,
+   "hokku": [
+    "I ever wind up",
+    "on a plane with someone like",
+    "this I will Jewish"
+   ],
+   "waki": [
+    "I'd turn the volume to max",
+    "and hit play on this banger"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:qbvmzulle4ytussf2qpzoqqd/post/3mrptahdsok2o",
+   "wakiUrl": "https://bsky.app/profile/did:plc:2grdgthmlfor3agrnecjug47/post/3mrptkmeuo22o"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6515151515151515,
+   "hokku": [
+    "never had the good",
+    "luck to have a Chilean",
+    "hot dog but I hope"
+   ],
+   "waki": [
+    "a missed opportunity",
+    "to not call it a Chile"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:2xmyrlbajfevm6xebndvbyu4/post/3mroplrwaoc2x",
+   "wakiUrl": "https://bsky.app/profile/did:plc:oqhp3p33szfg5qcaw3g6bnoj/post/3mropzm4szs2q"
+  },
+  {
+   "kind": "cross",
+   "coverage": 0.6515151515151515,
+   "hokku": [
+    "Yes, provided I'd",
+    "either been kicked in the head",
+    "by a horse or kicked"
+   ],
+   "waki": [
+    "Or, ex-money, as many",
+    "of its early-adopters"
+   ],
+   "hokkuUrl": "https://bsky.app/profile/did:plc:4zktrqy3fmfbggum2t7bqmou/post/3mrnx4pv3xk2u",
+   "wakiUrl": "https://bsky.app/profile/did:plc:3udj6t5t4wfkwun542wxy4yn/post/3mrnxbsu5dt2m"
+  }
+ ]
+}
