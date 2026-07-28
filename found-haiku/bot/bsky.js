@@ -94,6 +94,11 @@ async function pds(path, { method = 'GET', body, jwt, params } = {}) {
   });
   const data = await res.json().catch(() => ({}));
   if (!res.ok) {
+    // an expired or rejected token must never outlive the failure it caused:
+    // drop the cached session so the next call logs in fresh
+    if (res.status === 401 || data.error === 'ExpiredToken' || /expired/i.test(data.message || '')) {
+      session = null;
+    }
     const err = new Error(data.message || `${path} failed (${res.status})`);
     err.status = res.status;
     throw err;
