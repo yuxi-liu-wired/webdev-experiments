@@ -85,12 +85,16 @@ const p2 = await post(
 rare finds carry badges (iambic, rhymed, kigo, 山脈…) and a shininess measured against millions of real posts.`,
   { root: ref1, parent: ref1 });
 
+const p3 = await post(
+`renga @a @b — linked verse: you open with a found 5-7-5, each guest answers with an alternating found 7-7 or 5-7-5 from their own posts, one attributed stanza per voice, up to four guests, posted as a thread. a renga needs every voice.`,
+  { root: ref1, parent: { uri: p2.uri, cid: p2.cid } });
+
 await post(
 `try the engine on any text — paste prose, or mine a bluesky account, ranked shiniest first:
 found-haiku.netlify.app
 
 errors get exact replies. if I say your format is not allowed, this thread is the manual.`,
-  { root: ref1, parent: { uri: p2.uri, cid: p2.cid } });
+  { root: ref1, parent: { uri: p3.uri, cid: p3.cid } });
 
 // pin the thread root
 const prof = await fetch(`${PDS}/xrpc/com.atproto.repo.getRecord?repo=${s.did}&collection=app.bsky.actor.profile&rkey=self`,
@@ -104,13 +108,26 @@ await xrpc('com.atproto.repo.putRecord', {
 });
 console.log('thread posted, root pinned');
 
-// remove the stub it replaces
+// remove the thread it replaces: the old root and every bot reply under it
 const old = process.env.OLD_PINNED_RKEY;
 if (old) {
-  await xrpc('com.atproto.repo.deleteRecord', {
-    repo: s.did, collection: 'app.bsky.feed.post', rkey: old,
-  });
-  console.log(`old stub ${old} deleted`);
+  const oldUri = `at://${s.did}/app.bsky.feed.post/${old}`;
+  const t = await fetch(`https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread?uri=${encodeURIComponent(oldUri)}&depth=6`)
+    .then((r) => r.json()).catch(() => null);
+  const rkeys = [old];
+  const walk = (node) => {
+    for (const rep of node?.replies || []) {
+      if (rep?.post?.author?.did === s.did) rkeys.push(rep.post.uri.split('/').pop());
+      walk(rep);
+    }
+  };
+  walk(t?.thread);
+  for (const rkey of rkeys) {
+    await xrpc('com.atproto.repo.deleteRecord', {
+      repo: s.did, collection: 'app.bsky.feed.post', rkey,
+    });
+  }
+  console.log(`old thread deleted (${rkeys.length} posts)`);
 }
 
 console.log(`\nBOT_PINNED_URL=https://bsky.app/profile/${s.handle}/post/${p1.uri.split('/').pop()}`);
