@@ -1,3 +1,20 @@
+2026-07-29 - the exploration: sedoka, dokugin, and the strangers' ryogin
+
+The deep dig over 13.6M posts and 36 hours of reply joins. The 3x3 matrix
+filled in: 6,287 cross-author sedoka — and the best of them are genuinely
+mondoka, question-katauta answered by question-katauta, the classical
+dialogue form rediscovering its habitat in reply pairs. Poetic reply-trees
+reach depth 12; the longest any-poetic chain is 23 posts. Wakiku latency:
+median 42 minutes. One account sits in 929 cross-author pairs.
+
+Two crowns, each a named classical practice arrived at by accident. The
+longest alternating chain of one voice is an eleven-stanza dokugin: an
+academic thread about comics studies whose every post scans 5-7-5 or 7-7 in
+strict alternation. And the longest with alternating voices — renga's own
+seating rule — is a seven-stanza ryogin by two strangers arguing about book
+piracy and fair pay for creative work: a linked poem about the value of art,
+composed unknowingly, for free. The corpus's sense of irony outruns ours.
+
 2026-07-28 - the network has been writing renga all along
 
 The miner ran over 9,994,756 posts, 1,486,035 of them with reply parents

@@ -142,29 +142,44 @@ function dfsAny(id, path) {
 }
 for (const r of roots) dfsAny(r, [r]);
 
-// longest renga-true chain: shapes strictly alternate 575 / 77, either phase
+// longest renga-true chain: shapes strictly alternate 575 / 77, either phase.
+// Two crowns: any authorship (a solo run is a dokugin — one poet, all
+// stanzas, a real classical practice), and the strangers' version where
+// adjacent stanzas must change voice, renga's own seating rule.
 let longestTrue = [];
-function dfsTrue(id, want, path) {
+let longestCross = [];
+function dfsTrue(id, want, path, lastDid, crossOnly) {
   const node = poetic.get(id);
-  if (!node[`s${want}`]) {
-    if (path.length > longestTrue.length) longestTrue = [...path];
+  const best = crossOnly ? longestCross : longestTrue;
+  if (!node[`s${want}`] || (crossOnly && node.did === lastDid)) {
+    if (path.length > best.length) {
+      if (crossOnly) longestCross = [...path]; else longestTrue = [...path];
+    }
     return;
   }
   const newPath = [...path, { id, shape: want }];
   const next = children.get(id) || [];
-  if (!next.length) {
-    if (newPath.length > longestTrue.length) longestTrue = newPath;
-    return;
-  }
   const other = want === '575' ? '77' : '575';
   let extended = false;
   for (const c of next) {
-    if (poetic.get(c)[`s${other}`]) { dfsTrue(c, other, newPath); extended = true; }
+    const child = poetic.get(c);
+    if (child[`s${other}`] && (!crossOnly || child.did !== node.did)) {
+      dfsTrue(c, other, newPath, node.did, crossOnly);
+      extended = true;
+    }
   }
-  if (!extended && newPath.length > longestTrue.length) longestTrue = newPath;
+  if (!extended) {
+    const b = crossOnly ? longestCross : longestTrue;
+    if (newPath.length > b.length) {
+      if (crossOnly) longestCross = newPath; else longestTrue = newPath;
+    }
+  }
 }
 for (const r of roots) {
-  for (const phase of ['575', '77']) dfsTrue(r, phase, []);
+  for (const phase of ['575', '77']) {
+    dfsTrue(r, phase, [], null, false);
+    dfsTrue(r, phase, [], null, true);
+  }
 }
 
 const lengthHist = {};
@@ -214,6 +229,12 @@ for (const { id, shape } of longestTrue) {
   console.log(`  [${shape}] @${id.split('/')[0].slice(0, 20)}…  ${n[`s${shape}`].lines.join(' / ')}`);
   console.log(`      ${url(id)}`);
 }
+console.log('\nlongest renga-true chain with alternating VOICES (the strangers\u2019 kasen):', longestCross.length, 'stanzas');
+for (const { id, shape } of longestCross) {
+  const n = poetic.get(id);
+  console.log(`  [${shape}] ${n[`s${shape}`].lines.join(' / ')}`);
+  console.log(`      ${url(id)}`);
+}
 console.log('\nlongest any-poetic chain:', longestAny.length, 'posts');
 
 const topHubs = [...hubs.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
@@ -224,6 +245,7 @@ writeFileSync(new URL('../data/renga-explore.json', import.meta.url).pathname, J
   stats, matrix, lengthHist,
   sedoka: sedoka.slice(0, 100), duels: duels.slice(0, 100), tanRenga: tanRenga.slice(0, 100),
   longestTrue: longestTrue.map(({ id, shape }) => ({ id, shape, lines: poetic.get(id)[`s${shape}`].lines })),
+  longestCross: longestCross.map(({ id, shape }) => ({ id, shape, lines: poetic.get(id)[`s${shape}`].lines })),
   latencyQuantiles: latencies.length ? { n: latencies.length } : null,
 }, null, 1));
 console.log('\nwritten: data/renga-explore.json');
