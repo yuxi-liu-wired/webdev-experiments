@@ -120,6 +120,8 @@ export async function pollOnce(env = process.env, log = console.log) {
     lastSeen = mention.indexedAt;
   }
 
-  if (lastSeen) await updateSeen(session, lastSeen);
+  // one millisecond past the last mention: updateSeen's cutoff is exclusive,
+  // and marking seen AT the timestamp leaves that mention unread forever
+  if (lastSeen) await updateSeen(session, new Date(Date.parse(lastSeen) + 1).toISOString());
   return { mentions: mentions.length, answered };
 }
