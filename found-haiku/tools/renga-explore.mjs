@@ -78,6 +78,19 @@ for await (const line of rl) {
 }
 console.log(`\n${stats.scanned.toLocaleString()} posts (${stats.withParent.toLocaleString()} with parent) · ${stats.poetic.toLocaleString()} poetic`);
 
+// Persist the expensive part. Annotating 13M posts costs a quarter hour;
+// every graph question on top of it costs seconds — so the annotation is
+// cached and tools/renga-query.mjs answers follow-ups without re-scanning.
+{
+  const cachePath = '/workspace/firehose-data/stanza-cache.jsonl';
+  const out = [];
+  for (const [id, n] of poetic) {
+    out.push(JSON.stringify({ id, did: n.did, parent: n.parent, t: n.t, s575: n.s575, s77: n.s77, s577: n.s577 }));
+  }
+  writeFileSync(cachePath, out.join('\n') + '\n');
+  console.log(`stanza cache written: ${cachePath} (${out.length.toLocaleString()} nodes)`);
+}
+
 // --- pairs ------------------------------------------------------------------
 const matrix = {};
 const tanRenga = [];
@@ -235,7 +248,13 @@ for (const { id, shape } of longestCross) {
   console.log(`  [${shape}] ${n[`s${shape}`].lines.join(' / ')}`);
   console.log(`      ${url(id)}`);
 }
-console.log('\nlongest any-poetic chain:', longestAny.length, 'posts');
+console.log('\nlongest any-poetic chain:', longestAny.length, 'posts:');
+for (const id of longestAny) {
+  const n = poetic.get(id);
+  const shape = n.s575 ? '575' : n.s77 ? '77' : '577';
+  console.log(`  [${shape}] ${n[`s${shape}`].lines.join(' / ')}`);
+  console.log(`      ${url(id)}`);
+}
 
 const topHubs = [...hubs.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
 console.log('\npoetic hubs (dids in most cross-author pairs):');
@@ -246,6 +265,11 @@ writeFileSync(new URL('../data/renga-explore.json', import.meta.url).pathname, J
   sedoka: sedoka.slice(0, 100), duels: duels.slice(0, 100), tanRenga: tanRenga.slice(0, 100),
   longestTrue: longestTrue.map(({ id, shape }) => ({ id, shape, lines: poetic.get(id)[`s${shape}`].lines })),
   longestCross: longestCross.map(({ id, shape }) => ({ id, shape, lines: poetic.get(id)[`s${shape}`].lines })),
+  longestAny: longestAny.map((id) => {
+    const n = poetic.get(id);
+    const shape = n.s575 ? 's575' : n.s77 ? 's77' : 's577';
+    return { id, shape: shape.slice(1), did: n.did, lines: n[shape].lines };
+  }),
   latencyQuantiles: latencies.length ? { n: latencies.length } : null,
 }, null, 1));
 console.log('\nwritten: data/renga-explore.json');
