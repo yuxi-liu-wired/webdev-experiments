@@ -1,61 +1,61 @@
 {
  "stats": {
-  "scanned": 13272581,
-  "withParent": 3012554,
-  "poetic": 1849595
+  "scanned": 13438688,
+  "withParent": 3099262,
+  "poetic": 1877441
  },
  "matrix": {
   "77>577": {
-   "cross": 18792,
-   "self": 14204
+   "cross": 19398,
+   "self": 14644
   },
   "77>77": {
-   "cross": 62816,
-   "self": 39479
+   "cross": 64844,
+   "self": 40667
   },
   "577>575": {
-   "cross": 7940,
-   "self": 6281
+   "cross": 8236,
+   "self": 6479
   },
   "577>77": {
-   "cross": 20607,
-   "self": 14072
+   "cross": 21310,
+   "self": 14534
   },
   "577>577": {
-   "cross": 6393,
-   "self": 5160
+   "cross": 6604,
+   "self": 5333
   },
   "77>575": {
-   "cross": 23914,
-   "self": 17039
+   "cross": 24739,
+   "self": 17544
   },
   "575>77": {
-   "cross": 26006,
-   "self": 17009
+   "cross": 26885,
+   "self": 17540
   },
   "575>575": {
-   "cross": 9988,
-   "self": 7630
+   "cross": 10335,
+   "self": 7866
   },
   "575>577": {
-   "cross": 7791,
-   "self": 6374
+   "cross": 8046,
+   "self": 6568
   }
  },
  "lengthHist": {
-  "2": 62579,
-  "3": 13489,
-  "4": 3868,
-  "5": 1442,
-  "6": 569,
-  "7": 258,
-  "8": 117,
-  "9": 46,
+  "2": 64441,
+  "3": 13899,
+  "4": 3992,
+  "5": 1502,
+  "6": 593,
+  "7": 262,
+  "8": 120,
+  "9": 47,
   "10": 25,
-  "11": 14,
+  "11": 15,
   "12": 7,
   "13": 6,
-  "14": 2,
+  "14": 3,
   "15": 3,
   "23": 1
  },
@@ -1506,6 +1506,23 @@
    ]
   },
   {
+   "coverage": 0.6915887850467289,
+   "kami": [
+    "reminding my friend",
+    "group of transgender women",
+    "that the author we all know"
+   ],
+   "shimo": [
+    "is always the best",
+    "example of exactly",
+    "what I'm talking about lol"
+   ],
+   "urls": [
+    "https://bsky.app/profile/did:plc:aisnrenzx5mccgxyvcebhs56/post/3mrsl4uaf222l",
+    "https://bsky.app/profile/did:plc:x4kk5vfkkefulsdckbeqqars/post/3mrslav4nm22t"
+   ]
+  },
+  {
    "coverage": 0.6907216494845361,
    "kami": [
     "thing conservatives",
@@ -1742,23 +1759,6 @@
     "https://bsky.app/profile/did:plc:xfwexkluc3smsrylpeoul2fa/post/3mrq3vae2u227",
     "https://bsky.app/profile/did:plc:js3sxkq23c74f2vqn2gbmmer/post/3mrq53365u223"
    ]
-  },
-  {
-   "coverage": 0.6826923076923077,
-   "kami": [
-    "IMPLORE you to post",
-    "a picture from whatever",
-    "device you’re using without"
-   ],
-   "shimo": [
-    "mothership doesn't",
-    "even have hiding rules how",
-    "can it claim to be better"
-   ],
-   "urls": [
-    "https://bsky.app/profile/did:plc:gaetec2oogglqhcfvablvzah/post/3mrq5o6uui223",
-    "https://bsky.app/profile/did:plc:dhrwrm7saf5jfhbrx7pco3pz/post/3mrqa3n7f3223"
-   ]
   }
  ],
  "duels": [
@@ -1811,6 +1811,23 @@
    "urls": [
     "https://bsky.app/profile/did:plc:ncv7tujfmbxyz6mf5gahqqnz/post/3mrqsk3msss2b",
     "https://bsky.app/profile/did:plc:xshcw7ujovq5fpu2zzy2yh7g/post/3mrqss62ug22f"
+   ]
+  },
+  {
+   "coverage": 0.9836065573770492,
+   "a": [
+    "Friendly reminder",
+    "that Rand Paul doesn’t believe",
+    "in evolution"
+   ],
+   "b": [
+    "If we all agree",
+    "to not believe in Rand Paul",
+    "will he go away"
+   ],
+   "urls": [
+    "https://bsky.app/profile/did:plc:qbvmzulle4ytussf2qpzoqqd/post/3mrskt2k2i224",
+    "https://bsky.app/profile/did:plc:ei6g6ipiqtnifihr5ksb5wn6/post/3mrslsde4hk2i"
    ]
   },
   {
@@ -3443,23 +3460,6 @@
    "urls": [
     "https://bsky.app/profile/did:plc:63vo5ntz43xswld4gsbz3m3d/post/3mrrvfljodc2t",
     "https://bsky.app/profile/did:plc:kyokzynodapzgnu3wc6zrefk/post/3mrrvilekxc2v"
-   ]
-  },
-  {
-   "coverage": 0.73,
-   "a": [
-    "Rosie O’Donnell’s",
-    "week-long role as fill-in host",
-    "may lead to something"
-   ],
-   "b": [
-    "Rosie O’Donnell",
-    "is awesome; she speaks her truth",
-    "and says what she thinks"
-   ],
-   "urls": [
-    "https://bsky.app/profile/did:plc:xzlvsk4ty7ecwigbjpxah6yb/post/3mroaq46s3p2z",
-    "https://bsky.app/profile/did:plc:lyi4jetsyonkh6annbutok67/post/3mrobkitfys2h"
    ]
   }
  ],
@@ -5221,7 +5221,226 @@
    ]
   }
  ],
+ "longestAny": [
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdd7gbc24",
+   "shape": "77",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "two accomplices entered",
+    "a home, tied up 8 people"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqddy3dc24",
+   "shape": "575",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "21-yr-old",
+    "man shot and killed his parents",
+    "and older brother"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqden2a224",
+   "shape": "77",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "a 29-yr-old man",
+    "shot and killed 3 people near"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdfao5s24",
+   "shape": "77",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "boyfriend, & her boyfriend’s mother",
+    "during a child custody"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdfvrws24",
+   "shape": "575",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "2025",
+    "a 51-yr-old man",
+    "shot and killed his 2"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdgltyk24",
+   "shape": "575",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "52-yr-old",
+    "man shot and killed his ex-wife",
+    "and 14-yr-old"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdh7dzc24",
+   "shape": "77",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "58-yr-old man shot",
+    "8 people, 2 fatally"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdhtkis24",
+   "shape": "77",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "home; 1 juvenile and 1",
+    "adult woman died (Macon"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdih7fs24",
+   "shape": "575",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "2024",
+    "a 53-yr-old man",
+    "shot and killed his son"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdjc4qc24",
+   "shape": "575",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "2024",
+    "a 53-yr-old man",
+    "shot and killed his wife"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdjueps24",
+   "shape": "77",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "43-yr-old woman",
+    "shot and killed her 5-yr-old"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdkfuc224",
+   "shape": "575",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "2022",
+    "a 61-yr-old man",
+    "shot and killed his wife’s"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdkyhyk24",
+   "shape": "575",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "a man shot and killed",
+    "his girlfriend, then fatally",
+    "shot himself (Dallas"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdlsouc24",
+   "shape": "77",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "a 26-yr-old man",
+    "shot and killed his girlfriend, shot"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdmik3c24",
+   "shape": "77",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "a 40-yr-old man shot",
+    "and killed his wife at home, then"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdnba4k24",
+   "shape": "77",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "a 65-yr-old man",
+    "shot and killed his wife at home"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdnsbzc24",
+   "shape": "77",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "a 50-yr-old man shot",
+    "and killed his wife at home, then"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdoewp224",
+   "shape": "77",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "PTSD shot and killed",
+    "his ex-wife, then fatally"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdpbdus24",
+   "shape": "575",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "2017",
+    "a 23-yr-old man",
+    "shot and killed his wife"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdptjvs24",
+   "shape": "77",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "a 32-yr-old man",
+    "shot and killed his 1-yr-old"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdqh3v224",
+   "shape": "77",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "a 58-yr-old man",
+    "shot and killed his 2-yr-old"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdqygl224",
+   "shape": "575",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "a 50-yr-old",
+    "man shot and killed his girlfriend",
+    "then fatally shot"
+   ]
+  },
+  {
+   "id": "did:plc:4aozdvfkmesmwi6qpdl5swvt/3mrnqdrkjoc24",
+   "shape": "575",
+   "did": "did:plc:4aozdvfkmesmwi6qpdl5swvt",
+   "lines": [
+    "38-yr-old",
+    "man shot and killed his ex-wife",
+    "then fatally shot"
+   ]
+  }
+ ],
  "latencyQuantiles": {
-  "n": 26006
+  "n": 26885
  }
 }

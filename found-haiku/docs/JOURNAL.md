@@ -1,3 +1,16 @@
+2026-07-29 - the longest chain, and what it is
+
+The 23-post chain, finally printed (after being computed and discarded
+twice — the reporting lesson is logged where lessons go): it is a single
+account's registry of American domestic gun deaths, incident after dated
+incident. It scans as stanza after stanza because the reporting sentence —
+"a 53-yr-old man shot and killed his wife" — is five-and-seven shaped, and
+the litany repeats it. The strictest form in the corpus emerged from its
+most brutal content. Recorded plainly; not decorated.
+
+The stanza cache (1,877,441 nodes) now persists at
+firehose-data/stanza-cache.jsonl; graph questions cost seconds.
+
 2026-07-29 - the exploration: sedoka, dokugin, and the strangers' ryogin
 
 The deep dig over 13.6M posts and 36 hours of reply joins. The 3x3 matrix
