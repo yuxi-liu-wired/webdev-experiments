@@ -1,3 +1,16 @@
+2026-07-30 - kintsugi
+
+The operator's read on the first avatar was right: rounded bars were weak.
+Second direction, hers: kintsugi — bold craggy gold on dark. Three
+iterations: uniform-zigzag strokes read as noodles (jitter frequency too
+high; real cracks run long and break rarely); tapered filled shards with few
+sharp turns got the fracture character; the final spreads three veins
+nearly edge to edge, 5-7-5 in length, with thin branch cracks bridging the
+lines and a bright core vein for the metal. Verified live after the
+appview's cache lag — the record's blob cid was the ground truth while the
+CDN served yesterday's face. The metaphor pays for itself: the bot finds
+the gold in broken text.
+
 2026-07-30 - the bot's face
 
 Avatar designed and set: five candidates rendered from the site's own
