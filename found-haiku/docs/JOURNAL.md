@@ -1,3 +1,13 @@
+2026-07-30 - the bot's face
+
+Avatar designed and set: five candidates rendered from the site's own
+palette (tools/avatar.html), judged at 96px circle crop where avatars
+actually live. Winner: sky ground, cream bars in 5-7-5 proportion,
+one golden chunk at the middle line's end — the found word. It is the only
+candidate that encodes the form, the finding, and the shininess at once.
+tools/set-avatar.mjs uploads the blob and rewrites the profile record;
+verified by fetching the live avatar back through the appview.
+
 2026-07-29 - the longest chain, and what it is
 
 The 23-post chain, finally printed (after being computed and discarded
