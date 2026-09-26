@@ -1,0 +1,4 @@
+# Set the Netlify site's base directory to "logseq-undo-journeys"; the page
+# is 1 prebuilt static file, so there is no build step.
+[build]
+  publish = "."
